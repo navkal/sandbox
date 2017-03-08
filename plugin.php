@@ -5,7 +5,7 @@
     echo( "<h2>Plugin stub</h2>" );
     
     // Execute Python script
-    $command = quote( getenv( "PYTHON" ) ) . " test.py";
+    $command = quote( getenv( "PYTHON" ) ) . " queries.py";
     error_log( "===> command=" . $command );
     exec( $command, $output, $status );
     echo( "===> output=" . print_r( $output, true ) );
