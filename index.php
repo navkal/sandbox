@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <?php
+    require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
+  ?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
