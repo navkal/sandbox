@@ -3,7 +3,7 @@
 <div class="container">
   <?php   
     // Execute Python script
-    $command = quote( getenv( "PYTHON" ) ) . " interface.py";
+    $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1";
     error_log( "===> command=" . $command );
     exec( $command, $output, $status );
     
