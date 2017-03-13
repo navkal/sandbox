@@ -1,3 +1,5 @@
+# Copyright 2017 Energize Apps.  All rights reserved.
+
 import printctl
 import argparse
 import json
