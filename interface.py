@@ -1,6 +1,5 @@
 import printctl
 import argparse
-from collections import namedtuple
 import json
 
 printctl.off()
