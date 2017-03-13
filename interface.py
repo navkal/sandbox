@@ -1,6 +1,7 @@
-import argparse
-import json
 import printctl
+import argparse
+from collections import namedtuple
+import json
 
 printctl.off()
 import queries
@@ -16,12 +17,12 @@ if __name__ == '__main__':
       'circuit': 'cirobj',
       'room': 'room' }
 
-    classname = types[ args.type ]
-
-    if classname:
-      obj = eval( 'queries.' + classname + '( args.id )' )
-    else:
-      obj = '{ "error": "unknown type: <' + args.type + '>" }'
+    try:
+      classname = types[ args.type ]
+      object = eval( 'queries.' + classname + '( args.id )' )
+      dict = object.__dict__;
+    except:
+      dict = { 'error': 'unrecognized type [' + args.type + ']' }
 
     printctl.on( )
-    print( json.dumps( obj.__dict__ ) )
+    print( json.dumps( dict ) )
