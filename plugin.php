@@ -7,7 +7,8 @@
   error_log( "===> output=" . print_r( $output, true ) );
 
   // Decode JSON output
-  $dev = json_decode( $output[0] );
+  $dev = (array) json_decode( $output[0] );
+  ksort( $dev );
 ?>
 
 <div class="container">
