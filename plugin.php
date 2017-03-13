@@ -1,7 +1,9 @@
 <!-- Copyright 2016 Energize Apps.  All rights reserved. -->
 <?php
   // Execute Python script
-  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1";
+  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t device -i 164";
+  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t room -i 10";
+  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t circuit -i 3";
   error_log( "===> command=" . $command );
   exec( $command, $output, $status );
   error_log( "===> output=" . print_r( $output, true ) );
