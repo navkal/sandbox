@@ -8,11 +8,5 @@
   exec( $command, $output, $status );
   error_log( "===> output=" . print_r( $output, true ) );
 
-  // Extract and decode output
-  error_log( "===> output length=" . count( $output ) );
-  $result = $output[ count( $output ) - 1 ];
-  error_log( "===> type of result=" . gettype( $result ) );
-  error_log( "===> result=" . $result );
-
-  echo $result;
+  echo $output[ count( $output ) - 1 ];
 ?>
