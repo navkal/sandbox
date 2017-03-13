@@ -7,8 +7,8 @@
   error_log( "===> output=" . print_r( $output, true ) );
 
   // Decode JSON output
-  $dev = (array) json_decode( $output[0] );
-  ksort( $dev );
+  $obj = (array) json_decode( $output[0] );
+  ksort( $obj );
 ?>
 
 <div class="container">
@@ -21,7 +21,7 @@
     </thead>
     <tbody>
       <?php
-        foreach ( $dev as $key => $val )
+        foreach ( $obj as $key => $val )
         {
           echo( '<tr>' );
           echo( '<td>' . $key . '</td>' );
