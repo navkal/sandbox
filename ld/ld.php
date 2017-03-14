@@ -6,14 +6,14 @@
     // Prepare UI to wait for post response
     $( "#btnGo" ).prop( "disabled", true );
     $( "#objectType" ).prop( "disabled", true );
-    $( "#objectId a" ).prop( "disabled", true );
+    $( "#objectSelector a" ).prop( "disabled", true );
     clearObject();
 
     // Clean up input
-    $( "#objectId" ).val( $( "#objectId" ).val().trim() );
-    if ( $( "#objectId" ).val() == "" )
+    $( "#objectSelector" ).val( $( "#objectSelector" ).val().trim() );
+    if ( $( "#objectSelector" ).val() == "" )
     {
-      $( "#objectId" ).val( 0 );
+      $( "#objectSelector" ).val( 0 );
     }
 
     // Set wait cursor
@@ -22,7 +22,7 @@
     // Post input to server
     var postData = new FormData();
     postData.append( "objectType", $( "#objectType" ).val() );
-    postData.append( "objectId", $( "#objectId" ).val() );
+    postData.append( "objectSelector", $( "#objectSelector" ).val() );
 
     $.ajax(
       "ld/query.php",
@@ -44,7 +44,7 @@
     $( "body" ).css( "cursor", "default" );
     $( "#btnGo" ).prop( "disabled", false );
     $( "#objectType" ).prop( "disabled", false );
-    $( "#objectId a" ).prop( "disabled", false );
+    $( "#objectSelector a" ).prop( "disabled", false );
 
     // Show the object
     showObject( rsp );
@@ -85,8 +85,8 @@
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <label for="objectId">ID</label>
-          <input type="text" class="form-control" id="objectId" maxlength=8 >
+          <label for="objectSelector">Selector</label>
+          <input type="text" class="form-control" id="objectSelector" maxlength=256 >
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">

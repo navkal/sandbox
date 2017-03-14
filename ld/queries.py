@@ -47,16 +47,19 @@ z.properties()
 
 class cirobj:
 
-    def __init__(self,id):
-        self.id = id
+    def __init__(self,id=None,path=None):
+        if id:
+          cur.execute('SELECT * FROM CircuitObject WHERE id = ?', (id,))
+        else:
+          cur.execute('SELECT * FROM CircuitObject WHERE path = ?', (path,))
 
         #initialize circuitObject properties
-        cur.execute('SELECT * FROM CircuitObject WHERE id = ?', (id,))
         row = cur.fetchone()
         cur.execute('SELECT * FROM Voltage WHERE id = ?',(row[4],))
         voltage = cur.fetchone()
         print(row,voltage)
 
+        self.id = row[0]
         self.room_id = row[1]
         self.path = row[2]
         self.voltage = voltage[1]

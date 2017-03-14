@@ -11,6 +11,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser( description='retrieve object from Location Dictionary database' )
     parser.add_argument( '-t', '--type', dest='type', help='object type' )
     parser.add_argument( '-i', '--id', dest='id',  help='object id' )
+    parser.add_argument( '-p', '--path', dest='path',  help='object path' )
     args = parser.parse_args()
 
     types = {
@@ -18,16 +19,22 @@ if __name__ == '__main__':
       'circuit': 'cirobj',
       'room': 'room' }
 
+    if args.path:
+      selector = 'path="' + args.path + '"'
+    else:
+      selector = 'id=' + args.id
+
     try:
       classname = types[ args.type ]
-      try:
-        object = eval( 'queries.' + classname + '( args.id )' )
-        dict = object.__dict__;
-      except:
-        dict = { 'Error': 'Unrecognized ID [' + args.id + ']' }
-
     except:
       dict = { 'Error': 'Unrecognized Type [' + args.type + ']' }
+    else:
+      try:
+        object = eval( 'queries.' + classname + '( ' + selector + ' )' )
+      except:
+        dict = { 'Error': 'Could not retrieve [' + selector + ']' }
+      else:
+        dict = object.__dict__;
 
     printctl.on( )
     print( json.dumps( dict ) )
