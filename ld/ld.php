@@ -45,17 +45,7 @@
     $( "#objectType" ).prop( "disabled", false );
     $( "#objectId a" ).prop( "disabled", false );
 
-    var tbody = "";
-
-    var keys = Object.keys( rsp ).sort();
-    for ( var i = 0; i < keys.length; i++ )
-    {
-      key = keys[i];
-      val = rsp[key];
-      tbody += "<tr><td>" + key + "</td><td>" + val + "</td></tr>"
-    }
-
-    $( "tbody" ).html( tbody );
+    showObject( rsp );
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
@@ -105,15 +95,7 @@
     </div>
   </form>
 
-  <table class="table" >
-    <thead>
-      <tr>
-        <th>Key</th>
-        <th>Value</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-
+  <?php
+    require_once "object.php";
+  ?>
 </div>
