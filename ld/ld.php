@@ -17,7 +17,7 @@
     postData.append( "object_id", $( "#object_id" ).val() );
 
     $.ajax(
-      "query.php",
+      "ld/query.php",
       {
         type: 'POST',
         processData: false,
