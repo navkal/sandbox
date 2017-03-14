@@ -4,17 +4,17 @@
   function onGo()
   {
     // Disable inputs
-    $( "#go_button" ).prop( "disabled", true );
-    $( "#object_type" ).prop( "disabled", true );
-    $( "#object_id a" ).prop( "disabled", true );
+    $( "#btnGo" ).prop( "disabled", true );
+    $( "#objectType" ).prop( "disabled", true );
+    $( "#objectId a" ).prop( "disabled", true );
 
     // Set wait cursor
     $( "body" ).css( "cursor", "progress" );
 
     // Post input to server
     var postData = new FormData();
-    postData.append( "object_type", $( "#object_type" ).val() );
-    postData.append( "object_id", $( "#object_id" ).val() );
+    postData.append( "objectType", $( "#objectType" ).val() );
+    postData.append( "objectId", $( "#objectId" ).val() );
 
     $.ajax(
       "ld/query.php",
@@ -34,9 +34,9 @@
   {
     // Restore cursor and button states
     $( "body" ).css( "cursor", "default" );
-    $( "#go_button" ).prop( "disabled", false );
-    $( "#object_type" ).prop( "disabled", false );
-    $( "#object_id a" ).prop( "disabled", false );
+    $( "#btnGo" ).prop( "disabled", false );
+    $( "#objectType" ).prop( "disabled", false );
+    $( "#objectId a" ).prop( "disabled", false );
 
     var tbody = "";
 
@@ -65,31 +65,38 @@
 
 <div class="container">
 
-  <div class="form-group">
-    <div class="row" >
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <select id="object_type" class="form-control" >
-          <option>
-            circuit
-          </option>
-          <option>
-            room
-          </option>
-          <option>
-            device
-          </option>
-        </select>
-      </div>
+  <form>
+    <div class="form-group">
+      <div class="row" >
 
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <input type="text" id="object_id" />
-      </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <label for="objectType">Type</label>
+          <select id="objectType" class="form-control" >
+            <option value="circuit">
+              Circuit
+            </option>
+            <option value="room">
+              Room
+            </option>
+            <option value="device">
+              Device
+            </option>
+          </select>
+        </div>
 
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <button id="go_button" class="btn btn-primary" onclick="onGo()" >Go</button>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <label for="objectId">ID</label>
+          <input type="text" class="form-control" id="objectId" maxlength="5" required >
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <label>&nbsp;</label>
+          <button id="btnGo" class="btn btn-primary form-control" onclick="onGo()" >Go</button>
+        </div>
+
       </div>
     </div>
-  </div>
+  </form>
 
   <table class="table" >
     <thead>
