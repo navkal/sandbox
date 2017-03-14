@@ -51,7 +51,7 @@ class cirobj:
         if id:
           cur.execute('SELECT * FROM CircuitObject WHERE id = ?', (id,))
         else:
-          cur.execute('SELECT * FROM CircuitObject WHERE path = ?', (path,))
+          cur.execute('SELECT * FROM CircuitObject WHERE upper(path) = ?', (path.upper(),))
 
         #initialize circuitObject properties
         row = cur.fetchone()
