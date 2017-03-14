@@ -94,6 +94,8 @@
       </div>
     </div>
   </form>
+  
+  <br/>
 
   <?php
     require_once "object.php";

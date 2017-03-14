@@ -1,7 +1,6 @@
 <script>
   function showObject( rsp )
   {
-
     var tbody = "";
 
     var keys = Object.keys( rsp ).sort();
@@ -12,7 +11,7 @@
       tbody += "<tr><td>" + key + "</td><td>" + val + "</td></tr>"
     }
 
-    $( "tbody" ).html( tbody );
+    $( "#objectLayout" ).html( tbody );
   }
 </script>
 
@@ -23,6 +22,6 @@
       <th>Value</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="objectLayout" >
   </tbody>
 </table>
