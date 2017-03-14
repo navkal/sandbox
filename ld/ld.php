@@ -8,6 +8,13 @@
     $( "#objectType" ).prop( "disabled", true );
     $( "#objectId a" ).prop( "disabled", true );
 
+    // Clean up input
+    $( "#objectId" ).val( $( "#objectId" ).val().trim() );
+    if ( $( "#objectId" ).val() == "" )
+    {
+      $( "#objectId" ).val( 0 );
+    }
+
     // Set wait cursor
     $( "body" ).css( "cursor", "progress" );
 
