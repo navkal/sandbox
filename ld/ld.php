@@ -93,7 +93,7 @@
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <label for="objectId">ID</label>
-          <input type="text" class="form-control" id="objectId" maxlength="5" required >
+          <input type="text" class="form-control" id="objectId" maxlength=8 >
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -115,4 +115,5 @@
     <tbody>
     </tbody>
   </table>
+
 </div>
