@@ -1,4 +1,9 @@
 <script>
+  function clearObject( rsp )
+  {
+    $( "#objectLayout" ).html( "" );
+  }
+
   function showObject( rsp )
   {
     var tbody = "";

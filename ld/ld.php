@@ -3,10 +3,11 @@
 <script>
   function onGo()
   {
-    // Disable inputs
+    // Prepare UI to wait for post response
     $( "#btnGo" ).prop( "disabled", true );
     $( "#objectType" ).prop( "disabled", true );
     $( "#objectId a" ).prop( "disabled", true );
+    clearObject();
 
     // Clean up input
     $( "#objectId" ).val( $( "#objectId" ).val().trim() );
@@ -45,6 +46,7 @@
     $( "#objectType" ).prop( "disabled", false );
     $( "#objectId a" ).prop( "disabled", false );
 
+    // Show the object
     showObject( rsp );
   }
 
@@ -56,7 +58,8 @@
     $( "#inputFileFields" ).prop( "disabled", false );
     $( "#inputFileTabs a" ).prop( "disabled", false );
 
-    $( "tbody" ).html( "<tr><td>" + sStatus + "</td><td>" + sErrorThrown + "</td></tr>" );
+    // Show error information
+    showObject( { sStatus : sErrorThrown } )
   }
 </script>
 
@@ -94,7 +97,7 @@
       </div>
     </div>
   </form>
-  
+
   <br/>
 
   <?php

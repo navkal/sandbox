@@ -24,10 +24,10 @@ if __name__ == '__main__':
         object = eval( 'queries.' + classname + '( args.id )' )
         dict = object.__dict__;
       except:
-        dict = { 'Error': 'Unrecognized id [' + args.id + ']' }
+        dict = { 'Error': 'Unrecognized ID [' + args.id + ']' }
 
     except:
-      dict = { 'Error': 'Unrecognized type [' + args.type + ']' }
+      dict = { 'Error': 'Unrecognized Type [' + args.type + ']' }
 
     printctl.on( )
     print( json.dumps( dict ) )
