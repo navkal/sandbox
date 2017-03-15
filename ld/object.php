@@ -1,11 +1,14 @@
 <script>
   function clearObject( rsp )
   {
+    $( "#objectArea" ).css( "display", "none" );
     $( "#objectLayout" ).html( "" );
   }
 
   function showObject( rsp )
   {
+    $( "#objectArea" ).css( "display", "block" );
+
     var tbody = "";
 
     var keys = Object.keys( rsp ).sort();
@@ -20,13 +23,15 @@
   }
 </script>
 
-<table class="table" >
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody id="objectLayout" >
-  </tbody>
-</table>
+<div id="objectArea">
+  <table class="table" >
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody id="objectLayout" >
+    </tbody>
+  </table>
+</div>

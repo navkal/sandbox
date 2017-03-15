@@ -11,15 +11,12 @@
 
   function onGo()
   {
+    // Prepare UI to wait for post response
+    setWaitState( true );
+    clearObject();
+
     // Trim input
     $( "#objectSelector" ).val( $( "#objectSelector" ).val().trim() );
-
-    // Prepare UI to wait for post response
-    $( "body" ).css( "cursor", "progress" );
-    $( "#btnGo" ).prop( "disabled", true );
-    $( "#objectType" ).prop( "disabled", true );
-    $( "#objectSelector" ).prop( "disabled", true );
-    clearObject();
 
     // Post input to server
     var postData = new FormData();
@@ -42,11 +39,8 @@
 
   function handlePostResponse( rsp, sStatus, tJqXhr )
   {
-    // Restore cursor and button states
-    $( "body" ).css( "cursor", "default" );
-    $( "#btnGo" ).prop( "disabled", false );
-    $( "#objectType" ).prop( "disabled", false );
-    $( "#objectSelector" ).prop( "disabled", false );
+    // Restore cursor and control states
+    setWaitState( false );
 
     if ( $( "#objectSelector" ).val() == "" )
     {
@@ -59,14 +53,19 @@
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
   {
-    // Restore cursor and button states
-    $( "body" ).css( "cursor", "default" );
-    $( "#submitFileButton" ).prop( "disabled", false );
-    $( "#inputFileFields" ).prop( "disabled", false );
-    $( "#inputFileTabs a" ).prop( "disabled", false );
+    // Restore cursor and control states
+    setWaitState( false );
 
     // Show error information
     showObject( { sStatus : sErrorThrown } )
+  }
+
+  function setWaitState( bWait )
+  {
+    $( "body" ).css( "cursor", bWait ? "progress" : "default" );
+    $( "#btnGo" ).prop( "disabled", bWait );
+    $( "#objectType" ).prop( "disabled", bWait );
+    $( "#objectSelector" ).prop( "disabled", bWait );
   }
 </script>
 
