@@ -44,7 +44,7 @@
 
     if ( $( "#objectSelector" ).val() == "" )
     {
-      $( "#objectSelector" ).val( rsp.path || rsp.id );
+      $( "#objectSelector" ).val( rsp.Path || rsp.ID );
     }
 
     // Show the object
