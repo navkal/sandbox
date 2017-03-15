@@ -7,7 +7,7 @@
 
   function showObject( rsp )
   {
-    $( "#objectArea" ).css( "display", "block" );
+    $( "#objectArea" ).css( "display", "initial" );
 
     var tbody = "";
 
