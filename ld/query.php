@@ -3,10 +3,40 @@
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
   error_log( "====> post=" . print_r( $_POST, true ) );
 
-  // Set argument tag as path or id
-  $tag = ( ( $_POST['objectType'] == "circuit" ) && ! ctype_digit( $_POST['objectSelector'] ) ) ? 'p' : 'i';
+  // Get posted values
+  $postType = $_POST['objectType'];
+  $postSelector = $_POST['objectSelector'];
 
-  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t " . $_POST['objectType'] . " -" . $tag . " " . $_POST['objectSelector'];
+  // Determine query selector argument
+  $selector = '';
+  if ( $postType == "circuit" )
+  {
+    // Object is a circuit
+
+    if ( $postSelector != '' )
+    {
+      if ( ctype_digit( $postSelector ) )
+      {
+        // All digits: argument is an id
+        $selector = ' -i ';
+      }
+      else
+      {
+        // Not all digits: argument is a path
+        $selector = ' -p ';
+      }
+
+      $selector .= $postSelector;
+    }
+  }
+  else
+  {
+    // Object is not a circuit
+    $selector = ' -i ' . ( ( $postSelector == '' ) ? '1' : $postSelector );
+  }
+
+
+  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t " . $postType . $selector;
   error_log( "===> command=" . $command );
   exec( $command, $output, $status );
   error_log( "===> output=" . print_r( $output, true ) );

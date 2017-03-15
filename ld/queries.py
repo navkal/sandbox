@@ -50,8 +50,10 @@ class cirobj:
     def __init__(self,id=None,path=None):
         if id:
           cur.execute('SELECT * FROM CircuitObject WHERE id = ?', (id,))
-        else:
+        elif path:
           cur.execute('SELECT * FROM CircuitObject WHERE upper(path) = ?', (path.upper(),))
+        else:
+          cur.execute('SELECT * FROM CircuitObject WHERE path NOT LIKE "%.%"' )
 
         #initialize circuitObject properties
         row = cur.fetchone()

@@ -1,23 +1,25 @@
 <!-- Copyright 2017 Energize Apps.  All rights reserved. -->
 
 <script>
+  $( document ).ready( showRoot );
+
+  function showRoot()
+  {
+    $( "#objectType" ).val( "circuit" );
+    onGo();
+  }
+
   function onGo()
   {
+    // Trim input
+    $( "#objectSelector" ).val( $( "#objectSelector" ).val().trim() );
+
     // Prepare UI to wait for post response
+    $( "body" ).css( "cursor", "progress" );
     $( "#btnGo" ).prop( "disabled", true );
     $( "#objectType" ).prop( "disabled", true );
-    $( "#objectSelector a" ).prop( "disabled", true );
+    $( "#objectSelector" ).prop( "disabled", true );
     clearObject();
-
-    // Clean up input
-    $( "#objectSelector" ).val( $( "#objectSelector" ).val().trim() );
-    if ( $( "#objectSelector" ).val() == "" )
-    {
-      $( "#objectSelector" ).val( 0 );
-    }
-
-    // Set wait cursor
-    $( "body" ).css( "cursor", "progress" );
 
     // Post input to server
     var postData = new FormData();
@@ -44,7 +46,12 @@
     $( "body" ).css( "cursor", "default" );
     $( "#btnGo" ).prop( "disabled", false );
     $( "#objectType" ).prop( "disabled", false );
-    $( "#objectSelector a" ).prop( "disabled", false );
+    $( "#objectSelector" ).prop( "disabled", false );
+
+    if ( $( "#objectSelector" ).val() == "" )
+    {
+      $( "#objectSelector" ).val( rsp.path || rsp.id );
+    }
 
     // Show the object
     showObject( rsp );

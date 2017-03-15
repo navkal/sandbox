@@ -21,8 +21,10 @@ if __name__ == '__main__':
 
     if args.path:
       selector = 'path="' + args.path + '"'
-    else:
+    elif args.id:
       selector = 'id=' + args.id
+    else:
+      selector = ''
 
     try:
       classname = types[ args.type ]
