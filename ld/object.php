@@ -16,7 +16,7 @@
     {
       key = keys[i];
       val = rsp[key];
-      tbody += "<tr><td>" + key + "</td><td>" + JSON.stringify( val ) + "</td></tr>"
+      tbody += "<tr><td>" + key + "</td><td>" + val + "</td></tr>"
     }
 
     $( "#objectLayout" ).html( tbody );
