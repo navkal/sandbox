@@ -71,11 +71,14 @@ class cirobj:
         self.parent = row[2].rsplit('.',maxsplit=1)[0]
         self.root = row[2].split('.',maxsplit=1)[0]
 
-        cur.execute('SELECT path, id FROM CircuitObject WHERE parent = ?', (self.path,))
+        cur.execute('SELECT id, path FROM CircuitObject WHERE parent = ?', (self.path,))
         self.children = cur.fetchall()
+        cur.execute('SELECT id, description FROM Device WHERE parent = ?', (self.path,))
+        self.devices = cur.fetchall()
         print('my parent is ',self.parent)
         print('my root is ',self.root)
         print('my children are ', self.children)
+        print('my devcies are ', self.devices)
 
 
     def get_main_display(self):
@@ -91,7 +94,7 @@ class cirobj:
 
 ###########################################
 ##########GETS ROOT OF CIROBJ#######################
-z = cirobj(14)
+z = cirobj()
 display = z.get_main_display()
 print(display['Root'])
 #################################

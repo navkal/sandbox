@@ -43,21 +43,18 @@
     var sIndent = Array( nDepth ).join( "-")
     TREE[tRsp.path] = sIndent + tRsp.path + "<br/>";
 
-    // Optionally update display
-    if ( tRsp.children.length == 0 )
+    // Update display
+    $( "#objectTree" ).html( "" );
+    var aPaths = Object.keys( TREE ).sort();
+    for ( var iPath = 0; iPath < aPaths.length; iPath ++ )
     {
-      $( "#objectTree" ).html( "" );
-      var aPaths = Object.keys( TREE ).sort();
-      for ( var iPath = 0; iPath < aPaths.length; iPath ++ )
-      {
-        $( "#objectTree" ).append( TREE[aPaths[iPath]] );
-      }
+      $( "#objectTree" ).append( TREE[aPaths[iPath]] );
     }
 
     // Traverse children
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
     {
-      var sChildPath = tRsp.children[iChild][0];
+      var sChildPath = tRsp.children[iChild][1];
       if ( sChildPath != tRsp.path )
       {
         walkSubtree( sChildPath );
