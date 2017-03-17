@@ -19,7 +19,7 @@
     tPostData.append( "objectSelector", path );
 
     $.ajax(
-      "ld/query.php",
+      "cn/query.php",
       {
         type: 'POST',
         processData: false,
