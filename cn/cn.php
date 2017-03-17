@@ -14,7 +14,7 @@
   function walkSubtree( path )
   {
     // --> KLUDGE --> remove after paths are fixed in DB -->
-    path = path.replace(/\s+/g, '');
+    if ( path.includes( " " ) ) { console.log( "====> BAD PATH=" + path ); return; }
     // <-- KLUDGE <-- remove after paths are fixed in DB <--
 
     // Post request to server
