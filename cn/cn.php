@@ -13,6 +13,10 @@
 
   function walkSubtree( path )
   {
+    // --> KLUDGE --> remove after paths are fixed in DB -->
+    path = path.replace(/\s+/g, '');
+    // <-- KLUDGE <-- remove after paths are fixed in DB <--
+
     // Post request to server
     var tPostData = new FormData();
     tPostData.append( "objectType", "circuit" );
@@ -63,7 +67,8 @@
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
   {
-    console.log( sStatus + " " + sErrorThrown );
+    console.log( "==> ERROR=" + sStatus + " " + sErrorThrown );
+    console.log( "==> HEADER=" + JSON.stringify( tJqXhr ) );
   }
 
   </script>
