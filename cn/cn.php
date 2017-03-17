@@ -38,10 +38,24 @@
 
   function handlePostResponse( tRsp, sStatus, tJqXhr )
   {
-    // Append to tree
-    var nDepth = tRsp.path.split( "." ).length
+    var sPath = tRsp.path;
+
+    // Append path to tree
+    var nDepth = sPath.split( "." ).length
     var sIndent = Array( nDepth ).join( "-")
-    TREE[tRsp.path] = sIndent + tRsp.path + "<br/>";
+    TREE[sPath] = sIndent + sPath + "<br/>";
+
+    // Append devices to tree
+    var aDevices = tRsp.devices;
+    if ( aDevices.length > 0 ){ console.log( "====> " + sPath + " has " + aDevices.length + " devices" ); }
+    for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
+    {
+      var iDeviceId = aDevices[iDevice][0];
+      var sDeviceDescr = aDevices[iDevice][1];
+      console.log( iDeviceId + " " + sDeviceDescr );
+      sDevicePath = sPath + ".0" + iDeviceId + "-" + sDeviceDescr;
+      TREE[sDevicePath] = sIndent + "-" + sDevicePath + "<br/>";
+    }
 
     // Update display
     $( "#objectTree" ).html( "" );
@@ -55,7 +69,7 @@
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
     {
       var sChildPath = tRsp.children[iChild][1];
-      if ( sChildPath != tRsp.path )
+      if ( sChildPath != sPath )  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
       {
         walkSubtree( sChildPath );
       }
