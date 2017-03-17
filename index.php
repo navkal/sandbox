@@ -34,7 +34,7 @@
 	<body>
     <br/>
     <?php
-      include "ld/ld.php";
+      include "cn/cn.php";
     ?>
  	</body>
 </html>

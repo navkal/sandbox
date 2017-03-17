@@ -71,9 +71,8 @@ class cirobj:
         self.parent = row[2].rsplit('.',maxsplit=1)[0]
         self.root = row[2].split('.',maxsplit=1)[0]
 
-        self.children = []
         cur.execute('SELECT path, id FROM CircuitObject WHERE parent = ?', (self.path,))
-        CirObjChildren = cur.fetchall() 
+        self.children = cur.fetchall()
         print('my parent is ',self.parent)
         print('my root is ',self.root)
         print('my children are ', self.children)

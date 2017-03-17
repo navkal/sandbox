@@ -36,7 +36,7 @@ if __name__ == '__main__':
       except:
         dict = { 'Error': 'Could not retrieve [' + selector + ']' }
       else:
-        dict = object.get_main_display();
+        dict = object.__dict__;
 
     printctl.on( )
     print( json.dumps( dict ) )
