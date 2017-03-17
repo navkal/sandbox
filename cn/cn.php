@@ -41,8 +41,9 @@
     var sPath = tRsp.path;
 
     // Append path to tree
-    var nDepth = sPath.split( "." ).length
-    var sIndent = Array( nDepth ).join( "-")
+    var nDepth = sPath.split( "." ).length;
+    if(nDepth>4)return;//<--------- DEBUG
+    var sIndent = Array( nDepth ).join( "-");
     TREE[sPath] = sIndent + sPath + "<br/>";
 
     // Append devices to tree
@@ -51,15 +52,18 @@
     for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
     {
       var iDeviceId = aDevices[iDevice][0];
-      var sDeviceDescr = aDevices[iDevice][1];
-      console.log( iDeviceId + " " + sDeviceDescr );
-      sDevicePath = sPath + ".0" + iDeviceId + "-" + sDeviceDescr;
-      TREE[sDevicePath] = sIndent + "-" + sDevicePath + "<br/>";
+      var iDeviceLoc = aDevices[iDevice][1];
+      var sDeviceDescr = aDevices[iDevice][2];
+      var sDevName = iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
+      console.log( sDevName );
+      sDevicePath = sPath + " " + sDevName;
+      sIndent = Array( nDepth + 1 ).join( "-");
+      TREE[sDevicePath] = sIndent + sDevicePath + "<br/>";
     }
 
     // Update display
     $( "#objectTree" ).html( "" );
-    var aPaths = Object.keys( TREE ).sort();
+    var aPaths = Object.keys( TREE ).sort( compareKeys );
     for ( var iPath = 0; iPath < aPaths.length; iPath ++ )
     {
       $( "#objectTree" ).append( TREE[aPaths[iPath]] );
@@ -74,6 +78,74 @@
         walkSubtree( sChildPath );
       }
     }
+  }
+
+  function compareKeys( s1, s2 )
+  {
+    // Extract path and device strings
+    var aSplit1 = s1.split( " " );
+    var aSplit2 = s2.split( " " );
+    var sPath1 = aSplit1.shift();
+    var sPath2 = aSplit2.shift();
+    var sDev1 = aSplit1.join( " " );
+    var sDev2 = aSplit2.join( " " );
+
+    // Split path into fragments
+    var aPath1 = sPath1.split( "." );
+    var aPath2 = sPath2.split( "." );
+
+    // Compare paths
+    var iResult = 0;
+    for ( var i = 0; ( iResult == 0 ) && ( i < aPath1.length ) && ( i < aPath2.length ); i++ )
+    {
+      var sFragment1 = aPath1[i];
+      var sFragment2 = aPath2[i];
+
+      var isNum1 = /^\d+$/.test( sFragment1 );
+      var isNum2 = /^\d+$/.test( sFragment2 );
+
+      if ( isNum1 && isNum2 )
+      {
+        // Compare fragments as numbers
+        iResult = sFragment1 - sFragment2;
+      }
+      else
+      {
+        // Compare fragments as strings
+        iResult = sFragment1.localeCompare( sFragment2 );
+      }
+    }
+
+    // If leading parts of paths are the same, compare their lengths
+    if ( iResult == 0 )
+    {
+      iResult = aPath1.length - aPath2.length;
+      console.log( iResult + " <- [" + aPath1 + "] =?= [" + aPath2 + "]" );
+    }
+
+    // If paths are the same, compare devices
+    if ( iResult == 0 )
+    {
+      if ( sDev1 == sDev2 )
+      {
+        iResult = 0;
+      }
+      else if ( sDev1 == "" )
+      {
+        iResult = -1;
+      }
+      else if ( sDev2 == "" )
+      {
+        iResult = 1;
+      }
+      else
+      {
+        // Compare device IDs, which are guaranteed to be numeric and unique
+        iResult = sDev1.split( "," )[0] - sDev2.split( "," )[0];
+      }
+    }
+
+    return iResult;
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )

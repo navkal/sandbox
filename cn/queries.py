@@ -73,7 +73,7 @@ class cirobj:
 
         cur.execute('SELECT id, path FROM CircuitObject WHERE parent = ?', (self.path,))
         self.children = cur.fetchall()
-        cur.execute('SELECT id, description FROM Device WHERE parent = ?', (self.path,))
+        cur.execute('SELECT id, room_id, description FROM Device WHERE parent = ?', (self.path,))
         self.devices = cur.fetchall()
         print('my parent is ',self.parent)
         print('my root is ',self.root)
