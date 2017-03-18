@@ -14,7 +14,7 @@
   function walkSubtree( path )
   {
     // --> KLUDGE --> remove after paths are fixed in DB -->
-    if ( path.includes( " " ) ) { console.log( "====> BAD PATH=" + path ); return; }
+    if ( path.includes( " " ) ) { console.log( "=> BAD PATH=" + path ); return; }
     // <-- KLUDGE <-- remove after paths are fixed in DB <--
 
     // Post request to server
@@ -42,20 +42,18 @@
 
     // Append path to tree
     var nDepth = sPath.split( "." ).length;
-    //if(nDepth>4)return;//<--------- DEBUG
+    if(nDepth>2)return;//<--------- DEBUG
     var sIndent = Array( nDepth ).join( "-");
     TREE[sPath] = sIndent + sPath + "<br/>";
 
     // Append devices to tree
     var aDevices = tRsp.devices;
-    if ( aDevices.length > 0 ){ console.log( "====> " + sPath + " has " + aDevices.length + " devices" ); }
     for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
     {
       var iDeviceId = aDevices[iDevice][0];
       var iDeviceLoc = aDevices[iDevice][1];
       var sDeviceDescr = aDevices[iDevice][2];
       var sDevName = iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
-      console.log( sDevName );
       sDevicePath = sPath + " " + sDevName;
       sIndent = Array( nDepth + 1 ).join( "-");
       TREE[sDevicePath] = sIndent + sDevicePath + "<br/>";
