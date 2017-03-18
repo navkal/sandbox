@@ -61,13 +61,7 @@
     // If this is a leaf, or there are device leaves, update display
     if ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) )
     {
-      var sTree = "";
-      var aPaths = Object.keys( TREE ).sort( compareKeys );
-      for ( var iPath = 0; iPath < aPaths.length; iPath ++ )
-      {
-        sTree += TREE[aPaths[iPath]];
-      }
-      $( "#objectTree" ).html( sTree );
+      displayTree();
     }
 
     // Traverse children
@@ -77,9 +71,19 @@
       if ( sChildPath != sPath )  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
       {
         walkSubtree( sChildPath );
-        //setTimeout( walkSubtree, 1000 * ( nDepth + 1 ), sChildPath );
       }
     }
+  }
+
+  function displayTree()
+  {
+    var sTree = "";
+    var aPaths = Object.keys( TREE ).sort( compareKeys );
+    for ( var iPath = 0; iPath < aPaths.length; iPath ++ )
+    {
+      sTree += TREE[aPaths[iPath]];
+    }
+    $( "#objectTree" ).html( sTree );
   }
 
   function compareKeys( s1, s2 )
