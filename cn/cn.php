@@ -76,7 +76,8 @@
       var sChildPath = tRsp.children[iChild][1];
       if ( sChildPath != sPath )  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
       {
-        setTimeout( walkSubtree, 1000 * ( nDepth + 1 ), sChildPath );
+        walkSubtree( sChildPath );
+        //setTimeout( walkSubtree, 1000 * ( nDepth + 1 ), sChildPath );
       }
     }
   }
