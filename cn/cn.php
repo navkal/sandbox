@@ -3,6 +3,8 @@
 <script>
 
   var TREE = {};
+  var REQ = 0;
+  var RSP = 0;
 
   $( document ).ready( walkTree );
 
@@ -22,6 +24,7 @@
     tPostData.append( "objectType", "circuit" );
     tPostData.append( "objectSelector", path );
 
+    REQ ++;
     $.ajax(
       "cn/query.php",
       {
@@ -59,10 +62,13 @@
     }
 
     // If this is a leaf, or there are device leaves, update display
-    if ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) )
+    if ( ( ( RSP / REQ ) > 0.98 ) && ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) ) )
     {
+      console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
       displayTree();
     }
+
+    RSP ++;
 
     // Traverse children
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
@@ -166,6 +172,7 @@
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
   {
+    RSP ++;
     console.log( "==> ERROR=" + sStatus + " " + sErrorThrown );
     console.log( "==> HEADER=" + JSON.stringify( tJqXhr ) );
   }
@@ -174,5 +181,6 @@
 
 <div class="container">
   <div id="objectTree" style="overflow:auto">
+    <h1>Walking the Circuit Tree...</h1>
   </div>
 </div>
