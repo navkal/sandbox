@@ -42,7 +42,7 @@
 
     // Append path to tree
     var nDepth = sPath.split( "." ).length;
-    if(nDepth>2)return;//<--------- DEBUG
+    if(nDepth>4)return;//<--------- DEBUG
     var sIndent = Array( nDepth ).join( "-");
     TREE[sPath] = sIndent + sPath + "<br/>";
 
@@ -122,7 +122,18 @@
     if ( iResult == 0 )
     {
       iResult = aPath1.length - aPath2.length;
-      console.log( iResult + " <- [" + aPath1 + "] =?= [" + aPath2 + "]" );
+
+      // Special treatment to order folders before devices:
+      // If path lengths differ by 1, shorter path has a device, and longer path does not, flip the result
+      if (
+            ( ( iResult == -1 ) && ( sDev1 != "" ) && ( sDev2 == "" ) )
+            ||
+            ( ( iResult == 1 ) && ( sDev1 == "" ) && ( sDev2 != "" ) )
+          )
+      {
+        console.log( "SWITCH! " + iResult + " <- [" + aPath1 + "] =?= [" + aPath2 + "]" );
+        iResult *= -1;
+      }
     }
 
     // If paths are the same, compare devices
