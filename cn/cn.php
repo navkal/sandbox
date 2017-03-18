@@ -42,7 +42,7 @@
 
     // Append path to tree
     var nDepth = sPath.split( "." ).length;
-    if(nDepth>4)return;//<--------- DEBUG
+    //if(nDepth>4)return;//<--------- DEBUG
     var sIndent = Array( nDepth ).join( "-");
     TREE[sPath] = sIndent + sPath + "<br/>";
 
@@ -61,12 +61,16 @@
       TREE[sDevicePath] = sIndent + sDevicePath + "<br/>";
     }
 
-    // Update display
-    $( "#objectTree" ).html( "" );
-    var aPaths = Object.keys( TREE ).sort( compareKeys );
-    for ( var iPath = 0; iPath < aPaths.length; iPath ++ )
+    // If this is a leaf, or there are device leaves, update display
+    if ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) )
     {
-      $( "#objectTree" ).append( TREE[aPaths[iPath]] );
+      var sTree = "";
+      var aPaths = Object.keys( TREE ).sort( compareKeys );
+      for ( var iPath = 0; iPath < aPaths.length; iPath ++ )
+      {
+        sTree += TREE[aPaths[iPath]];
+      }
+      $( "#objectTree" ).html( sTree );
     }
 
     // Traverse children
@@ -75,7 +79,7 @@
       var sChildPath = tRsp.children[iChild][1];
       if ( sChildPath != sPath )  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
       {
-        walkSubtree( sChildPath );
+        setTimeout( walkSubtree, 1000 * ( nDepth + 1 ), sChildPath );
       }
     }
   }
