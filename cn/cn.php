@@ -62,13 +62,13 @@
     }
 
     // If this is a leaf, or there are device leaves, update display
-    if ( ( ( RSP / REQ ) > 0.98 ) && ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) ) )
+    if ( ( ( RSP / REQ ) > 0.99 ) && ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) ) )
     {
-      console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
       displayTree();
     }
 
     RSP ++;
+    if ( ( RSP / REQ ) > 0.99 ) console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
 
     // Traverse children
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
