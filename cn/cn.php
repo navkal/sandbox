@@ -42,7 +42,6 @@
 
     // Append path to tree
     var nDepth = sPath.split( "." ).length;
-    if(nDepth>4)return;//<--------- DEBUG
     var sIndent = Array( nDepth ).join( "-");
     TREE[sPath] = sIndent + sPath + "<br/>";
 
@@ -131,7 +130,6 @@
             ( ( iResult == 1 ) && ( sDev1 == "" ) && ( sDev2 != "" ) )
           )
       {
-        console.log( "SWITCH! " + iResult + " <- [" + aPath1 + "] =?= [" + aPath2 + "]" );
         iResult *= -1;
       }
     }
