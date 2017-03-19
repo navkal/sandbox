@@ -66,12 +66,15 @@
     if ( ( ( RSP / REQ ) > 0.99 ) && ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) ) )
     {
       displayTree();
+      $( "#walkStatus" ).html( "Circuit Tree" );
     }
 
     $( "#walkTime" ).html( timeSince( START ) );
 
     RSP ++;
     if ( ( RSP / REQ ) > 0.99 ) console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
+
+    if(nDepth>3)return;////////////DEBUG DEBUG DEBUG
 
     // Traverse children
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
@@ -218,8 +221,8 @@
   </script>
 
 <div class="container">
-  Elapsed time: <span id="walkTime"></span>
+  <h3 id="walkStatus" >Retrieving Tree...</h3>
+  <h4>Retrieval time: <span id="walkTime"></span></h4>
   <div id="objectTree" style="overflow:auto">
-    <h1>Walking the Circuit Tree...</h1>
   </div>
 </div>
