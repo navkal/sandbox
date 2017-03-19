@@ -63,7 +63,7 @@
     }
 
     // If this is a leaf, or there are device leaves, update display
-    if ( ( ( RSP / REQ ) > 0.99 ) && ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) ) )
+    if ( ( ( RSP / REQ ) > 0.995 ) && ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) ) )
     {
       displayTree();
       $( "#walkStatus" ).html( "Circuit Tree" );
@@ -72,9 +72,9 @@
     $( "#walkTime" ).html( timeSince( START ) );
 
     RSP ++;
-    if ( ( RSP / REQ ) > 0.99 ) console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
+    if ( ( RSP / REQ ) > 0.995 ) console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
 
-    if(nDepth>3)return;////////////DEBUG DEBUG DEBUG
+    /////////////if(nDepth>3)return;////////////DEBUG DEBUG DEBUG
 
     // Traverse children
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
