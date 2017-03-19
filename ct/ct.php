@@ -1,8 +1,9 @@
 <!-- Copyright 2017 Energize Apps.  All rights reserved. -->
 
 <script>
-  var TEST_DEPTH = 0;
+  var TEST_DEPTH = 4;
 
+  var FOLDERS_FIRST = false;
   var TREE = {};
   var REQ = 0;
   var RSP = 0;
@@ -65,7 +66,7 @@
       var sDeviceDescr = aDevices[iDevice][2];
       var sDevName = iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
       sDevicePath = sPath + " " + sDevName;
-      sIndent = Array( nDepth + 1 ).join( "-");
+      sIndent = Array( nDepth ).join( "&nbsp;") + "[";
       TREE[sDevicePath] = sIndent + sDevicePath + "<br/>";
     }
 
@@ -150,15 +151,18 @@
     {
       iResult = aPath1.length - aPath2.length;
 
-      // Special handling to order folders before devices:
-      // If path lengths differ by 1, shorter path has a device, and longer path does not, flip the result
-      if (
-            ( ( iResult == -1 ) && ( sDev1 != "" ) && ( sDev2 == "" ) )
-            ||
-            ( ( iResult == 1 ) && ( sDev1 == "" ) && ( sDev2 != "" ) )
-          )
+      if ( FOLDERS_FIRST )
       {
-        iResult *= -1;
+        // Special handling to order folders before devices:
+        // If path lengths differ by 1, shorter path has a device, and longer path does not, flip the result
+        if (
+              ( ( iResult == -1 ) && ( sDev1 != "" ) && ( sDev2 == "" ) )
+              ||
+              ( ( iResult == 1 ) && ( sDev1 == "" ) && ( sDev2 != "" ) )
+            )
+        {
+          iResult *= -1;
+        }
       }
     }
 
