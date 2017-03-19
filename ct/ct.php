@@ -66,8 +66,8 @@
       var sDeviceDescr = aDevices[iDevice][2];
       var sDevName = iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
       sDevicePath = sPath + " " + sDevName;
-      sIndent = Array( nDepth ).join( "&nbsp;") + "[";
-      TREE[sDevicePath] = sIndent + sDevicePath + "<br/>";
+      sIndent = Array( nDepth ).join( "&nbsp;");
+      TREE[sDevicePath] = sIndent + "[" + sDevName + "]<br/>";
     }
 
     // Update timer
