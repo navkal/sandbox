@@ -6,6 +6,7 @@
   var REQ = 0;
   var RSP = 0;
   var START = new Date();
+  var TEST_DEPTH = 0;
 
   $( document ).ready( walkTree );
 
@@ -67,14 +68,20 @@
     // Update timer
     $( "#walkTime" ).html( timeSince( START ) );
 
-    // If all requests have been satisfied, display the tree
-    if ( ( REQ > 1 ) && ( REQ == RSP ) )
+    // Optionally truncate tree for faster testing
+    if ( TEST_DEPTH && ( nDepth >= TEST_DEPTH ) )
+    {
+      tRsp.children=[];
+      console.log( "====> QUITTING at depth=" + TEST_DEPTH )
+    }
+
+    // If all requests have been satisfied and there are no more children to traverse, display the tree
+    if ( ( REQ == RSP ) && ( tRsp.children.length == 0 ) )
+    //if ( ( REQ > 1 ) && ( REQ == RSP ) )
     {
       $( "#walkStatus" ).html( "Circuit Tree" );
       displayTree();
     }
-
-    //////////if(nDepth>4)return;////////////DEBUG DEBUG DEBUG
 
     // Traverse children
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
@@ -139,7 +146,7 @@
     {
       iResult = aPath1.length - aPath2.length;
 
-      // Special treatment to order folders before devices:
+      // Special handling to order folders before devices:
       // If path lengths differ by 1, shorter path has a device, and longer path does not, flip the result
       if (
             ( ( iResult == -1 ) && ( sDev1 != "" ) && ( sDev2 == "" ) )
