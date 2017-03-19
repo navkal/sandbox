@@ -5,7 +5,7 @@
   var TREE = {};
   var REQ = 0;
   var RSP = 0;
-  var startTime = new Date();
+  var START = new Date();
 
   $( document ).ready( walkTree );
 
@@ -68,7 +68,7 @@
       displayTree();
     }
 
-    $( "#walkTime" ).html( timeSince( startTime ) );
+    $( "#walkTime" ).html( timeSince( START ) );
 
     RSP ++;
     if ( ( RSP / REQ ) > 0.99 ) console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
@@ -182,7 +182,7 @@
 
   function timeSince( startTime )
   {
-    var ms = new Date() - startTime + 886390000;
+    var ms = new Date() - startTime;
 
     var x = 1000 * 60 * 60 * 24;
     var day = Math.floor( ms / x );
@@ -200,13 +200,15 @@
     var sec = Math.floor( ms / x );
     ms = ms - ( sec * x );
 
-    return day + "d " + pad( hr, 2 ) + ":" + pad( min, 2 ) + ":" + pad( sec, 2 ) + "." + pad( ms, 3 );
+    sElapsed = day + "d " + pad( hr, 2 ) + ":" + pad( min, 2 ) + ":" + pad( sec, 2 ) + "." + pad( ms, 3 );
+
+    return sElapsed;
   }
 
-  function pad( num, len )
+  function pad( iNum, iLen )
   {
-    var sNum = String( num );
-    while( sNum.length < len )
+    var sNum = String( iNum );
+    while( sNum.length < iLen )
     {
       sNum = "0" + sNum;
     }
