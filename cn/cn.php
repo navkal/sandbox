@@ -1,12 +1,12 @@
 <!-- Copyright 2017 Energize Apps.  All rights reserved. -->
 
 <script>
+  var TEST_DEPTH = 0;
 
   var TREE = {};
   var REQ = 0;
   var RSP = 0;
   var START = new Date();
-  var TEST_DEPTH = 1;
 
   $( document ).ready( walkTree );
 
@@ -214,7 +214,8 @@
     var sec = Math.floor( ms / x );
     ms = ms - ( sec * x );
 
-    sElapsed = day + "d " + pad( hr, 2 ) + ":" + pad( min, 2 ) + ":" + pad( sec, 2 ) + "." + pad( ms, 3 );
+    sDay = day ? ( day + "d " ) : "";
+    sElapsed = sDay + pad( hr, 2 ) + ":" + pad( min, 2 ) + ":" + pad( sec, 2 ) + "." + pad( ms, 3 );
 
     return sElapsed;
   }
