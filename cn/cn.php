@@ -67,6 +67,8 @@
 
     // Update timer
     $( "#walkTime" ).html( timeSince( START ) );
+    $( "#walkReq" ).html( REQ );
+    $( "#walkRsp" ).html( RSP );
 
     // Optionally truncate tree for faster testing
     if ( TEST_DEPTH && ( nDepth >= TEST_DEPTH ) )
@@ -77,7 +79,6 @@
 
     // If all requests have been satisfied and there are no more children to traverse, display the tree
     if ( ( REQ == RSP ) && ( tRsp.children.length == 0 ) )
-    //if ( ( REQ > 1 ) && ( REQ == RSP ) )
     {
       $( "#walkStatus" ).html( "Circuit Tree" );
       displayTree();
@@ -229,7 +230,9 @@
 
 <div class="container">
   <h3 id="walkStatus" >Retrieving Circuit Tree...</h3>
-  <h4>Retrieval time: <span id="walkTime"></span></h4>
+  <h5>Retrieval time: <span id="walkTime"></span></h5>
+  <h5>Requests: <span id="walkReq"></span></h5>
+  <h5>Responses: <span id="walkRsp"></span></h5>
   <div id="objectTree" style="overflow:auto">
   </div>
 </div>
