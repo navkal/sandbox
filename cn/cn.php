@@ -1,7 +1,7 @@
 <!-- Copyright 2017 Energize Apps.  All rights reserved. -->
 
 <script>
-  var TEST_DEPTH = 0;
+  var TEST_DEPTH = 3;
 
   var TREE = {};
   var REQ = 0;
@@ -237,6 +237,7 @@
   <h5>Retrieval time: <span id="walkTime"></span></h5>
   <h5>Requests: <span id="walkReq"></span></h5>
   <h5>Responses: <span id="walkRsp"></span></h5>
-  <div id="objectTree" style="overflow:auto">
+  <hr/>
+  <div id="objectTree" style="font-family:courier">
   </div>
 </div>

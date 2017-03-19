@@ -32,7 +32,6 @@
     </style>
   </head>
 	<body>
-    <br/>
     <?php
       include "cn/cn.php";
     ?>
