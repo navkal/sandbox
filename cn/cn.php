@@ -5,6 +5,7 @@
   var TREE = {};
   var REQ = 0;
   var RSP = 0;
+  var startTime = new Date();
 
   $( document ).ready( walkTree );
 
@@ -66,6 +67,8 @@
     {
       displayTree();
     }
+
+    $( "#walkTime" ).html( timeSince( startTime ) );
 
     RSP ++;
     if ( ( RSP / REQ ) > 0.99 ) console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
@@ -177,9 +180,43 @@
     console.log( "==> HEADER=" + JSON.stringify( tJqXhr ) );
   }
 
+  function timeSince( startTime )
+  {
+    var ms = new Date() - startTime + 886390000;
+
+    var x = 1000 * 60 * 60 * 24;
+    var day = Math.floor( ms / x );
+    ms = ms - ( day * x );
+
+    x = 1000 * 60 * 60;
+    var hr = Math.floor( ms / x );
+    ms = ms - ( hr * x );
+
+    x = 1000 * 60;
+    var min = Math.floor( ms / x );
+    ms = ms - ( min * x );
+
+    x = 1000;
+    var sec = Math.floor( ms / x );
+    ms = ms - ( sec * x );
+
+    return day + "d " + pad( hr, 2 ) + ":" + pad( min, 2 ) + ":" + pad( sec, 2 ) + "." + pad( ms, 3 );
+  }
+
+  function pad( num, len )
+  {
+    var sNum = String( num );
+    while( sNum.length < len )
+    {
+      sNum = "0" + sNum;
+    }
+    return sNum;
+  }
+
   </script>
 
 <div class="container">
+  Elapsed time: <span id="walkTime"></span>
   <div id="objectTree" style="overflow:auto">
     <h1>Walking the Circuit Tree...</h1>
   </div>
