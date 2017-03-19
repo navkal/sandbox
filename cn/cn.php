@@ -6,12 +6,16 @@
   var REQ = 0;
   var RSP = 0;
   var START = new Date();
-  var TEST_DEPTH = 0;
+  var TEST_DEPTH = 1;
 
   $( document ).ready( walkTree );
 
   function walkTree()
   {
+    if ( TEST_DEPTH )
+    {
+      console.log( "=> Retrieving to depth=" + TEST_DEPTH );
+    }
     walkSubtree( "" );
   }
 
@@ -74,7 +78,6 @@
     if ( TEST_DEPTH && ( nDepth >= TEST_DEPTH ) )
     {
       tRsp.children=[];
-      console.log( "====> QUITTING at depth=" + TEST_DEPTH )
     }
 
     // If all requests have been satisfied and there are no more children to traverse, display the tree
@@ -187,8 +190,8 @@
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
   {
     RSP ++;
-    console.log( "==> ERROR=" + sStatus + " " + sErrorThrown );
-    console.log( "==> HEADER=" + JSON.stringify( tJqXhr ) );
+    console.log( "=> ERROR=" + sStatus + " " + sErrorThrown );
+    console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
   }
 
   function timeSince( startTime )
