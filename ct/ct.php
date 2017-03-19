@@ -32,7 +32,7 @@
 
     REQ ++;
     $.ajax(
-      "cn/query.php",
+      "ct/query.php",
       {
         type: 'POST',
         processData: false,
