@@ -42,6 +42,8 @@
 
   function handlePostResponse( tRsp, sStatus, tJqXhr )
   {
+    RSP ++;
+
     var sPath = tRsp.path;
 
     // Append path to tree
@@ -62,19 +64,17 @@
       TREE[sDevicePath] = sIndent + sDevicePath + "<br/>";
     }
 
-    // If this is a leaf, or there are device leaves, update display
-    if ( ( ( RSP / REQ ) > 0.995 ) && ( ( aDevices.length > 0 ) || ( tRsp.children.length == 0 ) ) )
-    {
-      displayTree();
-      $( "#walkStatus" ).html( "Circuit Tree" );
-    }
-
+    // Update timer
     $( "#walkTime" ).html( timeSince( START ) );
 
-    RSP ++;
-    if ( ( RSP / REQ ) > 0.995 ) console.log( "===> " + REQ + " " + RSP + " " + ( RSP / REQ ) );
+    // If all requests have been satisfied, display the tree
+    if ( ( REQ > 1 ) && ( REQ == RSP ) )
+    {
+      $( "#walkStatus" ).html( "Circuit Tree" );
+      displayTree();
+    }
 
-    /////////////if(nDepth>3)return;////////////DEBUG DEBUG DEBUG
+    //////////if(nDepth>4)return;////////////DEBUG DEBUG DEBUG
 
     // Traverse children
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
@@ -221,7 +221,7 @@
   </script>
 
 <div class="container">
-  <h3 id="walkStatus" >Retrieving Tree...</h3>
+  <h3 id="walkStatus" >Retrieving Circuit Tree...</h3>
   <h4>Retrieval time: <span id="walkTime"></span></h4>
   <div id="objectTree" style="overflow:auto">
   </div>
