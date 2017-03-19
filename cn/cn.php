@@ -12,6 +12,7 @@
 
   function walkTree()
   {
+    return;
     if ( TEST_DEPTH )
     {
       console.log( "=> Retrieving to depth=" + TEST_DEPTH );
@@ -230,14 +231,73 @@
     return sNum;
   }
 
-  </script>
+  function openPropertiesWindow()
+  {
+    return popupwindow("/cn/properties.php", "Properties", window, 300, 500 );
+  }
+
+  function popupwindow( url, title, win, w, h )
+  {
+    var y = ( win.top.outerHeight / 2 ) + win.top.screenY - ( h / 2)
+    var x = ( win.top.outerWidth / 2 ) + win.top.screenX - ( w / 2)
+    return win.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x);
+  }
+
+</script>
 
 <div class="container">
-  <h3 id="walkStatus" >Retrieving Circuit Tree...</h3>
-  <h5>Retrieval time: <span id="walkTime"></span></h5>
-  <h5>Requests: <span id="walkReq"></span></h5>
-  <h5>Responses: <span id="walkRsp"></span></h5>
-  <hr/>
-  <div id="objectTree" style="font-family:courier">
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" >
+  Link with href
+</a>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" >
+  Button with data-target
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    stuff
   </div>
+</div>
+
+<!-------------------------------------->
+        <div class="panel panel-default panel-info">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#subtree_MWSB" >
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+              <a data-toggle="collapse" href="#subtree_MWSB" >
+                <span class="glyphicon glyphicon-flash"></span>
+              </a>
+              <a data-toggle="collapse" href="#subtree_MWSB" >
+                MWSB
+              </a>
+              <a href="javascript:void(null)" onclick="openPropertiesWindow()">
+                Properties
+              </a>
+            </h4>
+          </div>
+          <div id="subtree_MWSB" class="panel-collapse collapse" >
+            <dl class="dl-horizontal list-group-item list-group-item-info" >
+              <dt>moo</dt>
+              <dd>a</dd>
+              <dd>b</dd>
+            </dl>
+          </div>
+        </div>
+<!-------------------------------------->
+
+
+
+<!-- == DELETE THIS BELOW ------------->
+                                                <div style="display:none" >
+                                                  <h3 id="walkStatus" >Retrieving Circuit Tree...</h3>
+                                                  <h5>Retrieval time: <span id="walkTime"></span></h5>
+                                                  <h5>Requests: <span id="walkReq"></span></h5>
+                                                  <h5>Responses: <span id="walkRsp"></span></h5>
+                                                  <hr/>
+                                                  <div id="objectTree" style="font-family:courier">
+                                                  </div>
+                                                </div>
+<!-- == DELETE THIS ABOVE ------------->
+
 </div>

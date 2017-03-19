@@ -33,7 +33,7 @@
   </head>
 	<body>
     <?php
-      include "ct/ct.php";
+      include "cn/cn.php";
     ?>
  	</body>
 </html>
