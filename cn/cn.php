@@ -1,7 +1,7 @@
 <!-- Copyright 2017 Energize Apps.  All rights reserved. -->
 
 <script>
-  var TEST_DEPTH = 3;
+  var TEST_DEPTH = 0;
 
   var TREE = {};
   var REQ = 0;
