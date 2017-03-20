@@ -48,7 +48,7 @@
 
   var g_aPropertiesWindows = [];
   var g_tTree = {};
-  var g_sPropertiesButton = '<button class="btn btn-link btn-xs pull-right" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-info-sign" style="width:50px;font-size:18px;" ></span></button>';
+  var g_sPropertiesButton = '<button class="btn btn-link btn-xs pull-right" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-info-sign" style="width:40px;font-size:18px;" ></span></button>';
 
   $( document ).ready( initView );
 
