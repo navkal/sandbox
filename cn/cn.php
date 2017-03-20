@@ -69,11 +69,13 @@
     var h = 400;
     var y = ( window.top.outerHeight / 2 ) + window.top.screenY - ( h / 2)
     var x = ( window.top.outerWidth / 2 ) + window.top.screenX - ( w / 2)
+
     var childWindow = window.open(
       '/cn/properties.php',
       'Properties',
       'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x
     );
+
     g_aChildWindows.push( childWindow );
   }
 
@@ -90,7 +92,61 @@
 
   <button class="btn btn-default" onclick="openChildWindow()">Properties</button>
 
+  <div class="just-padding">
+    <div id="circuitTree" class="list-group list-group-root well">
+    
+              <a href="#MWSB" class="list-group-item" data-toggle="collapse">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+                MWSB
+              </a>
+              <div class="list-group collapse" id="MWSB">
+                <a href="#" class="list-group-item">1,UNKNOWN,Kitchen Mechanical</a>
+                <a href="#" class="list-group-item">2,UNKNOWN,Transfer sw</a>
+                <a href="#" class="list-group-item">3,UNKNOWN,Emergency distribution</a>
+                <a href="#" class="list-group-item">4,UNKNOWN,Dunn Building</a>
+                <a href="#" class="list-group-item">5,UNKNOWN,Collins Center</a>
+                <a href="#" class="list-group-item">6,UNKNOWN,Distribution</a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.1
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.2
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.3
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.4
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.5
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.6
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.7
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.8
+                </a>
+                <a class="list-group-item" data-toggle="collapse">
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                  MWSB.9
+                </a>
 
+              </div>
+              
+    </div>
+  </div>
 
 
                               <div class="just-padding">
