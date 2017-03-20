@@ -48,7 +48,7 @@
 
   var g_aPropertiesWindows = [];
   var g_tTree = {};
-  var g_sPropertiesButton = '<button class="btn btn-default btn-xs pull-right" onclick="openPropertiesWindow(event)">Properties</button>';
+  var g_sPropertiesButton = '<button class="btn btn-default btn-xs pull-right" onclick="openPropertiesWindow(event)" style="padding-left:11px";><i class="glyphicon glyphicon-info-sign" style="height:100%;text-align:center"></i></button>';
 
   $( document ).ready( initView );
 
@@ -119,14 +119,24 @@
 
     // Load devices into collapsed content
     var aDevices = tRsp.devices;
+    var aDeviceText = [];
     for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
     {
       var iDeviceId = aDevices[iDevice][0];
       var iDeviceLoc = aDevices[iDevice][1];
       var sDeviceDescr = aDevices[iDevice][2];
       sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
-      g_tTree[sDevicePath] = {};
-      sCollapsed += '<a href="#" class="list-group-item" path="' + sDevicePath + '">' + sDeviceDescr + ' at ' + iDeviceLoc + '</a>';
+      var sDeviceText = sDeviceDescr + ' at ' + iDeviceLoc
+      aDeviceText.push( { path: sDevicePath, text: sDeviceText } );
+      console.log( "" + iDevice + ": " + sDeviceText );
+    }
+    aDeviceText.sort( compareDevices );
+    for ( var iDevice = 0; iDevice < aDeviceText.length; iDevice ++ )
+    {
+      sCollapsed += '<a href="#" class="list-group-item" path="' + aDeviceText[iDevice].path + '">';
+      sCollapsed += aDeviceText[iDevice].text;
+      sCollapsed += g_sPropertiesButton;
+      sCollapsed += '</a>';
     }
 
     // Close collapsed content block
@@ -139,6 +149,11 @@
     $( '.list-group-item' ).on( 'click', toggleFolder );
   }
 
+  function compareDevices( d1, d2 )
+  {
+    return d1.text.localeCompare( d2.text );
+  }
+
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
   {
     console.log( "=> ERROR=" + sStatus + " " + sErrorThrown );
@@ -147,7 +162,7 @@
 
   function toggleFolder()
   {
-    $( '.glyphicon', this )
+    $( '.glyphicon-chevron-right,.glyphicon-chevron-down', this )
       .toggleClass('glyphicon-chevron-right')
       .toggleClass('glyphicon-chevron-down');
   }
@@ -155,7 +170,7 @@
   function openPropertiesWindow( tEvent )
   {
     tEvent.stopPropagation();
-    var sPath = $( tEvent.target ).parent().attr("path");
+    var sPath = $(event.target).closest( "a" ).attr("path");
     var sUrl = '/cn/properties.php?path=' + sPath;
     childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 400, 500 );
   }
