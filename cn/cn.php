@@ -89,11 +89,11 @@
   {
     // Insert node in tree
     var sPath = tRsp.path;
-    g_tTree[sPath] = {};
+    g_tTree[sPath] = { children:[] };
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" >';
+    sNode += '<a href="#' + sPath + '" class="list-group-item collapsed" data-toggle="collapse" path="' + sPath + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-right"></i>';
     sNode += sPath;
     sNode += g_sPropertiesButton;
@@ -106,18 +106,17 @@
 
     // Sort children and load into collapsed content
     var aChildren = tRsp.children;
-    var aChildPaths = [];
     for ( var iChild = 0; iChild < aChildren.length; iChild ++ )
     {
       var sChildPath = aChildren[iChild][1];
       if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
-      aChildPaths.push( sChildPath );
+      g_tTree[sPath].children.push( sChildPath );
     }
-    aChildPaths.sort();
-    for ( var iChild = 0; iChild < aChildPaths.length; iChild ++ )
+    g_tTree[sPath].children.sort();
+    for ( var iChild = 0; iChild < g_tTree[sPath].children.length; iChild ++ )
     {
-      var sChildPath = aChildPaths[iChild];
-      sCollapsed += '<a class="list-group-item" data-toggle="collapse" path="' + sChildPath + '" >';
+      var sChildPath = g_tTree[sPath].children[iChild];
+      sCollapsed += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + sChildPath + '" >';
       sCollapsed += '<i class="glyphicon glyphicon-chevron-right"></i>';
       sCollapsed += sChildPath;
       sCollapsed += g_sPropertiesButton;
@@ -167,11 +166,14 @@
     console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
   }
 
-  function toggleFolder()
+  function toggleFolder( tEvent )
   {
     $( '.glyphicon-chevron-right,.glyphicon-chevron-down', this )
-      .toggleClass('glyphicon-chevron-right')
-      .toggleClass('glyphicon-chevron-down');
+      .toggleClass( 'glyphicon-chevron-right' )
+      .toggleClass( 'glyphicon-chevron-down' );
+
+    console.log( "===> collapsed?" + $(this).hasClass( 'collapsed' ) );
+
   }
 
   function openPropertiesWindow( tEvent )
