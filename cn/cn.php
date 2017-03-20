@@ -44,26 +44,18 @@
   var RSP = 0;
   var START = new Date();
 
-$(function() {
-        
-  $('.list-group-item').on('click', function() {
+  $( document ).ready( initView );
+
+  function initView()
+  {
+    $( '.list-group-item' ).on( 'click', toggleFolder );
+  }
+
+  function toggleFolder()
+  {
     $('.glyphicon', this)
       .toggleClass('glyphicon-chevron-right')
       .toggleClass('glyphicon-chevron-down');
-  });
-
-});
-
-  $( document ).ready( walkTree );
-
-  function walkTree()
-  {
-
-    // Set handlers to show plus and minus icons on folders
-    $( ".collapse" ).on( "shown.bs.collapse", collapseShow );
-    $( ".collapse" ).on( "hidden.bs.collapse", collapseHide );
-
-    return;
   }
 
   function walkSubtree( path )
@@ -300,12 +292,12 @@ $(function() {
                               <div class="just-padding">
 
                                 <div class="list-group list-group-root well">
-                                  
+
                                   <a href="#item-1" class="list-group-item" data-toggle="collapse">
                                     <i class="glyphicon glyphicon-chevron-right"></i>Item 1
                                   </a>
                                   <div class="list-group collapse" id="item-1">
-                                    
+
                                     <a href="#item-1-1" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 1.1
                                     </a>
@@ -314,7 +306,7 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 1.1.2</a>
                                       <a href="#" class="list-group-item">Item 1.1.3</a>
                                     </div>
-                                    
+
                                     <a href="#item-1-2" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 1.2
                                     </a>
@@ -323,7 +315,7 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 1.2.2</a>
                                       <a href="#" class="list-group-item">Item 1.2.3</a>
                                     </div>
-                                    
+
                                     <a href="#item-1-3" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 1.3
                                     </a>
@@ -332,14 +324,14 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 1.3.2</a>
                                       <a href="#" class="list-group-item">Item 1.3.3</a>
                                     </div>
-                                    
+
                                   </div>
-                                  
+
                                   <a href="#item-2" class="list-group-item" data-toggle="collapse">
                                     <i class="glyphicon glyphicon-chevron-right"></i>Item 2
                                   </a>
                                   <div class="list-group collapse" id="item-2">
-                                    
+
                                     <a href="#item-2-1" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 2.1
                                     </a>
@@ -348,7 +340,7 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 2.1.2</a>
                                       <a href="#" class="list-group-item">Item 2.1.3</a>
                                     </div>
-                                    
+
                                     <a href="#item-2-2" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 2.2
                                     </a>
@@ -357,7 +349,7 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 2.2.2</a>
                                       <a href="#" class="list-group-item">Item 2.2.3</a>
                                     </div>
-                                    
+
                                     <a href="#item-2-3" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 2.3
                                     </a>
@@ -366,15 +358,15 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 2.3.2</a>
                                       <a href="#" class="list-group-item">Item 2.3.3</a>
                                     </div>
-                                    
+
                                   </div>
-                                  
-                                  
+
+
                                   <a href="#item-3" class="list-group-item" data-toggle="collapse">
                                     <i class="glyphicon glyphicon-chevron-right"></i>Item 3
                                   </a>
                                   <div class="list-group collapse" id="item-3">
-                                    
+
                                     <a href="#item-3-1" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 3.1
                                     </a>
@@ -383,7 +375,7 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 3.1.2</a>
                                       <a href="#" class="list-group-item">Item 3.1.3</a>
                                     </div>
-                                    
+
                                     <a href="#item-3-2" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 3.2
                                     </a>
@@ -392,7 +384,7 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 3.2.2</a>
                                       <a href="#" class="list-group-item">Item 3.2.3</a>
                                     </div>
-                                    
+
                                     <a href="#item-3-3" class="list-group-item" data-toggle="collapse">
                                       <i class="glyphicon glyphicon-chevron-right"></i>Item 3.3
                                     </a>
@@ -401,81 +393,11 @@ $(function() {
                                       <a href="#" class="list-group-item">Item 3.3.2</a>
                                       <a href="#" class="list-group-item">Item 3.3.3</a>
                                     </div>
-                                    
+
                                   </div>
-                                  
+
                                 </div>
-                                
+
                               </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-------------------------------------- >
-        <div class="panel panel-default panel-info">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#subtree_MWSB" >
-                <span class="glyphicon glyphicon-plus"></span>
-              </a>
-              <a data-toggle="collapse" href="#subtree_MWSB" >
-                <span class="glyphicon glyphicon-flash"></span>
-              </a>
-              <a data-toggle="collapse" href="#subtree_MWSB" >
-                MWSB
-              </a>
-              <a href="javascript:void(null)" class="pull-right" onclick="openPropertiesWindow()">
-                Properties
-              </a>
-            </h4>
-          </div>
-
-          <div id="subtree_MWSB" class="panel-collapse collapse" >
-
-
-
-
-            <div>
-            </div>
-
-
-
-
-          </div>
-        </div>
-<!-------------------------------------->
-
-
-
-<!-- == DELETE THIS BELOW ------------->
-                                                <div style="display:none" >
-                                                  <h3 id="walkStatus" >Retrieving Circuit Tree...</h3>
-                                                  <h5>Retrieval time: <span id="walkTime"></span></h5>
-                                                  <h5>Requests: <span id="walkReq"></span></h5>
-                                                  <h5>Responses: <span id="walkRsp"></span></h5>
-                                                  <hr/>
-                                                  <div id="objectTree" style="font-family:courier">
-                                                  </div>
-                                                </div>
-<!-- == DELETE THIS ABOVE ------------->
 
 </div>
