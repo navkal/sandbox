@@ -256,17 +256,7 @@
 </script>
 
 <div class="container">
-<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" >
-  Link with href
-</a>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" >
-  Button with data-target
-</button>
-<div class="collapse" id="collapseExample">
-  <div class="well">
-    stuff
-  </div>
-</div>
+
 
 <!-------------------------------------->
         <div class="panel panel-default panel-info">
@@ -281,7 +271,7 @@
               <a data-toggle="collapse" href="#subtree_MWSB" >
                 MWSB
               </a>
-              <a href="javascript:void(null)" onclick="openPropertiesWindow()">
+              <a href="javascript:void(null)" class="pull-right" onclick="openPropertiesWindow()">
                 Properties
               </a>
             </h4>
