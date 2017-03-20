@@ -12,12 +12,12 @@
 
   function walkTree()
   {
+
+    // Set handlers to show plus and minus icons on folders
+    $( ".collapse" ).on( "shown.bs.collapse", collapseShow );
+    $( ".collapse" ).on( "hidden.bs.collapse", collapseHide );
+
     return;
-    if ( TEST_DEPTH )
-    {
-      console.log( "=> Retrieving to depth=" + TEST_DEPTH );
-    }
-    walkSubtree( "" );
   }
 
   function walkSubtree( path )
@@ -233,14 +233,24 @@
 
   function openPropertiesWindow()
   {
-    return popupwindow("/cn/properties.php", "Properties", window, 300, 500 );
+    return popupWindow("/cn/properties.php", "Properties", window, 300, 500 );
   }
 
-  function popupwindow( url, title, win, w, h )
+  function popupWindow( url, title, win, w, h )
   {
     var y = ( win.top.outerHeight / 2 ) + win.top.screenY - ( h / 2)
     var x = ( win.top.outerWidth / 2 ) + win.top.screenX - ( w / 2)
     return win.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x);
+  }
+
+  function collapseShow( tEvent )
+  {
+    $(this).parent().find( ".glyphicon-plus" ).removeClass( "glyphicon-plus" ).addClass( "glyphicon-minus" );
+  }
+
+  function collapseHide( tEvent )
+  {
+    $(this).parent().find( ".glyphicon-minus" ).removeClass( "glyphicon-minus" ).addClass( "glyphicon-plus" );
   }
 
 </script>
