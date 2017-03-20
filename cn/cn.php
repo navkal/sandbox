@@ -92,9 +92,10 @@
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse">';
+    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-right"></i>';
     sNode += sPath;
+    sNode += '<button class="btn btn-default btn-xs pull-right" onclick="openChildWindow(event)">Properties</button>';
     sNode += '</a>';
     $( "#circuitTree" ).append( sNode );
 
@@ -108,9 +109,10 @@
       var sChildPath = tRsp.children[iChild][1];
       if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
 
-      sCollapsed += '<a class="list-group-item" data-toggle="collapse">';
+      sCollapsed += '<a class="list-group-item" data-toggle="collapse" path="' + sChildPath + '" >';
       sCollapsed += '<i class="glyphicon glyphicon-chevron-right"></i>';
       sCollapsed += sChildPath;
+      sCollapsed += '<button class="btn btn-default btn-xs pull-right" onclick="openChildWindow(event)">Properties</button>';
       sCollapsed += '</a>';
     }
 
@@ -123,7 +125,7 @@
       var sDeviceDescr = aDevices[iDevice][2];
       sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
       g_tTree[sDevicePath] = {};
-      sCollapsed += '<a href="#" class="list-group-item">' + sDeviceDescr + ' at ' + iDeviceLoc + '</a>';
+      sCollapsed += '<a href="#" class="list-group-item" path="' + sDevicePath + '">' + sDeviceDescr + ' at ' + iDeviceLoc + '</a>';
     }
 
     // Close collapsed content block
@@ -150,15 +152,18 @@
       .toggleClass('glyphicon-chevron-down');
   }
 
-  function openChildWindow()
+  function openChildWindow( event )
   {
+    event.stopPropagation();
+
     var w = 300;
     var h = 400;
     var y = ( window.top.outerHeight / 2 ) + window.top.screenY - ( h / 2)
     var x = ( window.top.outerWidth / 2 ) + window.top.screenX - ( w / 2)
 
+
     var childWindow = window.open(
-      '/cn/properties.php',
+      '/cn/properties.php?path=' + $(event.target).parent().attr("path"),
       'Properties',
       'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x
     );
@@ -176,8 +181,6 @@
 </script>
 
 <div class="container">
-
-  <button class="btn btn-default" onclick="openChildWindow()">Properties</button>
 
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
