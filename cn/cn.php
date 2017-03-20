@@ -47,6 +47,7 @@
 <script>
 
   var g_aChildWindows = [];
+  var g_tTree = {};
 
   $( document ).ready( initView );
 
@@ -54,7 +55,76 @@
   {
     $( window ).on( 'unload', closeChildWindows );
     $( '.list-group-item' ).on( 'click', toggleFolder );
+
+    getTreeNode( "" );
   }
+
+  function getTreeNode( path )
+  {
+    // --> KLUDGE --> remove after paths are fixed in DB -->
+    if ( path.includes( " " ) ) { console.log( "=> BAD PATH=" + path ); return; }
+    // <-- KLUDGE <-- remove after paths are fixed in DB <--
+
+    // Post request to server
+    var tPostData = new FormData();
+    tPostData.append( "objectType", "circuit" );
+    tPostData.append( "objectSelector", path );
+
+    $.ajax(
+      "cn/query.php",
+      {
+        type: 'POST',
+        processData: false,
+        contentType: false,
+        dataType : 'json',
+        data: tPostData
+      }
+    )
+    .done( handlePostResponse )
+    .fail( handlePostError );
+  }
+
+
+
+  function handlePostResponse( tRsp, sStatus, tJqXhr )
+  {
+    var sPath = tRsp.path;
+
+    // Append path to tree
+    var nDepth = sPath.split( "." ).length;
+    var sIndent = Array( nDepth ).join( "-");
+    g_tTree[sPath] = sIndent + sPath + "<br/>";
+
+    // Append devices to tree
+    var aDevices = tRsp.devices;
+    for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
+    {
+      var iDeviceId = aDevices[iDevice][0];
+      var iDeviceLoc = aDevices[iDevice][1];
+      var sDeviceDescr = aDevices[iDevice][2];
+      var sDevName = iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
+      sDevicePath = sPath + " " + sDevName;
+      sIndent = Array( nDepth ).join( "&nbsp;");
+      g_tTree[sDevicePath] = sIndent + "[" + sDevName + "]<br/>";
+    }
+
+    var sNode = "";
+
+    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse">';
+    sNode += '  <i class="glyphicon glyphicon-chevron-right"></i>';
+    sNode += '  ' + sPath;
+    sNode += '</a>';
+
+
+    $( "#circuitTree" ).append( sNode );
+  }
+
+  function handlePostError( tJqXhr, sStatus, sErrorThrown )
+  {
+    console.log( "=> ERROR=" + sStatus + " " + sErrorThrown );
+    console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
+  }
+
 
   function toggleFolder()
   {
@@ -94,7 +164,14 @@
 
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
-    
+
+    </div>
+  </div>
+
+
+  <div class="just-padding">
+    <div class="list-group list-group-root well">
+
               <a href="#MWSB" class="list-group-item" data-toggle="collapse">
                 <i class="glyphicon glyphicon-chevron-right"></i>
                 MWSB
@@ -144,7 +221,7 @@
                 </a>
 
               </div>
-              
+
     </div>
   </div>
 
