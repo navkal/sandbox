@@ -1,5 +1,41 @@
 <!-- Copyright 2017 Energize Apps.  All rights reserved. -->
 
+<style>
+.just-padding {
+    padding: 15px;
+}
+
+.list-group.list-group-root {
+    padding: 0;
+    overflow: hidden;
+}
+
+.list-group.list-group-root .list-group {
+    margin-bottom: 0;
+}
+
+.list-group.list-group-root .list-group-item {
+    border-radius: 0;
+    border-width: 1px 0 0 0;
+}
+
+.list-group.list-group-root > .list-group-item:first-child {
+    border-top-width: 0;
+}
+
+.list-group.list-group-root > .list-group > .list-group-item {
+    padding-left: 30px;
+}
+
+.list-group.list-group-root > .list-group > .list-group > .list-group-item {
+    padding-left: 45px;
+}
+
+.list-group-item .glyphicon {
+    margin-right: 5px;
+}
+
+</style>
 <script>
   var TEST_DEPTH = 0;
 
@@ -7,6 +43,16 @@
   var REQ = 0;
   var RSP = 0;
   var START = new Date();
+
+$(function() {
+        
+  $('.list-group-item').on('click', function() {
+    $('.glyphicon', this)
+      .toggleClass('glyphicon-chevron-right')
+      .toggleClass('glyphicon-chevron-down');
+  });
+
+});
 
   $( document ).ready( walkTree );
 
@@ -242,23 +288,149 @@
     var x = ( win.top.outerWidth / 2 ) + win.top.screenX - ( w / 2)
     return win.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x);
   }
-
-  function collapseShow( tEvent )
-  {
-    $(this).parent().find( ".glyphicon-plus" ).removeClass( "glyphicon-plus" ).addClass( "glyphicon-minus" );
-  }
-
-  function collapseHide( tEvent )
-  {
-    $(this).parent().find( ".glyphicon-minus" ).removeClass( "glyphicon-minus" ).addClass( "glyphicon-plus" );
-  }
-
 </script>
 
 <div class="container">
 
 
-<!-------------------------------------->
+
+
+
+
+                              <div class="just-padding">
+
+                                <div class="list-group list-group-root well">
+                                  
+                                  <a href="#item-1" class="list-group-item" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-chevron-right"></i>Item 1
+                                  </a>
+                                  <div class="list-group collapse" id="item-1">
+                                    
+                                    <a href="#item-1-1" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 1.1
+                                    </a>
+                                    <div class="list-group collapse" id="item-1-1">
+                                      <a href="#" class="list-group-item">Item 1.1.1</a>
+                                      <a href="#" class="list-group-item">Item 1.1.2</a>
+                                      <a href="#" class="list-group-item">Item 1.1.3</a>
+                                    </div>
+                                    
+                                    <a href="#item-1-2" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 1.2
+                                    </a>
+                                    <div class="list-group collapse" id="item-1-2">
+                                      <a href="#" class="list-group-item">Item 1.2.1</a>
+                                      <a href="#" class="list-group-item">Item 1.2.2</a>
+                                      <a href="#" class="list-group-item">Item 1.2.3</a>
+                                    </div>
+                                    
+                                    <a href="#item-1-3" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 1.3
+                                    </a>
+                                    <div class="list-group collapse" id="item-1-3">
+                                      <a href="#" class="list-group-item">Item 1.3.1</a>
+                                      <a href="#" class="list-group-item">Item 1.3.2</a>
+                                      <a href="#" class="list-group-item">Item 1.3.3</a>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                  <a href="#item-2" class="list-group-item" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-chevron-right"></i>Item 2
+                                  </a>
+                                  <div class="list-group collapse" id="item-2">
+                                    
+                                    <a href="#item-2-1" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 2.1
+                                    </a>
+                                    <div class="list-group collapse" id="item-2-1">
+                                      <a href="#" class="list-group-item">Item 2.1.1</a>
+                                      <a href="#" class="list-group-item">Item 2.1.2</a>
+                                      <a href="#" class="list-group-item">Item 2.1.3</a>
+                                    </div>
+                                    
+                                    <a href="#item-2-2" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 2.2
+                                    </a>
+                                    <div class="list-group collapse" id="item-2-2">
+                                      <a href="#" class="list-group-item">Item 2.2.1</a>
+                                      <a href="#" class="list-group-item">Item 2.2.2</a>
+                                      <a href="#" class="list-group-item">Item 2.2.3</a>
+                                    </div>
+                                    
+                                    <a href="#item-2-3" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 2.3
+                                    </a>
+                                    <div class="list-group collapse" id="item-2-3">
+                                      <a href="#" class="list-group-item">Item 2.3.1</a>
+                                      <a href="#" class="list-group-item">Item 2.3.2</a>
+                                      <a href="#" class="list-group-item">Item 2.3.3</a>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                  
+                                  <a href="#item-3" class="list-group-item" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-chevron-right"></i>Item 3
+                                  </a>
+                                  <div class="list-group collapse" id="item-3">
+                                    
+                                    <a href="#item-3-1" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 3.1
+                                    </a>
+                                    <div class="list-group collapse" id="item-3-1">
+                                      <a href="#" class="list-group-item">Item 3.1.1</a>
+                                      <a href="#" class="list-group-item">Item 3.1.2</a>
+                                      <a href="#" class="list-group-item">Item 3.1.3</a>
+                                    </div>
+                                    
+                                    <a href="#item-3-2" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 3.2
+                                    </a>
+                                    <div class="list-group collapse" id="item-3-2">
+                                      <a href="#" class="list-group-item">Item 3.2.1</a>
+                                      <a href="#" class="list-group-item">Item 3.2.2</a>
+                                      <a href="#" class="list-group-item">Item 3.2.3</a>
+                                    </div>
+                                    
+                                    <a href="#item-3-3" class="list-group-item" data-toggle="collapse">
+                                      <i class="glyphicon glyphicon-chevron-right"></i>Item 3.3
+                                    </a>
+                                    <div class="list-group collapse" id="item-3-3">
+                                      <a href="#" class="list-group-item">Item 3.3.1</a>
+                                      <a href="#" class="list-group-item">Item 3.3.2</a>
+                                      <a href="#" class="list-group-item">Item 3.3.3</a>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                </div>
+                                
+                              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------- >
         <div class="panel panel-default panel-info">
           <div class="panel-heading">
             <h4 class="panel-title">
@@ -276,12 +448,18 @@
               </a>
             </h4>
           </div>
+
           <div id="subtree_MWSB" class="panel-collapse collapse" >
-            <dl class="dl-horizontal list-group-item list-group-item-info" >
-              <dt>moo</dt>
-              <dd>a</dd>
-              <dd>b</dd>
-            </dl>
+
+
+
+
+            <div>
+            </div>
+
+
+
+
           </div>
         </div>
 <!-------------------------------------->
