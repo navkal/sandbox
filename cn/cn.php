@@ -48,7 +48,7 @@
 
   var g_aPropertiesWindows = [];
   var g_tTree = {};
-  var g_sPropertiesButton = '<button class="btn btn-link btn-xs pull-right" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-info-sign" style="width:40px;font-size:18px;" ></span></button>';
+  var g_sPropertiesButton = '<button class="btn btn-link btn-xs pull-right" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-info-sign" style="width:40px;font-size:16px;" ></span></button>';
 
   $( document ).ready( initView );
 
@@ -104,12 +104,19 @@
     var sCollapsed = "";
     sCollapsed += '<div class="list-group collapse" id="' + sPath + '">';
 
-    // Load children into collapsed content
-    for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
+    // Sort children and load into collapsed content
+    var aChildren = tRsp.children;
+    var aChildPaths = [];
+    for ( var iChild = 0; iChild < aChildren.length; iChild ++ )
     {
-      var sChildPath = tRsp.children[iChild][1];
+      var sChildPath = aChildren[iChild][1];
       if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
-
+      aChildPaths.push( sChildPath );
+    }
+    aChildPaths.sort();
+    for ( var iChild = 0; iChild < aChildPaths.length; iChild ++ )
+    {
+      var sChildPath = aChildPaths[iChild];
       sCollapsed += '<a class="list-group-item" data-toggle="collapse" path="' + sChildPath + '" >';
       sCollapsed += '<i class="glyphicon glyphicon-chevron-right"></i>';
       sCollapsed += sChildPath;
@@ -117,9 +124,9 @@
       sCollapsed += '</a>';
     }
 
-    // Load devices into collapsed content
+    // Sort devices and load into collapsed content
     var aDevices = tRsp.devices;
-    var aDeviceText = [];
+    var aDeviceInfo = [];
     for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
     {
       var iDeviceId = aDevices[iDevice][0];
@@ -127,14 +134,14 @@
       var sDeviceDescr = aDevices[iDevice][2];
       sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
       var sDeviceText = sDeviceDescr + ' at ' + iDeviceLoc
-      aDeviceText.push( { path: sDevicePath, text: sDeviceText } );
+      aDeviceInfo.push( { path: sDevicePath, text: sDeviceText } );
       console.log( "" + iDevice + ": " + sDeviceText );
     }
-    aDeviceText.sort( compareDevices );
-    for ( var iDevice = 0; iDevice < aDeviceText.length; iDevice ++ )
+    aDeviceInfo.sort( compareDevices );
+    for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
-      sCollapsed += '<a href="#" class="list-group-item" path="' + aDeviceText[iDevice].path + '">';
-      sCollapsed += aDeviceText[iDevice].text;
+      sCollapsed += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '">';
+      sCollapsed += aDeviceInfo[iDevice].text;
       sCollapsed += g_sPropertiesButton;
       sCollapsed += '</a>';
     }
