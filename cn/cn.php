@@ -54,8 +54,6 @@
   function initView()
   {
     $( window ).on( 'unload', closeChildWindows );
-    $( '.list-group-item' ).on( 'click', toggleFolder );
-
     getTreeNode( "" );
   }
 
@@ -88,35 +86,54 @@
 
   function handlePostResponse( tRsp, sStatus, tJqXhr )
   {
+    // Insert node in tree
     var sPath = tRsp.path;
+    g_tTree[sPath] = {};
 
-    // Append path to tree
-    var nDepth = sPath.split( "." ).length;
-    var sIndent = Array( nDepth ).join( "-");
-    g_tTree[sPath] = sIndent + sPath + "<br/>";
+    // Display tree node
+    var sNode = "";
+    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse">';
+    sNode += '<i class="glyphicon glyphicon-chevron-right"></i>';
+    sNode += sPath;
+    sNode += '</a>';
+    $( "#circuitTree" ).append( sNode );
 
-    // Append devices to tree
+    // Open block of collapsed content
+    var sCollapsed = "";
+    sCollapsed += '<div class="list-group collapse" id="' + sPath + '">';
+
+    // Load children into collapsed content
+    for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
+    {
+      var sChildPath = tRsp.children[iChild][1];
+      if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
+
+      sCollapsed += '<a class="list-group-item" data-toggle="collapse">';
+      sCollapsed += '<i class="glyphicon glyphicon-chevron-right"></i>';
+      sCollapsed += sChildPath;
+      sCollapsed += '</a>';
+    }
+
+    // Load devices into collapsed content
     var aDevices = tRsp.devices;
     for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
     {
       var iDeviceId = aDevices[iDevice][0];
       var iDeviceLoc = aDevices[iDevice][1];
       var sDeviceDescr = aDevices[iDevice][2];
-      var sDevName = iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
-      sDevicePath = sPath + " " + sDevName;
-      sIndent = Array( nDepth ).join( "&nbsp;");
-      g_tTree[sDevicePath] = sIndent + "[" + sDevName + "]<br/>";
+      sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
+      g_tTree[sDevicePath] = {};
+      sCollapsed += '<a href="#" class="list-group-item">' + sDeviceDescr + ' at ' + iDeviceLoc + '</a>';
     }
 
-    var sNode = "";
+    // Close collapsed content block
+    sCollapsed += '</div>';
 
-    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse">';
-    sNode += '  <i class="glyphicon glyphicon-chevron-right"></i>';
-    sNode += '  ' + sPath;
-    sNode += '</a>';
+    // Load collapsed content
+    $( "#circuitTree" ).append( sCollapsed );
 
-
-    $( "#circuitTree" ).append( sNode );
+    // Attach toggle handler
+    $( '.list-group-item' ).on( 'click', toggleFolder );
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
@@ -128,7 +145,7 @@
 
   function toggleFolder()
   {
-    $('.glyphicon', this)
+    $( '.glyphicon', this )
       .toggleClass('glyphicon-chevron-right')
       .toggleClass('glyphicon-chevron-down');
   }
@@ -172,11 +189,11 @@
   <div class="just-padding">
     <div class="list-group list-group-root well">
 
-              <a href="#MWSB" class="list-group-item" data-toggle="collapse">
+              <a href="#MWSBmoo" class="list-group-item" data-toggle="collapse">
                 <i class="glyphicon glyphicon-chevron-right"></i>
                 MWSB
               </a>
-              <div class="list-group collapse" id="MWSB">
+              <div class="list-group collapse" id="MWSBmoo">
                 <a href="#" class="list-group-item">1,UNKNOWN,Kitchen Mechanical</a>
                 <a href="#" class="list-group-item">2,UNKNOWN,Transfer sw</a>
                 <a href="#" class="list-group-item">3,UNKNOWN,Emergency distribution</a>
