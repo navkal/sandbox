@@ -46,14 +46,15 @@
 
 <script>
 
-  var g_aChildWindows = [];
+  var g_aPropertiesWindows = [];
   var g_tTree = {};
+  var g_sPropertiesButton = '<button class="btn btn-default btn-xs pull-right" onclick="openPropertiesWindow(event)">Properties</button>';
 
   $( document ).ready( initView );
 
   function initView()
   {
-    $( window ).on( 'unload', closeChildWindows );
+    $( window ).on( 'unload', closePropertiesWindows );
     getTreeNode( "" );
   }
 
@@ -95,7 +96,7 @@
     sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-right"></i>';
     sNode += sPath;
-    sNode += '<button class="btn btn-default btn-xs pull-right" onclick="openChildWindow(event)">Properties</button>';
+    sNode += g_sPropertiesButton;
     sNode += '</a>';
     $( "#circuitTree" ).append( sNode );
 
@@ -112,7 +113,7 @@
       sCollapsed += '<a class="list-group-item" data-toggle="collapse" path="' + sChildPath + '" >';
       sCollapsed += '<i class="glyphicon glyphicon-chevron-right"></i>';
       sCollapsed += sChildPath;
-      sCollapsed += '<button class="btn btn-default btn-xs pull-right" onclick="openChildWindow(event)">Properties</button>';
+      sCollapsed += g_sPropertiesButton;
       sCollapsed += '</a>';
     }
 
@@ -144,7 +145,6 @@
     console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
   }
 
-
   function toggleFolder()
   {
     $( '.glyphicon', this )
@@ -152,39 +152,76 @@
       .toggleClass('glyphicon-chevron-down');
   }
 
-  function openChildWindow( event )
+  function openPropertiesWindow( tEvent )
   {
-    event.stopPropagation();
-
-    var w = 300;
-    var h = 400;
-    var y = ( window.top.outerHeight / 2 ) + window.top.screenY - ( h / 2)
-    var x = ( window.top.outerWidth / 2 ) + window.top.screenX - ( w / 2)
-
-
-    var childWindow = window.open(
-      '/cn/properties.php?path=' + $(event.target).parent().attr("path"),
-      'Properties',
-      'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x
-    );
-
-    g_aChildWindows.push( childWindow );
+    tEvent.stopPropagation();
+    var sPath = $( tEvent.target ).parent().attr("path");
+    var sUrl = '/cn/properties.php?path=' + sPath;
+    childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 400, 500 );
   }
 
-  function closeChildWindows()
+  function closePropertiesWindows()
   {
-    for ( var iWin = 0; iWin < g_aChildWindows.length; iWin ++ )
-    {
-      g_aChildWindows[iWin].close();
-    }
+    childWindowsClose( g_aPropertiesWindows );
   }
+
+
+// -> -> -> Manage child windows -> -> ->
+
+// Open child window and save reference in array.
+// - If opened with Click, save in element [0].
+// - If opened with <key>+Click, save in new element.
+function childWindowOpen( tEvent, aChildWindows, sUrl, sName, sNameSuffix, iWidth, iHeight )
+{
+  var iIndex, sWindowFeatures, bFocus;
+
+  if ( tEvent.altKey || tEvent.shiftKey || tEvent.ctrlKey )
+  {
+    // User pressed a special key while clicking.  Allow browser default behavior.
+    iIndex = aChildWindows.length;
+    sName += "_" + sNameSuffix;
+    sWindowFeatures = "";
+    bFocus = false;
+  }
+  else
+  {
+    // User pressed no special key while clicking.  Override browser default behavior.
+    iIndex = 0;
+    var nLeft = parseInt( ( screen.availWidth / 2 ) - ( iWidth / 2 ) );
+    var nTop = parseInt( ( screen.availHeight / 2 ) - ( iHeight / 2 ) );
+    sWindowFeatures = "width=" + iWidth + ",height=" + iHeight + ",status,resizable,left=" + nLeft + ",top=" + nTop + ",screenX=" + nLeft + ",screenY=" + nTop + ",scrollbars=yes";
+    bFocus = true;
+  }
+
+  // Open the new child window
+  aChildWindows[iIndex] = window.open( sUrl, sName, sWindowFeatures );
+
+  // Optionally focus on the new child window
+  if ( bFocus )
+  {
+    aChildWindows[iIndex].focus();
+  }
+}
+
+// Close all child windows in given array
+function childWindowsClose( aWindows )
+{
+  for ( var iIndex = 0; iIndex < aWindows.length; iIndex ++ )
+  {
+    aWindows[iIndex].close();
+  }
+}
+
+// <- <- <- Manage child windows <- <- <-
+
+
+
 </script>
 
 <div class="container">
 
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
-
     </div>
   </div>
 
