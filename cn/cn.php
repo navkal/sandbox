@@ -28,7 +28,7 @@
     border-top-width: 0;
   }
 
-  .list-group-item .glyphicon
+  .glyphicon-chevron-down, .glyphicon-chevron-right
   {
     margin-right: 5px;
   }
