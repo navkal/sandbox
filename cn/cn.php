@@ -103,14 +103,17 @@
     {
       var sChildPath = aChildren[iChild][1];
       if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
-      aChildInfo.push( { path: sChildPath, text: sChildPath.split( "." )[nDepth] } );
+
+      var sChildDescr = aChildren[iChild][2];
+      var sChildLabel = sChildPath.split( "." )[nDepth] + ": " + sChildDescr;
+      aChildInfo.push( { path: sChildPath, label: sChildLabel } );
     }
     aChildInfo.sort( compareNodes );
     for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
     {
       sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
-      sCollapse += aChildInfo[iChild].text;
+      sCollapse += aChildInfo[iChild].label;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
     }
@@ -124,14 +127,14 @@
       var iDeviceLoc = aDevices[iDevice][1];
       var sDeviceDescr = aDevices[iDevice][2];
       sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
-      var sDeviceText = sDeviceDescr + ' at ' + iDeviceLoc
-      aDeviceInfo.push( { path: sDevicePath, text: sDeviceText } );
+      var sDeviceLabel = sDeviceDescr + ' at ' + iDeviceLoc
+      aDeviceInfo.push( { path: sDevicePath, label: sDeviceLabel } );
     }
     aDeviceInfo.sort( compareNodes );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
       sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
-      sCollapse += aDeviceInfo[iDevice].text;
+      sCollapse += aDeviceInfo[iDevice].label;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
     }
@@ -168,8 +171,8 @@
 
   function compareNodes( d1, d2 )
   {
-    var s1 = d1.text;
-    var s2 = d2.text;
+    var s1 = d1.label;
+    var s2 = d2.label;
 
     var bNum1 = /^\d+$/.test( s1 );
     var bNum2 = /^\d+$/.test( s2 );

@@ -71,7 +71,7 @@ class cirobj:
         self.parent = row[2].rsplit('.',maxsplit=1)[0]
         self.root = row[2].split('.',maxsplit=1)[0]
 
-        cur.execute('SELECT id, path FROM CircuitObject WHERE parent = ?', (self.path,))
+        cur.execute('SELECT id, path, description FROM CircuitObject WHERE parent = ?', (self.path,))
         self.children = cur.fetchall()
         cur.execute('SELECT id, room_id, description FROM Device WHERE parent = ?', (self.path,))
         self.devices = cur.fetchall()
