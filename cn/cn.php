@@ -32,6 +32,11 @@
   {
     margin-right: 5px;
   }
+
+  .no-children
+  {
+    color: lightgray;
+  }
 </style>
 
 <script>
@@ -133,7 +138,7 @@
     aDeviceInfo.sort( compareNodes );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
-      sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a href="javascript:void(null)" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += aDeviceInfo[iDevice].label;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
@@ -158,7 +163,7 @@
     var nCollapseElements = aChildren.length + aDevices.length;
     if ( ( aChildren.length + aDevices.length ) == 0 )
     {
-      $( '#circuitTree a[path="' + sPath + '"] .toggle' ).css( "visibility", "hidden" );
+      $( '#circuitTree a[path="' + sPath + '"] .toggle' ).addClass( "no-children" );
     }
 
     // Attach toggle handler
@@ -199,14 +204,17 @@
 
   function toggleFolder( tEvent )
   {
-    $( '.toggle', this )
-      .toggleClass( 'glyphicon-chevron-right' )
-      .toggleClass( 'glyphicon-chevron-down' );
-
-    var sPath = $( this ).attr( "path" );
-    if ( ! g_tTreeMap[sPath] )
+    if ( ! $(tEvent.target).find(".toggle").hasClass( "no-children" ) )
     {
-      getTreeNode( sPath );
+      $( '.toggle', this )
+        .toggleClass( 'glyphicon-chevron-right' )
+        .toggleClass( 'glyphicon-chevron-down' );
+
+      var sPath = $( this ).attr( "path" );
+      if ( ! g_tTreeMap[sPath] )
+      {
+        getTreeNode( sPath );
+      }
     }
   }
 
