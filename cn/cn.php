@@ -85,10 +85,13 @@
 
   function handlePostResponse( tRsp, sStatus, tJqXhr )
   {
-    // Insert node in tree
+    // Get path and related values
     var sPath = tRsp.path;
-    g_tTreeMap[sPath] = { children:[] };
+    var nDepth = sPath.split( "." ).length;
     var sEncode = sPath.replace( /\./g, '-dot-' );
+
+    // Insert node in tree
+    g_tTreeMap[sPath] = { children:[] };
 
     // Display tree node
     var sNode = "";
@@ -283,6 +286,15 @@ function childWindowsClose( aWindows )
                                       <a href="#" class="list-group-item">Item 1.1.1</a>
                                       <a href="#" class="list-group-item">Item 1.1.2</a>
                                       <a href="#" class="list-group-item">Item 1.1.3</a>
+                                      <a href="#item-1-1-4" class="list-group-item" data-toggle="collapse">
+                                        <i class="glyphicon glyphicon-chevron-right"></i>Item 1.1.4
+                                      </a>
+                                      <div class="list-group collapse" id="item-1-1-4">
+                                        <a href="#" class="list-group-item">Item 1.1.4.1</a>
+                                        <a href="#" class="list-group-item">Item 1.1.4.2</a>
+                                        <a href="#" class="list-group-item">Item 1.1.4.3</a>
+                                      </div>
+
                                     </div>
 
                                     <a href="#item-1-2" class="list-group-item" data-toggle="collapse">
