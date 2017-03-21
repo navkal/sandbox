@@ -139,7 +139,6 @@
     sCollapse += '</div>';
 
     // Load collapsed content
-    console.log( "=========> num elements=" + nCollapseElements );
     var sSubtree = sNode + sCollapse;
 
     if ( Object.keys( g_tTreeMap ).length == 0 )
@@ -170,17 +169,18 @@
   {
     var s1 = d1.text;
     var s2 = d2.text;
+
     var bNum1 = /^\d+$/.test( s1 );
     var bNum2 = /^\d+$/.test( s2 );
 
     if ( bNum1 && bNum2 )
     {
-      // Compare fragments as numbers
+      // Compare numerically
       iResult = s1 - s2;
     }
     else
     {
-      // Compare fragments as strings
+      // Compare alphabetically
       iResult = s1.localeCompare( s2 );
     }
 
