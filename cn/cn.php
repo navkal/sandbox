@@ -28,7 +28,7 @@
     border-top-width: 0;
   }
 
-  .glyphicon-chevron-down, .glyphicon-chevron-right
+  .list-group .glyphicon-chevron-down, .list-group .glyphicon-chevron-right
   {
     margin-right: 5px;
   }
