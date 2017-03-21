@@ -47,7 +47,7 @@
 <script>
 
   var g_aPropertiesWindows = [];
-  var g_tTree = {};
+  var g_tTreeMap = {};
   var g_sPropertiesButton = '<button class="btn btn-link btn-xs pull-right" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-info-sign" style="width:40px;font-size:16px;" ></span></button>';
 
   $( document ).ready( initView );
@@ -58,16 +58,16 @@
     getTreeNode( "" );
   }
 
-  function getTreeNode( path )
+  function getTreeNode( sPath )
   {
     // --> KLUDGE --> remove after paths are fixed in DB -->
-    if ( path.includes( " " ) ) { console.log( "=> BAD PATH=" + path ); return; }
+    if ( sPath.includes( " " ) ) { console.log( "=> BAD PATH=" + sPath ); return; }
     // <-- KLUDGE <-- remove after paths are fixed in DB <--
 
     // Post request to server
     var tPostData = new FormData();
     tPostData.append( "objectType", "circuit" );
-    tPostData.append( "objectSelector", path );
+    tPostData.append( "objectSelector", sPath );
 
     $.ajax(
       "cn/query.php",
@@ -83,26 +83,23 @@
     .fail( handlePostError );
   }
 
-
-
   function handlePostResponse( tRsp, sStatus, tJqXhr )
   {
     // Insert node in tree
     var sPath = tRsp.path;
-    g_tTree[sPath] = { children:[] };
+    g_tTreeMap[sPath] = { children:[] };
 
     // Display tree node
     var sNode = "";
     sNode += '<a href="#' + sPath + '" class="list-group-item collapsed" data-toggle="collapse" path="' + sPath + '" >';
-    sNode += '<i class="glyphicon glyphicon-chevron-right"></i>';
+    sNode += '<i class="glyphicon glyphicon-chevron-down"></i>';
     sNode += sPath;
     sNode += g_sPropertiesButton;
     sNode += '</a>';
-    $( "#circuitTree" ).append( sNode );
 
     // Open block of collapsed content
-    var sCollapsed = "";
-    sCollapsed += '<div class="list-group collapse" id="' + sPath + '">';
+    var sCollapse = "";
+    sCollapse += '<div class="list-group collapse in" id="' + sPath + '">';
 
     // Sort children and load into collapsed content
     var aChildren = tRsp.children;
@@ -110,17 +107,17 @@
     {
       var sChildPath = aChildren[iChild][1];
       if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
-      g_tTree[sPath].children.push( sChildPath );
+      g_tTreeMap[sPath].children.push( sChildPath );
     }
-    g_tTree[sPath].children.sort();
-    for ( var iChild = 0; iChild < g_tTree[sPath].children.length; iChild ++ )
+    g_tTreeMap[sPath].children.sort();
+    for ( var iChild = 0; iChild < g_tTreeMap[sPath].children.length; iChild ++ )
     {
-      var sChildPath = g_tTree[sPath].children[iChild];
-      sCollapsed += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + sChildPath + '" >';
-      sCollapsed += '<i class="glyphicon glyphicon-chevron-right"></i>';
-      sCollapsed += sChildPath;
-      sCollapsed += g_sPropertiesButton;
-      sCollapsed += '</a>';
+      var sChildPath = g_tTreeMap[sPath].children[iChild];
+      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + sChildPath + '" >';
+      sCollapse += '<i class="glyphicon glyphicon-chevron-right"></i>';
+      sCollapse += sChildPath;
+      sCollapse += g_sPropertiesButton;
+      sCollapse += '</a>';
     }
 
     // Sort devices and load into collapsed content
@@ -139,17 +136,28 @@
     aDeviceInfo.sort( compareDevices );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
-      sCollapsed += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '">';
-      sCollapsed += aDeviceInfo[iDevice].text;
-      sCollapsed += g_sPropertiesButton;
-      sCollapsed += '</a>';
+      sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '">';
+      sCollapse += aDeviceInfo[iDevice].text;
+      sCollapse += g_sPropertiesButton;
+      sCollapse += '</a>';
     }
 
     // Close collapsed content block
-    sCollapsed += '</div>';
+    sCollapse += '</div>';
 
     // Load collapsed content
-    $( "#circuitTree" ).append( sCollapsed );
+    var sSubtree = sNode + sCollapse;
+    console.log( "=> sPath=" + sPath );
+    if ( Object.keys( g_tTreeMap ).length == 1 )
+    {
+      console.log( "=======> FIIIIIIIIIRST" );
+      $( "#circuitTree" ).append( sSubtree );
+    }
+    else
+    {
+      var tReplace = $( '#circuitTree a[path="' + sPath + '"]' );
+      tReplace.replaceWith( sSubtree );
+    }
 
     // Attach toggle handler
     $( '.list-group-item' ).on( 'click', toggleFolder );
@@ -172,7 +180,13 @@
       .toggleClass( 'glyphicon-chevron-right' )
       .toggleClass( 'glyphicon-chevron-down' );
 
-    console.log( "===> collapsed?" + $(this).hasClass( 'collapsed' ) );
+    var sPath = $( this ).attr( "path" );
+    if ( ! g_tTreeMap[sPath] )
+    {
+      console.log( "==========> MUST FETCH " + sPath );
+      getTreeNode( sPath );
+    }
+    else console.log( "==========> ALREADY HAVE " + sPath );
 
   }
 
@@ -249,63 +263,7 @@ function childWindowsClose( aWindows )
     </div>
   </div>
 
-
-  <div class="just-padding">
-    <div class="list-group list-group-root well">
-
-              <a href="#MWSBmoo" class="list-group-item" data-toggle="collapse">
-                <i class="glyphicon glyphicon-chevron-right"></i>
-                MWSB
-              </a>
-              <div class="list-group collapse" id="MWSBmoo">
-                <a href="#" class="list-group-item">1,UNKNOWN,Kitchen Mechanical</a>
-                <a href="#" class="list-group-item">2,UNKNOWN,Transfer sw</a>
-                <a href="#" class="list-group-item">3,UNKNOWN,Emergency distribution</a>
-                <a href="#" class="list-group-item">4,UNKNOWN,Dunn Building</a>
-                <a href="#" class="list-group-item">5,UNKNOWN,Collins Center</a>
-                <a href="#" class="list-group-item">6,UNKNOWN,Distribution</a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.1
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.2
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.3
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.4
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.5
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.6
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.7
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.8
-                </a>
-                <a class="list-group-item" data-toggle="collapse">
-                  <i class="glyphicon glyphicon-chevron-right"></i>
-                  MWSB.9
-                </a>
-
-              </div>
-
-    </div>
-  </div>
-
+<!------------------------------------------------------------------------- >
 
                               <div class="just-padding">
 
@@ -417,5 +375,6 @@ function childWindowsClose( aWindows )
                                 </div>
 
                               </div>
+<!------------------------------------------------------------------------->
 
 </div>
