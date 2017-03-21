@@ -85,7 +85,7 @@
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" style="padding-left:' + sPadNode + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" title="' + sPath + '" style="padding-left:' + sPadNode + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
     sNode += aPath[nDepth-1];
     sNode += g_sPropertiesButton;
@@ -107,7 +107,7 @@
     aChildInfo.sort( compareNodes );
     for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
     {
-      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
       sCollapse += aChildInfo[iChild].text;
       sCollapse += g_sPropertiesButton;
@@ -129,7 +129,7 @@
     aDeviceInfo.sort( compareNodes );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
-      sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += aDeviceInfo[iDevice].text;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
