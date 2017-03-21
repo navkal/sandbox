@@ -28,16 +28,6 @@
     border-top-width: 0;
   }
 
-  .list-group.list-group-root > .list-group > .list-group-item
-  {
-    padding-left: 30px;
-  }
-
-  .list-group.list-group-root > .list-group > .list-group > .list-group-item
-  {
-    padding-left: 45px;
-  }
-
   .list-group-item .glyphicon
   {
     margin-right: 5px;
@@ -87,15 +77,17 @@
   {
     // Get path and related values
     var sPath = tRsp.path;
-    var nDepth = sPath.split( "." ).length;
     var sEncode = sPath.replace( /\./g, '-dot-' );
+    var nDepth = sPath.split( "." ).length;
+    var sPadNode = "" + ( nDepth * 15 ) + "px";
+    var sPadCollapse = "" + ( ( nDepth + 1 ) * 15 ) + "px";
 
     // Insert node in tree
     g_tTreeMap[sPath] = { children:[] };
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" style="padding-left:' + sPadNode + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down"></i>';
     sNode += sPath;
     sNode += g_sPropertiesButton;
@@ -117,7 +109,7 @@
     for ( var iChild = 0; iChild < g_tTreeMap[sPath].children.length; iChild ++ )
     {
       var sChildPath = g_tTreeMap[sPath].children[iChild];
-      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + sChildPath + '" >';
+      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + sChildPath + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right"></i>';
       sCollapse += sChildPath;
       sCollapse += g_sPropertiesButton;
@@ -140,7 +132,7 @@
     aDeviceInfo.sort( compareDevices );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
-      sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '">';
+      sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += aDeviceInfo[iDevice].text;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
