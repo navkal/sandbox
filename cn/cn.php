@@ -91,7 +91,7 @@
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sPath + '" class="list-group-item collapsed" data-toggle="collapse" path="' + sPath + '" >';
+    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down"></i>';
     sNode += sPath;
     sNode += g_sPropertiesButton;
