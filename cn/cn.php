@@ -69,11 +69,11 @@
         data: tPostData
       }
     )
-    .done( handlePostResponse )
+    .done( insertTreeNode )
     .fail( handlePostError );
   }
 
-  function handlePostResponse( tRsp, sStatus, tJqXhr )
+  function insertTreeNode( tRsp, sStatus, tJqXhr )
   {
     // Get path and related values
     var sPath = tRsp.path;
@@ -162,7 +162,7 @@
     $( '.list-group-item' ).off( 'click' );
     $( '.list-group-item' ).on( 'click', toggleFolder );
 
-    // Insert node in tree
+    // Insert node in tree map
     g_tTreeMap[sPath] = {};
   }
 
