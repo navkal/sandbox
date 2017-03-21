@@ -88,10 +88,11 @@
     // Insert node in tree
     var sPath = tRsp.path;
     g_tTreeMap[sPath] = { children:[] };
+    var sEncode = sPath.replace( /\./g, '-dot-' );
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sPath + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down"></i>';
     sNode += sPath;
     sNode += g_sPropertiesButton;
@@ -99,7 +100,7 @@
 
     // Open block of collapsed content
     var sCollapse = "";
-    sCollapse += '<div class="list-group collapse in" id="' + sPath + '">';
+    sCollapse += '<div class="list-group collapse in" id="' + sEncode + '">';
 
     // Sort children and load into collapsed content
     var aChildren = tRsp.children;
@@ -160,6 +161,7 @@
     }
 
     // Attach toggle handler
+    $( '.list-group-item' ).off( 'click' );
     $( '.list-group-item' ).on( 'click', toggleFolder );
   }
 
@@ -263,7 +265,7 @@ function childWindowsClose( aWindows )
     </div>
   </div>
 
-<!------------------------------------------------------------------------- >
+<!------------------------------------------------------------------------->
 
                               <div class="just-padding">
 
