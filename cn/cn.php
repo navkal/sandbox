@@ -80,6 +80,7 @@
     var sEncode = sPath.replace( /\./g, '-dot-' );
     var aPath = sPath.split( "." );
     var nDepth = aPath.length;
+    var sLabel = aPath[nDepth-1] + ": " + tRsp.description;
     var sPadNode = "" + ( nDepth * 15 ) + "px";
     var sPadCollapse = "" + ( ( nDepth + 1 ) * 15 ) + "px";
 
@@ -87,7 +88,7 @@
     var sNode = "";
     sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" title="' + sPath + '" style="padding-left:' + sPadNode + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
-    sNode += aPath[nDepth-1];
+    sNode += sLabel;
     sNode += g_sPropertiesButton;
     sNode += '</a>';
 
