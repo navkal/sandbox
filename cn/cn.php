@@ -65,7 +65,7 @@
     tPostData.append( "objectSelector", sPath );
 
     $.ajax(
-      "cn/query.php",
+      "cn/getObject.php",
       {
         type: 'POST',
         processData: false,
@@ -171,7 +171,7 @@
     $( '.list-group-item' ).on( 'click', toggleFolder );
 
     // Insert node in tree map
-    g_tTreeMap[sPath] = {};
+    g_tTreeMap[sPath] = tRsp;
   }
 
   function compareNodes( d1, d2 )
