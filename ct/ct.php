@@ -33,7 +33,7 @@
 
     REQ ++;
     $.ajax(
-      "ct/query.php",
+      "ct/getObject.php",
       {
         type: 'POST',
         processData: false,
