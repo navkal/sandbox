@@ -78,18 +78,16 @@
     // Get path and related values
     var sPath = tRsp.path;
     var sEncode = sPath.replace( /\./g, '-dot-' );
-    var nDepth = sPath.split( "." ).length;
+    var aPath = sPath.split( "." );
+    var nDepth = aPath.length;
     var sPadNode = "" + ( nDepth * 15 ) + "px";
     var sPadCollapse = "" + ( ( nDepth + 1 ) * 15 ) + "px";
-
-    // Insert node in tree
-    g_tTreeMap[sPath] = { children:[] };
 
     // Display tree node
     var sNode = "";
     sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" style="padding-left:' + sPadNode + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
-    sNode += sPath;
+    sNode += aPath[nDepth-1];
     sNode += g_sPropertiesButton;
     sNode += '</a>';
 
@@ -99,19 +97,19 @@
 
     // Sort children and load into collapsed content
     var aChildren = tRsp.children;
+    var aChildInfo = [];
     for ( var iChild = 0; iChild < aChildren.length; iChild ++ )
     {
       var sChildPath = aChildren[iChild][1];
       if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
-      g_tTreeMap[sPath].children.push( sChildPath );
+      aChildInfo.push( { path: sChildPath, text: sChildPath.split( "." )[nDepth] } );
     }
-    g_tTreeMap[sPath].children.sort();
-    for ( var iChild = 0; iChild < g_tTreeMap[sPath].children.length; iChild ++ )
+    aChildInfo.sort( compareNodes );
+    for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
     {
-      var sChildPath = g_tTreeMap[sPath].children[iChild];
-      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + sChildPath + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
-      sCollapse += sChildPath;
+      sCollapse += aChildInfo[iChild].text;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
     }
@@ -128,7 +126,7 @@
       var sDeviceText = sDeviceDescr + ' at ' + iDeviceLoc
       aDeviceInfo.push( { path: sDevicePath, text: sDeviceText } );
     }
-    aDeviceInfo.sort( compareDevices );
+    aDeviceInfo.sort( compareNodes );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
       sCollapse += '<a href="#" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" style="padding-left:' + sPadCollapse + '" >';
@@ -144,7 +142,7 @@
     console.log( "=========> num elements=" + nCollapseElements );
     var sSubtree = sNode + sCollapse;
 
-    if ( Object.keys( g_tTreeMap ).length == 1 )
+    if ( Object.keys( g_tTreeMap ).length == 0 )
     {
       $( "#circuitTree" ).append( sSubtree );
     }
@@ -163,11 +161,30 @@
     // Attach toggle handler
     $( '.list-group-item' ).off( 'click' );
     $( '.list-group-item' ).on( 'click', toggleFolder );
+
+    // Insert node in tree
+    g_tTreeMap[sPath] = {};
   }
 
-  function compareDevices( d1, d2 )
+  function compareNodes( d1, d2 )
   {
-    return d1.text.localeCompare( d2.text );
+    var s1 = d1.text;
+    var s2 = d2.text;
+    var bNum1 = /^\d+$/.test( s1 );
+    var bNum2 = /^\d+$/.test( s2 );
+
+    if ( bNum1 && bNum2 )
+    {
+      // Compare fragments as numbers
+      iResult = s1 - s2;
+    }
+    else
+    {
+      // Compare fragments as strings
+      iResult = s1.localeCompare( s2 );
+    }
+
+    return iResult;
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
@@ -187,7 +204,6 @@
     {
       getTreeNode( sPath );
     }
-
   }
 
   function openPropertiesWindow( tEvent )
