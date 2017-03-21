@@ -176,21 +176,30 @@
 
   function compareNodes( d1, d2 )
   {
-    var s1 = d1.label;
-    var s2 = d2.label;
+    // Extract labels
+    var sLabel1 = d1.label;
+    var sLabel2 = d2.label;
 
-    var bNum1 = /^\d+$/.test( s1 );
-    var bNum2 = /^\d+$/.test( s2 );
+    // Extract prefixes
+    var sPrefix1 = sLabel1.split( ":" )[0];
+    var sPrefix2 = sLabel2.split( ":" )[0];
 
+    // Determine whether prefixes are numeric
+    var bNum1 = /^\d+$/.test( sPrefix1 );
+    var bNum2 = /^\d+$/.test( sPrefix2 );
+
+    var iResult = 0;
     if ( bNum1 && bNum2 )
     {
       // Compare numerically
-      iResult = s1 - s2;
+      iResult = sPrefix1 - sPrefix2;
     }
-    else
+
+    // If no difference found, compare full text
+    if ( iResult == 0 )
     {
       // Compare alphabetically
-      iResult = s1.localeCompare( s2 );
+      iResult = sLabel1.localeCompare( sLabel2 );
     }
 
     return iResult;
