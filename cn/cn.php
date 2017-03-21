@@ -28,7 +28,7 @@
     border-top-width: 0;
   }
 
-  .list-group .glyphicon-chevron-down, .list-group .glyphicon-chevron-right
+  .toggle
   {
     margin-right: 5px;
   }
@@ -88,7 +88,7 @@
     // Display tree node
     var sNode = "";
     sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" style="padding-left:' + sPadNode + '" >';
-    sNode += '<i class="glyphicon glyphicon-chevron-down"></i>';
+    sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
     sNode += sPath;
     sNode += g_sPropertiesButton;
     sNode += '</a>';
@@ -110,7 +110,7 @@
     {
       var sChildPath = g_tTreeMap[sPath].children[iChild];
       sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + sChildPath + '" style="padding-left:' + sPadCollapse + '" >';
-      sCollapse += '<i class="glyphicon glyphicon-chevron-right"></i>';
+      sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
       sCollapse += sChildPath;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
@@ -127,7 +127,6 @@
       sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
       var sDeviceText = sDeviceDescr + ' at ' + iDeviceLoc
       aDeviceInfo.push( { path: sDevicePath, text: sDeviceText } );
-      console.log( "" + iDevice + ": " + sDeviceText );
     }
     aDeviceInfo.sort( compareDevices );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
@@ -142,17 +141,23 @@
     sCollapse += '</div>';
 
     // Load collapsed content
+    console.log( "=========> num elements=" + nCollapseElements );
     var sSubtree = sNode + sCollapse;
-    console.log( "=> sPath=" + sPath );
+
     if ( Object.keys( g_tTreeMap ).length == 1 )
     {
-      console.log( "=======> FIIIIIIIIIRST" );
       $( "#circuitTree" ).append( sSubtree );
     }
     else
     {
       var tReplace = $( '#circuitTree a[path="' + sPath + '"]' );
       tReplace.replaceWith( sSubtree );
+    }
+
+    var nCollapseElements = aChildren.length + aDevices.length;
+    if ( ( aChildren.length + aDevices.length ) == 0 )
+    {
+      $( '#circuitTree a[path="' + sPath + '"] .toggle' ).css( "visibility", "hidden" );
     }
 
     // Attach toggle handler
@@ -173,17 +178,15 @@
 
   function toggleFolder( tEvent )
   {
-    $( '.glyphicon-chevron-right,.glyphicon-chevron-down', this )
+    $( '.toggle', this )
       .toggleClass( 'glyphicon-chevron-right' )
       .toggleClass( 'glyphicon-chevron-down' );
 
     var sPath = $( this ).attr( "path" );
     if ( ! g_tTreeMap[sPath] )
     {
-      console.log( "==========> MUST FETCH " + sPath );
       getTreeNode( sPath );
     }
-    else console.log( "==========> ALREADY HAVE " + sPath );
 
   }
 
