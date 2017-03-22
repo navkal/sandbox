@@ -4,12 +4,12 @@
   error_log( "====> post=" . print_r( $_POST, true ) );
 
   // Get posted values
-  $postType = $_POST['objectType'];
+  $postTable = $_POST['objectTable'];
   $postSelector = $_POST['objectSelector'];
 
   // Determine query selector argument
   $selector = '';
-  if ( $postType == "circuit" )
+  if ( $postTable == "circuit" )
   {
     // Object is a circuit
 
@@ -36,7 +36,7 @@
   }
 
 
-  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t " . $postType . $selector;
+  $command = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t " . $postTable . $selector;
   error_log( "===> command=" . $command );
   exec( $command, $output, $status );
   error_log( "===> output=" . print_r( $output, true ) );

@@ -61,7 +61,7 @@
 
     // Post request to server
     var tPostData = new FormData();
-    tPostData.append( "objectType", "circuit" );
+    tPostData.append( "objectTable", "circuit" );
     tPostData.append( "objectSelector", sPath );
 
     $.ajax(
@@ -138,7 +138,7 @@
       var sDeviceLabel = sDeviceDescr + ' at ' + iDeviceLoc
       aDeviceInfo.push( { oid: iDeviceId, path: sDevicePath, label: sDeviceLabel } );
     }
-    
+
     aDeviceInfo.sort( compareNodes );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {

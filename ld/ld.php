@@ -5,7 +5,7 @@
 
   function showRoot()
   {
-    $( "#objectType" ).val( "circuit" );
+    $( "#objectTable" ).val( "circuit" );
     onGo();
   }
 
@@ -20,7 +20,7 @@
 
     // Post input to server
     var postData = new FormData();
-    postData.append( "objectType", $( "#objectType" ).val() );
+    postData.append( "objectTable", $( "#objectTable" ).val() );
     postData.append( "objectSelector", $( "#objectSelector" ).val() );
 
     $.ajax(
@@ -64,7 +64,7 @@
   {
     $( "body" ).css( "cursor", bWait ? "progress" : "default" );
     $( "#btnGo" ).prop( "disabled", bWait );
-    $( "#objectType" ).prop( "disabled", bWait );
+    $( "#objectTable" ).prop( "disabled", bWait );
     $( "#objectSelector" ).prop( "disabled", bWait );
   }
 </script>
@@ -76,8 +76,8 @@
       <div class="row" >
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <label for="objectType">Type</label>
-          <select id="objectType" class="form-control" >
+          <label for="objectTable">Table</label>
+          <select id="objectTable" class="form-control" >
             <option value="circuit">
               Circuit
             </option>

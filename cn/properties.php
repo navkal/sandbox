@@ -70,7 +70,7 @@
   {
     // Post request to server
     var tPostData = new FormData();
-    tPostData.append( "objectType", ( ( g_sType == 'device' ) ? "device" : "circuit" ) );
+    tPostData.append( "objectTable", ( ( g_sType == 'device' ) ? "device" : "circuit" ) );
     tPostData.append( "objectSelector", ( ( g_sType == 'device' ) ? g_sOid : g_sPath ) );
 
     $.ajax(
