@@ -131,12 +131,12 @@
     var aDeviceInfo = [];
     for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
     {
-      var iDeviceId = aDevices[iDevice][0];
-      var iDeviceLoc = aDevices[iDevice][1];
+      var sDeviceOid = aDevices[iDevice][0];
+      var sDeviceLoc = aDevices[iDevice][1];
       var sDeviceDescr = aDevices[iDevice][2];
-      sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
-      var sDeviceLabel = sDeviceDescr + ' at ' + iDeviceLoc
-      aDeviceInfo.push( { oid: iDeviceId, path: sDevicePath, label: sDeviceLabel } );
+      sDevicePath = sPath + " " + sDeviceOid + "," + sDeviceLoc + "," + sDeviceDescr;
+      var sDeviceLabel = sDeviceDescr + ' at ' + sDeviceLoc
+      aDeviceInfo.push( { oid: sDeviceOid, path: sDevicePath, label: sDeviceLabel } );
     }
 
     aDeviceInfo.sort( compareNodes );
