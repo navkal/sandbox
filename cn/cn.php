@@ -88,10 +88,12 @@
     var sLabel = aPath[nDepth-1] + ": " + tRsp.description;
     var sPadNode = "" + ( nDepth * 15 ) + "px";
     var sPadCollapse = "" + ( ( nDepth + 1 ) * 15 ) + "px";
+    var sType = tRsp.object_type.toLowerCase();
+    var sOid = tRsp.id;
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" title="' + sPath + '" style="padding-left:' + sPadNode + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
     sNode += sLabel;
     sNode += g_sPropertiesButton;
@@ -106,17 +108,18 @@
     var aChildInfo = [];
     for ( var iChild = 0; iChild < aChildren.length; iChild ++ )
     {
+      var sChildOid = aChildren[iChild][0];
       var sChildPath = aChildren[iChild][1];
       if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
-
       var sChildDescr = aChildren[iChild][2];
       var sChildLabel = sChildPath.split( "." )[nDepth] + ": " + sChildDescr;
-      aChildInfo.push( { path: sChildPath, label: sChildLabel } );
+      var sChildType = aChildren[iChild][3];
+      aChildInfo.push( { oid: sChildOid, path: sChildPath, label: sChildLabel, type: sChildType } );
     }
     aChildInfo.sort( compareNodes );
     for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
     {
-      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
       sCollapse += aChildInfo[iChild].label;
       sCollapse += g_sPropertiesButton;
@@ -133,12 +136,13 @@
       var sDeviceDescr = aDevices[iDevice][2];
       sDevicePath = sPath + " " + iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
       var sDeviceLabel = sDeviceDescr + ' at ' + iDeviceLoc
-      aDeviceInfo.push( { path: sDevicePath, label: sDeviceLabel } );
+      aDeviceInfo.push( { oid: iDeviceId, path: sDevicePath, label: sDeviceLabel } );
     }
+    
     aDeviceInfo.sort( compareNodes );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
-      sCollapse += '<a href="javascript:void(null)" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a href="javascript:void(null)" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" type="device" oid="' + aDeviceInfo[iDevice].oid + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += aDeviceInfo[iDevice].label;
       sCollapse += g_sPropertiesButton;
       sCollapse += '</a>';
@@ -230,8 +234,10 @@
   function openPropertiesWindow( tEvent )
   {
     tEvent.stopPropagation();
-    var sPath = $(event.target).closest( "a" ).attr("path");
-    var sUrl = '/cn/properties.php?path=' + sPath;
+    var sPath = $(event.target).closest( "a" ).attr( "path" );
+    var sType = $(event.target).closest( "a" ).attr( "type" );
+    var sOid = $(event.target).closest( "a" ).attr( "oid" );
+    var sUrl = '/cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
     childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 400, 500 );
   }
 
