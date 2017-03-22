@@ -66,12 +66,12 @@ class cirobj:
         self.room_id = row[1]
         self.path = row[2]
         self.voltage = voltage[1]
-        self.type = row[5]
+        self.object_type = row[5]
         self.description = row[6]
         self.parent = row[2].rsplit('.',maxsplit=1)[0]
         self.root = row[2].split('.',maxsplit=1)[0]
 
-        cur.execute('SELECT id, path FROM CircuitObject WHERE parent = ?', (self.path,))
+        cur.execute('SELECT id, path, description, object_type FROM CircuitObject WHERE parent = ?', (self.path,))
         self.children = cur.fetchall()
         cur.execute('SELECT id, room_id, description FROM Device WHERE parent = ?', (self.path,))
         self.devices = cur.fetchall()
@@ -86,7 +86,7 @@ class cirobj:
                 'Room ID': self.room_id,
                 'Path': self.path,
                 'Voltage': self.voltage,
-                'Type': self.type,
+                'Type': self.object_type,
                 'Description': self.description,
                 'Parent': self.parent,
                 'Root': self.root,
