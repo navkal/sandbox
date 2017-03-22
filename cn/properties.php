@@ -36,13 +36,28 @@
     </style>
   </head>
 	<body>
-    <h3>
-      <?php
-        echo( $_REQUEST["path"] );
-      ?>
-    </h3>
-    <p>This is a prototype</p>
-    <span id="test"></span>
+    <div class="container">
+
+      <h3>
+        <?php
+          echo( $_REQUEST["path"] );
+        ?>
+      </h3>
+
+      <div id="objectArea">
+        <table class="table" >
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id="objectLayout" >
+          </tbody>
+        </table>
+      </div>
+
+    </div>
  	</body>
 </html>
 
@@ -95,7 +110,21 @@
 
   function showProperties()
   {
-    $( '#test' ).html( JSON.stringify( g_tProperties ) );
+    var tbody = "";
+
+    var keys = Object.keys( g_tProperties ).sort();
+    for ( var i = 0; i < keys.length; i++ )
+    {
+      key = keys[i];
+      val = g_tProperties[key];
+      if ( Array.isArray( val ) )
+      {
+        val = val.length;
+      }
+      tbody += "<tr><td>" + key + "</td><td>" + val + "</td></tr>"
+    }
+
+    $( "#objectLayout" ).html( tbody );
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
