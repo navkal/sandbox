@@ -1,0 +1,3773 @@
+MWSB
+ [1,UNKNOWN,Kitchen Mechanical]
+ [2,UNKNOWN,Transfer sw]
+ [3,UNKNOWN,Emergency distribution]
+ [4,UNKNOWN,Dunn Building]
+ [5,UNKNOWN,Collins Center]
+ [6,UNKNOWN,Distribution]
+-MWSB.1
+--MWSB.1.PBA
+   [7,UNKNOWN,AHU-1]
+   [8,UNKNOWN,AHU-4]
+   [9,UNKNOWN,AHU-1]
+   [10,UNKNOWN,AHU-4]
+   [11,UNKNOWN,AHU-1]
+   [12,UNKNOWN,AHU-4]
+   [13,UNKNOWN,F-1]
+   [14,UNKNOWN,AHU-6]
+   [15,UNKNOWN,F-1]
+   [16,UNKNOWN,AHU-6]
+   [17,UNKNOWN,F-1]
+   [18,UNKNOWN,AHU-6]
+   [19,UNKNOWN,AHU-3]
+   [20,UNKNOWN,F-2]
+   [21,UNKNOWN,AHU-3]
+   [22,UNKNOWN,F-2]
+   [23,UNKNOWN,AHU-3]
+   [24,UNKNOWN,F-2]
+   [25,UNKNOWN,F-5]
+   [26,UNKNOWN,F-4]
+   [27,UNKNOWN,F-5]
+   [28,UNKNOWN,F-4]
+   [29,UNKNOWN,F-5]
+   [30,UNKNOWN,F-4]
+   [31,UNKNOWN,AHU-7]
+   [32,UNKNOWN,AHU-7]
+   [33,UNKNOWN,AHU-7]
+---MWSB.1.PBA.1
+---MWSB.1.PBA.2
+---MWSB.1.PBA.3
+---MWSB.1.PBA.4
+---MWSB.1.PBA.5
+---MWSB.1.PBA.6
+---MWSB.1.PBA.7
+---MWSB.1.PBA.8
+---MWSB.1.PBA.9
+---MWSB.1.PBA.10
+---MWSB.1.PBA.11
+---MWSB.1.PBA.12
+---MWSB.1.PBA.13
+---MWSB.1.PBA.14
+---MWSB.1.PBA.15
+---MWSB.1.PBA.16
+---MWSB.1.PBA.17
+---MWSB.1.PBA.18
+---MWSB.1.PBA.19
+---MWSB.1.PBA.20
+---MWSB.1.PBA.21
+---MWSB.1.PBA.22
+---MWSB.1.PBA.23
+---MWSB.1.PBA.24
+---MWSB.1.PBA.25
+---MWSB.1.PBA.26
+---MWSB.1.PBA.27
+---MWSB.1.PBA.28
+---MWSB.1.PBA.29
+---MWSB.1.PBA.30
+---MWSB.1.PBA.31
+---MWSB.1.PBA.32
+---MWSB.1.PBA.33
+---MWSB.1.PBA.34
+---MWSB.1.PBA.35
+---MWSB.1.PBA.36
+---MWSB.1.PBA.37
+---MWSB.1.PBA.38
+---MWSB.1.PBA.39
+---MWSB.1.PBA.40
+---MWSB.1.PBA.41
+---MWSB.1.PBA.42
+-MWSB.2
+-MWSB.3
+-MWSB.4
+--MWSB.4.M1
+   [34,UNKNOWN,ACCU-6]
+   [35,UNKNOWN,ACCU-3]
+   [36,UNKNOWN,ACCU-5]
+   [37,UNKNOWN,ACCU-4]
+---MWSB.4.M1.1
+---MWSB.4.M1.2
+---MWSB.4.M1.3
+---MWSB.4.M1.4
+---MWSB.4.M1.5
+-MWSB.5
+--MWSB.5.DHB
+---MWSB.5.DHB.1
+----MWSB.5.DHB.1.L42sec1
+     [38,277,Lights]
+     [39,278,Lights]
+     [40,279,Lights]
+     [41,283,Lights]
+     [42,284,Lights]
+     [43,287,Lights]
+     [44,280,Lights]
+     [45,285,Lights]
+     [46,286,Lights]
+     [47,288,Lights]
+     [48,376,Lights]
+     [49,289,Lights]
+     [50,294,Lights]
+     [51,296,Lights]
+     [52,282,Lights]
+     [53,375,Lights]
+     [54,291,Lights]
+     [55,292,Lights]
+     [56,UNKNOWN,baths]
+     [57,UNKNOWN,Corridor night light]
+     [58,153,Lights]
+     [59,153,Lights]
+     [60,153,Lights]
+     [61,153,Lights]
+-----MWSB.5.DHB.1.L42sec1.1
+-----MWSB.5.DHB.1.L42sec1.2
+-----MWSB.5.DHB.1.L42sec1.3
+-----MWSB.5.DHB.1.L42sec1.4
+-----MWSB.5.DHB.1.L42sec1.5
+-----MWSB.5.DHB.1.L42sec1.6
+-----MWSB.5.DHB.1.L42sec1.7
+-----MWSB.5.DHB.1.L42sec1.8
+-----MWSB.5.DHB.1.L42sec1.9
+-----MWSB.5.DHB.1.L42sec1.10
+-----MWSB.5.DHB.1.L42sec1.11
+-----MWSB.5.DHB.1.L42sec1.12
+-----MWSB.5.DHB.1.L42sec1.13
+-----MWSB.5.DHB.1.L42sec1.14
+-----MWSB.5.DHB.1.L42sec1.15
+-----MWSB.5.DHB.1.L42sec1.16
+-----MWSB.5.DHB.1.L42sec1.17
+-----MWSB.5.DHB.1.L42sec1.18
+-----MWSB.5.DHB.1.L42sec1.19
+-----MWSB.5.DHB.1.L42sec1.20
+-----MWSB.5.DHB.1.L42sec1.21
+-----MWSB.5.DHB.1.L42sec1.22
+-----MWSB.5.DHB.1.L42sec1.23
+-----MWSB.5.DHB.1.L42sec1.24
+----MWSB.5.DHB.1.L42sec2
+     [62,153,Lights]
+     [63,153,Lights]
+     [64,153,Lights]
+     [65,UNKNOWN,Fan F-48]
+     [66,UNKNOWN,Fan F-48]
+     [67,UNKNOWN,AHU-10]
+     [68,UNKNOWN,Fan F-48]
+     [69,UNKNOWN,AHU-10]
+     [70,UNKNOWN,AHU-10]
+     [71,UNKNOWN,L2C via T2C]
+     [72,UNKNOWN,T2C > L2C]
+     [73,UNKNOWN,L2C via T2C]
+     [74,UNKNOWN,T2C > L2C]
+     [75,UNKNOWN,L2C via T2C]
+     [76,UNKNOWN,T2C > L2C]
+     [77,385,fan F-47B]
+     [78,385,F-47B]
+     [79,UNKNOWN,Roof fan F-47B]
+-----MWSB.5.DHB.1.L42sec2.25
+-----MWSB.5.DHB.1.L42sec2.26
+-----MWSB.5.DHB.1.L42sec2.27
+-----MWSB.5.DHB.1.L42sec2.28
+-----MWSB.5.DHB.1.L42sec2.29
+-----MWSB.5.DHB.1.L42sec2.30
+-----MWSB.5.DHB.1.L42sec2.31
+-----MWSB.5.DHB.1.L42sec2.32
+-----MWSB.5.DHB.1.L42sec2.33
+-----MWSB.5.DHB.1.L42sec2.34
+-----MWSB.5.DHB.1.L42sec2.35
+-----MWSB.5.DHB.1.L42sec2.36
+-----MWSB.5.DHB.1.L42sec2.37
+-----MWSB.5.DHB.1.L42sec2.38
+------MWSB.5.DHB.1.L42sec2.38.T2C
+-------MWSB.5.DHB.1.L42sec2.38.T2C.L2C
+        [80,283,Hand Dryer]
+        [81,277,Outlets]
+        [82,277,Outlets]
+        [83,277,Outlets]
+        [84,280,Outlets]
+        [85,280,Outlets]
+        [86,280,Outlets]
+        [87,278,Outlets]
+        [88,278,Outlets]
+        [89,292,Outlets]
+        [90,281,Outlets corr]
+        [91,279,Outlets]
+        [92,285,Outlets]
+        [93,285,Outlets]
+        [94,285,Outlets]
+        [95,283,Outlets]
+        [96,284,Outlets]
+        [97,287,Outlets]
+        [98,286,Outlets]
+        [99,286,Outlets]
+        [100,286,Outlets]
+        [101,288,Outlets]
+        [102,288,Outlets]
+        [103,376,Outlets]
+        [104,288,Outlets]
+        [105,376,Outlets]
+        [106,376,Outlets]
+        [107,289,Outlets]
+        [108,289,Outlets]
+        [109,289,Outlets]
+        [110,294,Outlets]
+        [111,294,Outlets]
+        [112,294,Outlets]
+        [113,296,Outlets]
+        [114,296,Outlets]
+        [115,296,Outlets]
+        [116,385,fan F-64]
+        [117,385,fan F-65]
+        [118,385,fan F-39]
+        [119,385,fan F-39A]
+        [120,385,AHU-8 Control Panel]
+        [121,281,Electric Water Cooler corr]
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.1
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.2
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.3
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.4
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.5
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.6
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.7
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.8
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.9
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.10
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.11
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.12
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.13
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.14
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.15
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.16
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.17
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.18
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.19
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.20
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.21
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.22
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.23
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.24
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.25
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.26
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.27
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.28
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.29
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.30
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.31
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.32
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.33
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.34
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.35
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.36
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.37
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.38
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.39
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.40
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.41
+--------MWSB.5.DHB.1.L42sec2.38.T2C.L2C.42
+-----MWSB.5.DHB.1.L42sec2.39
+-----MWSB.5.DHB.1.L42sec2.40
+-----MWSB.5.DHB.1.L42sec2.41
+-----MWSB.5.DHB.1.L42sec2.42
+-----MWSB.5.DHB.1.L42sec2.43
+-----MWSB.5.DHB.1.L42sec2.44
+-----MWSB.5.DHB.1.L42sec2.45
+-----MWSB.5.DHB.1.L42sec2.46
+-----MWSB.5.DHB.1.L42sec2.47
+-----MWSB.5.DHB.1.L42sec2.48
+---MWSB.5.DHB.2
+----MWSB.5.DHB.2.T2BA
+-----MWSB.5.DHB.2.T2BA.L2BASec1
+      [122,261,Outlets]
+      [123,261,Outlets]
+      [124,262,Outlets]
+      [125,263,Outlets]
+      [126,264,Outlets]
+      [127,265,Outlets]
+      [128,266,Outlets]
+      [129,267,Outlets]
+      [130,267,Outlets]
+      [131,255,telepole]
+      [132,414,Uni Vent (UV) Room]
+      [133,242,UV]
+      [134,243,UV]
+      [135,241,UV]
+      [136,269,UV]
+      [137,270,UV]
+      [138,272,UV]
+      [139,273,UV]
+      [140,276,UV]
+      [141,269,UV]
+------MWSB.5.DHB.2.T2BA.L2BASec1.1
+------MWSB.5.DHB.2.T2BA.L2BASec1.2
+------MWSB.5.DHB.2.T2BA.L2BASec1.3
+------MWSB.5.DHB.2.T2BA.L2BASec1.4
+------MWSB.5.DHB.2.T2BA.L2BASec1.5
+------MWSB.5.DHB.2.T2BA.L2BASec1.6
+------MWSB.5.DHB.2.T2BA.L2BASec1.7
+------MWSB.5.DHB.2.T2BA.L2BASec1.8
+------MWSB.5.DHB.2.T2BA.L2BASec1.9
+------MWSB.5.DHB.2.T2BA.L2BASec1.10
+------MWSB.5.DHB.2.T2BA.L2BASec1.11
+------MWSB.5.DHB.2.T2BA.L2BASec1.12
+------MWSB.5.DHB.2.T2BA.L2BASec1.13
+------MWSB.5.DHB.2.T2BA.L2BASec1.14
+------MWSB.5.DHB.2.T2BA.L2BASec1.15
+------MWSB.5.DHB.2.T2BA.L2BASec1.16
+------MWSB.5.DHB.2.T2BA.L2BASec1.17
+------MWSB.5.DHB.2.T2BA.L2BASec1.18
+------MWSB.5.DHB.2.T2BA.L2BASec1.19
+------MWSB.5.DHB.2.T2BA.L2BASec1.20
+------MWSB.5.DHB.2.T2BA.L2BASec1.21
+------MWSB.5.DHB.2.T2BA.L2BASec1.22
+------MWSB.5.DHB.2.T2BA.L2BASec1.23
+------MWSB.5.DHB.2.T2BA.L2BASec1.24
+------MWSB.5.DHB.2.T2BA.L2BASec1.25
+------MWSB.5.DHB.2.T2BA.L2BASec1.26
+------MWSB.5.DHB.2.T2BA.L2BASec1.27
+------MWSB.5.DHB.2.T2BA.L2BASec1.28
+------MWSB.5.DHB.2.T2BA.L2BASec1.29
+------MWSB.5.DHB.2.T2BA.L2BASec1.30
+------MWSB.5.DHB.2.T2BA.L2BASec1.30A
+------MWSB.5.DHB.2.T2BA.L2BASec1.30B
+------MWSB.5.DHB.2.T2BA.L2BASec1.30C
+-----MWSB.5.DHB.2.T2BA.L2BASec2
+      [142,253,Double Oven]
+      [143,385,Outlets above rm 369]
+      [144,253,Double Oven]
+      [145,255,Dishwasher]
+      [146,253,Cooktop]
+      [147,253,Cooktop]
+      [148,253,Clothes Dryer]
+      [149,255,Cooktop]
+      [150,253,Clothes Dryer]
+      [151,255,Cooktop]
+      [152,255,Cooktop]
+      [153,255,Wall Oven]
+      [154,255,Cooktop]
+      [155,255,Wall Oven]
+      [156,255,Clothes Dryer]
+      [157,255,Electric Range]
+      [158,255,Clothes Dryer]
+      [159,255,Electric Range]
+      [160,255,Air Condenser]
+      [161,255,Electric Range]
+      [162,255,Air Condenser]
+      [163,255,Electric Range]
+      [164,270,Air Condenser]
+      [165,270,Air Condenser]
+------MWSB.5.DHB.2.T2BA.L2BASec2.31
+------MWSB.5.DHB.2.T2BA.L2BASec2.32
+------MWSB.5.DHB.2.T2BA.L2BASec2.33
+------MWSB.5.DHB.2.T2BA.L2BASec2.34
+------MWSB.5.DHB.2.T2BA.L2BASec2.35
+------MWSB.5.DHB.2.T2BA.L2BASec2.36
+------MWSB.5.DHB.2.T2BA.L2BASec2.37
+------MWSB.5.DHB.2.T2BA.L2BASec2.38
+------MWSB.5.DHB.2.T2BA.L2BASec2.39
+------MWSB.5.DHB.2.T2BA.L2BASec2.40
+------MWSB.5.DHB.2.T2BA.L2BASec2.41
+------MWSB.5.DHB.2.T2BA.L2BASec2.42
+------MWSB.5.DHB.2.T2BA.L2BASec2.43
+------MWSB.5.DHB.2.T2BA.L2BASec2.44
+------MWSB.5.DHB.2.T2BA.L2BASec2.45
+------MWSB.5.DHB.2.T2BA.L2BASec2.46
+------MWSB.5.DHB.2.T2BA.L2BASec2.47
+------MWSB.5.DHB.2.T2BA.L2BASec2.48
+------MWSB.5.DHB.2.T2BA.L2BASec2.49
+------MWSB.5.DHB.2.T2BA.L2BASec2.50
+------MWSB.5.DHB.2.T2BA.L2BASec2.51
+------MWSB.5.DHB.2.T2BA.L2BASec2.52
+------MWSB.5.DHB.2.T2BA.L2BASec2.53
+------MWSB.5.DHB.2.T2BA.L2BASec2.54
+------MWSB.5.DHB.2.T2BA.L2BASec2.55
+------MWSB.5.DHB.2.T2BA.L2BASec2.56
+------MWSB.5.DHB.2.T2BA.L2BASec2.57
+------MWSB.5.DHB.2.T2BA.L2BASec2.58
+------MWSB.5.DHB.2.T2BA.L2BASec2.59
+------MWSB.5.DHB.2.T2BA.L2BASec2.60
+------MWSB.5.DHB.2.T2BA.L2BASec2.61
+------MWSB.5.DHB.2.T2BA.L2BASec2.62
+------MWSB.5.DHB.2.T2BA.L2BASec2.63
+------MWSB.5.DHB.2.T2BA.L2BASec2.64
+------MWSB.5.DHB.2.T2BA.L2BASec2.65
+------MWSB.5.DHB.2.T2BA.L2BASec2.66
+------MWSB.5.DHB.2.T2BA.L2BASec2.67
+------MWSB.5.DHB.2.T2BA.L2BASec2.68
+------MWSB.5.DHB.2.T2BA.L2BASec2.69
+------MWSB.5.DHB.2.T2BA.L2BASec2.70
+------MWSB.5.DHB.2.T2BA.L2BASec2.71
+------MWSB.5.DHB.2.T2BA.L2BASec2.72
+---MWSB.5.DHB.3
+----MWSB.5.DHB.3.T1A
+-----MWSB.5.DHB.3.T1A.L1A
+      [166,347,Handicap door (South)]
+      [167,220,Outlets]
+      [168,126,Outlets]
+      [169,127,Outlets]
+      [170,415,Water Cooler]
+      [171,221,HandDryer]
+      [172,222,Outlets]
+      [173,222,Outlets]
+      [174,222,Outlets]
+      [175,223,Outlets]
+      [176,223,Outlets]
+      [177,223,Outlets]
+      [178,224,Outlets]
+      [179,224,Outlets]
+      [180,224,Outlets]
+      [181,130,UV]
+      [182,127,UV]
+      [183,128,UV]
+      [184,129,UV]
+      [185,132,UV]
+      [186,133,UV]
+      [187,139,UV]
+      [188,144,UV]
+      [189,131,UV]
+      [190,143,UV]
+      [191,144,UV]
+      [192,128,UV]
+      [193,126,CUH Corr]
+      [194,416,Door]
+      [195,144,UV]
+      [196,144,Double Oven]
+      [197,144,Double Oven]
+      [198,127,Outlets]
+      [199,128,Outlets]
+      [200,127,Outlets]
+      [201,128,Outlets]
+------MWSB.5.DHB.3.T1A.L1A.1
+------MWSB.5.DHB.3.T1A.L1A.2
+------MWSB.5.DHB.3.T1A.L1A.3
+------MWSB.5.DHB.3.T1A.L1A.4
+------MWSB.5.DHB.3.T1A.L1A.5
+------MWSB.5.DHB.3.T1A.L1A.6
+------MWSB.5.DHB.3.T1A.L1A.7
+------MWSB.5.DHB.3.T1A.L1A.8
+------MWSB.5.DHB.3.T1A.L1A.9
+------MWSB.5.DHB.3.T1A.L1A.10
+------MWSB.5.DHB.3.T1A.L1A.11
+------MWSB.5.DHB.3.T1A.L1A.12
+------MWSB.5.DHB.3.T1A.L1A.13
+------MWSB.5.DHB.3.T1A.L1A.14
+------MWSB.5.DHB.3.T1A.L1A.15
+------MWSB.5.DHB.3.T1A.L1A.16
+------MWSB.5.DHB.3.T1A.L1A.17
+------MWSB.5.DHB.3.T1A.L1A.18
+------MWSB.5.DHB.3.T1A.L1A.19
+------MWSB.5.DHB.3.T1A.L1A.20
+------MWSB.5.DHB.3.T1A.L1A.21
+------MWSB.5.DHB.3.T1A.L1A.22
+------MWSB.5.DHB.3.T1A.L1A.23
+------MWSB.5.DHB.3.T1A.L1A.24
+------MWSB.5.DHB.3.T1A.L1A.25
+------MWSB.5.DHB.3.T1A.L1A.26
+------MWSB.5.DHB.3.T1A.L1A.27
+------MWSB.5.DHB.3.T1A.L1A.28
+------MWSB.5.DHB.3.T1A.L1A.29
+------MWSB.5.DHB.3.T1A.L1A.30
+------MWSB.5.DHB.3.T1A.L1A.31
+------MWSB.5.DHB.3.T1A.L1A.32
+------MWSB.5.DHB.3.T1A.L1A.33
+------MWSB.5.DHB.3.T1A.L1A.34
+------MWSB.5.DHB.3.T1A.L1A.35
+------MWSB.5.DHB.3.T1A.L1A.36
+---MWSB.5.DHB.4
+----MWSB.5.DHB.4.T1DA
+-----MWSB.5.DHB.4.T1DA.L1DA
+      [202,225,Handicap door (North)]
+      [203,225,Outlets]
+      [204,225,Outlets]
+      [205,225,Outlets]
+      [206,226,Outlets]
+      [207,226,Outlets]
+      [208,226,Outlets]
+      [209,227,Outlets]
+      [210,227,Outlets]
+      [211,227,Outlets]
+      [212,228,Hand dryer]
+      [213,220,Outlets Water cooler]
+      [214,148,UV]
+      [215,149,UV]
+      [216,209,UV]
+      [217,210,UV]
+      [218,208,UV]
+      [219,363,UV]
+      [220,211,UV]
+      [221,227,UV]
+      [222,417,CUH corr]
+      [223,225,UV]
+      [224,226,UV]
+      [225,233,UV]
+------MWSB.5.DHB.4.T1DA.L1DA.1
+------MWSB.5.DHB.4.T1DA.L1DA.2
+------MWSB.5.DHB.4.T1DA.L1DA.3
+------MWSB.5.DHB.4.T1DA.L1DA.4
+------MWSB.5.DHB.4.T1DA.L1DA.5
+------MWSB.5.DHB.4.T1DA.L1DA.6
+------MWSB.5.DHB.4.T1DA.L1DA.7
+------MWSB.5.DHB.4.T1DA.L1DA.8
+------MWSB.5.DHB.4.T1DA.L1DA.9
+------MWSB.5.DHB.4.T1DA.L1DA.10
+------MWSB.5.DHB.4.T1DA.L1DA.11
+------MWSB.5.DHB.4.T1DA.L1DA.12
+------MWSB.5.DHB.4.T1DA.L1DA.13
+------MWSB.5.DHB.4.T1DA.L1DA.14
+------MWSB.5.DHB.4.T1DA.L1DA.15
+------MWSB.5.DHB.4.T1DA.L1DA.16
+------MWSB.5.DHB.4.T1DA.L1DA.17
+------MWSB.5.DHB.4.T1DA.L1DA.18
+------MWSB.5.DHB.4.T1DA.L1DA.19
+------MWSB.5.DHB.4.T1DA.L1DA.20
+------MWSB.5.DHB.4.T1DA.L1DA.21
+------MWSB.5.DHB.4.T1DA.L1DA.22
+------MWSB.5.DHB.4.T1DA.L1DA.23
+------MWSB.5.DHB.4.T1DA.L1DA.24
+---MWSB.5.DHB.5
+----MWSB.5.DHB.5.T2A
+-----MWSB.5.DHB.5.T2A.L2A
+      [226,255,Washer]
+      [227,247,Outlets]
+      [228,247,Outlets]
+      [229,247,Outlets]
+      [230,246,Outlets]
+      [231,246,Outlets]
+      [232,246,Outlets]
+      [233,245,Outlets]
+      [234,245,Outlets]
+      [235,245,Outlets]
+      [236,244,Outlets]
+      [237,244,Outlets]
+      [238,244,Outlets]
+      [239,255,Outlets]
+      [240,255,Outlets]
+      [241,255,Outlets]
+      [242,253,Outlets]
+      [243,254,Bathroom]
+      [244,365,Bathroom]
+      [245,252,Outlets]
+      [246,253,Outlets]
+      [247,253,Outlets]
+      [248,252,Outlets]
+      [249,253,Outlets]
+      [250,251,Outlets]
+      [251,250,Outlets]
+      [252,249,Hand dryer]
+      [253,248,Outlets]
+      [254,325,UV]
+      [255,309,UV]
+      [256,246,UV]
+      [257,247,UV]
+      [258,244,UV]
+      [259,245,UV]
+      [260,243,UV]
+      [261,253,UV]
+      [262,255,UV]
+      [263,254,Hand dryer]
+      [264,253,Washer]
+      [265,365,Hand dryer]
+      [266,255,Gas range]
+      [267,253,Dishwasher]
+      [268,253,Exhaust hood]
+      [269,255,Disposal]
+------MWSB.5.DHB.5.T2A.L2A.1
+------MWSB.5.DHB.5.T2A.L2A.2
+------MWSB.5.DHB.5.T2A.L2A.3
+------MWSB.5.DHB.5.T2A.L2A.4
+------MWSB.5.DHB.5.T2A.L2A.5
+------MWSB.5.DHB.5.T2A.L2A.6
+------MWSB.5.DHB.5.T2A.L2A.7
+------MWSB.5.DHB.5.T2A.L2A.8
+------MWSB.5.DHB.5.T2A.L2A.9
+------MWSB.5.DHB.5.T2A.L2A.10
+------MWSB.5.DHB.5.T2A.L2A.11
+------MWSB.5.DHB.5.T2A.L2A.12
+------MWSB.5.DHB.5.T2A.L2A.13
+------MWSB.5.DHB.5.T2A.L2A.14
+------MWSB.5.DHB.5.T2A.L2A.15
+------MWSB.5.DHB.5.T2A.L2A.16
+------MWSB.5.DHB.5.T2A.L2A.17
+------MWSB.5.DHB.5.T2A.L2A.18
+------MWSB.5.DHB.5.T2A.L2A.19
+------MWSB.5.DHB.5.T2A.L2A.20
+------MWSB.5.DHB.5.T2A.L2A.21
+------MWSB.5.DHB.5.T2A.L2A.22
+------MWSB.5.DHB.5.T2A.L2A.23
+------MWSB.5.DHB.5.T2A.L2A.24
+------MWSB.5.DHB.5.T2A.L2A.25
+------MWSB.5.DHB.5.T2A.L2A.26
+------MWSB.5.DHB.5.T2A.L2A.27
+------MWSB.5.DHB.5.T2A.L2A.28
+------MWSB.5.DHB.5.T2A.L2A.29
+------MWSB.5.DHB.5.T2A.L2A.30
+------MWSB.5.DHB.5.T2A.L2A.31
+------MWSB.5.DHB.5.T2A.L2A.32
+------MWSB.5.DHB.5.T2A.L2A.33
+------MWSB.5.DHB.5.T2A.L2A.34
+------MWSB.5.DHB.5.T2A.L2A.35
+------MWSB.5.DHB.5.T2A.L2A.36
+------MWSB.5.DHB.5.T2A.L2A.37
+------MWSB.5.DHB.5.T2A.L2A.38
+------MWSB.5.DHB.5.T2A.L2A.39
+------MWSB.5.DHB.5.T2A.L2A.40
+------MWSB.5.DHB.5.T2A.L2A.41
+------MWSB.5.DHB.5.T2A.L2A.42
+---MWSB.5.DHB.6
+----MWSB.5.DHB.6.T2DA
+-----MWSB.5.DHB.6.T2DA.L2DA
+      [270,259,Outlets]
+      [271,259,Outlets]
+      [272,259,Outlets]
+      [273,260,Outlets]
+      [274,260,Outlets]
+      [275,366,Outlets]
+      [276,366,Outlets]
+      [277,304,Outlets]
+      [278,304,Janitor Closet]
+      [279,304,Outlets]
+      [280,304,Outlets]
+      [281,304,Lights vestibule]
+      [282,418,Lights Library (wall)]
+      [283,418,Lights Library (wall)]
+      [284,300,Outlets]
+      [285,300,Outlets]
+      [286,300,Outlets]
+      [287,299,Outlets]
+      [288,299,Outlets]
+      [289,299,Outlets]
+      [290,298,Outlets]
+      [291,298,Outlets]
+      [292,298,Outlets]
+      [293,297,Outlets]
+      [294,297,Outlets]
+      [295,297,Outlets]
+      [296,316,UV]
+      [297,317,UV]
+      [298,299,UV]
+      [299,300,UV]
+      [300,324,UV]
+      [301,296,UV]
+      [302,297,UV]
+      [303,298,UV]
+      [304,259,UV]
+      [305,260,UV]
+      [306,366,UV]
+      [307,259,AC Unit]
+      [308,211,Condenser (Rooftop)]
+      [309,259,Outlets AC Unit]
+      [310,211,Condenser (Rooftop)]
+      [311,259,AC Unit]
+      [312,211,Condenser (Rooftop)]
+------MWSB.5.DHB.6.T2DA.L2DA.1
+------MWSB.5.DHB.6.T2DA.L2DA.2
+------MWSB.5.DHB.6.T2DA.L2DA.3
+------MWSB.5.DHB.6.T2DA.L2DA.4
+------MWSB.5.DHB.6.T2DA.L2DA.5
+------MWSB.5.DHB.6.T2DA.L2DA.6
+------MWSB.5.DHB.6.T2DA.L2DA.7
+------MWSB.5.DHB.6.T2DA.L2DA.8
+------MWSB.5.DHB.6.T2DA.L2DA.9
+------MWSB.5.DHB.6.T2DA.L2DA.10
+------MWSB.5.DHB.6.T2DA.L2DA.11
+------MWSB.5.DHB.6.T2DA.L2DA.12
+------MWSB.5.DHB.6.T2DA.L2DA.13
+------MWSB.5.DHB.6.T2DA.L2DA.14
+------MWSB.5.DHB.6.T2DA.L2DA.15
+------MWSB.5.DHB.6.T2DA.L2DA.16
+------MWSB.5.DHB.6.T2DA.L2DA.17
+------MWSB.5.DHB.6.T2DA.L2DA.18
+------MWSB.5.DHB.6.T2DA.L2DA.19
+------MWSB.5.DHB.6.T2DA.L2DA.20
+------MWSB.5.DHB.6.T2DA.L2DA.21
+------MWSB.5.DHB.6.T2DA.L2DA.22
+------MWSB.5.DHB.6.T2DA.L2DA.23
+------MWSB.5.DHB.6.T2DA.L2DA.24
+------MWSB.5.DHB.6.T2DA.L2DA.25
+------MWSB.5.DHB.6.T2DA.L2DA.26
+------MWSB.5.DHB.6.T2DA.L2DA.27
+------MWSB.5.DHB.6.T2DA.L2DA.28
+------MWSB.5.DHB.6.T2DA.L2DA.29
+------MWSB.5.DHB.6.T2DA.L2DA.30
+------MWSB.5.DHB.6.T2DA.L2DA.31
+------MWSB.5.DHB.6.T2DA.L2DA.32
+------MWSB.5.DHB.6.T2DA.L2DA.33
+------MWSB.5.DHB.6.T2DA.L2DA.34
+------MWSB.5.DHB.6.T2DA.L2DA.35
+------MWSB.5.DHB.6.T2DA.L2DA.36
+------MWSB.5.DHB.6.T2DA.L2DA.37
+------MWSB.5.DHB.6.T2DA.L2DA.38
+------MWSB.5.DHB.6.T2DA.L2DA.39
+------MWSB.5.DHB.6.T2DA.L2DA.40
+------MWSB.5.DHB.6.T2DA.L2DA.41
+------MWSB.5.DHB.6.T2DA.L2DA.42
+------MWSB.5.DHB.6.T2DA.L2DA.43
+------MWSB.5.DHB.6.T2DA.L2DA.44
+------MWSB.5.DHB.6.T2DA.L2DA.45
+------MWSB.5.DHB.6.T2DA.L2DA.46
+------MWSB.5.DHB.6.T2DA.L2DA.47
+------MWSB.5.DHB.6.T2DA.L2DA.48
+---MWSB.5.DHB.7
+---MWSB.5.DHB.8
+---MWSB.5.DHB.9
+----MWSB.5.DHB.9.T2CA
+-----MWSB.5.DHB.9.T2CA.L2CA
+      [313,295,Outlets]
+      [314,258,Outlets corr]
+      [315,258,Outlets Water cooler]
+      [316,293,Outlets]
+      [317,291,Outlets]
+      [318,292,Outlets]
+      [319,419,Outlets]
+      [320,281,Outlets]
+      [321,420,Outlets]
+      [322,UNKNOWN,AHU-10 controls]
+      [323,282,Outlets]
+      [324,282,Outlets]
+      [325,282,Outlets]
+      [326,282,Outlets]
+      [327,282,Outlets]
+      [328,282,Outlets]
+      [329,282,Outlets]
+      [330,282,Outlets]
+      [331,282,Contactor Controls]
+      [332,153,Destratification Fans Library]
+      [333,292,Hand dryer]
+      [334,153,Destratification Fans Library]
+      [335,291,Hand dryer]
+      [336,278,Air conditioning unit]
+      [337,278,Air conditioning unit]
+      [338,279,Outlets copier]
+      [339,277,UV]
+      [340,280,UV]
+      [341,285,UV]
+      [342,286,UV]
+      [343,288,UV]
+      [344,376,UV]
+      [345,289,UV]
+      [346,294,UV]
+------MWSB.5.DHB.9.T2CA.L2CA.1
+------MWSB.5.DHB.9.T2CA.L2CA.2
+------MWSB.5.DHB.9.T2CA.L2CA.3
+------MWSB.5.DHB.9.T2CA.L2CA.4
+------MWSB.5.DHB.9.T2CA.L2CA.5
+------MWSB.5.DHB.9.T2CA.L2CA.6
+------MWSB.5.DHB.9.T2CA.L2CA.7
+------MWSB.5.DHB.9.T2CA.L2CA.8
+------MWSB.5.DHB.9.T2CA.L2CA.9
+------MWSB.5.DHB.9.T2CA.L2CA.10
+------MWSB.5.DHB.9.T2CA.L2CA.11
+------MWSB.5.DHB.9.T2CA.L2CA.12
+------MWSB.5.DHB.9.T2CA.L2CA.13
+------MWSB.5.DHB.9.T2CA.L2CA.14
+------MWSB.5.DHB.9.T2CA.L2CA.15
+------MWSB.5.DHB.9.T2CA.L2CA.16
+------MWSB.5.DHB.9.T2CA.L2CA.17
+------MWSB.5.DHB.9.T2CA.L2CA.18
+------MWSB.5.DHB.9.T2CA.L2CA.19
+------MWSB.5.DHB.9.T2CA.L2CA.20
+------MWSB.5.DHB.9.T2CA.L2CA.21
+------MWSB.5.DHB.9.T2CA.L2CA.22
+------MWSB.5.DHB.9.T2CA.L2CA.23
+------MWSB.5.DHB.9.T2CA.L2CA.24
+------MWSB.5.DHB.9.T2CA.L2CA.25
+------MWSB.5.DHB.9.T2CA.L2CA.26
+------MWSB.5.DHB.9.T2CA.L2CA.27
+------MWSB.5.DHB.9.T2CA.L2CA.28
+------MWSB.5.DHB.9.T2CA.L2CA.29
+------MWSB.5.DHB.9.T2CA.L2CA.30
+------MWSB.5.DHB.9.T2CA.L2CA.31
+------MWSB.5.DHB.9.T2CA.L2CA.32
+------MWSB.5.DHB.9.T2CA.L2CA.33
+------MWSB.5.DHB.9.T2CA.L2CA.34
+------MWSB.5.DHB.9.T2CA.L2CA.35
+------MWSB.5.DHB.9.T2CA.L2CA.36
+------MWSB.5.DHB.9.T2CA.L2CA.37
+------MWSB.5.DHB.9.T2CA.L2CA.38
+------MWSB.5.DHB.9.T2CA.L2CA.39
+------MWSB.5.DHB.9.T2CA.L2CA.40
+------MWSB.5.DHB.9.T2CA.L2CA.41
+------MWSB.5.DHB.9.T2CA.L2CA.42
+---MWSB.5.DHB.10
+----MWSB.5.DHB.10.T1BA
+-----MWSB.5.DHB.10.T1BA.L1BA
+      [347,174,Outlets]
+      [348,170,Outlets]
+      [349,170,Outlets]
+      [350,172,Outlets]
+      [351,179,Outlets]
+      [352,178,Outlets]
+      [353,136,Hand dryer]
+      [354,159,hand dryer]
+      [355,160,hand dryer]
+      [356,153,Outlets]
+      [357,421,Outlets]
+      [358,157,Outlets]
+      [359,157,Outlets]
+      [360,153,Outlets]
+      [361,156,Outlets]
+      [362,156,Outlets]
+      [363,155,Outlets]
+      [364,154,Outlets]
+      [365,153,Outlets]
+      [366,153,Library book security system]
+      [367,153,Outlets]
+      [368,154,Outlets]
+      [369,153,Door opener Library]
+      [370,153,Copy machine Library]
+      [371,153,Outlets]
+      [372,153,Outlets]
+      [373,153,Outlets]
+      [374,133,UV]
+      [375,132,UV]
+      [376,161,Outlets corr]
+      [377,422,Copy Machine]
+------MWSB.5.DHB.10.T1BA.L1BA.1
+------MWSB.5.DHB.10.T1BA.L1BA.2
+------MWSB.5.DHB.10.T1BA.L1BA.3
+------MWSB.5.DHB.10.T1BA.L1BA.4
+------MWSB.5.DHB.10.T1BA.L1BA.5
+------MWSB.5.DHB.10.T1BA.L1BA.6
+------MWSB.5.DHB.10.T1BA.L1BA.7
+------MWSB.5.DHB.10.T1BA.L1BA.8
+------MWSB.5.DHB.10.T1BA.L1BA.9
+------MWSB.5.DHB.10.T1BA.L1BA.10
+------MWSB.5.DHB.10.T1BA.L1BA.11
+------MWSB.5.DHB.10.T1BA.L1BA.12
+------MWSB.5.DHB.10.T1BA.L1BA.13
+------MWSB.5.DHB.10.T1BA.L1BA.14
+------MWSB.5.DHB.10.T1BA.L1BA.15
+------MWSB.5.DHB.10.T1BA.L1BA.16
+------MWSB.5.DHB.10.T1BA.L1BA.17
+------MWSB.5.DHB.10.T1BA.L1BA.18
+------MWSB.5.DHB.10.T1BA.L1BA.19
+------MWSB.5.DHB.10.T1BA.L1BA.20
+------MWSB.5.DHB.10.T1BA.L1BA.21
+------MWSB.5.DHB.10.T1BA.L1BA.22
+------MWSB.5.DHB.10.T1BA.L1BA.23
+------MWSB.5.DHB.10.T1BA.L1BA.24
+------MWSB.5.DHB.10.T1BA.L1BA.25
+------MWSB.5.DHB.10.T1BA.L1BA.26
+------MWSB.5.DHB.10.T1BA.L1BA.27
+------MWSB.5.DHB.10.T1BA.L1BA.28
+------MWSB.5.DHB.10.T1BA.L1BA.29
+------MWSB.5.DHB.10.T1BA.L1BA.30
+------MWSB.5.DHB.10.T1BA.L1BA.31
+------MWSB.5.DHB.10.T1BA.L1BA.32
+------MWSB.5.DHB.10.T1BA.L1BA.33
+------MWSB.5.DHB.10.T1BA.L1BA.34
+------MWSB.5.DHB.10.T1BA.L1BA.35
+------MWSB.5.DHB.10.T1BA.L1BA.36
+---MWSB.5.DHB.11
+---MWSB.5.DHB.12
+-MWSB.6
+--MWSB.6.DE
+   [378,UNKNOWN,C Building existing cargo ELEVATOR]
+   [379,UNKNOWN,Tranformer TKE]
+   [380,UNKNOWN,ELEVATOR]
+   [381,UNKNOWN,New Lobby]
+---MWSB.6.DE.1
+----MWSB.6.DE.1.LE3
+     [382,153,Lights Library]
+     [383,153,Lights Library]
+     [384,319,Lights]
+     [385,301,Lights]
+     [386,383,Lights]
+     [387,256,Lights corr]
+     [388,258,Lights corr]
+     [389,423,Lights corr]
+     [390,150,Lights corr]
+     [391,281,Lights corr]
+     [392,290,Lights corr]
+     [393,295,Lights corr]
+     [394,UNKNOWN,Exit Signs Entrance / Closing (E/C) 4th Floor]
+     [395,293,Lights Library]
+     [396,303,Lights corr]
+     [397,305,Lights corr]
+-----MWSB.6.DE.1.LE3.1
+-----MWSB.6.DE.1.LE3.2
+-----MWSB.6.DE.1.LE3.3
+-----MWSB.6.DE.1.LE3.4
+-----MWSB.6.DE.1.LE3.5
+-----MWSB.6.DE.1.LE3.6
+-----MWSB.6.DE.1.LE3.7
+-----MWSB.6.DE.1.LE3.8
+-----MWSB.6.DE.1.LE3.9
+-----MWSB.6.DE.1.LE3.10
+-----MWSB.6.DE.1.LE3.11
+-----MWSB.6.DE.1.LE3.12
+----MWSB.6.DE.1.LE3A
+     [398,424,Lights corr]
+     [399,266,Lights]
+     [400,267,Lights]
+     [401,306,Lights corr]
+     [402,248,Lights]
+     [403,308,Lights]
+     [404,249,Lights]
+     [405,381,Lights]
+     [406,UNKNOWN,Exit Signs Door Closing (D/C) 4th Floor]
+     [407,UNKNOWN,Exit Signs Door Entrance (D/E) 4th Floor]
+-----MWSB.6.DE.1.LE3A.1
+-----MWSB.6.DE.1.LE3A.2
+-----MWSB.6.DE.1.LE3A.3
+-----MWSB.6.DE.1.LE3A.4
+-----MWSB.6.DE.1.LE3A.5
+-----MWSB.6.DE.1.LE3A.6
+-----MWSB.6.DE.1.LE3A.7
+-----MWSB.6.DE.1.LE3A.8
+-----MWSB.6.DE.1.LE3A.9
+-----MWSB.6.DE.1.LE3A.10
+-----MWSB.6.DE.1.LE3A.11
+-----MWSB.6.DE.1.LE3A.12
+---MWSB.6.DE.2
+----MWSB.6.DE.2.LE2
+     [408,189,Lights]
+     [409,193,Lights]
+     [410,145,Lights corr]
+     [411,147,Lights corr]
+     [412,397,Lights corr]
+     [413,161,Lights corr]
+     [414,202,Lights corr]
+     [415,207,Lights corr]
+     [416,UNKNOWN,Lights stairs C3]
+     [417,UNKNOWN,Lights stairs E1]
+     [418,UNKNOWN,Lights stairs E2]
+     [419,425,Exit Sign E/C]
+     [420,216,Lights]
+     [421,228,Lights]
+     [422,364,Lights]
+     [423,205,Lights Bathroom]
+     [424,217,Lights corr]
+     [425,218,Lights corr]
+     [426,UNKNOWN,]
+     [427,239,Lights corr]
+-----MWSB.6.DE.2.LE2.1
+-----MWSB.6.DE.2.LE2.2
+-----MWSB.6.DE.2.LE2.3
+-----MWSB.6.DE.2.LE2.4
+-----MWSB.6.DE.2.LE2.5
+-----MWSB.6.DE.2.LE2.6
+-----MWSB.6.DE.2.LE2.7
+-----MWSB.6.DE.2.LE2.8
+-----MWSB.6.DE.2.LE2.9
+-----MWSB.6.DE.2.LE2.10
+-----MWSB.6.DE.2.LE2.11
+-----MWSB.6.DE.2.LE2.12
+----MWSB.6.DE.2.LE2A
+     [428,220,Lights corr]
+     [429,219,Lights corr]
+     [430,216,Lights corr]
+     [431,135,Lights corr]
+     [432,221,Lights]
+     [433,136,Lights]
+     [434,158,Lights]
+     [435,UNKNOWN,Lights stairs D1]
+     [436,UNKNOWN,Lights stairs D2]
+     [437,UNKNOWN,Lights stairs C2]
+     [438,UNKNOWN,Fire Alarm/TFA]
+     [439,UNKNOWN,Intercom]
+     [440,426,Exit signs D/C]
+     [441,UNKNOWN,Fire Alarm/TFA]
+     [442,UNKNOWN,Intercom]
+     [443,426,Exit signs E/C]
+-----MWSB.6.DE.2.LE2A.1
+-----MWSB.6.DE.2.LE2A.2
+-----MWSB.6.DE.2.LE2A.3
+-----MWSB.6.DE.2.LE2A.4
+-----MWSB.6.DE.2.LE2A.5
+-----MWSB.6.DE.2.LE2A.6
+-----MWSB.6.DE.2.LE2A.7
+-----MWSB.6.DE.2.LE2A.8
+-----MWSB.6.DE.2.LE2A.9
+-----MWSB.6.DE.2.LE2A.10
+-----MWSB.6.DE.2.LE2A.11
+-----MWSB.6.DE.2.LE2A.12
+-----MWSB.6.DE.2.LE2A.13
+-----MWSB.6.DE.2.LE2A.14
+-----MWSB.6.DE.2.LE2A.15
+-----MWSB.6.DE.2.LE2A.16
+-----MWSB.6.DE.2.LE2A.17
+---MWSB.6.DE.3
+----MWSB.6.DE.3.LE1A
+     [444,65,Lights]
+     [445,66,Lights]
+     [446,413,Lights]
+     [447,67,Lights]
+     [448,UNKNOWN,Lights Ramp]
+     [449,427,Lights mezz]
+     [450,84,Lights Cafeteria]
+     [451,UNKNOWN,Lights exterior egress]
+     [452,UNKNOWN,Timeclock]
+     [453,54,Lights]
+     [454,63,Lights]
+     [455,333,Lights]
+     [456,81,Lights]
+     [457,82,Lights]
+     [458,83,Lights]
+     [459,UNKNOWN,Exit Signs]
+     [460,428,cafeteria]
+     [461,428,cafeteria]
+     [462,428,cafeteria]
+-----MWSB.6.DE.3.LE1A.1
+-----MWSB.6.DE.3.LE1A.2
+-----MWSB.6.DE.3.LE1A.3
+-----MWSB.6.DE.3.LE1A.4
+-----MWSB.6.DE.3.LE1A.5
+-----MWSB.6.DE.3.LE1A.6
+-----MWSB.6.DE.3.LE1A.7
+-----MWSB.6.DE.3.LE1A.8
+-----MWSB.6.DE.3.LE1A.9
+-----MWSB.6.DE.3.LE1A.10
+-----MWSB.6.DE.3.LE1A.11
+-----MWSB.6.DE.3.LE1A.12
+---MWSB.6.DE.4
+---MWSB.6.DE.5
+----MWSB.6.DE.5.TODE
+-----MWSB.6.DE.5.TODE.ODE
+      [463,429,Collins Center 3A-3B]
+      [464,429,Collins Center 2A-2B]
+      [465,429,Collins Center 5A-5B]
+      [466,429,Collins Center 3A-3B]
+      [467,429,Collins Center 4A-4B]
+      [468,349,TV Office]
+      [469,430,TV Office]
+      [470,431,Access]
+      [471,UNKNOWN,Collins panel HSELA Emergency Lights (3P)]
+      [472,UNKNOWN,Lobby evacuation fresh fan]
+      [473,UNKNOWN,Collins panel HSELA Emergency Lights (3P)]
+      [474,UNKNOWN,Lobby evacuation fresh fan]
+      [475,UNKNOWN,Collins panel HSELA Emergency Lights (3P)]
+      [476,UNKNOWN,Lobby evacuation fresh fan]
+      [477,UNKNOWN,Collins Center Roof Hatches 6A-6B]
+------MWSB.6.DE.5.TODE.ODE.1
+------MWSB.6.DE.5.TODE.ODE.2
+------MWSB.6.DE.5.TODE.ODE.3
+------MWSB.6.DE.5.TODE.ODE.4
+------MWSB.6.DE.5.TODE.ODE.5
+------MWSB.6.DE.5.TODE.ODE.6
+------MWSB.6.DE.5.TODE.ODE.7
+------MWSB.6.DE.5.TODE.ODE.8
+------MWSB.6.DE.5.TODE.ODE.9
+------MWSB.6.DE.5.TODE.ODE.10
+------MWSB.6.DE.5.TODE.ODE.11
+------MWSB.6.DE.5.TODE.ODE.12
+------MWSB.6.DE.5.TODE.ODE.13
+------MWSB.6.DE.5.TODE.ODE.14
+------MWSB.6.DE.5.TODE.ODE.15
+------MWSB.6.DE.5.TODE.ODE.16
+------MWSB.6.DE.5.TODE.ODE.17
+------MWSB.6.DE.5.TODE.ODE.18
+---MWSB.6.DE.6
+----MWSB.6.DE.6.PKE
+     [478,UNKNOWN,Comp (??)]
+     [479,UNKNOWN,Comp (??)]
+     [480,UNKNOWN,Comp (??)]
+     [481,UNKNOWN,Comp (??)]
+     [482,UNKNOWN,Comp (??)]
+     [483,UNKNOWN,Comp (??)]
+     [484,UNKNOWN,Comp (??)]
+     [485,432,Lights]
+     [486,UNKNOWN,Comp (??)]
+     [487,UNKNOWN,GFI (??)]
+     [488,UNKNOWN,Comp (??)]
+     [489,UNKNOWN,Refrigerator Deli Line]
+     [490,UNKNOWN,Comp (??)]
+     [491,UNKNOWN,Refrigerator Deli Line]
+-----MWSB.6.DE.6.PKE.1
+-----MWSB.6.DE.6.PKE.2
+-----MWSB.6.DE.6.PKE.3
+-----MWSB.6.DE.6.PKE.4
+-----MWSB.6.DE.6.PKE.5
+-----MWSB.6.DE.6.PKE.6
+-----MWSB.6.DE.6.PKE.7
+-----MWSB.6.DE.6.PKE.8
+-----MWSB.6.DE.6.PKE.9
+-----MWSB.6.DE.6.PKE.10
+-----MWSB.6.DE.6.PKE.11
+-----MWSB.6.DE.6.PKE.12
+-----MWSB.6.DE.6.PKE.13
+-----MWSB.6.DE.6.PKE.14
+----MWSB.6.DE.6.TKE
+---MWSB.6.DE.7
+---MWSB.6.DE.8
+----MWSB.6.DE.8.PMEsec1
+     [492,25,Lights boys' showers]
+     [493,UNKNOWN,Exit Signs]
+     [494,433,Lights]
+     [495,UNKNOWN,Exit Signs]
+     [496,25,Lights girls' showers]
+     [497,5,Lights corr]
+     [498,434,Lights]
+     [499,435,Lights]
+     [500,436,Lights]
+     [501,38,Lights corr]
+     [502,3,Lights corr]
+     [503,49,Lights Lobby]
+     [504,43,Lights]
+     [505,44,Lights]
+     [506,UNKNOWN,Lights stairs]
+     [507,UNKNOWN,Exit Signs]
+     [508,UNKNOWN,Boiler 1]
+     [509,UNKNOWN,Boiler 2]
+     [510,UNKNOWN,Boiler 1]
+     [511,UNKNOWN,Boiler 2]
+     [512,UNKNOWN,Boiler 1]
+     [513,UNKNOWN,Boiler 2]
+     [514,UNKNOWN,PE via TE]
+     [515,UNKNOWN,Boiler 3]
+     [516,UNKNOWN,PE via TE]
+     [517,UNKNOWN,Boiler 3]
+     [518,UNKNOWN,PE via TE]
+     [519,UNKNOWN,Boiler 3]
+     [520,UNKNOWN,Jockey Pump #1]
+     [521,UNKNOWN,P-2]
+     [522,UNKNOWN,Jockey Pump #1]
+     [523,UNKNOWN,P-2]
+     [524,UNKNOWN,Jockey Pump #1]
+     [525,UNKNOWN,P-2]
+     [526,UNKNOWN,P-1]
+     [527,UNKNOWN,P-3]
+     [528,UNKNOWN,P-1]
+     [529,UNKNOWN,P-3]
+     [530,UNKNOWN,P-1]
+     [531,UNKNOWN,P-3]
+     [532,UNKNOWN,Jockey Pump Control Circuit]
+     [533,UNKNOWN,Jockey Pump #2]
+     [534,UNKNOWN,Jockey Pump #2]
+     [535,UNKNOWN,Jockey Pump #2]
+-----MWSB.6.DE.8.PMEsec1.1
+-----MWSB.6.DE.8.PMEsec1.2
+-----MWSB.6.DE.8.PMEsec1.3
+-----MWSB.6.DE.8.PMEsec1.4
+-----MWSB.6.DE.8.PMEsec1.5
+-----MWSB.6.DE.8.PMEsec1.6
+-----MWSB.6.DE.8.PMEsec1.7
+-----MWSB.6.DE.8.PMEsec1.8
+-----MWSB.6.DE.8.PMEsec1.9
+-----MWSB.6.DE.8.PMEsec1.10
+-----MWSB.6.DE.8.PMEsec1.11
+-----MWSB.6.DE.8.PMEsec1.12
+-----MWSB.6.DE.8.PMEsec1.13
+-----MWSB.6.DE.8.PMEsec1.14
+-----MWSB.6.DE.8.PMEsec1.15
+-----MWSB.6.DE.8.PMEsec1.16
+-----MWSB.6.DE.8.PMEsec1.17
+-----MWSB.6.DE.8.PMEsec1.18
+-----MWSB.6.DE.8.PMEsec1.19
+-----MWSB.6.DE.8.PMEsec1.20
+-----MWSB.6.DE.8.PMEsec1.21
+-----MWSB.6.DE.8.PMEsec1.22
+-----MWSB.6.DE.8.PMEsec1.23
+-----MWSB.6.DE.8.PMEsec1.24
+-----MWSB.6.DE.8.PMEsec1.25
+-----MWSB.6.DE.8.PMEsec1.26
+-----MWSB.6.DE.8.PMEsec1.27
+-----MWSB.6.DE.8.PMEsec1.28
+-----MWSB.6.DE.8.PMEsec1.29
+-----MWSB.6.DE.8.PMEsec1.30
+-----MWSB.6.DE.8.PMEsec1.31
+-----MWSB.6.DE.8.PMEsec1.32
+-----MWSB.6.DE.8.PMEsec1.33
+-----MWSB.6.DE.8.PMEsec1.34
+-----MWSB.6.DE.8.PMEsec1.35
+-----MWSB.6.DE.8.PMEsec1.36
+-----MWSB.6.DE.8.PMEsec1.37
+-----MWSB.6.DE.8.PMEsec1.38
+-----MWSB.6.DE.8.PMEsec1.39
+-----MWSB.6.DE.8.PMEsec1.40
+-----MWSB.6.DE.8.PMEsec1.41
+-----MWSB.6.DE.8.PMEsec1.42
+----MWSB.6.DE.8.PMEsec2
+     [536,119,Lights Lobby]
+     [537,109,Lights]
+     [538,111,Lights]
+     [539,114,Lights]
+     [540,119,Lights Lobby]
+     [541,UNKNOWN,Level 2]
+     [542,118,Lights corr]
+     [543,119,Lights Lobby]
+     [544,433,]
+     [545,117,Alcoves]
+     [546,107,Lights corr]
+     [547,108,Lights corr]
+     [548,240,Lights Elev Lobby]
+     [549,UNKNOWN,AHU-13]
+     [550,UNKNOWN,Lights mechanical Penthouses]
+     [551,UNKNOWN,AHU-13]
+     [552,UNKNOWN,AHU-13]
+     [553,UNKNOWN,Fuel Oil Pump P-4 & P-5]
+     [554,UNKNOWN,Water Heater (H2O)]
+     [555,UNKNOWN,Fuel Oil Pump P-4 & P-5]
+     [556,UNKNOWN,Water Heater (H2O)]
+     [557,UNKNOWN,Fuel Oil Pump P-4]
+     [558,UNKNOWN,Fuel Oil Pump P-5]
+     [559,UNKNOWN,Water Heater (H2O)]
+     [560,UNKNOWN,Jockey Pump #3]
+     [561,UNKNOWN,F-21]
+     [562,UNKNOWN,Jockey Pump #3]
+     [563,UNKNOWN,F-21]
+     [564,UNKNOWN,Jockey Pump #3]
+     [565,UNKNOWN,F-21]
+     [566,UNKNOWN,ATC Air Compressor-1]
+     [567,UNKNOWN,ATC Air Compressor-2]
+     [568,UNKNOWN,ATC Air Compressor-1]
+     [569,UNKNOWN,ATC Air Compressor-2]
+     [570,UNKNOWN,ATC Air Compressor-1]
+     [571,UNKNOWN,ATC Air Compressor-2]
+-----MWSB.6.DE.8.PMEsec2.43
+-----MWSB.6.DE.8.PMEsec2.44
+-----MWSB.6.DE.8.PMEsec2.45
+-----MWSB.6.DE.8.PMEsec2.46
+-----MWSB.6.DE.8.PMEsec2.47
+-----MWSB.6.DE.8.PMEsec2.48
+-----MWSB.6.DE.8.PMEsec2.49
+-----MWSB.6.DE.8.PMEsec2.50
+-----MWSB.6.DE.8.PMEsec2.51
+-----MWSB.6.DE.8.PMEsec2.52
+-----MWSB.6.DE.8.PMEsec2.53
+-----MWSB.6.DE.8.PMEsec2.54
+-----MWSB.6.DE.8.PMEsec2.55
+-----MWSB.6.DE.8.PMEsec2.56
+-----MWSB.6.DE.8.PMEsec2.57
+-----MWSB.6.DE.8.PMEsec2.58
+-----MWSB.6.DE.8.PMEsec2.59
+-----MWSB.6.DE.8.PMEsec2.60
+-----MWSB.6.DE.8.PMEsec2.61
+-----MWSB.6.DE.8.PMEsec2.62
+-----MWSB.6.DE.8.PMEsec2.63
+-----MWSB.6.DE.8.PMEsec2.64
+-----MWSB.6.DE.8.PMEsec2.65
+-----MWSB.6.DE.8.PMEsec2.66
+-----MWSB.6.DE.8.PMEsec2.67
+-----MWSB.6.DE.8.PMEsec2.68
+-----MWSB.6.DE.8.PMEsec2.69
+-----MWSB.6.DE.8.PMEsec2.70
+-----MWSB.6.DE.8.PMEsec2.71
+-----MWSB.6.DE.8.PMEsec2.72
+-MWSB.7
+--MWSB.7.DG
+   [572,UNKNOWN,P4G]
+   [573,UNKNOWN,L4GC]
+   [574,UNKNOWN,L4G1]
+   [575,UNKNOWN,ACCU-1]
+   [576,UNKNOWN,Site Light / Time clock]
+   [577,UNKNOWN,Site Light / Time clock]
+   [578,UNKNOWN,Site Light / Time clock]
+---MWSB.7.DG.1
+----MWSB.7.DG.1.P4Gsec1
+     [579,122,Lights]
+     [580,123,Lights]
+     [581,122,Lights]
+     [582,UNKNOWN,F-9]
+     [583,UNKNOWN,F-9]
+     [584,UNKNOWN,F-9]
+     [585,UNKNOWN,RTU-2]
+     [586,UNKNOWN,RTU-2]
+     [587,UNKNOWN,RTU-2]
+     [588,UNKNOWN,RTU-1]
+     [589,UNKNOWN,RTU-3]
+     [590,UNKNOWN,RTU-1]
+     [591,UNKNOWN,RTU-3]
+     [592,UNKNOWN,RTU-1]
+     [593,UNKNOWN,RTU-3]
+     [594,UNKNOWN,AHU-2]
+     [595,UNKNOWN,AHU-2]
+     [596,UNKNOWN,AHU-2]
+-----MWSB.7.DG.1.P4Gsec1.1
+-----MWSB.7.DG.1.P4Gsec1.2
+-----MWSB.7.DG.1.P4Gsec1.3
+-----MWSB.7.DG.1.P4Gsec1.4
+-----MWSB.7.DG.1.P4Gsec1.5
+-----MWSB.7.DG.1.P4Gsec1.6
+-----MWSB.7.DG.1.P4Gsec1.7
+-----MWSB.7.DG.1.P4Gsec1.8
+-----MWSB.7.DG.1.P4Gsec1.9
+-----MWSB.7.DG.1.P4Gsec1.10
+-----MWSB.7.DG.1.P4Gsec1.11
+-----MWSB.7.DG.1.P4Gsec1.12
+-----MWSB.7.DG.1.P4Gsec1.13
+-----MWSB.7.DG.1.P4Gsec1.14
+-----MWSB.7.DG.1.P4Gsec1.15
+-----MWSB.7.DG.1.P4Gsec1.16
+-----MWSB.7.DG.1.P4Gsec1.17
+-----MWSB.7.DG.1.P4Gsec1.18
+-----MWSB.7.DG.1.P4Gsec1.19
+-----MWSB.7.DG.1.P4Gsec1.20
+-----MWSB.7.DG.1.P4Gsec1.21
+-----MWSB.7.DG.1.P4Gsec1.22
+-----MWSB.7.DG.1.P4Gsec1.23
+-----MWSB.7.DG.1.P4Gsec1.24
+-----MWSB.7.DG.1.P4Gsec1.25
+-----MWSB.7.DG.1.P4Gsec1.26
+-----MWSB.7.DG.1.P4Gsec1.27
+-----MWSB.7.DG.1.P4Gsec1.28
+-----MWSB.7.DG.1.P4Gsec1.29
+-----MWSB.7.DG.1.P4Gsec1.30
+-----MWSB.7.DG.1.P4Gsec1.31
+-----MWSB.7.DG.1.P4Gsec1.32
+-----MWSB.7.DG.1.P4Gsec1.33
+-----MWSB.7.DG.1.P4Gsec1.34
+-----MWSB.7.DG.1.P4Gsec1.35
+-----MWSB.7.DG.1.P4Gsec1.36
+----MWSB.7.DG.1.P4Gsec2
+     [597,UNKNOWN,F-8]
+     [598,UNKNOWN,P-8]
+     [599,UNKNOWN,F-8]
+     [600,UNKNOWN,P-8]
+     [601,UNKNOWN,F-8]
+     [602,UNKNOWN,P-8]
+     [603,UNKNOWN,P-9]
+     [604,UNKNOWN,P-9]
+     [605,UNKNOWN,P-9]
+     [606,UNKNOWN,AHU-11]
+     [607,UNKNOWN,AHU-11]
+     [608,UNKNOWN,AHU-11]
+     [609,UNKNOWN,RTU-4]
+     [610,UNKNOWN,AHU-12]
+     [611,UNKNOWN,RTU-4]
+     [612,UNKNOWN,AHU-12]
+     [613,UNKNOWN,RTU-4]
+     [614,UNKNOWN,AHU-12]
+-----MWSB.7.DG.1.P4Gsec2.37
+-----MWSB.7.DG.1.P4Gsec2.38
+-----MWSB.7.DG.1.P4Gsec2.39
+-----MWSB.7.DG.1.P4Gsec2.40
+-----MWSB.7.DG.1.P4Gsec2.41
+-----MWSB.7.DG.1.P4Gsec2.42
+-----MWSB.7.DG.1.P4Gsec2.43
+-----MWSB.7.DG.1.P4Gsec2.44
+-----MWSB.7.DG.1.P4Gsec2.45
+-----MWSB.7.DG.1.P4Gsec2.46
+-----MWSB.7.DG.1.P4Gsec2.47
+-----MWSB.7.DG.1.P4Gsec2.48
+-----MWSB.7.DG.1.P4Gsec2.49
+-----MWSB.7.DG.1.P4Gsec2.50
+-----MWSB.7.DG.1.P4Gsec2.51
+-----MWSB.7.DG.1.P4Gsec2.52
+-----MWSB.7.DG.1.P4Gsec2.53
+-----MWSB.7.DG.1.P4Gsec2.54
+-----MWSB.7.DG.1.P4Gsec2.55
+-----MWSB.7.DG.1.P4Gsec2.56
+-----MWSB.7.DG.1.P4Gsec2.57
+-----MWSB.7.DG.1.P4Gsec2.58
+-----MWSB.7.DG.1.P4Gsec2.59
+-----MWSB.7.DG.1.P4Gsec2.60
+-----MWSB.7.DG.1.P4Gsec2.61
+-----MWSB.7.DG.1.P4Gsec2.62
+-----MWSB.7.DG.1.P4Gsec2.63
+-----MWSB.7.DG.1.P4Gsec2.64
+-----MWSB.7.DG.1.P4Gsec2.65
+-----MWSB.7.DG.1.P4Gsec2.66
+-----MWSB.7.DG.1.P4Gsec2.67
+-----MWSB.7.DG.1.P4Gsec2.68
+-----MWSB.7.DG.1.P4Gsec2.69
+-----MWSB.7.DG.1.P4Gsec2.70
+-----MWSB.7.DG.1.P4Gsec2.71
+-----MWSB.7.DG.1.P4Gsec2.72
+-----MWSB.7.DG.1.P4Gsec2.73
+-----MWSB.7.DG.1.P4Gsec2.74
+-----MWSB.7.DG.1.P4Gsec2.75
+-----MWSB.7.DG.1.P4Gsec2.76
+-----MWSB.7.DG.1.P4Gsec2.77
+-----MWSB.7.DG.1.P4Gsec2.78
+---MWSB.7.DG.2
+----MWSB.7.DG.2.L4GC
+     [615,UNKNOWN,Lights mechanical Room]
+     [616,437,Lights]
+     [617,438,Lights]
+     [618,13,Lights]
+     [619,14,Lights]
+     [620,15,Lights]
+     [621,41,Lights]
+     [622,439,Lights]
+     [623,UNKNOWN,Lights girls' locker room]
+     [624,UNKNOWN,Lights Equipment Storage]
+     [625,31,Lights]
+     [626,32,Lights]
+     [627,UNKNOWN,Team Room]
+     [628,UNKNOWN,Lights boys' locker room]
+     [629,30,Rm]
+     [630,38,Lights corr]
+     [631,3,Lights corr]
+     [632,49,Lights Arts Lobby]
+     [633,26,Lights Bath]
+     [634,27,Lights Bath]
+     [635,28,Lights Bath]
+     [636,440,Lights Bath]
+     [637,441,Lights Bath]
+     [638,50,Lights]
+     [639,42,Lights]
+     [640,442,Lights]
+     [641,443,Lights]
+     [642,444,Lights]
+     [643,52,Lights classrm]
+     [644,45,Lights Ceramic]
+     [645,46,Lights Art]
+     [646,47,Lights Art]
+     [647,UNKNOWN,Elevator mechanical Room]
+     [648,UNKNOWN,Safari]
+     [649,UNKNOWN,Safari]
+     [650,UNKNOWN,bypass Relays]
+     [651,UNKNOWN,Far Safari lights]
+     [652,UNKNOWN,bypass Relays]
+     [653,UNKNOWN,Near Safari lights]
+     [654,UNKNOWN,bypass Relays]
+     [655,UNKNOWN,LGC via TGC TGC>LGC]
+     [656,UNKNOWN,LGC via TGC TGC>LGC]
+     [657,UNKNOWN,LGC via TGC TGC>LGC]
+-----MWSB.7.DG.2.L4GC.1
+-----MWSB.7.DG.2.L4GC.2
+-----MWSB.7.DG.2.L4GC.3
+-----MWSB.7.DG.2.L4GC.4
+-----MWSB.7.DG.2.L4GC.5
+-----MWSB.7.DG.2.L4GC.6
+-----MWSB.7.DG.2.L4GC.7
+-----MWSB.7.DG.2.L4GC.8
+-----MWSB.7.DG.2.L4GC.9
+-----MWSB.7.DG.2.L4GC.10
+-----MWSB.7.DG.2.L4GC.11
+-----MWSB.7.DG.2.L4GC.12
+-----MWSB.7.DG.2.L4GC.13
+-----MWSB.7.DG.2.L4GC.14
+-----MWSB.7.DG.2.L4GC.15
+-----MWSB.7.DG.2.L4GC.16
+-----MWSB.7.DG.2.L4GC.17
+-----MWSB.7.DG.2.L4GC.18
+-----MWSB.7.DG.2.L4GC.19
+-----MWSB.7.DG.2.L4GC.20
+-----MWSB.7.DG.2.L4GC.21
+-----MWSB.7.DG.2.L4GC.22
+-----MWSB.7.DG.2.L4GC.23
+-----MWSB.7.DG.2.L4GC.24
+-----MWSB.7.DG.2.L4GC.25
+-----MWSB.7.DG.2.L4GC.26
+-----MWSB.7.DG.2.L4GC.27
+-----MWSB.7.DG.2.L4GC.28
+-----MWSB.7.DG.2.L4GC.29
+-----MWSB.7.DG.2.L4GC.30
+-----MWSB.7.DG.2.L4GC.31
+-----MWSB.7.DG.2.L4GC.32
+-----MWSB.7.DG.2.L4GC.33
+-----MWSB.7.DG.2.L4GC.34
+-----MWSB.7.DG.2.L4GC.35
+-----MWSB.7.DG.2.L4GC.36
+-----MWSB.7.DG.2.L4GC.37A
+------MWSB.7.DG.2.L4GC.37A.TGC
+-------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1
+        [658,UNKNOWN,Outlets Gym South wall]
+        [659,UNKNOWN,Folding curtain gym]
+        [660,9,Outlets mechanical room]
+        [661,14,Outlets mechanical room]
+        [662,UNKNOWN,Backboard gym (South)]
+        [663,UNKNOWN,Backboard gym (North)]
+        [664,UNKNOWN,Outlet Stage]
+        [665,15,Outlet equip]
+        [666,9,Outlets corr]
+        [667,UNKNOWN,Outlets storage]
+        [668,7,Outlets corr]
+        [669,UNKNOWN,South parking pole outlets]
+        [670,UNKNOWN,Backboard gym (North)]
+        [671,UNKNOWN,Outlet CUH gym west entry]
+        [672,UNKNOWN,Outlet field house floor]
+        [673,UNKNOWN,Folding curtain gym]
+        [674,30,Outlets boys' locker]
+        [675,UNKNOWN,Folding curtain gym #3]
+        [676,5,Outlets equip]
+        [677,3,Outlets corr]
+        [678,445,Outlets CUH's chair - 10]
+        [679,445,Outlets CUH's chair - 11]
+        [680,UNKNOWN,Scoreboard gym (South)]
+        [681,UNKNOWN,Backboard gym (South)]
+        [682,UNKNOWN,Folding curtain gym]
+        [683,UNKNOWN,Outlets gym (West)]
+        [684,UNKNOWN,Outlets Janitor's closet]
+        [685,UNKNOWN,Backboard gym (South)]
+        [686,UNKNOWN,Outlets gym (North)]
+        [687,446,EWC]
+        [688,447,CUH vest]
+        [689,UNKNOWN,Vending Machine]
+        [690,UNKNOWN,Paddle fans gym]
+        [691,UNKNOWN,Paddle fans gym]
+        [692,UNKNOWN,Paddle fans gym]
+        [693,UNKNOWN,Folding curtain gym]
+        [694,UNKNOWN,Backboard gym (North)]
+        [695,UNKNOWN,Scoreboard gym (North)]
+        [696,UNKNOWN,Batting cage]
+        [697,UNKNOWN,Backboard gym (North)]
+        [698,UNKNOWN,Backboard gym (South)]
+        [699,UNKNOWN,Folding curtain gym #4]
+        [700,UNKNOWN,Backboard gym (South)]
+        [701,UNKNOWN,Folding curtain gym]
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.1
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.2
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.3
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.4
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.5
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.6
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.7
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.8
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.9
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.10
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.11
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.12
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.13
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.14
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.15
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.16
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.17
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.18
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.19
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.20
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.21
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.22
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.23
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.24
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.25
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.26
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.27
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.28
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.29
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.30
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.31
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.32
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.33
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.34
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.35
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.36
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.36A
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.36B
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec1.36C
+-------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2
+        [702,51,Outlets Office Tech]
+        [703,UNKNOWN,Walker duct (Center)]
+        [704,51,Outlets Office Tech]
+        [705,UNKNOWN,Walker duct (North)]
+        [706,52,Outlets]
+        [707,52,Outlets]
+        [708,52,Outlets]
+        [709,45,Outlets ceramic]
+        [710,42,Outlets storage]
+        [711,46,Outlets art]
+        [712,51,Outlets Office Tech]
+        [713,UNKNOWN,North & West]
+        [714,51,Outlets Office Tech]
+        [715,UNKNOWN,Walker duct (South)]
+        [716,47,Outlets art]
+        [717,47,Outlets art]
+        [718,49,Outlets lobby]
+        [719,UNKNOWN,Elev mechanical Room]
+        [720,51,Outlets Office Tech]
+        [721,UNKNOWN,East & South]
+        [722,45,Outlets ceramic]
+        [723,45,Outlets ceramic]
+        [724,50,Outlets key]
+        [725,46,Outlets art]
+        [726,46,Outlets art]
+        [727,50,Outlets key]
+        [728,46,Outlets floor art]
+        [729,46,Outlets floor art]
+        [730,46,Outlets floor art]
+        [731,45,Lights ceramic]
+        [732,45,Lights ceramic]
+        [733,45,Lights ceramic]
+        [734,46,Lights art]
+        [735,46,Lights art]
+        [736,50,Outlets key]
+        [737,46,Lights art]
+        [738,47,Lights art]
+        [739,47,Lights art]
+        [740,47,Lights art]
+        [741,50,Outlets key]
+        [742,47,Lights art]
+        [743,18,Refrigerator training]
+        [744,18,Ice maker Training]
+        [745,18,Refrigerator training]
+        [746,18,Ice maker Training]
+        [747,18,Outlet for whirpool training]
+        [748,22,Hand Dryer]
+        [749,24,Hand Dryer]
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.37
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.38
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.39
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.40
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.41
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.42
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.43
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.44
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.45
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.46
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.47
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.48
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.49
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.50
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.51
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.52
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.53
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.54
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.55
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.56
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.57
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.58
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.59
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.60
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.61
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.62
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.63
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.64
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.65
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.66
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.67
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.68
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.69
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.70
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.71
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.72
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.73
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.74
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.75
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.76
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.77
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec2.78
+-------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3
+        [750,440,Outlets]
+        [751,441,Outlets]
+        [752,440,Outlets]
+        [753,441,Outlets]
+        [754,49,Hand Dryer Men's]
+        [755,50,Outlets key]
+        [756,443,Hand Dryer Women's]
+        [757,448,Hand Dryer bath]
+        [758,443,Hand Dryer bath]
+        [759,3,Water cooler corr]
+        [760,19,Outlets office]
+        [761,UNKNOWN,Outlets Kiln]
+        [762,UNKNOWN,outlets M&W rest]
+        [763,38,Outlets corr]
+        [764,37,Outlets team]
+        [765,32,Outlets store]
+        [766,31,Outlets office]
+        [767,20,Outlets office]
+        [768,39,Outlets team]
+        [769,40,Outlets team]
+        [770,449,Outlets team]
+        [771,450,Outlets Janitors closet]
+        [772,UNKNOWN,Security Panel]
+        [773,35,Outlets team]
+        [774,33,Outlets office]
+        [775,25,Outlets boys shower]
+        [776,23,Outlets girls' shower]
+        [777,22,Outlets girls' toilet]
+        [778,UNKNOWN,Fan F-11]
+        [779,UNKNOWN,Fan F-12]
+        [780,UNKNOWN,Fan F-13]
+        [781,UNKNOWN,Fan F-19]
+        [782,UNKNOWN,Fan F-25]
+        [783,UNKNOWN,Fan F-14]
+        [784,3,Water Cooler corr]
+        [785,UNKNOWN,Kiln]
+        [786,UNKNOWN,Kiln]
+        [787,UNKNOWN,Kiln]
+        [788,UNKNOWN,Kiln]
+        [789,UNKNOWN,Kiln]
+        [790,UNKNOWN,Kiln]
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.79
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.80
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.81
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.82
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.83
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.84
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.85
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.86
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.87
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.88
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.89
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.90
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.91
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.92
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.93
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.94
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.95
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.96
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.97
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.98
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.99
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.100
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.101
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.102
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.103
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.104
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.105
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.106
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.107
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.108
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.109
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.110
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.111
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.112
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.113
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.114
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.115
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.116
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.117
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.118
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.119
+--------MWSB.7.DG.2.L4GC.37A.TGC.LGCsec3.120
+-----MWSB.7.DG.2.L4GC.37B
+-----MWSB.7.DG.2.L4GC.37C
+---MWSB.7.DG.3
+----MWSB.7.DG.3.L4G1sec1
+     [791,451,Lights Exterior gym]
+     [792,UNKNOWN,F-17]
+     [793,451,Lights Exterior gym]
+     [794,UNKNOWN,F-17]
+     [795,UNKNOWN,Lights exterior (East)]
+     [796,UNKNOWN,Lights Soffit]
+     [797,UNKNOWN,F-17]
+     [798,452,Lights exterior]
+     [799,UNKNOWN,Lights tower floods]
+     [800,UNKNOWN,Lights Exterior delivery entrance (West)]
+     [801,453,Lights]
+     [802,106,Lights]
+     [803,340,Lights]
+     [804,106,Lights]
+     [805,340,Lights]
+     [806,UNKNOWN,Lights elevator lobby]
+     [807,UNKNOWN,Lights stairs B1]
+     [808,447,Lights]
+     [809,112,Lights]
+     [810,118,Lights]
+     [811,UNKNOWN,Field House corr]
+     [812,121,Lights]
+     [813,121,Lights lobby]
+     [814,UNKNOWN,Lights tower sconces]
+     [815,119,Lights lobby]
+     [816,UNKNOWN,Lights high bay]
+     [817,UNKNOWN,LG1 Via TGD]
+     [818,UNKNOWN,LG1 Via TGD]
+     [819,UNKNOWN,LG1 Via TGD]
+-----MWSB.7.DG.3.L4G1sec1.1
+-----MWSB.7.DG.3.L4G1sec1.2
+-----MWSB.7.DG.3.L4G1sec1.3
+-----MWSB.7.DG.3.L4G1sec1.4
+-----MWSB.7.DG.3.L4G1sec1.5
+-----MWSB.7.DG.3.L4G1sec1.6
+-----MWSB.7.DG.3.L4G1sec1.7
+-----MWSB.7.DG.3.L4G1sec1.8
+-----MWSB.7.DG.3.L4G1sec1.9
+-----MWSB.7.DG.3.L4G1sec1.10
+-----MWSB.7.DG.3.L4G1sec1.11
+-----MWSB.7.DG.3.L4G1sec1.12
+-----MWSB.7.DG.3.L4G1sec1.13
+-----MWSB.7.DG.3.L4G1sec1.14
+-----MWSB.7.DG.3.L4G1sec1.15
+-----MWSB.7.DG.3.L4G1sec1.16
+-----MWSB.7.DG.3.L4G1sec1.17
+-----MWSB.7.DG.3.L4G1sec1.18
+-----MWSB.7.DG.3.L4G1sec1.19
+-----MWSB.7.DG.3.L4G1sec1.20
+-----MWSB.7.DG.3.L4G1sec1.21
+-----MWSB.7.DG.3.L4G1sec1.22
+-----MWSB.7.DG.3.L4G1sec1.23
+-----MWSB.7.DG.3.L4G1sec1.24
+----MWSB.7.DG.3.L4G1sec2
+     [820,119,Lights lobby]
+     [821,119,Lights lobby]
+     [822,119,Lights vest]
+     [823,109,Lights]
+     [824,110,Lights]
+     [825,116,Lights]
+     [826,113,Lights corr]
+     [827,451,Lights gym dimmer control (reference)]
+     [828,105,Lights gym]
+     [829,105,Lights gym]
+     [830,105,Lights gym]
+     [831,105,Lights gym]
+     [832,105,Lights gym]
+     [833,105,Lights gym]
+     [834,105,Lights gym]
+     [835,105,Lights gym]
+     [836,119,Lights lobby]
+     [837,UNKNOWN,3rd Floor]
+     [838,454,Lights]
+     [839,UNKNOWN,Fan F-17A]
+     [840,114,At jb above ceiling]
+     [841,UNKNOWN,Fan F-17A]
+     [842,451,Lights gym Zone 2 panel 2]
+     [843,UNKNOWN,Fan F-17A]
+     [844,451,Lights gym Zone 1 panel 1]
+     [845,451,Lights gym Zone 2 panel 1]
+     [846,451,Lights gym Zone 4 panel 3]
+     [847,451,Lights gym Zone 3 panel 2]
+     [848,451,Lights gym Zone 3 panel 2]
+     [849,451,Lights gym Zone 1 panel 1]
+     [850,451,Lights gym Zone 4 panel 3]
+     [851,451,Lights gym Zone 1 panel 1]
+     [852,451,Lights gym Zone 4 panel 3 (East court 7/8)]
+     [853,451,Lights gym Zone 2 panel 1]
+     [854,451,Lights gym Zone 3 panel 2]
+-----MWSB.7.DG.3.L4G1sec2.19
+-----MWSB.7.DG.3.L4G1sec2.20
+-----MWSB.7.DG.3.L4G1sec2.21
+-----MWSB.7.DG.3.L4G1sec2.22
+-----MWSB.7.DG.3.L4G1sec2.23
+-----MWSB.7.DG.3.L4G1sec2.24
+-----MWSB.7.DG.3.L4G1sec2.25
+-----MWSB.7.DG.3.L4G1sec2.26
+-----MWSB.7.DG.3.L4G1sec2.27
+-----MWSB.7.DG.3.L4G1sec2.28
+-----MWSB.7.DG.3.L4G1sec2.29
+-----MWSB.7.DG.3.L4G1sec2.30
+-----MWSB.7.DG.3.L4G1sec2.31
+-----MWSB.7.DG.3.L4G1sec2.32
+-----MWSB.7.DG.3.L4G1sec2.33
+-----MWSB.7.DG.3.L4G1sec2.34
+-----MWSB.7.DG.3.L4G1sec2.35
+-----MWSB.7.DG.3.L4G1sec2.36
+-----MWSB.7.DG.3.L4G1sec2.37
+-----MWSB.7.DG.3.L4G1sec2.38
+-----MWSB.7.DG.3.L4G1sec2.39
+-----MWSB.7.DG.3.L4G1sec2.40
+-----MWSB.7.DG.3.L4G1sec2.41
+-----MWSB.7.DG.3.L4G1sec2.42
+-----MWSB.7.DG.3.L4G1sec2.43
+-----MWSB.7.DG.3.L4G1sec2.44
+-----MWSB.7.DG.3.L4G1sec2.45
+-----MWSB.7.DG.3.L4G1sec2.46
+-----MWSB.7.DG.3.L4G1sec2.47
+-----MWSB.7.DG.3.L4G1sec2.48
+-----MWSB.7.DG.3.L4G1sec2.49
+-----MWSB.7.DG.3.L4G1sec2.50
+-----MWSB.7.DG.3.L4G1sec2.51
+-----MWSB.7.DG.3.L4G1sec2.52
+-----MWSB.7.DG.3.L4G1sec2.53
+-----MWSB.7.DG.3.L4G1sec2.54
+---MWSB.7.DG.4
+---MWSB.7.DG.5
+---MWSB.7.DG.6
+---MWSB.7.DG.7
+---MWSB.7.DG.8
+-MWSB.8
+--MWSB.8.DL
+   [992,458,ACCU-2]
+   [993,UNKNOWN,L42D-P4D]
+---MWSB.8.DL.1
+----MWSB.8.DL.1.PK
+     [994,UNKNOWN,Canteen Washer Booster Heater]
+     [995,UNKNOWN,Oven]
+     [996,UNKNOWN,2-Power Wash Sink]
+     [997,UNKNOWN,Oven & Blower (North Hood)]
+     [998,UNKNOWN,Oven & Blower (North Hood)]
+     [999,UNKNOWN,Kettles]
+     [1000,UNKNOWN,Steamer under south hood]
+     [1001,UNKNOWN,Steamer under south hood]
+     [1002,UNKNOWN,TET AIR Oven (??)]
+     [1003,UNKNOWN,Dishwasher and Hot Water BoosterA]
+     [1004,UNKNOWN,Lights Kitchen]
+     [1005,UNKNOWN,Janitor Closet]
+     [1006,UNKNOWN,Even (??) Machine Room]
+-----MWSB.8.DL.1.PK.1
+-----MWSB.8.DL.1.PK.2
+-----MWSB.8.DL.1.PK.3
+-----MWSB.8.DL.1.PK.4
+-----MWSB.8.DL.1.PK.5
+-----MWSB.8.DL.1.PK.6
+-----MWSB.8.DL.1.PK.7
+-----MWSB.8.DL.1.PK.8
+-----MWSB.8.DL.1.PK.9
+-----MWSB.8.DL.1.PK.10
+-----MWSB.8.DL.1.PK.11
+-----MWSB.8.DL.1.PK.12
+------MWSB.8.DL.1.PK.12.TK
+-------MWSB.8.DL.1.PK.12.TK.PKA
+        [1007,UNKNOWN,Receptacle]
+        [1008,UNKNOWN,Receptacle Work Table]
+        [1009,UNKNOWN,Receptacle Slicer]
+        [1010,UNKNOWN,Receptacle Proofer]
+        [1011,UNKNOWN,Lights New Kitchen Director Office (??)]
+        [1012,UNKNOWN,60 Quart Mixer (South)]
+        [1013,UNKNOWN,Receptacle Assistant Director Office (??)]
+        [1014,UNKNOWN,Receptacle Assistant Director Office]
+        [1015,UNKNOWN,Receptacle Director Office]
+        [1016,UNKNOWN,Receptacle Assistant Director Office]
+        [1017,459,Receptacle]
+        [1018,459,Receptacle]
+        [1019,UNKNOWN,(Oven) (??]
+        [1020,460,Receptacle]
+        [1021,UNKNOWN,Fax Machine Dir. Office]
+        [1022,461,Outlets (Center)]
+        [1023,UNKNOWN,Copy Machine Dir. Office]
+        [1024,462,Receptacle]
+        [1025,463,Receptacle Kitchen]
+        [1026,464,Receptacle]
+        [1027,465,Receptacle]
+--------MWSB.8.DL.1.PK.12.TK.PKA.1
+--------MWSB.8.DL.1.PK.12.TK.PKA.2
+--------MWSB.8.DL.1.PK.12.TK.PKA.3
+--------MWSB.8.DL.1.PK.12.TK.PKA.4
+--------MWSB.8.DL.1.PK.12.TK.PKA.5
+--------MWSB.8.DL.1.PK.12.TK.PKA.6
+--------MWSB.8.DL.1.PK.12.TK.PKA.7
+--------MWSB.8.DL.1.PK.12.TK.PKA.8
+--------MWSB.8.DL.1.PK.12.TK.PKA.9
+--------MWSB.8.DL.1.PK.12.TK.PKA.10
+--------MWSB.8.DL.1.PK.12.TK.PKA.11
+--------MWSB.8.DL.1.PK.12.TK.PKA.12
+--------MWSB.8.DL.1.PK.12.TK.PKA.13
+--------MWSB.8.DL.1.PK.12.TK.PKA.14
+--------MWSB.8.DL.1.PK.12.TK.PKA.15
+--------MWSB.8.DL.1.PK.12.TK.PKA.16
+--------MWSB.8.DL.1.PK.12.TK.PKA.17
+--------MWSB.8.DL.1.PK.12.TK.PKA.18
+--------MWSB.8.DL.1.PK.12.TK.PKA.19
+--------MWSB.8.DL.1.PK.12.TK.PKA.20
+--------MWSB.8.DL.1.PK.12.TK.PKA.21
+--------MWSB.8.DL.1.PK.12.TK.PKA.22
+--------MWSB.8.DL.1.PK.12.TK.PKA.23
+--------MWSB.8.DL.1.PK.12.TK.PKA.24
+--------MWSB.8.DL.1.PK.12.TK.PKA.25
+--------MWSB.8.DL.1.PK.12.TK.PKA.26
+--------MWSB.8.DL.1.PK.12.TK.PKA.27
+--------MWSB.8.DL.1.PK.12.TK.PKA.28
+--------MWSB.8.DL.1.PK.12.TK.PKA.29
+--------MWSB.8.DL.1.PK.12.TK.PKA.30
+--------MWSB.8.DL.1.PK.12.TK.PKA.31
+--------MWSB.8.DL.1.PK.12.TK.PKA.32
+--------MWSB.8.DL.1.PK.12.TK.PKA.33
+--------MWSB.8.DL.1.PK.12.TK.PKA.34
+--------MWSB.8.DL.1.PK.12.TK.PKA.35
+--------MWSB.8.DL.1.PK.12.TK.PKA.36
+--------MWSB.8.DL.1.PK.12.TK.PKA.37
+--------MWSB.8.DL.1.PK.12.TK.PKA.38
+--------MWSB.8.DL.1.PK.12.TK.PKA.39
+--------MWSB.8.DL.1.PK.12.TK.PKA.40
+--------MWSB.8.DL.1.PK.12.TK.PKA.41
+--------MWSB.8.DL.1.PK.12.TK.PKA.42
+-----MWSB.8.DL.1.PK.13
+-----MWSB.8.DL.1.PK.14
+-----MWSB.8.DL.1.PK.15
+---MWSB.8.DL.2
+---MWSB.8.DL.3
+----MWSB.8.DL.3.L42D
+     [1028,298,Lights]
+     [1029,299,Lights]
+     [1030,300,Lights]
+     [1031,302,Lights]
+     [1032,380,Lights]
+     [1033,317,Lights]
+     [1034,316,Lights]
+     [1035,314,Lights]
+     [1036,466,Lights]
+     [1037,382,Lights]
+     [1038,326,Lights]
+     [1039,384,Lights]
+     [1040,324,Lights]
+     [1041,323,Lights]
+     [1042,322,Lights]
+     [1043,321,Lights]
+     [1044,320,Lights]
+     [1045,303,Lights corr]
+     [1046,305,Lights corr]
+     [1047,467,Lights corr]
+     [1048,303,Lights (night) corr]
+     [1049,305,Lights (night) corr]
+     [1050,467,Lights (night) corr]
+     [1051,UNKNOWN,Switched]
+     [1052,UNKNOWN,L2D via T2D]
+     [1053,UNKNOWN,L2D via T2D]
+     [1054,UNKNOWN,L2D via T2D]
+-----MWSB.8.DL.3.L42D.1
+-----MWSB.8.DL.3.L42D.2
+-----MWSB.8.DL.3.L42D.3
+-----MWSB.8.DL.3.L42D.4
+-----MWSB.8.DL.3.L42D.5
+-----MWSB.8.DL.3.L42D.6
+-----MWSB.8.DL.3.L42D.7
+-----MWSB.8.DL.3.L42D.8
+-----MWSB.8.DL.3.L42D.9
+-----MWSB.8.DL.3.L42D.10
+-----MWSB.8.DL.3.L42D.11
+-----MWSB.8.DL.3.L42D.12
+-----MWSB.8.DL.3.L42D.13
+-----MWSB.8.DL.3.L42D.14
+-----MWSB.8.DL.3.L42D.15
+-----MWSB.8.DL.3.L42D.16
+-----MWSB.8.DL.3.L42D.17
+-----MWSB.8.DL.3.L42D.18
+-----MWSB.8.DL.3.L42D.19
+-----MWSB.8.DL.3.L42D.20
+-----MWSB.8.DL.3.L42D.21
+-----MWSB.8.DL.3.L42D.22
+-----MWSB.8.DL.3.L42D.23
+-----MWSB.8.DL.3.L42D.24
+-----MWSB.8.DL.3.L42D.25
+-----MWSB.8.DL.3.L42D.26
+-----MWSB.8.DL.3.L42D.27
+-----MWSB.8.DL.3.L42D.28
+-----MWSB.8.DL.3.L42D.29
+------MWSB.8.DL.3.L42D.29.T2D
+-------MWSB.8.DL.3.L42D.29.T2D.L2D
+        [1055,UNKNOWN,? Science Wing]
+        [1056,UNKNOWN,Water Cooler Outlets]
+        [1057,424,corr]
+        [1058,UNKNOWN,Stairs E2]
+        [1059,319,Hand Dryer]
+        [1060,317,Outlets]
+        [1061,317,Outlets]
+        [1062,317,Outlets]
+        [1063,316,Outlets]
+        [1064,316,Outlets]
+        [1065,316,Outlets]
+        [1066,315,Outlets]
+        [1067,382,Outlets]
+        [1068,314,Outlets]
+        [1069,466,Outlets]
+        [1070,326,Outlets]
+        [1071,385,Fan F-43]
+        [1072,302,Outlets]
+        [1073,257,Outlets]
+        [1074,258,Outlets]
+        [1075,380,Outlets]
+        [1076,305,Outlets]
+        [1077,301,Hand Dryer]
+        [1078,322,Distiller Controls]
+        [1079,322,Distiller Controls]
+        [1080,322,Distiller Controls]
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.1
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.2
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.3
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.4
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.5
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.6
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.7
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.8
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.9
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.10
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.11
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.12
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.13
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.14
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.15
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.16
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.17
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.18
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.19
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.20
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.21
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.22
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.23
+--------MWSB.8.DL.3.L42D.29.T2D.L2D.24
+-----MWSB.8.DL.3.L42D.30
+-----MWSB.8.DL.3.L42D.31
+-----MWSB.8.DL.3.L42D.32
+-----MWSB.8.DL.3.L42D.33
+-----MWSB.8.DL.3.L42D.34
+-----MWSB.8.DL.3.L42D.35
+-----MWSB.8.DL.3.L42D.36
+-----MWSB.8.DL.3.L42D.37
+-----MWSB.8.DL.3.L42D.38
+-----MWSB.8.DL.3.L42D.39
+-----MWSB.8.DL.3.L42D.40
+-----MWSB.8.DL.3.L42D.41
+-----MWSB.8.DL.3.L42D.42
+---MWSB.8.DL.4
+----MWSB.8.DL.4.L4G
+     [1081,65,Lights]
+     [1082,413,Lights]
+     [1083,UNKNOWN,Ramp]
+     [1084,UNKNOWN,bypass Relay]
+     [1085,UNKNOWN,Mezzanine Lights]
+     [1086,411,Lights]
+     [1087,56,Lights]
+     [1088,57,Lights]
+     [1089,58,Lights]
+     [1090,59,Lights]
+     [1091,60,Lights]
+     [1092,61,Lights]
+     [1093,64,Lights]
+     [1094,334,Lights]
+     [1095,69,Lights]
+     [1096,70,Lights]
+     [1097,84,Lights cafeteria]
+     [1098,55,Lights]
+     [1099,84,Lights cafeteria]
+     [1100,84,Lights cafeteria]
+     [1101,84,Lights cafeteria]
+     [1102,84,Lights cafeteria]
+     [1103,UNKNOWN,Timeclock bypass Relqay]
+     [1104,UNKNOWN,Exterior Egress Lights]
+     [1105,54,Lights]
+     [1106,62,Lights]
+     [1107,63,Lights]
+     [1108,65,Lights]
+     [1109,83,Lights]
+     [1110,UNKNOWN,Bypass Relay]
+     [1111,UNKNOWN,Hall Lights]
+     [1112,UNKNOWN,Lights Crawlspace]
+     [1113,UNKNOWN,Lights Crawlspace]
+     [1114,UNKNOWN,Lights Crawlspace]
+     [1115,UNKNOWN,Bypass Relay]
+     [1116,468,Lights]
+     [1117,458,Fan F-40]
+     [1118,385,Fan F-40]
+     [1119,385,Fan F-40]
+     [1120,385,Fan F-49]
+     [1121,385,Fan F-49]
+     [1122,385,Fan F-49]
+     [1123,UNKNOWN,LG via TG]
+     [1124,UNKNOWN,LG via TG]
+     [1125,UNKNOWN,LG via TG]
+-----MWSB.8.DL.4.L4G.1
+-----MWSB.8.DL.4.L4G.2
+-----MWSB.8.DL.4.L4G.3
+-----MWSB.8.DL.4.L4G.4
+-----MWSB.8.DL.4.L4G.5
+-----MWSB.8.DL.4.L4G.6
+-----MWSB.8.DL.4.L4G.7
+-----MWSB.8.DL.4.L4G.8
+-----MWSB.8.DL.4.L4G.9
+-----MWSB.8.DL.4.L4G.10
+-----MWSB.8.DL.4.L4G.11
+-----MWSB.8.DL.4.L4G.12
+-----MWSB.8.DL.4.L4G.13
+-----MWSB.8.DL.4.L4G.14
+-----MWSB.8.DL.4.L4G.15
+-----MWSB.8.DL.4.L4G.16
+-----MWSB.8.DL.4.L4G.17
+-----MWSB.8.DL.4.L4G.18
+-----MWSB.8.DL.4.L4G.19
+-----MWSB.8.DL.4.L4G.20
+-----MWSB.8.DL.4.L4G.21
+-----MWSB.8.DL.4.L4G.22
+-----MWSB.8.DL.4.L4G.23
+-----MWSB.8.DL.4.L4G.24
+-----MWSB.8.DL.4.L4G.25
+-----MWSB.8.DL.4.L4G.26
+-----MWSB.8.DL.4.L4G.27
+-----MWSB.8.DL.4.L4G.28
+-----MWSB.8.DL.4.L4G.29
+-----MWSB.8.DL.4.L4G.30
+-----MWSB.8.DL.4.L4G.31
+-----MWSB.8.DL.4.L4G.32
+-----MWSB.8.DL.4.L4G.33
+-----MWSB.8.DL.4.L4G.34
+------MWSB.8.DL.4.L4G.34.TG
+-------MWSB.8.DL.4.L4G.34.TG.LGsec1
+        [1126,385,Fan F-53]
+        [1127,385,Fan F-59]
+        [1128,385,Fan F-60]
+        [1129,84,Destratification fans]
+        [1130,UNKNOWN,cafeteria]
+        [1131,57,Outlets]
+        [1132,57,Outlets]
+        [1133,57,Outlets]
+        [1134,UNKNOWN,CUH's cafeteria]
+        [1135,UNKNOWN,Water Coolers]
+        [1136,UNKNOWN,cafeteria]
+        [1137,84,Outlets]
+        [1138,UNKNOWN,CUH's cafeteria]
+        [1139,57,Outlets]
+        [1140,84,Unit Ventilators (UV)]
+        [1141,82,Hand Dryer]
+        [1142,82,Outlets]
+        [1143,80,Outlets]
+        [1144,55,Outlets]
+        [1145,83,Outlets]
+        [1146,63,Outlets]
+        [1147,55,Outlets]
+        [1148,55,Outlets]
+        [1149,84,Outlets]
+        [1150,84,Outlets]
+        [1151,84,Outlets]
+        [1152,427,Outlets Mezzanine]
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.1
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.2
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.3
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.4
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.5
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.6
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.7
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.8
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.9
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.10
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.11
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.12
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.13
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.14
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.15
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.16
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.17
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.18
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.19
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.20
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.21
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.22
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.23
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.24
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.25
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.26
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.27
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.28
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.29
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.30
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.A
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.B
+--------MWSB.8.DL.4.L4G.34.TG.LGsec1.C
+-------MWSB.8.DL.4.L4G.34.TG.LGsec2
+        [1153,61,Outlets]
+        [1154,332,Outlets]
+        [1155,56,Outlets]
+        [1156,64,Outlets]
+        [1157,66,Outlets]
+        [1158,67,Outlets]
+        [1159,59,Outlets]
+        [1160,60,Outlets]
+        [1161,61,Outlets]
+        [1162,334,Outlets]
+        [1163,69,Outlets]
+        [1164,70,Outlets]
+        [1165,73,Outlets]
+        [1166,74,Outlets]
+        [1167,56,Outlets darkroom]
+        [1168,56,Outlets darkroom]
+        [1169,56,Outlets darkroom]
+        [1170,56,Outlets darkroom]
+        [1171,56,Outlets darkroom]
+        [1172,56,Outlets darkroom]
+        [1173,56,Outlets darkroom]
+        [1174,56,Outlets darkroom]
+        [1175,56,Outlets darkroom]
+        [1176,56,Outlets darkroom]
+        [1177,56,Outlets darkroom]
+        [1178,56,Outlets darkroom]
+        [1179,54,Outlets corr]
+        [1180,27,Outlets corr]
+        [1181,56,Safelights]
+        [1182,58,Outlets]
+        [1183,58,Outlets]
+        [1184,UNKNOWN,Trash Compactor]
+        [1185,UNKNOWN,Kitchen]
+        [1186,58,Outlets]
+        [1187,UNKNOWN,Fan F-63]
+        [1188,UNKNOWN,Storage Area]
+        [1189,58,Outlets]
+        [1190,UNKNOWN,Fan F-56]
+        [1191,UNKNOWN,Electric room]
+        [1192,58,Outlets]
+        [1193,469,Fan F-10]
+        [1194,469,Fan F-66]
+        [1195,470,Bryant A/C Unit]
+        [1196,71,]
+        [1197,471,Bryant A/C Unit]
+        [1198,71,]
+        [1199,472,Bryant A/C Unit]
+        [1200,71,]
+        [1201,UNKNOWN,Storage condensation Pump]
+        [1202,68,]
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.31
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.32
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.33
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.34
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.35
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.36
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.37
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.38
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.39
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.40
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.41
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.42
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.43
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.44
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.45
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.46
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.47
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.48
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.49
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.50
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.51
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.52
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.53
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.54
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.55
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.56
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.57
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.58
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.59
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.60
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.61
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.62
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.63
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.64
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.65
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.66
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.67
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.68
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.69
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.70
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.71
+--------MWSB.8.DL.4.L4G.34.TG.LGsec2.72
+-----MWSB.8.DL.4.L4G.35
+-----MWSB.8.DL.4.L4G.36
+-----MWSB.8.DL.4.L4G.37
+-----MWSB.8.DL.4.L4G.38
+-----MWSB.8.DL.4.L4G.39
+-----MWSB.8.DL.4.L4G.40
+-----MWSB.8.DL.4.L4G.41
+-----MWSB.8.DL.4.L4G.42
+---MWSB.8.DL.5
+    [1203,UNKNOWN,C4 RM4031]
+    [1204,UNKNOWN,368]
+    [1205,UNKNOWN,DL#5 > L42B]
+----MWSB.8.DL.5.L42B
+     [1206,367,Lights]
+     [1207,271,Lights]
+     [1208,274,Lights]
+     [1209,369,Lights]
+     [1210,275,Lights]
+     [1211,276,Lights]
+     [1212,273,Lights]
+     [1213,272,Lights]
+     [1214,269,Lights]
+     [1215,241,Lights]
+     [1216,242,Lights]
+     [1217,270,Lights]
+     [1218,243,Lights]
+     [1219,261,Lights]
+     [1220,262,Lights]
+     [1221,263,Lights]
+     [1222,264,Lights]
+     [1223,265,Lights]
+     [1224,UNKNOWN,AHU-8]
+     [1225,UNKNOWN,Fan F-6]
+     [1226,UNKNOWN,AHU-8]
+     [1227,UNKNOWN,Fan F-6]
+     [1228,UNKNOWN,AHU-8]
+     [1229,UNKNOWN,Fan F-6]
+     [1230,UNKNOWN,L2B via T2B]
+     [1231,UNKNOWN,DL#5 > L42B > T2B > L2B]
+     [1232,UNKNOWN,L2B via T2B]
+     [1233,UNKNOWN,DL#5 > L42B > T2B > L2B]
+     [1234,UNKNOWN,L2B via T2B]
+     [1235,UNKNOWN,DL#5 > L42B > T2B > L2B]
+-----MWSB.8.DL.5.L42B.1
+-----MWSB.8.DL.5.L42B.2
+-----MWSB.8.DL.5.L42B.3
+-----MWSB.8.DL.5.L42B.4
+-----MWSB.8.DL.5.L42B.5
+-----MWSB.8.DL.5.L42B.6
+-----MWSB.8.DL.5.L42B.7
+-----MWSB.8.DL.5.L42B.8
+-----MWSB.8.DL.5.L42B.9
+-----MWSB.8.DL.5.L42B.10
+-----MWSB.8.DL.5.L42B.11
+-----MWSB.8.DL.5.L42B.12
+-----MWSB.8.DL.5.L42B.13
+------MWSB.8.DL.5.L42B.13.T1B
+-------MWSB.8.DL.5.L42B.13.T1B.L2B
+        [1236,378,Exhaust Fan]
+        [1237,243,Outlet]
+        [1238,243,Outlet]
+        [1239,243,Outlet]
+        [1240,242,Outlet]
+        [1241,242,Outlet]
+        [1242,242,Outlet]
+        [1243,241,Outlet]
+        [1244,241,Outlet]
+        [1245,241,Outlet]
+        [1246,256,Outlets]
+        [1247,257,Outlets]
+        [1248,256,CWC]
+        [1249,UNKNOWN,corridor]
+        [1250,269,Outlets]
+        [1251,269,Outlets]
+        [1252,269,Outlets]
+        [1253,270,Outlets]
+        [1254,270,Outlets]
+        [1255,270,Outlets]
+        [1256,367,Outlets]
+        [1257,271,Outlets]
+        [1258,272,Outlets]
+        [1259,272,Outlets]
+        [1260,272,Outlets]
+        [1261,273,Outlets]
+        [1262,273,Outlets]
+        [1263,273,Outlets]
+        [1264,274,Outlets]
+        [1265,275,Outlets]
+        [1266,379,Copy Machine]
+        [1267,274,Outlets]
+        [1268,369,Outlets]
+        [1269,379,Copy Machine]
+        [1270,276,Outlets]
+        [1271,276,Outlets]
+        [1272,276,Outlets]
+        [1273,275,Hand Dryer]
+        [1274,268,Outlets]
+        [1275,UNKNOWN,Roof Fan F-47]
+        [1276,385,Fan F-47]
+        [1277,385,Fan F-47A]
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.1
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.2
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.3
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.4
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.5
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.6
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.7
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.8
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.9
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.10
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.11
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.12
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.13
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.14
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.15
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.16
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.17
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.18
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.19
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.20
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.21
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.22
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.23
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.24
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.25
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.26
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.27
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.28
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.29
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.30
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.31
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.32
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.33
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.34
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.35
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.36
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.37
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.38
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.39
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.40
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.41
+--------MWSB.8.DL.5.L42B.13.T1B.L2B.42
+-----MWSB.8.DL.5.L42B.14
+-----MWSB.8.DL.5.L42B.15
+-----MWSB.8.DL.5.L42B.16
+-----MWSB.8.DL.5.L42B.17
+-----MWSB.8.DL.5.L42B.18
+-----MWSB.8.DL.5.L42B.19
+-----MWSB.8.DL.5.L42B.20
+-----MWSB.8.DL.5.L42B.21
+-----MWSB.8.DL.5.L42B.22
+-----MWSB.8.DL.5.L42B.23
+-----MWSB.8.DL.5.L42B.24
+-----MWSB.8.DL.5.L42B.25
+-----MWSB.8.DL.5.L42B.26
+-----MWSB.8.DL.5.L42B.27
+-----MWSB.8.DL.5.L42B.28
+-----MWSB.8.DL.5.L42B.29
+-----MWSB.8.DL.5.L42B.30
+-----MWSB.8.DL.5.L42B.31
+-----MWSB.8.DL.5.L42B.32
+-----MWSB.8.DL.5.L42B.33
+-----MWSB.8.DL.5.L42B.34
+-----MWSB.8.DL.5.L42B.35
+-----MWSB.8.DL.5.L42B.36
+-----MWSB.8.DL.5.L42B.37
+-----MWSB.8.DL.5.L42B.38
+-----MWSB.8.DL.5.L42B.39
+-----MWSB.8.DL.5.L42B.40
+-----MWSB.8.DL.5.L42B.41
+-----MWSB.8.DL.5.L42B.42
+---MWSB.8.DL.6
+---MWSB.8.DL.7
+----MWSB.8.DL.7.L41D
+     [1278,229,Lights]
+     [1279,231,Lights]
+     [1280,230,Lights]
+     [1281,232,Lights]
+     [1282,233,Lights]
+     [1283,225,Lights]
+     [1284,226,Lights]
+     [1285,227,Lights]
+     [1286,214,Lights]
+     [1287,215,Lights]
+     [1288,473,Lights]
+     [1289,211,Lights]
+     [1290,362,Lights]
+     [1291,363,Lights]
+     [1292,210,Lights]
+     [1293,209,Lights]
+     [1294,217,Lights corr]
+     [1295,218,Lights corr]
+     [1296,239,Lights corr]
+     [1297,218,Nightlights Corr]
+     [1298,239,Nightlights Corr]
+     [1299,UNKNOWN,Courtyard exterior]
+     [1300,UNKNOWN,Timeclock]
+     [1301,385,Fan F-41]
+     [1302,385,Fan F-41]
+     [1303,385,Fan F-41]
+     [1304,UNKNOWN,L1D via T1D]
+     [1305,UNKNOWN,L1D via T1D]
+     [1306,UNKNOWN,L1D via T1D]
+-----MWSB.8.DL.7.L41D.1
+-----MWSB.8.DL.7.L41D.2
+-----MWSB.8.DL.7.L41D.3
+-----MWSB.8.DL.7.L41D.4
+-----MWSB.8.DL.7.L41D.5
+-----MWSB.8.DL.7.L41D.6
+-----MWSB.8.DL.7.L41D.7
+-----MWSB.8.DL.7.L41D.8
+-----MWSB.8.DL.7.L41D.9
+-----MWSB.8.DL.7.L41D.10
+-----MWSB.8.DL.7.L41D.11
+-----MWSB.8.DL.7.L41D.12
+-----MWSB.8.DL.7.L41D.13
+-----MWSB.8.DL.7.L41D.14
+-----MWSB.8.DL.7.L41D.15
+-----MWSB.8.DL.7.L41D.16
+-----MWSB.8.DL.7.L41D.17
+-----MWSB.8.DL.7.L41D.18
+-----MWSB.8.DL.7.L41D.19
+-----MWSB.8.DL.7.L41D.20
+-----MWSB.8.DL.7.L41D.21
+-----MWSB.8.DL.7.L41D.22
+-----MWSB.8.DL.7.L41D.23
+-----MWSB.8.DL.7.L41D.24
+-----MWSB.8.DL.7.L41D.25
+------MWSB.8.DL.7.L41D.25.T1D
+-------MWSB.8.DL.7.L41D.25.T1D.L1D
+        [1307,208,Outlets]
+        [1308,208,Outlets]
+        [1309,208,Outlets]
+        [1310,209,Outlets]
+        [1311,209,Outlets]
+        [1312,209,Outlets]
+        [1313,210,Outlets]
+        [1314,210,]
+        [1315,210,Outlets]
+        [1316,210,]
+        [1317,210,Outlets]
+        [1318,210,]
+        [1319,211,Outlets]
+        [1320,363,Outlets]
+        [1321,362,Outlets]
+        [1322,362,Outlets]
+        [1323,363,Outlets]
+        [1324,UNKNOWN,Hand Dryer RM3106]
+        [1325,216,]
+        [1326,473,Outlets]
+        [1327,473,Outlets]
+        [1328,473,Outlets]
+        [1329,214,Outlets]
+        [1330,213,Outlets]
+        [1331,239,Outlets corr]
+        [1332,218,Outlets corr]
+        [1333,147,Water Cooler corr]
+        [1334,149,Outlets]
+        [1335,213,Outlets]
+        [1336,149,Outlets]
+        [1337,149,Outlets]
+        [1338,148,Outlets]
+        [1339,148,Outlets]
+        [1340,148,Outlets]
+        [1341,147,Outlets corr]
+        [1342,216,Bathroom]
+        [1343,474,Storage]
+        [1344,UNKNOWN,Acid neutralization system]
+        [1345,146,Lights]
+        [1346,UNKNOWN,Vestibule]
+        [1347,475,Lights]
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.1
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.2
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.3
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.4
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.5
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.6
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.7
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.8
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.9
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.10
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.11
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.12
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.13
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.14
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.15
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.16
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.17
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.18
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.19
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.20
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.21
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.22
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.23
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.24
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.25
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.26
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.27
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.28
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.29
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.30
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.31
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.32
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.33
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.34
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.35
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.36
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.37
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.38
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.39
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.40
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.41
+--------MWSB.8.DL.7.L41D.25.T1D.L1D.42
+-----MWSB.8.DL.7.L41D.26
+-----MWSB.8.DL.7.L41D.27
+-----MWSB.8.DL.7.L41D.28
+-----MWSB.8.DL.7.L41D.29
+-----MWSB.8.DL.7.L41D.30
+---MWSB.8.DL.8
+----MWSB.8.DL.8.L42
+     [1348,310,Lights]
+     [1349,309,Lights]
+     [1350,325,Lights]
+     [1351,327,Lights]
+     [1352,311,Lights]
+     [1353,312,Lights]
+     [1354,328,Lights]
+     [1355,329,Lights]
+     [1356,330,Lights]
+     [1357,250,Lights]
+     [1358,251,Lights]
+     [1359,252,Lights]
+     [1360,254,Lights]
+     [1361,365,Lights]
+     [1362,245,Lights]
+     [1363,246,Lights]
+     [1364,247,Lights]
+     [1365,306,Night Lights corr]
+     [1366,424,Night Lights corr]
+     [1367,306,Night Lights corr]
+     [1368,424,Night Lights corr]
+     [1369,248,Night Lights corr]
+     [1370,307,Night Lights corr]
+     [1371,248,Night Lights corr]
+     [1372,307,Night Lights corr]
+     [1373,244,Lights]
+     [1374,253,Lights]
+     [1375,255,Lights]
+     [1376,476,Lights]
+     [1377,477,Lights]
+     [1378,478,Light]
+     [1379,UNKNOWN,Teachers entrance]
+     [1380,UNKNOWN,Photosensor Controlled]
+     [1381,UNKNOWN,Fan F-46]
+     [1382,UNKNOWN,Fan F-46]
+     [1383,UNKNOWN,Fan F-46]
+     [1384,UNKNOWN,L2 via T2]
+     [1385,UNKNOWN,L2 via T2]
+     [1386,UNKNOWN,L2 via T2]
+-----MWSB.8.DL.8.L42.1
+-----MWSB.8.DL.8.L42.2
+-----MWSB.8.DL.8.L42.3
+-----MWSB.8.DL.8.L42.4
+-----MWSB.8.DL.8.L42.5
+-----MWSB.8.DL.8.L42.6
+-----MWSB.8.DL.8.L42.7
+-----MWSB.8.DL.8.L42.8
+-----MWSB.8.DL.8.L42.9
+-----MWSB.8.DL.8.L42.10
+-----MWSB.8.DL.8.L42.11
+-----MWSB.8.DL.8.L42.12
+-----MWSB.8.DL.8.L42.13
+-----MWSB.8.DL.8.L42.14
+-----MWSB.8.DL.8.L42.15
+-----MWSB.8.DL.8.L42.16
+-----MWSB.8.DL.8.L42.17
+-----MWSB.8.DL.8.L42.18
+-----MWSB.8.DL.8.L42.19
+-----MWSB.8.DL.8.L42.20
+-----MWSB.8.DL.8.L42.21
+-----MWSB.8.DL.8.L42.22
+-----MWSB.8.DL.8.L42.23
+-----MWSB.8.DL.8.L42.24
+-----MWSB.8.DL.8.L42.25
+-----MWSB.8.DL.8.L42.26
+-----MWSB.8.DL.8.L42.27
+-----MWSB.8.DL.8.L42.28
+-----MWSB.8.DL.8.L42.29
+-----MWSB.8.DL.8.L42.30
+-----MWSB.8.DL.8.L42.31
+-----MWSB.8.DL.8.L42.32
+-----MWSB.8.DL.8.L42.33
+-----MWSB.8.DL.8.L42.34
+------MWSB.8.DL.8.L42.34.T2
+-------MWSB.8.DL.8.L42.34.T2.L2
+        [1387,311,Outlets]
+        [1388,311,Outlets]
+        [1389,307,Outlets corr]
+        [1390,308,Outlet water cooler corr]
+        [1391,UNKNOWN,Hand Dryer RM4073]
+        [1392,309,Outlets]
+        [1393,309,Outlets]
+        [1394,309,Outlets]
+        [1395,310,Outlets]
+        [1396,310,Outlets]
+        [1397,310,Outlets]
+        [1398,310,Outlets Center bench (South)]
+        [1399,310,Outlets Center bench (North)]
+        [1400,311,Outlets]
+        [1401,479,Outlets]
+        [1402,312,Outlets]
+        [1403,385,Condenser for Tutor Room]
+        [1404,UNKNOWN,Roof Fan F-44]
+        [1405,385,Fan F-44]
+        [1406,458,Outlets ACCU4]
+        [1407,458,Outlets ACCU5]
+        [1408,385,Condenser for Tutor Room]
+--------MWSB.8.DL.8.L42.34.T2.L2.1
+--------MWSB.8.DL.8.L42.34.T2.L2.2
+--------MWSB.8.DL.8.L42.34.T2.L2.3
+--------MWSB.8.DL.8.L42.34.T2.L2.4
+--------MWSB.8.DL.8.L42.34.T2.L2.5
+--------MWSB.8.DL.8.L42.34.T2.L2.6
+--------MWSB.8.DL.8.L42.34.T2.L2.7
+--------MWSB.8.DL.8.L42.34.T2.L2.8
+--------MWSB.8.DL.8.L42.34.T2.L2.9
+--------MWSB.8.DL.8.L42.34.T2.L2.10
+--------MWSB.8.DL.8.L42.34.T2.L2.11
+--------MWSB.8.DL.8.L42.34.T2.L2.12
+--------MWSB.8.DL.8.L42.34.T2.L2.13
+--------MWSB.8.DL.8.L42.34.T2.L2.14
+--------MWSB.8.DL.8.L42.34.T2.L2.15
+--------MWSB.8.DL.8.L42.34.T2.L2.16
+--------MWSB.8.DL.8.L42.34.T2.L2.17
+--------MWSB.8.DL.8.L42.34.T2.L2.18
+--------MWSB.8.DL.8.L42.34.T2.L2.19
+--------MWSB.8.DL.8.L42.34.T2.L2.20
+--------MWSB.8.DL.8.L42.34.T2.L2.21
+--------MWSB.8.DL.8.L42.34.T2.L2.22
+--------MWSB.8.DL.8.L42.34.T2.L2.23
+--------MWSB.8.DL.8.L42.34.T2.L2.24
+-----MWSB.8.DL.8.L42.35
+-----MWSB.8.DL.8.L42.36
+-----MWSB.8.DL.8.L42.37
+-----MWSB.8.DL.8.L42.38
+-----MWSB.8.DL.8.L42.39
+-----MWSB.8.DL.8.L42.40
+-----MWSB.8.DL.8.L42.41
+-----MWSB.8.DL.8.L42.42
+---MWSB.8.DL.9
+----MWSB.8.DL.9.L4GB
+     [1409,50,Lights]
+     [1410,51,Lights]
+     [1411,84,Lights cafeteria]
+     [1412,84,Lights cafeteria]
+     [1413,87,Lights cafeteria]
+     [1414,480,Lights cafeteria]
+     [1415,338,Lights cafeteria]
+     [1416,339,Lights cafeteria]
+     [1417,74,Lights]
+     [1418,75,Lights]
+     [1419,77,Lights]
+     [1420,78,Lights]
+     [1421,85,Lights]
+     [1422,481,Lights]
+     [1423,482,Lights Small office]
+     [1424,94,Lights]
+     [1425,UNKNOWN,Roof Fan F-50]
+     [1426,UNKNOWN,Roof Fan F-50]
+     [1427,UNKNOWN,Roof Fan F-50]
+     [1428,UNKNOWN,LGB via TGB]
+     [1429,UNKNOWN,LGB via TGB]
+     [1430,UNKNOWN,LGB via TGB]
+-----MWSB.8.DL.9.L4GB.1
+-----MWSB.8.DL.9.L4GB.2
+-----MWSB.8.DL.9.L4GB.3
+-----MWSB.8.DL.9.L4GB.4
+-----MWSB.8.DL.9.L4GB.5
+-----MWSB.8.DL.9.L4GB.6
+-----MWSB.8.DL.9.L4GB.7
+-----MWSB.8.DL.9.L4GB.8
+-----MWSB.8.DL.9.L4GB.9
+-----MWSB.8.DL.9.L4GB.10
+-----MWSB.8.DL.9.L4GB.11
+-----MWSB.8.DL.9.L4GB.12
+-----MWSB.8.DL.9.L4GB.13
+-----MWSB.8.DL.9.L4GB.14
+-----MWSB.8.DL.9.L4GB.15
+-----MWSB.8.DL.9.L4GB.16
+-----MWSB.8.DL.9.L4GB.17
+-----MWSB.8.DL.9.L4GB.18
+-----MWSB.8.DL.9.L4GB.19
+-----MWSB.8.DL.9.L4GB.20
+-----MWSB.8.DL.9.L4GB.21
+-----MWSB.8.DL.9.L4GB.22
+-----MWSB.8.DL.9.L4GB.23
+------MWSB.8.DL.9.L4GB.23.TGB
+-------MWSB.8.DL.9.L4GB.23.TGB.LGB
+        [1431,385,Fan F-51]
+        [1432,385,Fan F-54]
+        [1433,385,Fan F-55]
+        [1434,100,Outlets]
+        [1435,100,Outlets corr]
+        [1436,104,Outlets Tele]
+        [1437,96,Outlets]
+        [1438,96,Outlets]
+        [1439,96,Outlets]
+        [1440,94,Outlets]
+        [1441,94,Outlets]
+        [1442,97,Outlets]
+        [1443,77,Outlets]
+        [1444,78,Outlets]
+        [1445,75,Outlets]
+        [1446,76,Outlets]
+        [1447,90,Outlets]
+        [1448,92,Outlets]
+        [1449,337,Outlets]
+        [1450,95,Outlets]
+        [1451,90,Hand Dryer]
+        [1452,87,Outlets]
+        [1453,338,Outlets]
+        [1454,339,Outlets]
+        [1455,89,Outlets]
+        [1456,89,Outlets]
+        [1457,88,Outlets]
+        [1458,89,Outlets]
+        [1459,88,Outlets]
+        [1460,480,Outlets]
+        [1461,480,Outlets]
+        [1462,84,Outlets]
+        [1463,UNKNOWN,Cafe North]
+        [1464,84,Uni Vent Room]
+        [1465,483,Outlets Mezz]
+        [1466,84,UV]
+        [1467,84,UV]
+        [1468,87,UV]
+        [1469,89,UV]
+        [1470,UNKNOWN,Rooftop ACCU controls]
+        [1471,96,Lights]
+        [1472,385,ACCU controls]
+        [1473,96,Lights]
+        [1474,89,Outlets]
+        [1475,89,Outlets]
+        [1476,UNKNOWN,Rooftop ACCU controls]
+        [1477,84,Water Cooler]
+        [1478,96,Lights]
+        [1479,84,Destratification fans]
+        [1480,84,Handicap Door Operator cafeteria]
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.1
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.2
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.3
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.4
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.5
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.6
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.7
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.8
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.9
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.10
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.11
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.12
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.13
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.14
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.15
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.16
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.17
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.18
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.19
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.20
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.21
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.22
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.23
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.24
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.25
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.26
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.27
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.28
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.29
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.30
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.31
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.32
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.33
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.34
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.35
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.36
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.37
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.38
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.39
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.40
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.41
+--------MWSB.8.DL.9.L4GB.23.TGB.LGB.42
+-----MWSB.8.DL.9.L4GB.24
+-----MWSB.8.DL.9.L4GB.25
+-----MWSB.8.DL.9.L4GB.26
+-----MWSB.8.DL.9.L4GB.27
+-----MWSB.8.DL.9.L4GB.28
+-----MWSB.8.DL.9.L4GB.29
+-----MWSB.8.DL.9.L4GB.30
+---MWSB.8.DL.10
+----MWSB.8.DL.10.L41C
+     [1481,200,Lights]
+     [1482,201,Lights]
+     [1483,203,Lights]
+     [1484,208,Lights]
+     [1485,199,Lights]
+     [1486,368,Lights]
+     [1487,198,Lights]
+     [1488,151,Lights]
+     [1489,150,Lights]
+     [1490,UNKNOWN,Lights corr]
+     [1491,484,Lights corr]
+     [1492,149,Lights]
+     [1493,148,Lights]
+     [1494,147,Lights]
+     [1495,213,Lights]
+     [1496,151,Lights]
+     [1497,UNKNOWN,L1C/L1CA via T1C]
+     [1498,UNKNOWN,L1C/L1CA via T1C]
+     [1499,UNKNOWN,L1C/L1CA via T1C]
+-----MWSB.8.DL.10.L41C.1
+-----MWSB.8.DL.10.L41C.2
+-----MWSB.8.DL.10.L41C.3
+-----MWSB.8.DL.10.L41C.4
+-----MWSB.8.DL.10.L41C.5
+-----MWSB.8.DL.10.L41C.6
+-----MWSB.8.DL.10.L41C.7
+-----MWSB.8.DL.10.L41C.8
+-----MWSB.8.DL.10.L41C.9
+-----MWSB.8.DL.10.L41C.10
+-----MWSB.8.DL.10.L41C.11
+-----MWSB.8.DL.10.L41C.12
+-----MWSB.8.DL.10.L41C.13
+-----MWSB.8.DL.10.L41C.14
+-----MWSB.8.DL.10.L41C.15
+-----MWSB.8.DL.10.L41C.16
+-----MWSB.8.DL.10.L41C.17
+-----MWSB.8.DL.10.L41C.18
+-----MWSB.8.DL.10.L41C.19
+-----MWSB.8.DL.10.L41C.20
+-----MWSB.8.DL.10.L41C.21
+-----MWSB.8.DL.10.L41C.22
+------MWSB.8.DL.10.L41C.22.T1C
+-------MWSB.8.DL.10.L41C.22.T1C.L1C
+        [1500,385,fan F-36]
+        [1501,177,Outlets]
+        [1502,171,Outlets]
+        [1503,356,Outlets]
+        [1504,176,Outlets]
+        [1505,175,Outlets]
+        [1506,192,Outlets]
+        [1507,485,Outlets]
+        [1508,189,Outlets]
+        [1509,171,Outlets]
+        [1510,193,Outlets]
+        [1511,193,Outlets]
+        [1512,196,Outlets]
+        [1513,189,Outlets]
+        [1514,194,Outlets Copy Machine]
+        [1515,197,Outlets]
+        [1516,198,Outlets]
+        [1517,191,Hand Dryer]
+        [1518,199,Outlets]
+        [1519,199,Outlets]
+        [1520,199,Outlets]
+        [1521,200,Outlets]
+        [1522,200,Outlets]
+        [1523,200,Outlets]
+        [1524,201,Outlets]
+        [1525,201,Outlets]
+        [1526,201,Outlets]
+        [1527,203,Outlets]
+        [1528,203,Outlets]
+        [1529,203,Outlets]
+        [1530,151,Outlets]
+        [1531,151,Outlets]
+        [1532,151,Outlets]
+        [1533,151,Outlets]
+        [1534,151,Outlets]
+        [1535,151,Outlets Contactors controls]
+        [1536,150,Outlets]
+        [1537,150,Outlets]
+        [1538,205,Hand Dryer]
+        [1539,207,Outlets]
+        [1540,161,Outlets]
+        [1541,486,Outlets]
+        [1542,245,Outlets]
+        [1543,161,Outlets water coolers]
+        [1544,195,Hand Dryer]
+        [1545,191,Outlets]
+        [1546,195,Outlets]
+        [1547,196,Outlets]
+        [1548,204,Hand Dryer]
+        [1549,486,Hand Dryer]
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.1
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.2
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.3
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.4
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.5
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.6
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.7
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.8
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.9
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.10
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.11
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.12
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.13
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.14
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.15
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.16
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.17
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.18
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.19
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.20
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.21
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.22
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.23
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.24
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.25
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.26
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.27
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.28
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.29
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.30
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.31
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.32
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.33
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.34
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.35
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.36
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.37
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.38
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.39
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.40
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.41
+--------MWSB.8.DL.10.L41C.22.T1C.L1C.42
+-------MWSB.8.DL.10.L41C.22.T1C.L1CA
+        [1550,196,Hand Dryer]
+        [1551,199,UV]
+        [1552,200,UV]
+        [1553,201,UV]
+        [1554,203,UV]
+        [1555,152,Rizzo Machine]
+        [1556,150,Telepole]
+        [1557,150,Telepole]
+        [1558,487,Lights Exterior soffit (East)]
+        [1559,199,Timeclock]
+        [1560,150,Telepole]
+        [1561,150,Telepole]
+        [1562,150,Telepole]
+        [1563,150,Telepole]
+        [1564,150,Telepole]
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.1
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.2
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.3
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.4
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.5
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.6
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.7
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.8
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.9
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.10
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.11
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.12
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.13
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.14
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.15
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.16
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.17
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.18
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.19
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.20
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.21
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.22
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.23
+--------MWSB.8.DL.10.L41C.22.T1C.L1CA.24
+-----MWSB.8.DL.10.L41C.23
+-----MWSB.8.DL.10.L41C.24
+-----MWSB.8.DL.10.L41C.25
+-----MWSB.8.DL.10.L41C.26
+-----MWSB.8.DL.10.L41C.27
+-----MWSB.8.DL.10.L41C.28
+-----MWSB.8.DL.10.L41C.29
+-----MWSB.8.DL.10.L41C.30
+---MWSB.8.DL.11
+---MWSB.8.DL.12
+----MWSB.8.DL.12.LGB
+     [1565,461,Lights Dishwashing Area]
+     [1566,488,Lights]
+     [1567,461,Lights Paper Storage Room]
+     [1568,UNKNOWN,Fan Exhaust F-55]
+     [1569,UNKNOWN,Fan Exhaust F-56]
+-----MWSB.8.DL.12.LGB.1
+-----MWSB.8.DL.12.LGB.2
+-----MWSB.8.DL.12.LGB.3
+-----MWSB.8.DL.12.LGB.4
+-----MWSB.8.DL.12.LGB.5
+------MWSB.8.DL.12.LGB.5.TLGC
+-------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left
+        [1570,468,Lights (East)]
+        [1571,468,Lights (High Hats)]
+        [1572,468,Lights (High Hats)]
+        [1573,468,Lights (East)]
+        [1574,468,Lights Center Mezz South)]
+        [1575,468,Lights (High Hats)]
+        [1576,468,Lights (High Hats)]
+        [1577,468,Lights (Center Mezz South)]
+        [1578,468,Lights (West)]
+        [1579,468,Lights (West)]
+        [1580,468,Lights (East)]
+        [1581,468,Lights (East)]
+        [1582,468,Lights (High Hats)]
+        [1583,468,Lights (High Hats)]
+        [1584,468,Lights (High Hats)]
+        [1585,468,Lights (High Hats)]
+        [1586,468,Lights (Center Mezz)]
+        [1587,468,Lights (West)]
+        [1588,468,Lights (Center Mezz)]
+        [1589,468,Lights (West)]
+        [1590,489,Lights]
+        [1591,490,Lights]
+        [1592,490,Lights]
+        [1593,491,Lights]
+        [1594,492,Lights]
+        [1595,493,Outlets]
+        [1596,494,Outlets]
+        [1597,468,Outlets (South) Ice cream machine]
+        [1598,494,Outlets]
+        [1599,495,Lights]
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.1
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.2
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.3
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.4
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.5
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.6
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.7
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.8
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.9
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.10
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.11
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.12
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.13
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.14
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.15
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.16
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.17
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.18
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.19
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.20
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.21
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.22
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.23
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.24
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.25
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.26
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.27
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.28
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.29
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Left.30
+-------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right
+        [1600,461,Lights Deli]
+        [1601,461,Lights Serving Area (North)]
+        [1602,461,Emergency Battery (??)]
+        [1603,468,Lights (South)]
+        [1604,468,Lights (South)]
+        [1605,468,Lights (South)]
+        [1606,496,Lights]
+        [1607,461,Lights Kitchen Hood]
+        [1608,497,Lights]
+        [1609,468,Outlets Amplifier]
+        [1610,468,Salad Cooler]
+        [1611,468,Salad Cooler]
+        [1612,498,Pump Hot water]
+        [1613,499,Outlets]
+        [1614,469,Outlets]
+        [1615,500,Outlets]
+        [1616,501,Lights]
+        [1617,UNKNOWN,Incinerator]
+        [1618,461,Convection oven (Bottom)]
+        [1619,461,Convection oven (Top)]
+        [1620,UNKNOWN,Guidance Office]
+        [1621,461,Milk cooler (South)]
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.31
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.32
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.33
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.34
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.35
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.36
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.37
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.38
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.39
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.40
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.41
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.42
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.43
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.44
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.45
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.46
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.47
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.48
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.49
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.50
+--------MWSB.8.DL.12.LGB.5.TLGC.LGC-Right.51
+-----MWSB.8.DL.12.LGB.6
+-----MWSB.8.DL.12.LGB.7
+-----MWSB.8.DL.12.LGB.8
+-----MWSB.8.DL.12.LGB.9
+---MWSB.8.DL.13
+----MWSB.8.DL.13.L41B
+     [1622,134,Lights]
+     [1623,348,Lights]
+     [1624,133,Lights]
+     [1625,132,Lights]
+     [1626,131,Lights]
+     [1627,169,Lights]
+     [1628,352,Lights]
+     [1629,353,Lights]
+     [1630,170,Lights]
+     [1631,172,Lights]
+     [1632,173,Lights]
+     [1633,174,Lights]
+     [1634,168,Lights]
+     [1635,162,Lights]
+     [1636,502,Lights]
+     [1637,163,Lights]
+     [1638,164,Lights]
+     [1639,165,Lights]
+     [1640,166,Lights]
+     [1641,190,Lights]
+     [1642,357,Lights]
+     [1643,178,Lights]
+     [1644,180,Lights]
+     [1645,181,Lights]
+     [1646,182,Lights]
+     [1647,183,Lights]
+     [1648,184,Lights]
+     [1649,185,Lights]
+     [1650,186,Lights]
+     [1651,187,Lights]
+     [1652,188,Lights]
+     [1653,159,Lights]
+     [1654,160,Lights]
+     [1655,421,Lights]
+     [1656,171,Lights]
+     [1657,485,Lights]
+     [1658,192,Lights]
+     [1659,175,Lights]
+     [1660,176,Lights]
+     [1661,177,Lights]
+     [1662,503,Lights]
+     [1663,139,Lights]
+     [1664,140,Lights]
+     [1665,141,Lights]
+     [1666,142,Lights]
+     [1667,143,Lights]
+     [1668,144,Lights]
+     [1669,155,Lights]
+     [1670,156,Lights]
+     [1671,157,Lights]
+     [1672,UNKNOWN,L1B via T1B]
+     [1673,UNKNOWN,L1B via T1B]
+     [1674,UNKNOWN,L1B via T1B]
+-----MWSB.8.DL.13.L41B.1
+-----MWSB.8.DL.13.L41B.2
+-----MWSB.8.DL.13.L41B.3
+-----MWSB.8.DL.13.L41B.4
+-----MWSB.8.DL.13.L41B.5
+-----MWSB.8.DL.13.L41B.6
+-----MWSB.8.DL.13.L41B.7
+-----MWSB.8.DL.13.L41B.8
+-----MWSB.8.DL.13.L41B.9
+-----MWSB.8.DL.13.L41B.10
+-----MWSB.8.DL.13.L41B.11
+-----MWSB.8.DL.13.L41B.12
+-----MWSB.8.DL.13.L41B.13
+-----MWSB.8.DL.13.L41B.14
+-----MWSB.8.DL.13.L41B.15
+-----MWSB.8.DL.13.L41B.16
+-----MWSB.8.DL.13.L41B.17
+-----MWSB.8.DL.13.L41B.18
+-----MWSB.8.DL.13.L41B.19
+-----MWSB.8.DL.13.L41B.20
+-----MWSB.8.DL.13.L41B.21
+-----MWSB.8.DL.13.L41B.22
+-----MWSB.8.DL.13.L41B.23
+-----MWSB.8.DL.13.L41B.24
+-----MWSB.8.DL.13.L41B.25
+-----MWSB.8.DL.13.L41B.26
+------MWSB.8.DL.13.L41B.26.T1B
+-------MWSB.8.DL.13.L41B.26.T1B.L1B
+        [1675,385,Fan F-37]
+        [1676,385,Fan F-39B]
+        [1677,132,Outlets]
+        [1678,132,Outlets]
+        [1679,132,Outlets]
+        [1680,348,Outlets]
+        [1681,134,Outlets]
+        [1682,133,Outlets]
+        [1683,133,Outlets]
+        [1684,133,Outlets]
+        [1685,133,Outlets Copier (??)]
+        [1686,145,Outlets corr]
+        [1687,397,Outlets]
+        [1688,162,Outlets]
+        [1689,502,Outlets]
+        [1690,163,Outlets]
+        [1691,163,Outlets]
+        [1692,164,Outlets]
+        [1693,502,Outlets]
+        [1694,164,Outlets]
+        [1695,190,Outlets]
+        [1696,502,Outlets]
+        [1697,165,Outlets]
+        [1698,166,Outlets]
+        [1699,185,Outlets]
+        [1700,184,Outlets]
+        [1701,188,Outlets]
+        [1702,187,Outlets]
+        [1703,186,Outlets]
+        [1704,190,Outlets]
+        [1705,504,Outlets]
+        [1706,168,Outlets]
+        [1707,190,Outlets]
+        [1708,185,Outlets]
+        [1709,182,Outlets]
+        [1710,181,Outlets]
+        [1711,168,Outlets]
+        [1712,169,Outlets]
+        [1713,169,Outlets]
+        [1714,352,Outlets]
+        [1715,353,Outlets]
+        [1716,174,Outlets]
+        [1717,180,Outlets]
+        [1718,173,Outlets]
+        [1719,180,Outlets]
+        [1720,164,Outlets]
+        [1721,352,Hand Dryer]
+        [1722,353,Hand Dryer]
+        [1723,164,Outlets]
+        [1724,165,Hand Dryer]
+        [1725,166,Hand Dryer]
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.1
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.2
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.3
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.4
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.5
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.6
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.7
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.8
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.9
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.10
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.11
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.12
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.13
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.14
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.15
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.16
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.17
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.18
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.19
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.20
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.21
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.22
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.23
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.24
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.25
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.26
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.27
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.28
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.29
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.30
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.31
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.32
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.33
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.34
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.35
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.36
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.37
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.38
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.39
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.40
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.41
+--------MWSB.8.DL.13.L41B.26.T1B.L1B.42
+-----MWSB.8.DL.13.L41B.27
+-----MWSB.8.DL.13.L41B.28
+-----MWSB.8.DL.13.L41B.29
+-----MWSB.8.DL.13.L41B.30
+---MWSB.8.DL.14
+----MWSB.8.DL.14.L41
+     [1726,130,Lights]
+     [1727,129,Lights]
+     [1728,127,Lights]
+     [1729,128,Lights]
+     [1730,347,Lights]
+     [1731,219,Lights Night Corr]
+     [1732,216,Lights Night Corr]
+     [1733,219,Lights Night Corr]
+     [1734,216,Lights Night Corr]
+     [1735,137,Lights]
+     [1736,138,Lights]
+     [1737,145,Lights]
+     [1738,147,Lights]
+     [1739,146,Lights]
+     [1740,144,Lights]
+     [1741,143,Lights]
+     [1742,224,Lights]
+     [1743,223,Lights]
+     [1744,222,Lights]
+     [1745,220,Lights]
+     [1746,220,Lights Night Corr]
+     [1747,UNKNOWN,Exterior Lights]
+     [1748,505,Timeclock TC-8]
+     [1749,UNKNOWN,F-42]
+     [1750,UNKNOWN,F-42]
+     [1751,UNKNOWN,F-42]
+     [1752,UNKNOWN,T1/L1]
+     [1753,UNKNOWN,T1/L1]
+     [1754,UNKNOWN,T1/L1]
+-----MWSB.8.DL.14.L41.1
+-----MWSB.8.DL.14.L41.2
+-----MWSB.8.DL.14.L41.3
+-----MWSB.8.DL.14.L41.4
+-----MWSB.8.DL.14.L41.5
+-----MWSB.8.DL.14.L41.6
+-----MWSB.8.DL.14.L41.7
+-----MWSB.8.DL.14.L41.8
+-----MWSB.8.DL.14.L41.9
+-----MWSB.8.DL.14.L41.10
+-----MWSB.8.DL.14.L41.11
+-----MWSB.8.DL.14.L41.12
+-----MWSB.8.DL.14.L41.13
+-----MWSB.8.DL.14.L41.14
+-----MWSB.8.DL.14.L41.15
+-----MWSB.8.DL.14.L41.16
+-----MWSB.8.DL.14.L41.17
+-----MWSB.8.DL.14.L41.18
+-----MWSB.8.DL.14.L41.19
+-----MWSB.8.DL.14.L41.20
+-----MWSB.8.DL.14.L41.21
+-----MWSB.8.DL.14.L41.22
+-----MWSB.8.DL.14.L41.23
+-----MWSB.8.DL.14.L41.24
+-----MWSB.8.DL.14.L41.25
+-----MWSB.8.DL.14.L41.26
+-----MWSB.8.DL.14.L41.27
+------MWSB.8.DL.14.L41.27.T1
+-------MWSB.8.DL.14.L41.27.T1.L1
+        [1755,144,Outlets]
+        [1756,144,Outlets]
+        [1757,144,Outlets]
+        [1758,143,Outlets]
+        [1759,143,Outlets]
+        [1760,143,Contactor Control]
+        [1761,143,Outlets]
+        [1762,143,Outlets]
+        [1763,143,Outlets]
+        [1764,143,Outlets]
+        [1765,144,Outlets]
+        [1766,144,Outlets]
+        [1767,143,Outlets]
+        [1768,143,Outlets]
+        [1769,139,Outlets]
+        [1770,139,Outlets]
+        [1771,142,Outlets]
+        [1772,145,Outlets Water Cooler]
+        [1773,140,Outlets]
+        [1774,141,Outlets]
+        [1775,137,Outlets]
+        [1776,139,Outlets]
+        [1777,138,Outlets]
+        [1778,136,Hand Dryer]
+        [1779,131,Outlets]
+        [1780,131,Outlets]
+        [1781,131,Outlets]
+        [1782,130,Outlets]
+        [1783,130,Outlets]
+        [1784,130,Outlets]
+        [1785,129,Outlets]
+        [1786,129,Outlets]
+        [1787,129,Outlets]
+        [1788,135,Outlets]
+        [1789,140,Hand Dryer]
+        [1790,141,Hand Dryer]
+        [1791,144,Cooktop]
+        [1792,144,Outlets Dishwasher]
+        [1793,144,Cooktop]
+        [1794,144,Outlets Refrigerator]
+--------MWSB.8.DL.14.L41.27.T1.L1.1
+--------MWSB.8.DL.14.L41.27.T1.L1.2
+--------MWSB.8.DL.14.L41.27.T1.L1.3
+--------MWSB.8.DL.14.L41.27.T1.L1.4
+--------MWSB.8.DL.14.L41.27.T1.L1.5
+--------MWSB.8.DL.14.L41.27.T1.L1.6
+--------MWSB.8.DL.14.L41.27.T1.L1.7
+--------MWSB.8.DL.14.L41.27.T1.L1.8
+--------MWSB.8.DL.14.L41.27.T1.L1.9
+--------MWSB.8.DL.14.L41.27.T1.L1.10
+--------MWSB.8.DL.14.L41.27.T1.L1.11
+--------MWSB.8.DL.14.L41.27.T1.L1.12
+--------MWSB.8.DL.14.L41.27.T1.L1.13
+--------MWSB.8.DL.14.L41.27.T1.L1.14
+--------MWSB.8.DL.14.L41.27.T1.L1.15
+--------MWSB.8.DL.14.L41.27.T1.L1.16
+--------MWSB.8.DL.14.L41.27.T1.L1.17
+--------MWSB.8.DL.14.L41.27.T1.L1.18
+--------MWSB.8.DL.14.L41.27.T1.L1.19
+--------MWSB.8.DL.14.L41.27.T1.L1.20
+--------MWSB.8.DL.14.L41.27.T1.L1.21
+--------MWSB.8.DL.14.L41.27.T1.L1.22
+--------MWSB.8.DL.14.L41.27.T1.L1.23
+--------MWSB.8.DL.14.L41.27.T1.L1.24
+--------MWSB.8.DL.14.L41.27.T1.L1.25
+--------MWSB.8.DL.14.L41.27.T1.L1.26
+--------MWSB.8.DL.14.L41.27.T1.L1.27
+--------MWSB.8.DL.14.L41.27.T1.L1.28
+--------MWSB.8.DL.14.L41.27.T1.L1.29
+--------MWSB.8.DL.14.L41.27.T1.L1.30
+--------MWSB.8.DL.14.L41.27.T1.L1.31
+--------MWSB.8.DL.14.L41.27.T1.L1.32
+--------MWSB.8.DL.14.L41.27.T1.L1.33
+--------MWSB.8.DL.14.L41.27.T1.L1.34
+--------MWSB.8.DL.14.L41.27.T1.L1.35
+--------MWSB.8.DL.14.L41.27.T1.L1.36
+--------MWSB.8.DL.14.L41.27.T1.L1.37
+--------MWSB.8.DL.14.L41.27.T1.L1.38
+--------MWSB.8.DL.14.L41.27.T1.L1.39
+--------MWSB.8.DL.14.L41.27.T1.L1.40
+--------MWSB.8.DL.14.L41.27.T1.L1.41
+--------MWSB.8.DL.14.L41.27.T1.L1.42
+--------MWSB.8.DL.14.L41.27.T1.L1.43
+--------MWSB.8.DL.14.L41.27.T1.L1.44
+--------MWSB.8.DL.14.L41.27.T1.L1.45
+--------MWSB.8.DL.14.L41.27.T1.L1.46
+--------MWSB.8.DL.14.L41.27.T1.L1.47
+--------MWSB.8.DL.14.L41.27.T1.L1.48
+-----MWSB.8.DL.14.L41.28
+-----MWSB.8.DL.14.L41.29
+-----MWSB.8.DL.14.L41.30
+-----MWSB.8.DL.14.L41.31
+-----MWSB.8.DL.14.L41.32
+-----MWSB.8.DL.14.L41.33
+-----MWSB.8.DL.14.L41.34
+-----MWSB.8.DL.14.L41.35
+-----MWSB.8.DL.14.L41.36
+---MWSB.8.DL.15
+-MWSB.9
+--MWSB.9.AMDP
+   [1795,UNKNOWN,HSHTA]
+   [1796,UNKNOWN,HSHTB]
+   [1797,UNKNOWN,150 KVA theater dimmer]
+   [1798,UNKNOWN,HSHLB]
+   [1799,UNKNOWN,HSHLA]
+   [1800,UNKNOWN,Handicap Elevator]
+   [1801,UNKNOWN,75 KVA house dimmer]
+---MWSB.9.AMDP.1
+---MWSB.9.AMDP.2
+---MWSB.9.AMDP.3
+---MWSB.9.AMDP.4
+----MWSB.9.AMDP.4.HSHLA
+     [1850,513,Lights]
+     [1851,38,Lights]
+     [1852,42,Lights]
+     [1853,43,Lights]
+     [1854,44,Lights]
+     [1855,45,Lights]
+     [1856,514,Lights]
+     [1857,42,Lights]
+     [1858,43,Lights]
+     [1859,44,Lights]
+     [1860,45,Lights]
+     [1861,46,Lights]
+     [1862,515,Lights]
+     [1863,516,Lights]
+     [1864,47,Lights]
+     [1865,517,Lights]
+     [1866,48,Lights]
+     [1867,518,Lights]
+     [1868,519,Heaters]
+     [1869,520,Lights]
+     [1870,521,Lights]
+-----MWSB.9.AMDP.4.HSHLA.1
+-----MWSB.9.AMDP.4.HSHLA.2
+-----MWSB.9.AMDP.4.HSHLA.3
+-----MWSB.9.AMDP.4.HSHLA.4
+-----MWSB.9.AMDP.4.HSHLA.5
+-----MWSB.9.AMDP.4.HSHLA.6
+-----MWSB.9.AMDP.4.HSHLA.7
+-----MWSB.9.AMDP.4.HSHLA.8
+-----MWSB.9.AMDP.4.HSHLA.9
+-----MWSB.9.AMDP.4.HSHLA.10
+-----MWSB.9.AMDP.4.HSHLA.11
+-----MWSB.9.AMDP.4.HSHLA.12
+-----MWSB.9.AMDP.4.HSHLA.13
+-----MWSB.9.AMDP.4.HSHLA.14
+-----MWSB.9.AMDP.4.HSHLA.15
+-----MWSB.9.AMDP.4.HSHLA.16
+----MWSB.9.AMDP.4.HSHLB
+     [1839,506,Lights]
+     [1840,52,Lights]
+     [1841,506,Lights]
+     [1842,47,Lights]
+     [1843,506,Lights]
+     [1844,507,Lights]
+     [1845,508,Lights]
+     [1846,509,Lights]
+     [1847,510,Lights]
+     [1848,511,Lights]
+     [1849,512,Lights]
+-----MWSB.9.AMDP.4.HSHLB.1
+-----MWSB.9.AMDP.4.HSHLB.2
+-----MWSB.9.AMDP.4.HSHLB.3
+-----MWSB.9.AMDP.4.HSHLB.4
+-----MWSB.9.AMDP.4.HSHLB.5
+-----MWSB.9.AMDP.4.HSHLB.6
+-----MWSB.9.AMDP.4.HSHLB.7
+-----MWSB.9.AMDP.4.HSHLB.8
+-----MWSB.9.AMDP.4.HSHLB.9
+-----MWSB.9.AMDP.4.HSHLB.10
+-----MWSB.9.AMDP.4.HSHLB.11
+-----MWSB.9.AMDP.4.HSHLB.12
+----MWSB.9.AMDP.4.HSHTB
+     [1820,UNKNOWN,RTU-7]
+     [1821,70,Baseboard (BB) heat CUH vest]
+     [1822,52,Baseboard (BB) heat CUH corr]
+     [1823,70,Baseboard (BB) heat CUH vest]
+     [1824,UNKNOWN,RTU-8]
+     [1825,169,Baseboard (BB) heat CUH vest]
+     [1826,71,Baseboard (BB) heat]
+     [1827,73,Baseboard (BB) heat]
+     [1828,74,Baseboard (BB) heat]
+     [1829,76,Baseboard (BB) heat]
+     [1830,78,Baseboard (BB) heat]
+     [1831,80,Baseboard (BB) heat]
+     [1832,53,Baseboard (BB) heat CUH corr]
+     [1833,63,Baseboard (BB) heat Stage]
+     [1834,54,Baseboard (BB) heat CUH corr]
+     [1835,63,Baseboard (BB) heat Stage]
+     [1836,55,Baseboard (BB) heat CUH corr]
+     [1837,63,Baseboard (BB) heat Stage]
+     [1838,66,Baseboard (BB) heat]
+-----MWSB.9.AMDP.4.HSHTB.1
+-----MWSB.9.AMDP.4.HSHTB.2
+-----MWSB.9.AMDP.4.HSHTB.3
+-----MWSB.9.AMDP.4.HSHTB.4
+-----MWSB.9.AMDP.4.HSHTB.5
+-----MWSB.9.AMDP.4.HSHTB.6
+-----MWSB.9.AMDP.4.HSHTB.7
+-----MWSB.9.AMDP.4.HSHTB.8
+-----MWSB.9.AMDP.4.HSHTB.9
+-----MWSB.9.AMDP.4.HSHTB.10
+-----MWSB.9.AMDP.4.HSHTB.11
+-----MWSB.9.AMDP.4.HSHTB.12
+-----MWSB.9.AMDP.4.HSHTB.13
+-----MWSB.9.AMDP.4.HSHTB.14
+-----MWSB.9.AMDP.4.HSHTB.15
+-----MWSB.9.AMDP.4.HSHTB.16
+-----MWSB.9.AMDP.4.HSHTB.17
+-----MWSB.9.AMDP.4.HSHTB.18
+---MWSB.9.AMDP.5
+---MWSB.9.AMDP.6
+---MWSB.9.AMDP.7
+---MWSB.9.AMDP.8
+---MWSB.9.AMDP.9
+---MWSB.9.AMDP.10
+----MWSB.9.AMDP.10.TTV
+-----MWSB.9.AMDP.10.TTV.HSLAsec1
+      [1871,49,Outlets]
+      [1872,522,Outlets Audio Recording]
+      [1873,49,Outlets]
+      [1874,522,Outlets Audio Recording]
+      [1875,49,Outlets]
+      [1876,522,Outlets Audio Recording]
+      [1877,523,Outlets]
+      [1878,524,Outlets]
+      [1879,525,Outlets]
+      [1880,526,Outlets]
+      [1881,385,Fan F-29]
+      [1882,385,Fan F-30]
+      [1883,UNKNOWN,Outlets CC Instrument Room]
+      [1884,385,Fan F-29]
+      [1885,385,Fan F-30]
+      [1886,527,Outlets]
+      [1887,528,Lights]
+      [1888,529,Lights]
+      [1889,49,Lights]
+      [1890,530,Lights]
+      [1891,164,Lights]
+      [1892,531,Outlets]
+      [1893,532,Lights]
+      [1894,168,Lights]
+      [1895,169,Lights]
+      [1896,533,Lights]
+      [1897,56,Lights]
+      [1898,168,Lights]
+      [1899,534,Lights]
+      [1900,535,Lights]
+      [1901,533,Outlets]
+      [1902,536,Outlets]
+------MWSB.9.AMDP.10.TTV.HSLAsec1.1
+------MWSB.9.AMDP.10.TTV.HSLAsec1.2
+------MWSB.9.AMDP.10.TTV.HSLAsec1.3
+------MWSB.9.AMDP.10.TTV.HSLAsec1.4
+------MWSB.9.AMDP.10.TTV.HSLAsec1.5
+------MWSB.9.AMDP.10.TTV.HSLAsec1.6
+------MWSB.9.AMDP.10.TTV.HSLAsec1.7
+------MWSB.9.AMDP.10.TTV.HSLAsec1.8
+------MWSB.9.AMDP.10.TTV.HSLAsec1.9
+------MWSB.9.AMDP.10.TTV.HSLAsec1.10
+------MWSB.9.AMDP.10.TTV.HSLAsec1.11
+------MWSB.9.AMDP.10.TTV.HSLAsec1.12
+------MWSB.9.AMDP.10.TTV.HSLAsec1.13
+------MWSB.9.AMDP.10.TTV.HSLAsec1.14
+------MWSB.9.AMDP.10.TTV.HSLAsec1.15
+------MWSB.9.AMDP.10.TTV.HSLAsec1.16
+------MWSB.9.AMDP.10.TTV.HSLAsec1.17
+------MWSB.9.AMDP.10.TTV.HSLAsec1.18
+------MWSB.9.AMDP.10.TTV.HSLAsec1.19
+------MWSB.9.AMDP.10.TTV.HSLAsec1.20
+------MWSB.9.AMDP.10.TTV.HSLAsec1.21
+------MWSB.9.AMDP.10.TTV.HSLAsec1.22
+------MWSB.9.AMDP.10.TTV.HSLAsec1.23
+------MWSB.9.AMDP.10.TTV.HSLAsec1.24
+-----MWSB.9.AMDP.10.TTV.HSLAsec2
+      [1903,UNKNOWN,Motorized Partition]
+      [1904,UNKNOWN,Motorized Partition]
+      [1905,UNKNOWN,Typing Room Recording]
+      [1906,39,Lights]
+      [1907,41,Lights]
+      [1908,58,Lights]
+      [1909,UNKNOWN,Auditorium Projection]
+      [1910,UNKNOWN,Firemen's Control Panel]
+      [1911,537,Lights]
+      [1912,531,Pump Emergency Sprinkler]
+      [1913,538,Lights]
+      [1914,UNKNOWN,Fan F-36]
+      [1915,47,Water cooler]
+      [1916,538,Lights]
+      [1917,UNKNOWN,Fan F-36]
+      [1918,539,Lights]
+      [1919,538,Lights]
+      [1920,540,Outlets]
+      [1921,538,Lights]
+      [1922,531,Stage fire curtains control unit]
+      [1923,539,Lights]
+      [1924,541,ICI repeater above ceiling]
+      [1925,531,Fire Alarm feed]
+      [1926,531,5 Wire 50 A Recorder (??)]
+------MWSB.9.AMDP.10.TTV.HSLAsec2.25
+------MWSB.9.AMDP.10.TTV.HSLAsec2.26
+------MWSB.9.AMDP.10.TTV.HSLAsec2.27
+------MWSB.9.AMDP.10.TTV.HSLAsec2.28
+------MWSB.9.AMDP.10.TTV.HSLAsec2.29
+------MWSB.9.AMDP.10.TTV.HSLAsec2.30
+------MWSB.9.AMDP.10.TTV.HSLAsec2.31
+------MWSB.9.AMDP.10.TTV.HSLAsec2.32
+------MWSB.9.AMDP.10.TTV.HSLAsec2.33
+------MWSB.9.AMDP.10.TTV.HSLAsec2.34
+------MWSB.9.AMDP.10.TTV.HSLAsec2.35
+------MWSB.9.AMDP.10.TTV.HSLAsec2.36
+------MWSB.9.AMDP.10.TTV.HSLAsec2.37
+------MWSB.9.AMDP.10.TTV.HSLAsec2.38
+------MWSB.9.AMDP.10.TTV.HSLAsec2.39
+------MWSB.9.AMDP.10.TTV.HSLAsec2.40
+------MWSB.9.AMDP.10.TTV.HSLAsec2.41
+------MWSB.9.AMDP.10.TTV.HSLAsec2.42
+------MWSB.9.AMDP.10.TTV.HSLAsec2.43
+------MWSB.9.AMDP.10.TTV.HSLAsec2.44
+------MWSB.9.AMDP.10.TTV.HSLAsec2.45
+------MWSB.9.AMDP.10.TTV.HSLAsec2.46
+------MWSB.9.AMDP.10.TTV.HSLAsec2.47
+------MWSB.9.AMDP.10.TTV.HSLAsec2.48
+------MWSB.9.AMDP.10.TTV.HSLAsec2.49
+---MWSB.9.AMDP.HSHTA
