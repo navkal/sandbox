@@ -4,14 +4,18 @@
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
   $g_iTestDepth = 0;
+  $g_iStartTime = time();
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
-  error_log( "===> Starting" . $sMsgDepth );
+  error_log( "===> [" . $g_iStartTime . "] Starting" . $sMsgDepth );
 
   $g_aTree = [];
   walkSubtree( "" );
   downloadTree();
 
-  error_log( "===> Completed" . $sMsgDepth );
+  $g_iEndTime = time();
+  error_log( "===> [" . $g_iEndTime . "] Finished" . $sMsgDepth );
+  $iElapsedSec = $g_iEndTime - $g_iStartTime;
+  error_log( "===> Elapsed time: " . $iElapsedSec . " seconds" );
 
   function walkSubtree( $sPath )
   {
