@@ -5,7 +5,7 @@
 
   $g_sDumpId = $_REQUEST["dumpid"];
 
-  $g_iTestDepth = 2;
+  $g_iTestDepth = 0;
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
 
   $g_iStartTime = time();
