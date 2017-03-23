@@ -22,10 +22,6 @@
 
   function walkSubtree( path )
   {
-    // --> KLUDGE --> remove after paths are fixed in DB -->
-    if ( path.includes( " " ) ) { console.log( "=> BAD PATH=" + path ); return; }
-    // <-- KLUDGE <-- remove after paths are fixed in DB <--
-
     // Post request to server
     var tPostData = new FormData();
     tPostData.append( "objectTable", "circuit" );
@@ -92,10 +88,7 @@
     for ( var iChild = 0; iChild < tRsp.children.length; iChild ++ )
     {
       var sChildPath = tRsp.children[iChild][1];
-      if ( sChildPath != sPath )  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
-      {
-        walkSubtree( sChildPath );
-      }
+      walkSubtree( sChildPath );
     }
   }
 

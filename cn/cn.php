@@ -55,10 +55,6 @@
 
   function getTreeNode( sPath )
   {
-    // --> KLUDGE --> remove after paths are fixed in DB -->
-    if ( sPath.includes( " " ) ) { console.log( "=> BAD PATH=" + sPath ); return; }
-    // <-- KLUDGE <-- remove after paths are fixed in DB <--
-
     // Post request to server
     var tPostData = new FormData();
     tPostData.append( "objectTable", "circuit" );
@@ -110,7 +106,6 @@
     {
       var sChildOid = aChildren[iChild][0];
       var sChildPath = aChildren[iChild][1];
-      if ( sChildPath == sPath ) continue;  // <-- KLUDGE. REMOVE AFTER ROOT PARENT FIELD IS CLEARED
       var sChildDescr = aChildren[iChild][2];
       var sChildLabel = sChildPath.split( "." )[nDepth] + ": " + sChildDescr;
       var sChildType = aChildren[iChild][3];
