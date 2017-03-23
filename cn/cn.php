@@ -295,6 +295,7 @@ function childWindowsClose( aWindows )
 </script>
 
 <div class="container">
+  <a class="btn btn-default" href="cn/downloadTree.php" role="button">Download Tree Dump</a>
 
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
