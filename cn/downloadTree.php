@@ -3,6 +3,8 @@
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
+  error_log( "===> Starting tree dump" );
+  
   $g_aTree = [];
   walkSubtree( "" );
   downloadTree();
@@ -25,7 +27,7 @@
 
     // Set up indentation
     $nDepth = count( explode( ".", $sPath ) );
-    $sIndent = str_repeat( '-', $nDepth );
+    $sIndent = str_repeat( '-', $nDepth - 1 );
 
     // Insert path in tree
     global $g_aTree;
