@@ -3,7 +3,7 @@
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
-  $g_iTestDepth = 2;
+  $g_iTestDepth = 5;
   $g_iStartTime = time();
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
   error_log( "===> [" . $g_iStartTime . "] Starting" . $sMsgDepth );
@@ -19,6 +19,9 @@
 
   function walkSubtree( $sPath )
   {
+    // Save status information
+    writeStatus( $sPath );
+
     // Retrieve object
     $sSelector = ( $sPath == "" ) ? "" : ' -p ' . $sPath;
     $sCommand = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t circuit " . $sSelector;
@@ -160,4 +163,12 @@
     return $iResult;
   }
 
+  function writeStatus( $sPath )
+  {
+    global $g_iStartTime;
+    $sFilename = sys_get_temp_dir() . "/" . "status_" . $g_iStartTime . ".txt";
+    $file = fopen( $sFilename, "w" ) or die( "Unable to open file: " . $sFilename );
+    fwrite( $file, $sPath . PHP_EOL );
+    fclose( $file );
+  }
 ?>
