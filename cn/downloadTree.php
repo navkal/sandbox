@@ -3,9 +3,12 @@
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
-  $g_iTestDepth = 5;
-  $g_iStartTime = time();
+  $g_sDumpId = $_REQUEST["dumpid"];
+
+  $g_iTestDepth = 2;
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
+
+  $g_iStartTime = time();
   error_log( "===> [" . $g_iStartTime . "] Starting" . $sMsgDepth );
 
   $g_aTree = [];
@@ -14,6 +17,7 @@
 
   $g_iEndTime = time();
   error_log( "===> [" . $g_iEndTime . "] Finished" . $sMsgDepth );
+
   $iElapsedSec = $g_iEndTime - $g_iStartTime;
   error_log( "===> Elapsed time: " . $iElapsedSec . " seconds" );
 
@@ -72,12 +76,12 @@
 
   function downloadTree()
   {
-    global $g_iStartTime;
-    $sFilename = sys_get_temp_dir() . "/" . "tree_" . $g_iStartTime . ".txt";
+    global $g_sDumpId;
+    $sFilename = sys_get_temp_dir() . "/" . "tree_" . $g_sDumpId . ".txt";
     $file = fopen( $sFilename, "w" ) or die( "Unable to open file: " . $sFilename );
     writeTree( $file );
     fclose( $file );
-    downloadFile( $sFilename, "", "text/plain" );
+    downloadFile( $sFilename, "", "text" );
   }
 
   function writeTree( $file )
@@ -165,8 +169,8 @@
 
   function writeStatus( $sPath )
   {
-    global $g_iStartTime;
-    $sFilename = sys_get_temp_dir() . "/" . "status_" . $g_iStartTime . ".txt";
+    global $g_sDumpId;
+    $sFilename = sys_get_temp_dir() . "/" . "status_" . $g_sDumpId . ".txt";
     $file = fopen( $sFilename, "w" ) or die( "Unable to open file: " . $sFilename );
     fwrite( $file, $sPath . PHP_EOL );
     fclose( $file );

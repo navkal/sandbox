@@ -241,6 +241,13 @@
     childWindowsClose( g_aPropertiesWindows );
   }
 
+  var g_sDumpId = "";
+  function startTreeDump( tEvent )
+  {
+    g_sDumpId = Date.now().toString( 36 );
+    location.href = tEvent.target.href + "?dumpid=" + g_sDumpId;
+    return false;
+  }
 
 // -> -> -> Manage child windows -> -> ->
 
@@ -290,13 +297,10 @@ function childWindowsClose( aWindows )
 
 // <- <- <- Manage child windows <- <- <-
 
-
-
 </script>
 
 <div class="container">
-  <a class="btn btn-default" href="cn/downloadTree.php" role="button">Download Tree Dump</a>
-
+  <a class="btn btn-default" href="cn/downloadTree.php" onclick="return startTreeDump(event);" role="button">Download Tree Dump</a>
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
     </div>
