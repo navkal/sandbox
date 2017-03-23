@@ -3,7 +3,7 @@
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
-  $g_iTestDepth = 0;
+  $g_iTestDepth = 2;
   $g_iStartTime = time();
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
   error_log( "===> [" . $g_iStartTime . "] Starting" . $sMsgDepth );
@@ -69,7 +69,8 @@
 
   function downloadTree()
   {
-    $sFilename = sys_get_temp_dir() . "/" . "tree_" . time() . ".txt";
+    global $g_iStartTime;
+    $sFilename = sys_get_temp_dir() . "/" . "tree_" . $g_iStartTime . ".txt";
     $file = fopen( $sFilename, "w" ) or die( "Unable to open file: " . $sFilename );
     writeTree( $file );
     fclose( $file );
