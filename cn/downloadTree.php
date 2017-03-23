@@ -81,7 +81,7 @@
     $file = fopen( $sFilename, "w" ) or die( "Unable to open file: " . $sFilename );
     writeTree( $file );
     fclose( $file );
-    downloadFile( $sFilename, "", "text" );
+    downloadFile( $sFilename, "", "text/plain" );
   }
 
   function writeTree( $file )
