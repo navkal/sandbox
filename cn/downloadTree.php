@@ -3,13 +3,14 @@
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
-  $g_sDumpId = $_REQUEST["dumpid"];
 
-  $g_iTestDepth = 0;
+  $g_iTestDepth = 1;
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
 
   $g_iStartTime = time();
   error_log( "===> [" . $g_iStartTime . "] Starting" . $sMsgDepth );
+
+  $g_sDumpId = isset( $_REQUEST["dumpid"] ) ? $_REQUEST["dumpid"] : $g_iStartTime;
 
   $g_aTree = [];
   walkSubtree( "" );
