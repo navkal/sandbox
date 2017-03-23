@@ -105,17 +105,19 @@
       $sFragment1 = $aPath1[$iFragment];
       $sFragment2 = $aPath2[$iFragment];
 
-      $bNum1 = ctype_digit( $sFragment1 );
-      $bNum2 = ctype_digit( $sFragment2 );
+      // Extract leading digits
+      $iNum1 = substr( $sFragment1, 0, strspn( $sFragment1, "0123456789") );
+      $iNum2 = substr( $sFragment2, 0, strspn( $sFragment2, "0123456789") );
 
-      if ( $bNum1 && $bNum2 )
+      // If both fragments have leading digits, compare numerically
+      if ( $iNum1 != "" && $iNum2 != "" )
       {
-        // Compare fragments as numbers
-        $iResult = $sFragment1 - $sFragment2;
+        $iResult = $iNum1 - $iNum2;
       }
-      else
+
+      // If no difference found yet, compare alphabetically
+      if ( $iResult == 0 )
       {
-        // Compare fragments as strings
         $iResult = strcmp( $sFragment1, $sFragment2 );
       }
     }
