@@ -3,8 +3,9 @@
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
-  error_log( "===> Starting tree dump" );
-  
+  $g_iTestDepth = 2;
+  error_log( "===> Starting tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" ) );
+
   $g_aTree = [];
   walkSubtree( "" );
   downloadTree();
@@ -34,18 +35,30 @@
     $g_aTree[$sPath] = $sIndent . $sPath . PHP_EOL;
 
     // Insert devices in tree
-
-
-
-
-    // Traverse children
-    $aChildren = $tObject->children;
-    foreach( $aChildren as $aChild )
+    $aDevices = $tObject->devices;
+    foreach( $aDevices as $aDevice )
     {
-      $sChildPath = $aChild[1];
-      walkSubtree( $sChildPath );
+
+      $iDeviceId = $aDevice[0];
+      $iDeviceLoc = $aDevice[1];
+      $sDeviceDescr = $aDevice[2];
+      $sDevName = $iDeviceId . "," . $iDeviceLoc . "," . $sDeviceDescr;
+      $sDevicePath = $sPath . " " . $sDevName;
+      $sIndent = str_repeat( ' ', $nDepth );
+      $g_aTree[$sDevicePath] = $sIndent . "[" . $sDevName . "]" . PHP_EOL;
     }
 
+    global $g_iTestDepth;
+    if ( ! $g_iTestDepth || ( $nDepth < $g_iTestDepth ) )
+    {
+      // Traverse children
+      $aChildren = $tObject->children;
+      foreach( $aChildren as $aChild )
+      {
+        $sChildPath = $aChild[1];
+        walkSubtree( $sChildPath );
+      }
+    }
   }
 
   function downloadTree()

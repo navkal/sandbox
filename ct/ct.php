@@ -61,7 +61,7 @@
       var iDeviceLoc = aDevices[iDevice][1];
       var sDeviceDescr = aDevices[iDevice][2];
       var sDevName = iDeviceId + "," + iDeviceLoc + "," + sDeviceDescr;
-      sDevicePath = sPath + " " + sDevName;
+      var sDevicePath = sPath + " " + sDevName;
       sIndent = Array( nDepth ).join( "&nbsp;");
       TREE[sDevicePath] = sIndent + "[" + sDevName + "]<br/>";
     }
