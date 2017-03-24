@@ -125,7 +125,10 @@
       room_id: "Room ID",
       devices: "Devices",
       id: "ID",
-      object_type: "Type"
+      object_type: "Type",
+      panel_id: "Panel ID",
+      closet_old: "Old Closet",
+      closet_new: "New Closet"
     };
 
     // Build map of display labels and display values
