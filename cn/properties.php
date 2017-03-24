@@ -43,12 +43,6 @@
 
       <div id="objectArea">
         <table class="table" >
-          <thead>
-            <tr>
-              <th>Key</th>
-              <th>Value</th>
-            </tr>
-          </thead>
           <tbody id="objectLayout" >
           </tbody>
         </table>
@@ -111,9 +105,6 @@
     var sTitle = g_tProperties["description"] || g_tProperties["path"];
     $( "#propertiesTitle" ).html( sTitle );
 
-    // Start building display of properties
-    var sTbody = "";
-
     // Initialize map of property labels
     var tLabelMap =
     {
@@ -157,11 +148,12 @@
 
     // Build layout of property display
     aKeys = Object.keys( tDisplayProps ).sort();
+    var sTbody = "";
     for ( var i = 0; i < aKeys.length; i++ )
     {
       var sKey = aKeys[i];
       var sVal = tDisplayProps[sKey];
-      sTbody += "<tr><td>" + sKey + "</td><td>" + sVal + "</td></tr>"
+      sTbody += '<tr><td style="text-align:right"><b>' + sKey + '</b></td><td>' + sVal + '</td></tr>';
     }
 
     // Display properties
