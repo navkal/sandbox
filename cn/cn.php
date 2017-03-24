@@ -228,6 +228,7 @@
 
   function openPropertiesWindow( tEvent )
   {
+    tEvent.preventDefault();
     tEvent.stopPropagation();
     var sPath = $(event.target).closest( "a" ).attr( "path" );
     var sType = $(event.target).closest( "a" ).attr( "type" );
