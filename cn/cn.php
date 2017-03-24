@@ -366,16 +366,11 @@
 
 <br/>
 <div class="container">
-      <a class="btn btn-default" id="dumpButton" href="cn/downloadTree.php" onclick="return startTreeDump(event);" >Download Tree Dump</a>
-      <div id="dumpStatus" class="well well-sm hidden" >
-        Generating tree. <span id="dumpTime"></span>
-      </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-    </div>
-    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-    </div>
+  <a class="btn btn-default" id="dumpButton" href="cn/downloadTree.php" onclick="return startTreeDump(event);" >Download Tree Dump</a>
+  <div id="dumpStatus" class="well well-sm hidden" >
+    Generating tree. <span id="dumpTime"></span>
   </div>
+ 
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
     </div>
