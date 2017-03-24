@@ -90,10 +90,7 @@
     downloadFile( $sFilename, "", "text/plain" );
 
     // Delete the file
-    error_log( "bf: file exists===>" . file_exists( $sFilename ) . "<===" );
-    error_log( "CLEAN UP NOW?" );
     unlink( $sFilename );
-    error_log( "af: file exists===>" . file_exists( $sFilename ) . "<===" );
   }
 
   function writeTree( $file )
