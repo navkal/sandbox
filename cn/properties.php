@@ -110,21 +110,44 @@
     var sTitle = g_tProperties["description"] || g_tProperties["path"];
     $( "#propertiesTitle" ).html( sTitle );
 
-    var tbody = "";
-
-    var keys = Object.keys( g_tProperties ).sort();
-    for ( var i = 0; i < keys.length; i++ )
+    var sTbody = "";
+    
+    var tLabelMap =
     {
-      key = keys[i];
-      val = g_tProperties[key];
-      if ( Array.isArray( val ) )
+      path: "Path",
+      children: "Children",
+      description: "Description",
+      parent: "Parent",
+      devices: "Devices"
+    };
+
+    // Build new map with display labels as keys
+    var tProps = {};
+    var aKeys = Object.keys( g_tProperties );
+    for ( var i = 0; i < aKeys.length; i++ )
+    {
+      var sKey = aKeys[i];
+      var sLabel = tLabelMap[sKey];
+      if ( sLabel )
       {
-        val = val.length;
+        tProps[sLabel] = g_tProperties[sKey];
       }
-      tbody += "<tr><td>" + key + "</td><td>" + val + "</td></tr>"
     }
 
-    $( "#objectLayout" ).html( tbody );
+    // Display map
+    aKeys = Object.keys( tProps ).sort();
+    for ( var i = 0; i < aKeys.length; i++ )
+    {
+      var sKey = aKeys[i];
+      var sVal = tProps[sKey];
+      if ( Array.isArray( sVal ) )
+      {
+        sVal = sVal.length;
+      }
+      sTbody += "<tr><td>" + sKey + "</td><td>" + sVal + "</td></tr>"
+    }
+
+    $( "#objectLayout" ).html( sTbody );
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
