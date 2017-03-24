@@ -3,14 +3,15 @@
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 
+  $_SESSION["downloadDone"] = false;
 
-  $g_iTestDepth = 1;
+  $g_iTestDepth = 4;
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
 
   $g_iStartTime = time();
   error_log( "===> [" . $g_iStartTime . "] Starting" . $sMsgDepth );
 
-  $g_sDumpId = isset( $_REQUEST["dumpid"] ) ? $_REQUEST["dumpid"] : $g_iStartTime;
+  $g_sDumpId = base_convert ( $g_iStartTime , 10, 36 );
 
   $g_aTree = [];
   walkSubtree( "" );
@@ -21,12 +22,10 @@
 
   $iElapsedSec = $g_iEndTime - $g_iStartTime;
   error_log( "===> Elapsed time: " . $iElapsedSec . " seconds" );
+  $_SESSION["downloadDone"] = true;
 
   function walkSubtree( $sPath )
   {
-    // Save status information
-    writeStatus( $sPath );
-
     // Retrieve object
     $sSelector = ( $sPath == "" ) ? "" : ' -p ' . $sPath;
     $sCommand = quote( getenv( "PYTHON" ) ) . " interface.py 2>&1 -t circuit " . $sSelector;
@@ -166,14 +165,5 @@
     }
 
     return $iResult;
-  }
-
-  function writeStatus( $sPath )
-  {
-    global $g_sDumpId;
-    $sFilename = sys_get_temp_dir() . "/" . "status_" . $g_sDumpId . ".txt";
-    $file = fopen( $sFilename, "w" ) or die( "Unable to open file: " . $sFilename );
-    fwrite( $file, $sPath . PHP_EOL );
-    fclose( $file );
   }
 ?>

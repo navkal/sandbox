@@ -71,7 +71,7 @@
       }
     )
     .done( insertTreeNode )
-    .fail( handlePostError );
+    .fail( handleAjaxError );
   }
 
   function insertTreeNode( tRsp, sStatus, tJqXhr )
@@ -204,7 +204,7 @@
     return iResult;
   }
 
-  function handlePostError( tJqXhr, sStatus, sErrorThrown )
+  function handleAjaxError( tJqXhr, sStatus, sErrorThrown )
   {
     console.log( "=> ERROR=" + sStatus + " " + sErrorThrown );
     console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
@@ -241,69 +241,90 @@
     childWindowsClose( g_aPropertiesWindows );
   }
 
-  var g_sDumpId = "";
+  // -> -> -> Manage child windows -> -> ->
+
+  // Open child window and save reference in array.
+  // - If opened with Click, save in element [0].
+  // - If opened with <key>+Click, save in new element.
+  function childWindowOpen( tEvent, aChildWindows, sUrl, sName, sNameSuffix, iWidth, iHeight )
+  {
+    var iIndex, sWindowFeatures, bFocus;
+
+    if ( tEvent.altKey || tEvent.shiftKey || tEvent.ctrlKey )
+    {
+      // User pressed a special key while clicking.  Allow browser default behavior.
+      iIndex = aChildWindows.length;
+      sName += "_" + sNameSuffix;
+      sWindowFeatures = "";
+      bFocus = false;
+    }
+    else
+    {
+      // User pressed no special key while clicking.  Override browser default behavior.
+      iIndex = 0;
+      var nLeft = parseInt( ( screen.availWidth / 2 ) - ( iWidth / 2 ) );
+      var nTop = parseInt( ( screen.availHeight / 2 ) - ( iHeight / 2 ) );
+      sWindowFeatures = "width=" + iWidth + ",height=" + iHeight + ",status,resizable,left=" + nLeft + ",top=" + nTop + ",screenX=" + nLeft + ",screenY=" + nTop + ",scrollbars=yes";
+      bFocus = true;
+    }
+
+    // Open the new child window
+    aChildWindows[iIndex] = window.open( sUrl, sName, sWindowFeatures );
+
+    // Optionally focus on the new child window
+    if ( bFocus )
+    {
+      aChildWindows[iIndex].focus();
+    }
+  }
+
+  // Close all child windows in given array
+  function childWindowsClose( aWindows )
+  {
+    for ( var iIndex = 0; iIndex < aWindows.length; iIndex ++ )
+    {
+      aWindows[iIndex].close();
+    }
+  }
+
+  // <- <- <- Manage child windows <- <- <-
+
+  var g_iInterval = null;
   function startTreeDump( tEvent )
   {
-    g_sDumpId = Date.now().toString( 36 );
-    location.href = tEvent.target.href + "?dumpid=" + g_sDumpId;
-    return false;
+    console.log( "===> startTreeDump()" );
+    $( '#btnDump' ).attr( "disabled", true );
+    g_iInterval = setInterval( waitTreeDump, 1000 );
+    return true;
   }
 
-// -> -> -> Manage child windows -> -> ->
-
-// Open child window and save reference in array.
-// - If opened with Click, save in element [0].
-// - If opened with <key>+Click, save in new element.
-function childWindowOpen( tEvent, aChildWindows, sUrl, sName, sNameSuffix, iWidth, iHeight )
-{
-  var iIndex, sWindowFeatures, bFocus;
-
-  if ( tEvent.altKey || tEvent.shiftKey || tEvent.ctrlKey )
+  function waitTreeDump()
   {
-    // User pressed a special key while clicking.  Allow browser default behavior.
-    iIndex = aChildWindows.length;
-    sName += "_" + sNameSuffix;
-    sWindowFeatures = "";
-    bFocus = false;
+    $.ajax(
+      "cn/downloadWait.php",
+      {
+        type: 'GET'
+      }
+    )
+    .done( endTreeDump )
+    .fail( handleAjaxError );
   }
-  else
+
+  function endTreeDump( tRsp, sStatus, tJqXhr )
   {
-    // User pressed no special key while clicking.  Override browser default behavior.
-    iIndex = 0;
-    var nLeft = parseInt( ( screen.availWidth / 2 ) - ( iWidth / 2 ) );
-    var nTop = parseInt( ( screen.availHeight / 2 ) - ( iHeight / 2 ) );
-    sWindowFeatures = "width=" + iWidth + ",height=" + iHeight + ",status,resizable,left=" + nLeft + ",top=" + nTop + ",screenX=" + nLeft + ",screenY=" + nTop + ",scrollbars=yes";
-    bFocus = true;
+    console.log( "===> endTreeDump(): done=" + tRsp );
+    if ( tRsp )
+    {
+      clearInterval( g_iInterval );
+      $( '#btnDump' ).attr( "disabled", false );
+    }
   }
-
-  // Open the new child window
-  aChildWindows[iIndex] = window.open( sUrl, sName, sWindowFeatures );
-
-  // Optionally focus on the new child window
-  if ( bFocus )
-  {
-    aChildWindows[iIndex].focus();
-  }
-}
-
-// Close all child windows in given array
-function childWindowsClose( aWindows )
-{
-  for ( var iIndex = 0; iIndex < aWindows.length; iIndex ++ )
-  {
-    aWindows[iIndex].close();
-  }
-}
-
-// <- <- <- Manage child windows <- <- <-
-
 </script>
 
 <div class="container">
-  <a class="btn btn-default" href="cn/downloadTree.php" onclick="return startTreeDump(event);" role="button">Download Tree Dump</a>
+  <a class="btn btn-default" id="btnDump" href="cn/downloadTree.php" onclick="return startTreeDump(event);" role="button">Download Tree Dump</a>
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
     </div>
   </div>
-
 </div>
