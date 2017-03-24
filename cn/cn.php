@@ -289,17 +289,23 @@
 
   // <- <- <- Manage child windows <- <- <-
 
+  var g_iStartTime = null;
   var g_iInterval = null;
   function startTreeDump( tEvent )
   {
     console.log( "===> startTreeDump()" );
-    $( '#btnDump' ).attr( "disabled", true );
+    $( '#dumpButton' ).addClass( "hidden" );
+    $( "#dumpTime" ).html( "" );
+    $( '#dumpStatus' ).removeClass( "hidden" );
     g_iInterval = setInterval( waitTreeDump, 1000 );
+    g_iStartTime = new Date();
     return true;
   }
 
   function waitTreeDump()
   {
+    $( "#dumpTime" ).html( timeSince( g_iStartTime ) );
+
     $.ajax(
       "cn/downloadWait.php",
       {
@@ -310,19 +316,66 @@
     .fail( handleAjaxError );
   }
 
+  function timeSince( startTime )
+  {
+    var ms = new Date() - startTime;
+
+    var x = 1000 * 60 * 60 * 24;
+    var day = Math.floor( ms / x );
+    ms = ms - ( day * x );
+
+    x = 1000 * 60 * 60;
+    var hr = Math.floor( ms / x );
+    ms = ms - ( hr * x );
+
+    x = 1000 * 60;
+    var min = Math.floor( ms / x );
+    ms = ms - ( min * x );
+
+    x = 1000;
+    var sec = Math.floor( ms / x );
+    ms = ms - ( sec * x );
+
+    sDay = day ? ( day + "d " ) : "";
+    sElapsed = sDay + pad( hr, 2 ) + ":" + pad( min, 2 ) + ":" + pad( sec, 2 ) /* + "." + pad( ms, 3 ) */;
+
+    return sElapsed;
+  }
+
+  function pad( iNum, iLen )
+  {
+    var sNum = String( iNum );
+    while( sNum.length < iLen )
+    {
+      sNum = "0" + sNum;
+    }
+    return sNum;
+  }
+
   function endTreeDump( tRsp, sStatus, tJqXhr )
   {
     console.log( "===> endTreeDump(): done=" + tRsp );
     if ( tRsp )
     {
       clearInterval( g_iInterval );
-      $( '#btnDump' ).attr( "disabled", false );
+      $( '#dumpButton' ).removeClass( "hidden" );
+      $( '#dumpStatus' ).addClass( "hidden" );
     }
   }
 </script>
 
+<br/>
 <div class="container">
-  <a class="btn btn-default" id="btnDump" href="cn/downloadTree.php" onclick="return startTreeDump(event);" role="button">Download Tree Dump</a>
+      <a class="btn btn-default" id="dumpButton" href="cn/downloadTree.php" onclick="return startTreeDump(event);" >Download Tree Dump</a>
+      <div id="dumpStatus" class="well well-sm hidden" >
+        Generating tree. <span id="dumpTime"></span>
+      </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    </div>
+  </div>
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
     </div>
