@@ -24,6 +24,9 @@
   error_log( "===> Elapsed time: " . $iElapsedSec . " seconds" );
   $_SESSION["downloadDone"] = true;
 
+  exit();
+
+
   function walkSubtree( $sPath )
   {
     // Retrieve object
@@ -76,12 +79,21 @@
 
   function downloadTree()
   {
+    // Generate the file
     global $g_sDumpId;
     $sFilename = sys_get_temp_dir() . "/" . "tree_" . $g_sDumpId . ".txt";
     $file = fopen( $sFilename, "w" ) or die( "Unable to open file: " . $sFilename );
     writeTree( $file );
     fclose( $file );
+
+    // Download the file
     downloadFile( $sFilename, "", "text/plain" );
+
+    // Delete the file
+    error_log( "bf: file exists===>" . file_exists( $sFilename ) . "<===" );
+    error_log( "CLEAN UP NOW?" );
+    unlink( $sFilename );
+    error_log( "af: file exists===>" . file_exists( $sFilename ) . "<===" );
   }
 
   function writeTree( $file )
