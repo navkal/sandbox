@@ -321,6 +321,7 @@
   {
     if ( tRsp && g_iInterval )
     {
+      console.log( "=> Tree dump completed.  Elapsed time: " + timeSince( g_iStartTime ) );
       clearInterval( g_iInterval );
       g_iInterval = null;
       $( '#dumpStart,#circuitTree' ).removeClass( "hidden" );
