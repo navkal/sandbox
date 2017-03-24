@@ -289,11 +289,12 @@
 
   // <- <- <- Manage child windows <- <- <-
 
+  // -> -> -> Tree dump -> -> ->
+
   var g_iStartTime = null;
   var g_iInterval = null;
   function startTreeDump( tEvent )
   {
-    console.log( "===> startTreeDump()" );
     $( '#dumpStart,#circuitTree' ).addClass( "hidden" );
     $( "#dumpTime" ).html( "00:00:00" );
     $( '#dumpStatus' ).removeClass( "hidden" );
@@ -315,6 +316,19 @@
     .done( endTreeDump )
     .fail( handleAjaxError );
   }
+
+  function endTreeDump( tRsp, sStatus, tJqXhr )
+  {
+    if ( tRsp && g_iInterval )
+    {
+      clearInterval( g_iInterval );
+      g_iInterval = null;
+      $( '#dumpStart,#circuitTree' ).removeClass( "hidden" );
+      $( '#dumpStatus' ).addClass( "hidden" );
+    }
+  }
+
+  // <- <- <- Tree dump <- <- <-
 
   function timeSince( startTime )
   {
@@ -352,16 +366,6 @@
     return sNum;
   }
 
-  function endTreeDump( tRsp, sStatus, tJqXhr )
-  {
-    console.log( "===> endTreeDump(): done=" + tRsp );
-    if ( tRsp )
-    {
-      clearInterval( g_iInterval );
-      $( '#dumpStart,#circuitTree' ).removeClass( "hidden" );
-      $( '#dumpStatus' ).addClass( "hidden" );
-    }
-  }
 </script>
 
 <br/>
