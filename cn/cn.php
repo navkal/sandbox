@@ -294,8 +294,8 @@
   function startTreeDump( tEvent )
   {
     console.log( "===> startTreeDump()" );
-    $( '#dumpButton,#circuitTree' ).addClass( "hidden" );
-    $( "#dumpTime" ).html( "" );
+    $( '#dumpStart,#circuitTree' ).addClass( "hidden" );
+    $( "#dumpTime" ).html( "00:00:00" );
     $( '#dumpStatus' ).removeClass( "hidden" );
     g_iInterval = setInterval( waitTreeDump, 1000 );
     g_iStartTime = new Date();
@@ -358,7 +358,7 @@
     if ( tRsp )
     {
       clearInterval( g_iInterval );
-      $( '#dumpButton,#circuitTree' ).removeClass( "hidden" );
+      $( '#dumpStart,#circuitTree' ).removeClass( "hidden" );
       $( '#dumpStatus' ).addClass( "hidden" );
     }
   }
@@ -366,7 +366,13 @@
 
 <br/>
 <div class="container">
-  <a class="btn btn-default" id="dumpButton" href="cn/downloadTree.php" onclick="return startTreeDump(event);" >Download Tree Dump</a>
+  <div id="dumpStart" >
+    <a class="btn btn-default" href="cn/downloadTree.php" onclick="return startTreeDump(event);" title="Generate and download dump of Circuit Tree" >Download Tree Dump</a>
+    <span class="well-sm text-info" >
+      <sup><i class="glyphicon glyphicon-asterisk" style="font-size:10px;"></i></sup>
+      Takes several minutes
+    </span>
+  </div>
   <div id="dumpStatus" class="well well-sm hidden" >
     Generating tree. <span id="dumpTime"></span>
   </div>
