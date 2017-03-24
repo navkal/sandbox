@@ -131,7 +131,7 @@
       closet_new: "New Closet"
     };
 
-    // Build map of display labels and display values
+    // Build map of labels and values for display
     var tDisplayProps = {};
     var aKeys = Object.keys( g_tProperties );
     for ( var i = 0; i < aKeys.length; i++ )
@@ -152,7 +152,7 @@
         // Save pair in map
         tDisplayProps[sLabel] = sVal;
       }
-      else console.log( "=> Properties window omitting field: " + sKey );
+      else console.log( "=> Omitted field: " + sKey );
     }
 
     // Build layout of property display
