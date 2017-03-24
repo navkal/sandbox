@@ -107,46 +107,61 @@
 
   function showProperties()
   {
+    // Display title
     var sTitle = g_tProperties["description"] || g_tProperties["path"];
     $( "#propertiesTitle" ).html( sTitle );
 
+    // Start building display of properties
     var sTbody = "";
-    
+
+    // Initialize map of property labels
     var tLabelMap =
     {
       path: "Path",
       children: "Children",
       description: "Description",
       parent: "Parent",
-      devices: "Devices"
+      voltage: "Voltage",
+      room_id: "Room ID",
+      devices: "Devices",
+      id: "ID",
+      object_type: "Type"
     };
 
-    // Build new map with display labels as keys
-    var tProps = {};
+    // Build map of display labels and display values
+    var tDisplayProps = {};
     var aKeys = Object.keys( g_tProperties );
     for ( var i = 0; i < aKeys.length; i++ )
     {
+      // Get display label
       var sKey = aKeys[i];
       var sLabel = tLabelMap[sKey];
+
       if ( sLabel )
       {
-        tProps[sLabel] = g_tProperties[sKey];
+        // Get display value
+        var sVal = g_tProperties[sKey];
+        if ( Array.isArray( sVal ) )
+        {
+          sVal = sVal.length;
+        }
+
+        // Save pair in map
+        tDisplayProps[sLabel] = sVal;
       }
+      else console.log( "=> Properties window omitting field: " + sKey );
     }
 
-    // Display map
-    aKeys = Object.keys( tProps ).sort();
+    // Build layout of property display
+    aKeys = Object.keys( tDisplayProps ).sort();
     for ( var i = 0; i < aKeys.length; i++ )
     {
       var sKey = aKeys[i];
-      var sVal = tProps[sKey];
-      if ( Array.isArray( sVal ) )
-      {
-        sVal = sVal.length;
-      }
+      var sVal = tDisplayProps[sKey];
       sTbody += "<tr><td>" + sKey + "</td><td>" + sVal + "</td></tr>"
     }
 
+    // Display properties
     $( "#objectLayout" ).html( sTbody );
   }
 

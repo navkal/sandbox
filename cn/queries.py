@@ -64,7 +64,7 @@ class cirobj:
         self.voltage = voltage[1]
         self.object_type = row[5]
         self.description = row[6]
-        self.parent = row[2].rsplit('.',maxsplit=1)[0]
+        self.parent = row[7]
         self.root = row[2].split('.',maxsplit=1)[0]
 
         cur.execute('SELECT id, path, description, object_type FROM CircuitObject WHERE parent = ?', (self.path,))
