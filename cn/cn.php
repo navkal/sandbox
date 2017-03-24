@@ -294,7 +294,7 @@
   function startTreeDump( tEvent )
   {
     console.log( "===> startTreeDump()" );
-    $( '#dumpButton' ).addClass( "hidden" );
+    $( '#dumpButton,#circuitTree' ).addClass( "hidden" );
     $( "#dumpTime" ).html( "" );
     $( '#dumpStatus' ).removeClass( "hidden" );
     g_iInterval = setInterval( waitTreeDump, 1000 );
@@ -358,7 +358,7 @@
     if ( tRsp )
     {
       clearInterval( g_iInterval );
-      $( '#dumpButton' ).removeClass( "hidden" );
+      $( '#dumpButton,#circuitTree' ).removeClass( "hidden" );
       $( '#dumpStatus' ).addClass( "hidden" );
     }
   }
@@ -370,7 +370,7 @@
   <div id="dumpStatus" class="well well-sm hidden" >
     Generating tree. <span id="dumpTime"></span>
   </div>
- 
+
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
     </div>

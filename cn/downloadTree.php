@@ -5,7 +5,7 @@
 
   $_SESSION["downloadDone"] = false;
 
-  $g_iTestDepth = 5;
+  $g_iTestDepth = 4;
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
 
   $g_iStartTime = time();
