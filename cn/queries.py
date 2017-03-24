@@ -65,14 +65,12 @@ class cirobj:
         self.object_type = row[5]
         self.description = row[6]
         self.parent = row[7]
-        self.root = row[2].split('.',maxsplit=1)[0]
 
         cur.execute('SELECT id, path, description, object_type FROM CircuitObject WHERE parent = ?', (self.path,))
         self.children = cur.fetchall()
         cur.execute('SELECT id, room_id, description FROM Device WHERE parent = ?', (self.path,))
         self.devices = cur.fetchall()
         print('my parent is ',self.parent)
-        print('my root is ',self.root)
         print('my children are ', self.children)
         print('my devcies are ', self.devices)
 
@@ -85,7 +83,6 @@ class cirobj:
                 'Type': self.object_type,
                 'Description': self.description,
                 'Parent': self.parent,
-                'Root': self.root,
                 'Children': self.children}
 
 class room:
