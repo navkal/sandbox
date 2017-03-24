@@ -38,10 +38,7 @@
 	<body>
     <div class="container">
 
-      <h3>
-        <?php
-          echo( $_REQUEST["path"] );
-        ?>
+      <h3 id="propertiesTitle">
       </h3>
 
       <div id="objectArea">
@@ -110,6 +107,9 @@
 
   function showProperties()
   {
+    var sTitle = g_tProperties["description"] || g_tProperties["path"];
+    $( "#propertiesTitle" ).html( sTitle );
+
     var tbody = "";
 
     var keys = Object.keys( g_tProperties ).sort();
