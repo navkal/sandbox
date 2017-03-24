@@ -230,10 +230,12 @@
   {
     tEvent.preventDefault();
     tEvent.stopPropagation();
-    var sPath = $(event.target).closest( "a" ).attr( "path" );
-    var sType = $(event.target).closest( "a" ).attr( "type" );
-    var sOid = $(event.target).closest( "a" ).attr( "oid" );
+
+    var sPath = $( tEvent.target ).closest( "a" ).attr( "path" );
+    var sType = $( tEvent.target ).closest( "a" ).attr( "type" );
+    var sOid = $( tEvent.target ).closest( "a" ).attr( "oid" );
     var sUrl = '/cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
+
     childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 400, 500 );
   }
 
