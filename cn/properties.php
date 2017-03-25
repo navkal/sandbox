@@ -38,8 +38,11 @@
 	<body>
     <div class="container">
 
-      <h3 id="propertiesTitle">
-      </h3>
+      <br/>
+      <div class="well well-sm">
+        <span class="h3" id="propertiesTitle">
+        </span>
+      </div>
 
       <div id="objectArea">
         <table class="table" >

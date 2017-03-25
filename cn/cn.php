@@ -236,7 +236,7 @@
     var sOid = $( tEvent.target ).closest( "a" ).attr( "oid" );
     var sUrl = '/cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
 
-    childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 350, 500 );
+    childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 350, 550 );
   }
 
   function closePropertiesWindows()
