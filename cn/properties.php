@@ -33,22 +33,30 @@
         font-family: 'Lato', Arial, sans-serif;
         line-height: 1.5;
       }
+
+      .table > tbody > tr:first-child > td
+      {
+        border: none;
+      }
     </style>
   </head>
+
 	<body>
     <div class="container">
 
       <br/>
-      <div class="well well-sm">
-        <span class="h3" id="propertiesTitle">
-        </span>
-      </div>
-
-      <div id="objectArea">
-        <table class="table" >
-          <tbody id="objectLayout" >
-          </tbody>
-        </table>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title" id="propertiesTitle"></h3>
+        </div>
+        <div class="panel-body">
+          <div id="objectArea">
+            <table class="table table-hover table-condensed" >
+              <tbody id="objectLayout" >
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
     </div>
