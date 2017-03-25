@@ -385,6 +385,8 @@
     Generating tree. <span id="dumpTime"></span>
   </div>
 
+  <hr/>
+
   <div class="just-padding">
     <div id="circuitTree" class="list-group list-group-root well">
     </div>
