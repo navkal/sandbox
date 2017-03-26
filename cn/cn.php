@@ -245,7 +245,7 @@
     tEvent.stopPropagation();
 
     var sPath = $( tEvent.target ).closest( "a" ).attr( "path" );
-    var sUrl = '/cn/image.php?path=' + sPath;
+    var sUrl = 'cn/image.php?path=' + sPath;
 
     var nDefaultWidth = 800;
     var nDefaultAspect = 2550 / 3300;
@@ -262,7 +262,7 @@
     var sPath = $( tEvent.target ).closest( "a" ).attr( "path" );
     var sType = $( tEvent.target ).closest( "a" ).attr( "type" );
     var sOid = $( tEvent.target ).closest( "a" ).attr( "oid" );
-    var sUrl = '/cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
+    var sUrl = 'cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
 
     childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 350, 550 );
   }
