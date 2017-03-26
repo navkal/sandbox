@@ -14,11 +14,6 @@ if __name__ == '__main__':
     parser.add_argument( '-p', '--path', dest='path',  help='object path' )
     args = parser.parse_args()
 
-    tables = {
-      'device': 'device',
-      'circuit': 'cirobj',
-      'room': 'room' }
-
     if args.path:
       selector = 'path="' + args.path + '"'
     elif args.id:
@@ -27,16 +22,11 @@ if __name__ == '__main__':
       selector = ''
 
     try:
-      classname = tables[ args.table ]
+      object = eval( 'queries.' + args.table + '( ' + selector + ' )' )
     except:
-      dict = { 'Error': 'Unrecognized table [' + args.table + ']' }
+      dict = { 'Error': 'Could not retrieve [' + selector + ']' }
     else:
-      try:
-        object = eval( 'queries.' + classname + '( ' + selector + ' )' )
-      except:
-        dict = { 'Error': 'Could not retrieve [' + selector + ']' }
-      else:
-        dict = object.__dict__;
+      dict = object.__dict__;
 
     printctl.on( )
     print( json.dumps( dict ) )

@@ -9,7 +9,7 @@
 
   // Determine query selector argument
   $selector = '';
-  if ( $postTable == "circuit" )
+  if ( $postTable == "cirobj" )
   {
     // Object is a circuit
 
