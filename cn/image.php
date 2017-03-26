@@ -51,9 +51,8 @@
     var tImg = new Image();
     tImg.src = $("img").attr("src");
 
-    var nDiv = tImg.naturalWidth / 800;
-    var nWidth =  tImg.naturalWidth / nDiv;
-    var nHeight = tImg.naturalHeight / nDiv;
+    var nWidth = $( window ).width();
+    var nHeight = nWidth * tImg.naturalHeight / tImg.naturalWidth;
 
     window.resizeTo( nWidth, nHeight );
   }
