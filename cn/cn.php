@@ -247,7 +247,11 @@
     var sPath = $( tEvent.target ).closest( "a" ).attr( "path" );
     var sUrl = '/cn/image.php?path=' + sPath;
 
-    childWindowOpen( tEvent, g_aImageWindows, sUrl, "Image", sPath, 800, 800 * 3300 / 2550 );
+    var nDefaultWidth = 800;
+    var nDefaultAspect = 2550 / 3300;
+    var nDefaultHeight = nDefaultWidth / nDefaultAspect;
+
+    childWindowOpen( tEvent, g_aImageWindows, sUrl, "Image", sPath, nDefaultWidth, nDefaultHeight );
   }
 
   function openPropertiesWindow( tEvent )

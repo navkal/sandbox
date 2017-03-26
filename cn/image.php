@@ -51,9 +51,25 @@
     var tImg = new Image();
     tImg.src = $("img").attr("src");
 
-    var nWidth = $( window ).width();
-    var nHeight = nWidth * tImg.naturalHeight / tImg.naturalWidth;
+    // Get window aspect
+    var nWinWidth = $( window ).width();
+    var nWinHeight = $( window ).height();
+    var nWinAspect = nWinWidth / nWinHeight;
 
-    window.resizeTo( nWidth, nHeight );
-  }
+    // Get image aspect
+    var nImgWidth = tImg.naturalWidth;
+    var nImgHeight = tImg.naturalHeight;
+    var nImgAspect = nImgWidth / nImgHeight;
+
+    // Measure discrepancy between the two aspects
+    var nDiscrepancy = Math.abs( ( nWinAspect / nImgAspect ) - 1 );
+    console.log( nDiscrepancy );
+
+    // If default aspect does not fit image, resize the window
+    if ( nDiscrepancy > 0.1 )
+    {
+      var nHeight = nWinWidth * tImg.naturalHeight / tImg.naturalWidth;
+      window.resizeTo( nWinWidth, nHeight );
+    }
+   }
 </script>
