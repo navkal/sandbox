@@ -9,12 +9,12 @@ import queries
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser( description='retrieve object from Location Dictionary database' )
-    parser.add_argument( '-t', '--type', dest='type', help='object type' )
+    parser.add_argument( '-t', '--table', dest='table', help='object table' )
     parser.add_argument( '-i', '--id', dest='id',  help='object id' )
     parser.add_argument( '-p', '--path', dest='path',  help='object path' )
     args = parser.parse_args()
 
-    types = {
+    tables = {
       'device': 'device',
       'circuit': 'cirobj',
       'room': 'room' }
@@ -27,9 +27,9 @@ if __name__ == '__main__':
       selector = ''
 
     try:
-      classname = types[ args.type ]
+      classname = tables[ args.table ]
     except:
-      dict = { 'Error': 'Unrecognized Type [' + args.type + ']' }
+      dict = { 'Error': 'Unrecognized table [' + args.table + ']' }
     else:
       try:
         object = eval( 'queries.' + classname + '( ' + selector + ' )' )

@@ -1,4 +1,5 @@
 import sqlite3
+import os
 
 conn = sqlite3.connect('AHSMap.sqlite')
 cur = conn.cursor()
@@ -46,11 +47,11 @@ class cirobj:
 
     def __init__(self,id=None,path=None):
         if id:
-          cur.execute('SELECT * FROM CircuitObject WHERE id = ?', (id,))
+            cur.execute('SELECT * FROM CircuitObject WHERE id = ?', (id,))
         elif path:
-          cur.execute('SELECT * FROM CircuitObject WHERE upper(path) = ?', (path.upper(),))
+            cur.execute('SELECT * FROM CircuitObject WHERE upper(path) = ?', (path.upper(),))
         else:
-          cur.execute('SELECT * FROM CircuitObject WHERE path NOT LIKE "%.%"' )
+            cur.execute('SELECT * FROM CircuitObject WHERE path NOT LIKE "%.%"' )
 
         #initialize circuitObject properties
         row = cur.fetchone()
@@ -66,8 +67,25 @@ class cirobj:
         self.description = row[6]
         self.parent = row[7]
 
+        # Add image filename
+        filename = 'images/' + self.path + '.jpg'
+        if os.path.isfile( filename ):
+            self.image = filename
+        else:
+            self.image = ''
+
+        # Retrieve children
         cur.execute('SELECT id, path, description, object_type FROM CircuitObject WHERE parent = ?', (self.path,))
         self.children = cur.fetchall()
+
+        # Append child image filenames
+        for i in range( len( self.children ) ):
+            filename = 'images/' + self.children[i][1] + '.jpg'
+            if os.path.isfile( filename ):
+                self.children[i] = self.children[i] + ( filename, )
+            else:
+                self.children[i] = self.children[i] + ('',)
+
         cur.execute('SELECT id, room_id, description FROM Device WHERE parent = ?', (self.path,))
         self.devices = cur.fetchall()
         print('my parent is ',self.parent)

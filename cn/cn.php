@@ -21,6 +21,8 @@
   {
     border-radius: 0;
     border-width: 1px 0 0 0;
+    padding-top: 7px;
+    padding-bottom: 5px;
   }
 
   .list-group.list-group-root > .list-group-item:first-child
@@ -41,15 +43,17 @@
 
 <script>
 
+  var g_aImageWindows = [];
   var g_aPropertiesWindows = [];
   var g_tTreeMap = {};
-  var g_sPropertiesButton = '<button class="btn btn-link btn-xs pull-right" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-info-sign" style="width:40px;font-size:16px;" ></span></button>';
+  var g_sImageButton = '<button class="btn btn-link btn-xs" onclick="openImageWindow(event)" title="Image" ><span class="glyphicon glyphicon glyphicon-picture" style="font-size:18px;" ></span></button>';
+  var g_sPropertiesButton = '<button class="btn btn-link btn-xs" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-list" style="font-size:18px;" ></span></button>';
 
   $( document ).ready( initView );
 
   function initView()
   {
-    $( window ).on( 'unload', closePropertiesWindows );
+    $( window ).on( 'unload', closeChildWindows );
     getTreeNode( "" );
   }
 
@@ -89,10 +93,13 @@
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sEncode + '" class="list-group-item" data-toggle="collapse" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item clearfix" data-toggle="collapse" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
     sNode += sLabel;
+    sNode += '<span class="pull-right">';
+    sNode += tRsp.image ? g_sImageButton : '';
     sNode += g_sPropertiesButton;
+    sNode += '</span>';
     sNode += '</a>';
 
     // Open block of collapsed content
@@ -109,15 +116,19 @@
       var sChildDescr = aChildren[iChild][2];
       var sChildLabel = sChildPath.split( "." )[nDepth] + ": " + sChildDescr;
       var sChildType = aChildren[iChild][3];
-      aChildInfo.push( { oid: sChildOid, path: sChildPath, label: sChildLabel, type: sChildType } );
+      var sChildImage = aChildren[iChild][4];
+      aChildInfo.push( { oid: sChildOid, path: sChildPath, label: sChildLabel, type: sChildType, image: sChildImage } );
     }
     aChildInfo.sort( compareNodes );
     for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
     {
-      sCollapse += '<a class="list-group-item collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a class="list-group-item clearfix collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
       sCollapse += aChildInfo[iChild].label;
+      sCollapse += '<span class="pull-right">';
+      sCollapse += aChildInfo[iChild].image ? g_sImageButton : '';
       sCollapse += g_sPropertiesButton;
+      sCollapse += '</span>';
       sCollapse += '</a>';
     }
 
@@ -137,9 +148,11 @@
     aDeviceInfo.sort( compareNodes );
     for ( var iDevice = 0; iDevice < aDeviceInfo.length; iDevice ++ )
     {
-      sCollapse += '<a href="javascript:void(null)" class="list-group-item" path="' + aDeviceInfo[iDevice].path + '" type="device" oid="' + aDeviceInfo[iDevice].oid + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a href="javascript:void(null)" class="list-group-item clearfix" path="' + aDeviceInfo[iDevice].path + '" type="device" oid="' + aDeviceInfo[iDevice].oid + '" title="Attached to ' + sPath + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += aDeviceInfo[iDevice].label;
+      sCollapse += '<span class="pull-right">';
       sCollapse += g_sPropertiesButton;
+      sCollapse += '</span>';
       sCollapse += '</a>';
     }
 
@@ -226,6 +239,17 @@
     }
   }
 
+  function openImageWindow( tEvent )
+  {
+    tEvent.preventDefault();
+    tEvent.stopPropagation();
+
+    var sPath = $( tEvent.target ).closest( "a" ).attr( "path" );
+    var sUrl = '/cn/image.php?path=' + sPath;
+
+    childWindowOpen( tEvent, g_aImageWindows, sUrl, "Image", sPath, 500, 650 );
+  }
+
   function openPropertiesWindow( tEvent )
   {
     tEvent.preventDefault();
@@ -239,8 +263,9 @@
     childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 350, 550 );
   }
 
-  function closePropertiesWindows()
+  function closeChildWindows()
   {
+    childWindowsClose( g_aImageWindows );
     childWindowsClose( g_aPropertiesWindows );
   }
 
