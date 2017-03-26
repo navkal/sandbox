@@ -121,16 +121,20 @@
     {
       path: "Path",
       children: "Children",
-      description: "Description",
+      //description: "Description",
       parent: "Parent",
       voltage: "Voltage",
-      room_id: "Room ID",
+      //room_id: "Room ID",
       devices: "Devices",
-      id: "ID",
+      //id: "ID",
       object_type: "Type",
       panel_id: "Panel ID",
+      closet_new: "New Closet",
       closet_old: "Old Closet",
-      closet_new: "New Closet"
+      loc_new: "New Location",
+      loc_old: "Old Location",
+      loc_type: "Location Type",
+      loc_descr: "Location Description"
     };
 
     // Build map of labels and values for display

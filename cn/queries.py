@@ -67,6 +67,15 @@ class cirobj:
         self.description = row[6]
         self.parent = row[7]
 
+        # Get room information
+        cur.execute('SELECT * FROM Room WHERE id = ?', (self.room_id,))
+        room = cur.fetchone()
+        print(room)
+        self.loc_new = room[1]
+        self.loc_old = room[2]
+        self.loc_type = room[3]
+        self.loc_descr = room[4]
+
         # Add image filename
         filename = 'images/' + self.path + '.jpg'
         if os.path.isfile( filename ):
