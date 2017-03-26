@@ -247,7 +247,7 @@
     var sPath = $( tEvent.target ).closest( "a" ).attr( "path" );
     var sUrl = '/cn/image.php?path=' + sPath;
 
-    childWindowOpen( tEvent, g_aImageWindows, sUrl, "Image", sPath, 500, 650 );
+    childWindowOpen( tEvent, g_aImageWindows, sUrl, "Image", sPath, 800, 800 * 3300 / 2550 );
   }
 
   function openPropertiesWindow( tEvent )

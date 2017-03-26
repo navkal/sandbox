@@ -5,12 +5,12 @@
 
   <?php
     require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
+    $sPath = $_REQUEST['path'];
+    $sImg = 'images/' . $sPath . '.jpg';
   ?>
   <head>
-    <title>Image:
-      <?php
-        echo( $_REQUEST['path'] );
-      ?>
+    <title>
+      Image: <?=$sPath?>
     </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,23 @@
 
 	<body>
     <div class="container-fluid">
-      <img class="img-responsive" src="images/<?=$_REQUEST['path']?>.jpg" alt="<?=$_REQUEST['path']?>">
+      <img class="img-responsive" src="<?=$sImg?>" alt="<?=$sPath?>">
     </div>
  	</body>
 </html>
+<script>
+
+  $( document ).ready( resizeWindow );
+
+  function resizeWindow()
+  {
+    var tImg = new Image();
+    tImg.src = $("img").attr("src");
+
+    var nDiv = tImg.naturalWidth / 800;
+    var nWidth =  tImg.naturalWidth / nDiv;
+    var nHeight = tImg.naturalHeight / nDiv;
+
+    window.resizeTo( nWidth, nHeight );
+  }
+</script>
