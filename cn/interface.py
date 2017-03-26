@@ -24,7 +24,7 @@ if __name__ == '__main__':
     try:
       object = eval( 'queries.' + args.table + '( ' + selector + ' )' )
     except:
-      dict = { 'Error': 'Could not retrieve [' + selector + ']' }
+      dict = { 'Error': 'Could not retrieve [' + selector + '] from [' + args.table + '] table' }
     else:
       dict = object.__dict__;
 
