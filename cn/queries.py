@@ -113,8 +113,6 @@ class cirobj:
             dev = device( dev_id )
             self.devices.append( [ dev.id, dev.closet_new, dev.closet_old, dev.description ] )
 
-
-        # self.devices = cur.fetchall()
         print('my parent is ',self.parent)
         print('my children are ', self.children)
         print('my devices are ', self.devices)
