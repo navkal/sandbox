@@ -56,7 +56,7 @@
     foreach( $aDevices as $aDevice )
     {
       $iDeviceId = $aDevice[0];
-      $iDeviceLoc = $aDevice[1] || $aDevice[2];
+      $iDeviceLoc = ( $aDevice[1] != "" ) ? $aDevice[1] : $aDevice[2];
       $sDeviceDescr = $aDevice[3];
       $sDevName = $iDeviceId . "," . $iDeviceLoc . "," . $sDeviceDescr;
       $sDevicePath = $sPath . " " . $sDevName;
