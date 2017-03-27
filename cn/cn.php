@@ -82,7 +82,7 @@
   {
     // Get path and related values
     var sPath = tRsp.path;
-    var sEncode = sPath.replace( /\./g, '-dot-' );
+    var sEncode = sPath.replace( /\./g, '-_-_-' );
     var aPath = sPath.split( "." );
     var nDepth = aPath.length;
     var sLabel = aPath[nDepth-1] + ": " + tRsp.description;
