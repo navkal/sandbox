@@ -1,4 +1,7 @@
 <!-- Copyright 2017 Energize Apps.  All rights reserved. -->
+<?php
+  $_SESSION["pathDotReplacement"] = '-_-_-';
+?>
 
 <style>
   .just-padding
@@ -42,7 +45,6 @@
 </style>
 
 <script>
-
   var g_aImageWindows = [];
   var g_aPropertiesWindows = [];
   var g_tTreeMap = {};
@@ -85,15 +87,16 @@
     var sEncode = sPath.replace( /\./g, '-_-_-' );
     var aPath = sPath.split( "." );
     var nDepth = aPath.length;
-    var sLabel = aPath[nDepth-1] + ": " + tRsp.description;
+    var sLabel = aPath[nDepth-1] + ": " + ( tRsp.error ? tRsp.error : tRsp.description );
     var sPadNode = "" + ( nDepth * 15 ) + "px";
     var sPadCollapse = "" + ( ( nDepth + 1 ) * 15 ) + "px";
     var sType = tRsp.object_type.toLowerCase();
     var sOid = tRsp.id;
+    var sErrorStyle =  tRsp.error ? 'color:red;' : '';
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sEncode + '" class="list-group-item clearfix" data-toggle="collapse" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item clearfix" data-toggle="collapse" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + ';' + sErrorStyle + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
     sNode += sLabel;
     sNode += '<span class="pull-right">';

@@ -119,6 +119,7 @@
     // Initialize map of property labels
     var tLabelMap =
     {
+      error: "Error",
       path: "Path",
       children: "Children",
       //description: "Description",
@@ -170,7 +171,8 @@
       var sVal = tDisplayProps[sKey];
       if ( sVal != '' )
       {
-        sTbody += '<tr><td style="text-align:right"><b>' + sKey + '</b></td><td>' + sVal + '</td></tr>';
+        var sColor = ( sKey == "Error" ) ? "color:red;" : '';
+        sTbody += '<tr><td style="text-align:right;' + sColor + '"><b>' + sKey + '</b></td><td style="' + sColor + '">' + sVal + '</td></tr>';
       }
     }
 

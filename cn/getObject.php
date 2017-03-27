@@ -41,5 +41,16 @@
   exec( $command, $output, $status );
   error_log( "===> output=" . print_r( $output, true ) );
 
-  echo $output[ count( $output ) - 1 ];
+  $sResult = $output[ count( $output ) - 1 ];
+  $tResult = json_decode( $sResult );
+  $sPath = $tResult->path;
+
+  if ( $sPath == 'MWSB.5' ) $sPath .= "abc" . $_SESSION["pathDotReplacement"] . "xyz";
+  if ( strpos( $sPath, $_SESSION["pathDotReplacement"] ) !== false )
+  {
+    $tResult->error = "Path contains reserved substring '" . $_SESSION["pathDotReplacement"] . "'";
+    $sResult = json_encode( $tResult );
+  }
+
+  echo $sResult;
 ?>
