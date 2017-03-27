@@ -138,8 +138,8 @@
     for ( var iDevice = 0; iDevice < aDevices.length; iDevice ++ )
     {
       var sDeviceOid = aDevices[iDevice][0];
-      var sDeviceLoc = aDevices[iDevice][1];
-      var sDeviceDescr = aDevices[iDevice][2];
+      var sDeviceLoc = aDevices[iDevice][1] || aDevices[iDevice][2];
+      var sDeviceDescr = aDevices[iDevice][3];
       sDevicePath = sPath + " " + sDeviceOid + "," + sDeviceLoc + "," + sDeviceDescr;
       var sDeviceLabel = sDeviceDescr + ' at ' + sDeviceLoc
       aDeviceInfo.push( { oid: sDeviceOid, path: sDevicePath, label: sDeviceLabel } );

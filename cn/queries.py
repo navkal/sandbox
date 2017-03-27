@@ -23,7 +23,11 @@ class device:
         room = cur.fetchone()
 
         self.closet_new = room[0]
+        if self.closet_new == 'no new room':
+            self.closet_new = ''
         self.closet_old = room[1]
+        if self.closet_old == 'no old room':
+            self.closet_old = ''
 
     def properties(self):
         print("room_id:", self.room_id)
@@ -72,8 +76,14 @@ class cirobj:
         room = cur.fetchone()
         print(room)
         self.loc_new = room[1]
+        if self.loc_new == 'no new room':
+            self.loc_new = ''
         self.loc_old = room[2]
+        if self.loc_old == 'no old room':
+            self.loc_old = ''
         self.loc_type = room[3]
+        if self.loc_type == 'no data':
+            self.loc_type = ''
         self.loc_descr = room[4]
 
         # Add image filename
@@ -95,11 +105,19 @@ class cirobj:
             else:
                 self.children[i] = self.children[i] + ('',)
 
-        cur.execute('SELECT id, room_id, description FROM Device WHERE parent = ?', (self.path,))
-        self.devices = cur.fetchall()
+        cur.execute('SELECT id FROM Device WHERE parent = ?', (self.path,))
+        dev_ids = cur.fetchall()
+        self.devices = []
+        for i in range( len (dev_ids) ):
+            dev_id = dev_ids[i][0]
+            dev = device( dev_id )
+            self.devices.append( [ dev.id, dev.closet_new, dev.closet_old, dev.description ] )
+
+
+        # self.devices = cur.fetchall()
         print('my parent is ',self.parent)
         print('my children are ', self.children)
-        print('my devcies are ', self.devices)
+        print('my devices are ', self.devices)
 
 
     def get_main_display(self):

@@ -128,7 +128,7 @@
       devices: "Devices",
       //id: "ID",
       object_type: "Type",
-      panel_id: "Panel ID",
+      // panel_id: "Panel ID",
       closet_new: "New Closet",
       closet_old: "Old Closet",
       loc_new: "New Location",
@@ -168,7 +168,10 @@
     {
       var sKey = aKeys[i];
       var sVal = tDisplayProps[sKey];
-      sTbody += '<tr><td style="text-align:right"><b>' + sKey + '</b></td><td>' + sVal + '</td></tr>';
+      if ( sVal != '' )
+      {
+        sTbody += '<tr><td style="text-align:right"><b>' + sKey + '</b></td><td>' + sVal + '</td></tr>';
+      }
     }
 
     // Display properties
