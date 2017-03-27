@@ -67,7 +67,7 @@ class cirobj:
         self.room_id = row[1]
         self.path = row[2]
         self.voltage = voltage[1]
-        self.object_type = row[5].lower()
+        self.object_type = row[5].title()
         self.description = row[6]
         self.parent = row[7]
 
