@@ -45,7 +45,6 @@
   $tResult = json_decode( $sResult );
   $sPath = $tResult->path;
 
-  if ( $sPath == 'MWSB.5' ) $sPath .= "abc" . $_SESSION["pathDotReplacement"] . "xyz";
   if ( strpos( $sPath, $_SESSION["pathDotReplacement"] ) !== false )
   {
     $tResult->error = "Path contains reserved substring '" . $_SESSION["pathDotReplacement"] . "'";

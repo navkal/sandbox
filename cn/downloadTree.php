@@ -5,7 +5,7 @@
 
   $_SESSION["downloadDone"] = false;
 
-  $g_iTestDepth = 3;
+  $g_iTestDepth = 0;
   $sMsgDepth = " tree dump to depth: " . ( $g_iTestDepth ? $g_iTestDepth : "Full" );
 
   $g_iStartTime = time();
@@ -43,13 +43,20 @@
     // Extract path from object
     $sPath = $tObject->path;
 
+    // Detect path format error
+    $sError = '';
+    if ( strpos( $sPath, $_SESSION["pathDotReplacement"] ) !== false )
+    {
+      $sError = " (Error: Path contains reserved substring '" . $_SESSION["pathDotReplacement"] . "')";
+    }
+
     // Set up indentation
     $nDepth = count( explode( ".", $sPath ) );
     $sIndent = str_repeat( '-', $nDepth - 1 );
 
     // Insert path in tree
     global $g_aTree;
-    $g_aTree[$sPath] = $sIndent . $sPath . PHP_EOL;
+    $g_aTree[$sPath] = $sIndent . $sPath . $sError . PHP_EOL;
 
     // Insert devices in tree
     $aDevices = $tObject->devices;
