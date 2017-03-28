@@ -185,6 +185,9 @@
     $( '.list-group-item' ).off( 'click' );
     $( '.list-group-item' ).on( 'click', toggleFolder );
 
+    // Set tooltips on tree toggles
+    setToggleTooltips();
+
     // Insert node in tree map
     g_tTreeMap[sPath] = tRsp;
   }
@@ -228,38 +231,45 @@
 
   function toggleFolder( tEvent )
   {
-    if ( ! $(tEvent.target).find(".toggle").hasClass( "no-children" ) )
-    {
-      if (tEvent.ctrlKey)
-        alert('Ctrl down');
-      if (tEvent.altKey)
-        alert('Alt down');
-      if (tEvent.shiftKey)
-        alert('Shift down');
-      if (tEvent.metaKey)
-        alert('Meta down');
+    var tItem = $( tEvent.target ).closest( '.list-group-item' );
 
-  
-      $( '.toggle', this )
+    // If we haven't already determined that it's a leaf, toggle it
+    if ( ! tItem.find( '.toggle' ).hasClass( "no-children" ) )
+    {
+      // Toggle the target tree element
+      $( '.toggle', tItem )
         .toggleClass( 'glyphicon-chevron-right' )
         .toggleClass( 'glyphicon-chevron-down' );
 
-      var sPath = $( this ).attr( "path" );
+      var sPath = $( tItem ).attr( "path" );
       if ( ! g_tTreeMap[sPath] )
       {
+        // Expand for the first time
         getTreeNode( sPath );
       }
+      else
+      {
+        // Optionally collapse all descendants of this target
+        if ( tEvent.ctrlKey && tItem.find( ".toggle.glyphicon-chevron-right" ).length > 0 )
+        {
+          collapseTree( tItem.attr( "href" ) );
+        }
+      }
+
+      setToggleTooltips();
     }
   }
 
-  function collapseTree()
+  function collapseTree( sRootSelector )
   {
+    var tRoot = $( sRootSelector );
+
     // Toggle the icons
-    var tOpenFolders = $( '#circuitTree .toggle.glyphicon-chevron-down:not(.no-children)' ).closest( '.list-group-item' );
+    var tOpenFolders = tRoot.find( '.toggle.glyphicon-chevron-down:not(.no-children)' ).closest( '.list-group-item' );
     tOpenFolders.each( toggleIcon );
 
     // Collapse the content
-    $( '.collapse' ).collapse( 'hide' );
+    $( '.collapse', tRoot ).collapse( 'hide' );
   }
 
   function toggleIcon()
@@ -267,6 +277,12 @@
     $( '.toggle', this )
       .toggleClass( 'glyphicon-chevron-right' )
       .toggleClass( 'glyphicon-chevron-down' );
+  }
+
+  function setToggleTooltips()
+  {
+    $( '.toggle.glyphicon-chevron-right' ).attr( 'title', '' );
+    $( '.toggle.glyphicon-chevron-down:not(.no-children)' ).attr( 'title', 'Ctrl+Click to collapse all' );
   }
 
   function openImageWindow( tEvent )
@@ -447,8 +463,6 @@
 
   <div id="circuitNavigator">
     <hr/>
-    <a class="btn btn-default btn-xs" href="javascript:void(null)" onclick="collapseTree();" title="Collapse Circuit Tree" >Collapse All</a>
-
     <div class="row" >
       <div class="just-padding">
         <div id="circuitTree" class="list-group list-group-root well">
