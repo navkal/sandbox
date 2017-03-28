@@ -242,6 +242,23 @@
     }
   }
 
+  function collapseTree()
+  {
+    // Toggle the icons
+    var tOpenFolders = $( '#circuitTree .toggle.glyphicon-chevron-down:not(.no-children)' ).closest( '.list-group-item' );
+    tOpenFolders.each( toggleIcon );
+
+    // Collapse the content
+    $( '.collapse' ).collapse( 'hide' );
+  }
+
+  function toggleIcon()
+  {
+    $( '.toggle', this )
+      .toggleClass( 'glyphicon-chevron-right' )
+      .toggleClass( 'glyphicon-chevron-down' );
+  }
+
   function openImageWindow( tEvent )
   {
     tEvent.preventDefault();
@@ -418,9 +435,12 @@
   </div>
 
   <hr/>
+  <a class="btn btn-default btn-xs" href="javascript:void(null)" onclick="collapseTree();" title="Collapse Circuit Tree" >Collapse All</a>
 
-  <div class="just-padding">
-    <div id="circuitTree" class="list-group list-group-root well">
+  <div class="row">
+    <div class="just-padding">
+      <div id="circuitTree" class="list-group list-group-root well">
+      </div>
     </div>
   </div>
 </div>
