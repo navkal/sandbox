@@ -42,13 +42,18 @@
   error_log( "===> output=" . print_r( $output, true ) );
 
   $sResult = $output[ count( $output ) - 1 ];
-  $tResult = json_decode( $sResult );
-  $sPath = $tResult->path;
 
-  if ( strpos( $sPath, $_SESSION["pathDotReplacement"] ) !== false )
+  // Check for illegal path format
+  $tResult = json_decode( $sResult );
+  if ( isset( $tResult->path ) )
   {
-    $tResult->error = "Path contains reserved substring '" . $_SESSION["pathDotReplacement"] . "'";
-    $sResult = json_encode( $tResult );
+    $sPath = $tResult->path;
+
+    if ( strpos( $sPath, $_SESSION["pathDotReplacement"] ) !== false )
+    {
+      $tResult->error = "Path contains reserved substring '" . $_SESSION["pathDotReplacement"] . "'";
+      $sResult = json_encode( $tResult );
+    }
   }
 
   echo $sResult;
