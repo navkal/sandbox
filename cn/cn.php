@@ -144,7 +144,7 @@
       var sDeviceLoc = aDevices[iDevice][1] || aDevices[iDevice][2];
       var sDeviceDescr = aDevices[iDevice][3];
       sDevicePath = sPath + " " + sDeviceOid + "," + sDeviceLoc + "," + sDeviceDescr;
-      var sDeviceLabel = sDeviceDescr + ' at ' + sDeviceLoc
+      var sDeviceLabel = sDeviceDescr + ' <span class="text-info">(at ' + sDeviceLoc + ')</span>';
       aDeviceInfo.push( { oid: sDeviceOid, path: sDevicePath, label: sDeviceLabel } );
     }
 
@@ -230,6 +230,16 @@
   {
     if ( ! $(tEvent.target).find(".toggle").hasClass( "no-children" ) )
     {
+      if (tEvent.ctrlKey)
+        alert('Ctrl down');
+      if (tEvent.altKey)
+        alert('Alt down');
+      if (tEvent.shiftKey)
+        alert('Shift down');
+      if (tEvent.metaKey)
+        alert('Meta down');
+
+  
       $( '.toggle', this )
         .toggleClass( 'glyphicon-chevron-right' )
         .toggleClass( 'glyphicon-chevron-down' );
