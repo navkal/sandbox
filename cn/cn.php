@@ -347,7 +347,8 @@
   var g_iInterval = null;
   function startTreeDump( tEvent )
   {
-    $( '#dumpStart,#circuitTree' ).addClass( "hidden" );
+    closeChildWindows();
+    $( '#dumpStart,#circuitNavigator' ).addClass( "hidden" );
     $( "#dumpTime" ).html( "00:00:00" );
     $( '#dumpStatus' ).removeClass( "hidden" );
     g_iInterval = setInterval( waitTreeDump, 1000 );
@@ -376,7 +377,7 @@
       console.log( "=> Tree dump completed.  Elapsed time: " + timeSince( g_iStartTime ) );
       clearInterval( g_iInterval );
       g_iInterval = null;
-      $( '#dumpStart,#circuitTree' ).removeClass( "hidden" );
+      $( '#dumpStart,#circuitNavigator' ).removeClass( "hidden" );
       $( '#dumpStatus' ).addClass( "hidden" );
     }
   }
@@ -434,12 +435,14 @@
     Generating tree. <span id="dumpTime"></span>
   </div>
 
-  <hr/>
-  <a class="btn btn-default btn-xs" href="javascript:void(null)" onclick="collapseTree();" title="Collapse Circuit Tree" >Collapse All</a>
+  <div id="circuitNavigator">
+    <hr/>
+    <a class="btn btn-default btn-xs" href="javascript:void(null)" onclick="collapseTree();" title="Collapse Circuit Tree" >Collapse All</a>
 
-  <div class="row">
-    <div class="just-padding">
-      <div id="circuitTree" class="list-group list-group-root well">
+    <div class="row" >
+      <div class="just-padding">
+        <div id="circuitTree" class="list-group list-group-root well">
+        </div>
       </div>
     </div>
   </div>
