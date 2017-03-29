@@ -462,8 +462,12 @@
   <div id="dumpStart" >
     <a class="btn btn-default btn-sm" href="cn/downloadTree.php" onclick="return startTreeDump(event);" title="Generate and download dump of Circuit Tree" ><span class="glyphicon glyphicon-download-alt"></span> Download Tree Dump</a>
     <span class="well-sm text-info" >
-      <sup><i class="glyphicon glyphicon-asterisk"></i></sup>
-      Takes several minutes
+      <sup>
+        <span class="glyphicon glyphicon-asterisk"></span>
+      </sup>
+      <small>
+        Takes several minutes
+      </small>
     </span>
   </div>
   <div id="dumpStatus" class="well well-sm hidden" >
