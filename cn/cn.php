@@ -24,8 +24,8 @@
   {
     border-radius: 0;
     border-width: 1px 0 0 0;
-    padding-top: 7px;
-    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 2px;
   }
 
   .list-group.list-group-root > .list-group-item:first-child
