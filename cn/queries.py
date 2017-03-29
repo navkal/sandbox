@@ -8,7 +8,7 @@ class device:
     def __init__(self,id):
         self.id = id
 
-        #initialize roomproperties
+        #initialize room properties
         cur.execute('SELECT * FROM Device WHERE id = ?', (id,))
         row = cur.fetchone()
         print("I am a device. This is me:", row)
@@ -23,10 +23,10 @@ class device:
         room = cur.fetchone()
 
         self.closet_new = room[0]
-        if self.closet_new == 'no new room':
+        if ( self.closet_new == 'no new room' ) or ( self.closet_new.upper().find( 'UNKNOWN' ) != -1 ):
             self.closet_new = ''
         self.closet_old = room[1]
-        if self.closet_old == 'no old room':
+        if ( self.closet_old == 'no old room' ) or ( self.closet_old.upper().find( 'UNKNOWN' ) != -1 ):
             self.closet_old = ''
 
     def properties(self):

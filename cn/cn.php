@@ -144,7 +144,8 @@
       var sDeviceLoc = aDevices[iDevice][1] || aDevices[iDevice][2];
       var sDeviceDescr = aDevices[iDevice][3];
       sDevicePath = sPath + " " + sDeviceOid + "," + sDeviceLoc + "," + sDeviceDescr;
-      var sDeviceLabel = sDeviceDescr + ' <span class="glyphicon glyphicon-map-marker"></span>' + sDeviceLoc;
+      var sDeviceAt = ( sDeviceLoc == '' ) ? '' : ( ' <span class="glyphicon glyphicon-map-marker"></span>' + sDeviceLoc );
+      var sDeviceLabel = sDeviceDescr + sDeviceAt;
       aDeviceInfo.push( { oid: sDeviceOid, path: sDevicePath, label: sDeviceLabel } );
     }
 
@@ -459,14 +460,14 @@
 <br/>
 <div class="container">
   <div id="dumpStart" >
-    <a class="btn btn-default" href="cn/downloadTree.php" onclick="return startTreeDump(event);" title="Generate and download dump of Circuit Tree" >Download Tree Dump</a>
+    <a class="btn btn-default btn-sm" href="cn/downloadTree.php" onclick="return startTreeDump(event);" title="Generate and download dump of Circuit Tree" ><span class="glyphicon glyphicon-download-alt"></span> Download Tree Dump</a>
     <span class="well-sm text-info" >
       <sup><i class="glyphicon glyphicon-asterisk"></i></sup>
       Takes several minutes
     </span>
   </div>
   <div id="dumpStatus" class="well well-sm hidden" >
-    Generating tree. <span id="dumpTime"></span>
+    <span class="glyphicon glyphicon-hourglass" style="font-size:18px;" ></span> Generating tree. <span id="dumpTime"></span>
   </div>
 
   <div id="circuitNavigator">
