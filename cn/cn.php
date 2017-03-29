@@ -281,7 +281,15 @@
 
   function setToggleTooltips()
   {
-    $( '.toggle.glyphicon-chevron-right' ).attr( 'title', '' );
+    // Right-arrow shows tooltip of parent
+    $( '.toggle.glyphicon-chevron-right' ).each(
+      function()
+      {
+        $( this ).attr( 'title', $( this ).parent().attr( 'title' ) );
+      }
+    );
+
+    // Down-arrow shows collapse-all instruction
     $( '.toggle.glyphicon-chevron-down:not(.no-children)' ).attr( 'title', 'Ctrl+Click to collapse all' );
   }
 
