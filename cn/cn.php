@@ -144,7 +144,7 @@
       var sDeviceLoc = aDevices[iDevice][1] || aDevices[iDevice][2];
       var sDeviceDescr = aDevices[iDevice][3];
       sDevicePath = sPath + " " + sDeviceOid + "," + sDeviceLoc + "," + sDeviceDescr;
-      var sDeviceLabel = sDeviceDescr + ' <span class="text-info">(at ' + sDeviceLoc + ')</span>';
+      var sDeviceLabel = sDeviceDescr + ' <span class="glyphicon glyphicon-map-marker"></span>' + sDeviceLoc;
       aDeviceInfo.push( { oid: sDeviceOid, path: sDevicePath, label: sDeviceLabel } );
     }
 
