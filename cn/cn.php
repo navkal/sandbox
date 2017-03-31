@@ -173,7 +173,11 @@
     else
     {
       var tReplace = $( '#circuitTree a[path="' + sPath + '"]' );
-      tReplace.replaceWith( sSubtree );
+      if ( $( '#' + sEncode ).length == 0 )
+      {
+        tReplace.replaceWith( sSubtree );
+      }
+      else console.log( "======> ATTEMPTED to add collapse div twice! id=" + sEncode );
     }
 
     var nCollapseElements = aChildren.length + aDevices.length;
@@ -246,11 +250,10 @@
       else
       {
         // Optionally collapse all descendants of this target
-        if ( tEvent.ctrlKey && tItem.find( ".toggle.glyphicon-chevron-right" ).length > 0 )
+        if ( tEvent.ctrlKey && tItem.find( ".toggle.glyphicon-chevron-down" ).length > 0 )
         {
           collapseTree( tItem.attr( "href" ) );
         }
-        setToggleTooltips();
       }
     }
   }
@@ -262,6 +265,7 @@
 
   function collapseHidden( tEvent )
   {
+    console.log( "======> hidden " + tEvent.target.id );
     collapseComplete( tEvent, false );
   }
 
@@ -279,25 +283,15 @@
     {
       tToggle.removeClass( 'glyphicon-chevron-down' ).addClass( 'glyphicon-chevron-right' );
     }
+    setToggleTooltips();
   }
 
   function collapseTree( sRootSelector )
   {
     var tRoot = $( sRootSelector );
 
-    // Toggle the icons
-    var tOpenFolders = tRoot.find( '.toggle.glyphicon-chevron-down:not(.no-children)' ).closest( '.list-group-item' );
-    tOpenFolders.each( toggleIcon );
-
     // Collapse the content
     $( '.collapse', tRoot ).collapse( 'hide' );
-  }
-
-  function toggleIcon()
-  {
-    $( '.toggle', this )
-      .toggleClass( 'glyphicon-chevron-right' )
-      .toggleClass( 'glyphicon-chevron-down' );
   }
 
   function setToggleTooltips()
