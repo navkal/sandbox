@@ -177,7 +177,6 @@
       {
         tReplace.replaceWith( sSubtree );
       }
-      else console.log( "======> ATTEMPTED to add collapse div twice! id=" + sEncode );
     }
 
     var nCollapseElements = aChildren.length + aDevices.length;
@@ -252,7 +251,7 @@
         // Optionally collapse all descendants of this target
         if ( tEvent.ctrlKey && tItem.find( ".toggle.glyphicon-chevron-down" ).length > 0 )
         {
-          collapseTree( tItem.attr( "href" ) );
+          $( '.collapse', $( tItem.attr( "href" ) ) ).collapse( 'hide' );
         }
       }
     }
@@ -265,7 +264,6 @@
 
   function collapseHidden( tEvent )
   {
-    console.log( "======> hidden " + tEvent.target.id );
     collapseComplete( tEvent, false );
   }
 
@@ -283,15 +281,8 @@
     {
       tToggle.removeClass( 'glyphicon-chevron-down' ).addClass( 'glyphicon-chevron-right' );
     }
+
     setToggleTooltips();
-  }
-
-  function collapseTree( sRootSelector )
-  {
-    var tRoot = $( sRootSelector );
-
-    // Collapse the content
-    $( '.collapse', tRoot ).collapse( 'hide' );
   }
 
   function setToggleTooltips()
