@@ -257,13 +257,11 @@
 
   function collapseShown( tEvent )
   {
-    console.log( "===> in collapseShown()" );
     collapseComplete( tEvent, true );
   }
 
   function collapseHidden( tEvent )
   {
-    console.log( "===> in collapseHidden()" );
     collapseComplete( tEvent, false );
   }
 
