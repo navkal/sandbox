@@ -96,7 +96,7 @@
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sEncode + '" class="list-group-item clearfix" data-toggle="collapse" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + ';' + sErrorStyle + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item clearfix" data-toggle="collapse" onclick="toggleFolder(event);" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + ';' + sErrorStyle + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
     sNode += sLabel;
     sNode += '<span class="pull-right">';
@@ -107,7 +107,7 @@
 
     // Open block of collapsed content
     var sCollapse = "";
-    sCollapse += '<div class="list-group collapse in" id="' + sEncode + '">';
+    sCollapse += '<div class="list-group collapse in" id="' + sEncode + '" >';
 
     // Sort children and load into collapsed content
     var aChildren = tRsp.children;
@@ -125,7 +125,7 @@
     aChildInfo.sort( compareNodes );
     for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
     {
-      sCollapse += '<a class="list-group-item clearfix collapsed" data-toggle="collapse" path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a class="list-group-item clearfix collapsed" data-toggle="collapse" onclick="toggleFolder(event);" path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
       sCollapse += aChildInfo[iChild].label;
       sCollapse += '<span class="pull-right">';
@@ -182,9 +182,9 @@
       $( '#circuitTree a[path="' + sPath + '"] .toggle' ).addClass( "no-children" );
     }
 
-    // Attach toggle handler
-    $( '.list-group-item' ).off( 'click' );
-    $( '.list-group-item' ).on( 'click', toggleFolder );
+    // Set toggle completion handlers
+    $( '#' + sEncode ).on( 'shown.bs.collapse', collapseShown );
+    $( '#' + sEncode ).on( 'hidden.bs.collapse', collapseHidden );
 
     // Set tooltips on tree toggles
     setToggleTooltips();
@@ -237,11 +237,6 @@
     // If we haven't already determined that it's a leaf, toggle it
     if ( ! tItem.find( '.toggle' ).hasClass( "no-children" ) )
     {
-      // Toggle the target tree element
-      $( '.toggle', tItem )
-        .toggleClass( 'glyphicon-chevron-right' )
-        .toggleClass( 'glyphicon-chevron-down' );
-
       var sPath = $( tItem ).attr( "path" );
       if ( ! g_tTreeMap[sPath] )
       {
@@ -255,9 +250,36 @@
         {
           collapseTree( tItem.attr( "href" ) );
         }
+        setToggleTooltips();
       }
+    }
+  }
 
-      setToggleTooltips();
+  function collapseShown( tEvent )
+  {
+    console.log( "===> in collapseShown()" );
+    collapseComplete( tEvent, true );
+  }
+
+  function collapseHidden( tEvent )
+  {
+    console.log( "===> in collapseHidden()" );
+    collapseComplete( tEvent, false );
+  }
+
+  function collapseComplete( tEvent, bShown )
+  {
+    var sId = $( tEvent.target ).attr( "id" );
+    var tItem = $( '.list-group-item[href="#' + sId + '"]' );
+    var tToggle = tItem.find( '.toggle' );
+
+    if ( bShown )
+    {
+      tToggle.removeClass( 'glyphicon-chevron-right' ).addClass( 'glyphicon-chevron-down' );
+    }
+    else
+    {
+      tToggle.removeClass( 'glyphicon-chevron-down' ).addClass( 'glyphicon-chevron-right' );
     }
   }
 
