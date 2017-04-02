@@ -96,7 +96,7 @@
 
     // Display tree node
     var sNode = "";
-    sNode += '<a href="#' + sEncode + '" class="list-group-item clearfix" data-toggle="collapse" onclick="toggleFolder(event);" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + ';' + sErrorStyle + '" >';
+    sNode += '<a href="#' + sEncode + '" class="list-group-item clearfix" data-toggle="collapse" onclick="toggleFolder(event);" ondblclick="toggleFolder(event);" path="' + sPath + '" type="' + sType + '" oid="' + sOid + '" title="' + sPath + '" style="padding-left:' + sPadNode + ';' + sErrorStyle + '" >';
     sNode += '<i class="glyphicon glyphicon-chevron-down toggle"></i>';
     sNode += sLabel;
     sNode += '<span class="pull-right">';
@@ -125,7 +125,7 @@
     aChildInfo.sort( compareNodes );
     for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
     {
-      sCollapse += '<a class="list-group-item clearfix collapsed" data-toggle="collapse" onclick="toggleFolder(event);" path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
+      sCollapse += '<a class="list-group-item clearfix collapsed" data-toggle="collapse" onclick="toggleFolder(event);"  ondblclick="toggleFolder(event);"path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
       sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
       sCollapse += aChildInfo[iChild].label;
       sCollapse += '<span class="pull-right">';
@@ -249,7 +249,7 @@
       else
       {
         // Optionally collapse all descendants of this target
-        if ( tEvent.ctrlKey && tItem.find( ".toggle.glyphicon-chevron-down" ).length > 0 )
+        if ( ( tEvent.type == "dblclick" ) && ( tItem.find( ".toggle.glyphicon-chevron-down" ).length > 0 ) )
         {
           $( '.collapse', $( tItem.attr( "href" ) ) ).collapse( 'hide' );
         }
@@ -296,7 +296,7 @@
     );
 
     // Down-arrow shows collapse-all instruction
-    $( '.toggle.glyphicon-chevron-down:not(.no-children)' ).attr( 'title', 'Ctrl+Click to collapse all' );
+    $( '.toggle.glyphicon-chevron-down:not(.no-children)' ).attr( 'title', 'Double click to collapse all' );
   }
 
   function openImageWindow( tEvent )
