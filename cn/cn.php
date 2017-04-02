@@ -273,16 +273,19 @@
     var tItem = $( '.list-group-item[href="#' + sId + '"]' );
     var tToggle = tItem.find( '.toggle' );
 
-    if ( bShown )
+    if ( ! tToggle.hasClass( 'no-children' ) )
     {
-      tToggle.removeClass( 'glyphicon-chevron-right' ).addClass( 'glyphicon-chevron-down' );
-    }
-    else
-    {
-      tToggle.removeClass( 'glyphicon-chevron-down' ).addClass( 'glyphicon-chevron-right' );
-    }
+      if ( bShown )
+      {
+        tToggle.removeClass( 'glyphicon-chevron-right' ).addClass( 'glyphicon-chevron-down' );
+      }
+      else
+      {
+        tToggle.removeClass( 'glyphicon-chevron-down' ).addClass( 'glyphicon-chevron-right' );
+      }
 
-    setToggleTooltips();
+      setToggleTooltips();
+    }
   }
 
   function setToggleTooltips()
