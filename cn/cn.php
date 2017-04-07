@@ -37,7 +37,7 @@
       <div id="the-basics" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div class="form-group has-feedback">
           <input class="typeahead" type="text" placeholder="Search..." >
-          <i class="glyphicon glyphicon-search form-control-feedback" style="color:gray"></i>
+          <i class="glyphicon glyphicon-search form-control-feedback" style="font-size:18px; color:#999;"></i>
         </div>
       </div>
     </div>
