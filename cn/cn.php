@@ -4,6 +4,10 @@
   $_SESSION["pathDotReplacement"] = '-_-_-';
 ?>
 
+<!-- Typeahead library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" integrity="sha256-LOnFraxKlOhESwdU/dX+K0GArwymUDups0czPWLEg4E=" crossorigin="anonymous"></script>
+
+<!-- Circuit Navigator scripts -->
 <link rel="stylesheet" href="cn/cn.css">
 <script src="cn/cn.js"></script>
 
