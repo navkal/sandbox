@@ -4,12 +4,14 @@
   $_SESSION["pathDotReplacement"] = '-_-_-';
 ?>
 
-<!-- Typeahead library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" integrity="sha256-LOnFraxKlOhESwdU/dX+K0GArwymUDups0czPWLEg4E=" crossorigin="anonymous"></script>
-
 <!-- Circuit Navigator scripts -->
 <link rel="stylesheet" href="cn/cn.css">
 <script src="cn/cn.js"></script>
+
+<!-- Search scripts -->
+<script src="cn/typeahead.js/typeahead.jquery.js"></script>
+<link rel="stylesheet" href="cn/search.css">
+<script src="cn/search.js"></script>
 
 <br/>
 <div class="container">
@@ -30,6 +32,13 @@
 
   <div id="circuitNavigator">
     <hr/>
+
+    <div class="row" >
+      <div id="the-basics" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <input class="typeahead" type="text" placeholder="Search...">
+      </div>
+    </div>
+
     <div class="row" >
       <div class="just-padding">
         <div id="circuitTree" class="list-group list-group-root well">
