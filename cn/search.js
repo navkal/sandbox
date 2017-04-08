@@ -43,7 +43,7 @@ function initSearch()
   resizeTypeahead();
   $(window).resize( resizeTypeahead );
 
-  // Build data structure based on hard-coded data
+  // Use hard-coded data
   $('#the-basics .typeahead').typeahead(
     {
       hint: true,
@@ -56,7 +56,7 @@ function initSearch()
     }
   );
 
-  // Build data structure based on Bloodhound suggestion engine
+  // Use Bloodhound with hard-coded data
   var fnFindStates = new Bloodhound(
     {
       datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -76,6 +76,24 @@ function initSearch()
       source: fnFindStates
     }
   );
+
+  // Use Bloodhound with prefetched data
+  var countries = new Bloodhound(
+    {
+      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      prefetch: 'cn/prefetch.json'
+    }
+  );
+
+  $('#prefetch .typeahead').typeahead(
+    null,
+    {
+      name: 'countries',
+      source: countries
+    }
+  );
+
 
 }
 

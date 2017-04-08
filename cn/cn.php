@@ -37,7 +37,7 @@
       <div id="the-basics" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div class="form-group has-feedback">
           <input class="typeahead" type="text" placeholder="Regex..." >
-          <i class="glyphicon glyphicon-search form-control-feedback" style="font-size:18px; color:#999;"></i>
+          <i class="glyphicon glyphicon-search form-control-feedback"></i>
         </div>
       </div>
     </div>
@@ -46,7 +46,16 @@
       <div id="bloodhound" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div class="form-group has-feedback">
           <input class="typeahead" type="text" placeholder="Bloodhound..." >
-          <i class="glyphicon glyphicon-search form-control-feedback" style="font-size:18px; color:#999;"></i>
+          <i class="glyphicon glyphicon-search form-control-feedback"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div id="prefetch" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div class="form-group has-feedback">
+          <input class="typeahead" type="text" placeholder="Prefetch..." >
+          <i class="glyphicon glyphicon-search form-control-feedback"></i>
         </div>
       </div>
     </div>
