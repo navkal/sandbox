@@ -36,6 +36,9 @@ function substringMatcher(strs)
   };
 };
 
+
+
+
 $(document).ready( initSearch );
 
 function initSearch()
@@ -44,7 +47,7 @@ function initSearch()
   $(window).resize( resizeTypeahead );
 
   // Use hard-coded data
-  $('#the-basics .typeahead').typeahead(
+  $( '#the-basics .typeahead' ).typeahead(
     {
       hint: true,
       highlight: true,
@@ -65,7 +68,7 @@ function initSearch()
     }
   );
 
-  $('#bloodhound .typeahead').typeahead(
+  $( '#bloodhound .typeahead' ).typeahead(
     {
       hint: true,
       highlight: true,
@@ -86,7 +89,7 @@ function initSearch()
     }
   );
 
-  $('#prefetch .typeahead').typeahead(
+  $( '#prefetch .typeahead' ).typeahead(
     null,
     {
       name: 'countries',
@@ -95,7 +98,49 @@ function initSearch()
   );
 
 
+  // Use data generated dynamically at backend
+  $( '#remote .typeahead' ).typeahead(
+    {
+      hint: true,
+      highlight: true,
+      minLength: 1
+    },
+    {
+      name: 'remote',
+      source: getMatches(g_aStates)
+    }
+  );
+
 }
+
+
+function getMatches( aStrings )
+{
+  return function( sFragment, fnShowDropdown )
+  {
+    console.log( "===> in anon function, sFragment=" + sFragment );
+
+    var tRegExp = new RegExp( sFragment, 'i' );
+    var aMatches = [];
+
+    $.each(
+      aStrings,
+      function( i, sFull )
+      {
+        if ( tRegExp.test( sFull ) )
+        {
+          aMatches.push( sFull );
+        }
+      }
+    );
+
+    console.log( "=====> num matches=" + aMatches.length );
+    fnShowDropdown( aMatches );
+
+    resizeTypeahead();
+  };
+};
+
 
 function resizeTypeahead()
 {

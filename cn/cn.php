@@ -61,6 +61,15 @@
     </div>
 
     <div class="row" >
+      <div id="remote" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div class="form-group has-feedback">
+          <input class="typeahead" type="text" placeholder="Remote..." >
+          <i class="glyphicon glyphicon-search form-control-feedback"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" >
       <div class="just-padding">
         <div id="circuitTree" class="list-group list-group-root well">
         </div>
