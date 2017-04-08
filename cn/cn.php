@@ -61,9 +61,9 @@
     </div>
 
     <div class="row" >
-      <div id="remote" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+      <div id="search" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div class="form-group has-feedback">
-          <input class="typeahead" type="text" placeholder="Remote..." >
+          <input class="typeahead" type="text" placeholder="Search..." >
           <i class="glyphicon glyphicon-search form-control-feedback"></i>
         </div>
       </div>

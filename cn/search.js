@@ -97,16 +97,15 @@ function initSearch()
     }
   );
 
-
-  // Use data generated dynamically at backend
-  $( '#remote .typeahead' ).typeahead(
+  // Get dynamic results from backend
+  $( '#search .typeahead' ).typeahead(
     {
       hint: true,
       highlight: true,
       minLength: 1
     },
     {
-      name: 'remote',
+      name: 'search',
       source: makeMatchfinder(g_aStates)
     }
   );
@@ -120,30 +119,54 @@ function makeMatchfinder( aStrings )
   {
     console.log( "===> in anon function, sFragment=" + sFragment );
 
-    var tRegExp = new RegExp( sFragment, 'i' );
-    var aMatches = [];
-
-    $.each(
-      aStrings,
-      function( i, sFull )
+    $.ajax(
+      encodeURI( "cn/search.php?query=" + sFragment ),
       {
-        if ( tRegExp.test( sFull ) )
-        {
-          aMatches.push( sFull );
-        }
+        type: 'GET',
+        dataType : 'json'
       }
-    );
-
-    console.log( "=====> num matches=" + aMatches.length );
-    fnShowDropdown( aMatches );
-
-    resizeTypeahead();
+    )
+    .done( showSearchResults )
+    .fail( handleAjaxError );
   };
 };
 
+function showSearchResults( aResults )
+{
+  console.log( "===> showSearchResults: " + aResults );
+
+  // Generate the HTML
+  var sHtml = '';
+  for ( var i in aResults )
+  {
+    var sResult = aResults[i];
+    sHtml += '<div class="tt-suggestion tt-selectable">';
+    sHtml += sResult;
+    sHtml += '</div>';
+  }
+
+  // Replace HTML in suggestions div
+  var tSuggestions = $( '.tt-dataset-search' );
+  tSuggestions.html( sHtml );
+
+  // Show the suggestions menu
+  var tMenu = tSuggestions.closest( '.tt-menu' );
+  tMenu.removeClass( 'tt-empty' );
+  tMenu.show();
+}
 
 function resizeTypeahead()
 {
   var sWidth = '' + $( '.typeahead' ).closest( '.container' ).width() + 'px';
   $( '.typeahead, .tt-menu' ).css( 'width', sWidth );
 }
+
+
+
+
+
+
+
+
+
+
