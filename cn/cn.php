@@ -9,7 +9,7 @@
 <script src="cn/cn.js"></script>
 
 <!-- Search scripts -->
-<script src="cn/typeahead.js/typeahead.jquery.js"></script>
+<script src="cn/typeahead.js/typeahead.bundle.min.js"></script>
 <link rel="stylesheet" href="cn/search.css">
 <script src="cn/search.js"></script>
 
@@ -36,7 +36,16 @@
     <div class="row" >
       <div id="the-basics" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div class="form-group has-feedback">
-          <input class="typeahead" type="text" placeholder="Search..." >
+          <input class="typeahead" type="text" placeholder="Regex..." >
+          <i class="glyphicon glyphicon-search form-control-feedback" style="font-size:18px; color:#999;"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div id="bloodhound" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div class="form-group has-feedback">
+          <input class="typeahead" type="text" placeholder="Bloodhound..." >
           <i class="glyphicon glyphicon-search form-control-feedback" style="font-size:18px; color:#999;"></i>
         </div>
       </div>
