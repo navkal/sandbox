@@ -107,15 +107,15 @@ function initSearch()
     },
     {
       name: 'remote',
-      source: getMatches(g_aStates)
+      source: makeMatchfinder(g_aStates)
     }
   );
 
 }
 
-
-function getMatches( aStrings )
+function makeMatchfinder( aStrings )
 {
+  // Create and return a function that finds matches
   return function( sFragment, fnShowDropdown )
   {
     console.log( "===> in anon function, sFragment=" + sFragment );
