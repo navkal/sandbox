@@ -79,7 +79,7 @@ function getMatches( tEvent )
   var sText = $( tEvent.target ).text();
 
   $.ajax(
-    encodeURI( "cn/search.php?query=" + sText ),
+    encodeURI( "cn/search.php?text=" + sText ),
     {
       type: 'GET',
       dataType : 'json'
