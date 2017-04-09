@@ -83,6 +83,8 @@ function initSearch()
   resizeTypeahead();
 }
 
+var g_iLastRequestTime = 0;
+
 function getSearchResults( tEvent )
 {
   var sText = $( tEvent.target ).val();
@@ -94,8 +96,10 @@ function getSearchResults( tEvent )
   }
   else
   {
+    g_iLastRequestTime = Date.now();
+
     $.ajax(
-      encodeURI( 'cn/search.php?requestTime=' + Date.now() + '&searchText=' + sText ),
+      encodeURI( 'cn/search.php?requestTime=' + g_iLastRequestTime + '&searchText=' + sText ),
       {
         type: 'GET',
         dataType : 'json'
@@ -108,31 +112,33 @@ function getSearchResults( tEvent )
 
 function loadSearchResults( tResults )
 {
-  console.log( "===> loadSearchResults: " + JSON.stringify( tResults ) );
-
+  console.log( "===> Last requestTime=" + g_iLastRequestTime );
   console.log( "===> requestTime=" + tResults.requestTime );
-  console.log( "===> searchResults=" + tResults.searchResults );
-  var aResults = tResults.searchResults;
 
-
-  // Generate the HTML
-  var sHtml = '';
-  for ( var i in aResults )
+  if ( tResults.requestTime == g_iLastRequestTime )
   {
-    var sResult = aResults[i];
-    sHtml += '<div class="tt-suggestion">';
-    sHtml += sResult;
-    sHtml += '</div>';
+    var aResults = tResults.searchResults;
+    console.log( "===> searchResults=" + aResults );
+
+    // Generate the HTML
+    var sHtml = '';
+    for ( var iResult in aResults )
+    {
+      var sResult = aResults[iResult];
+      sHtml += '<div class="tt-suggestion">';
+      sHtml += sResult;
+      sHtml += '</div>';
+    }
+
+    // Replace HTML in suggestions div
+    $( '#search .tt-dataset' ).html( sHtml );
+
+    // Set handlers
+    $( '#search .tt-suggestion' ).on( 'mousedown', selectSearchResult );
+
+    // Show the suggestions menu
+    showSearchResults();
   }
-
-  // Replace HTML in suggestions div
-  $( '#search .tt-dataset' ).html( sHtml );
-
-  // Set handlers
-  $( '#search .tt-suggestion' ).on( 'mousedown', selectSearchResult );
-
-  // Show the suggestions menu
-  showSearchResults();
 }
 
 function selectSearchResult( tEvent )
