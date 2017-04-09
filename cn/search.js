@@ -1,15 +1,17 @@
-  var g_aStates =
-  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-    'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-    'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-    'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-    'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-    'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-    'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-  ];
+// DELETE THIS
+var g_aStates =
+['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+];
 
+// DELETE THIS
 function substringMatcher(strs)
 {
   return function findMatches(q, cb) {
@@ -30,11 +32,18 @@ function substringMatcher(strs)
     });
 
     cb(matches);
-
     resizeTypeahead();
-
   };
 };
+
+
+
+
+
+
+
+
+
 
 
 
@@ -44,10 +53,8 @@ $(document).ready( initSearch );
 function initSearch()
 {
 
-
-
-  // Use hard-coded data
-  $( '#the-basics .typeahead' ).typeahead(
+  // DELETE THIS
+  $( '#delete-this .typeahead' ).typeahead(
     {
       hint: false,
       highlight: false,
@@ -109,7 +116,7 @@ function loadSearchResults( aResults )
   for ( var i in aResults )
   {
     var sResult = aResults[i];
-    sHtml += '<div class="tt-suggestion tt-selectable">';
+    sHtml += '<div class="tt-suggestion">';
     sHtml += sResult;
     sHtml += '</div>';
   }
@@ -117,8 +124,18 @@ function loadSearchResults( aResults )
   // Replace HTML in suggestions div
   $( '#search .tt-dataset' ).html( sHtml );
 
+  // Set handlers
+  $( '#search .tt-suggestion' ).on( 'mousedown', selectSearchResult );
+
   // Show the suggestions menu
   showSearchResults();
+}
+
+function selectSearchResult( tEvent )
+{
+  $( '#search .typeahead' ).val( $( tEvent.target ).text() );
+  hideSearchResults();
+  clearSearchResults();
 }
 
 function showSearchResults( tEvent )
@@ -129,9 +146,14 @@ function showSearchResults( tEvent )
   }
 }
 
-function hideSearchResults( tEvent )
+function hideSearchResults()
 {
   $( '#search .tt-menu' ).hide();
+}
+
+function clearSearchResults()
+{
+  $( '#search .tt-dataset' ).html( '' );
 }
 
 function resizeTypeahead()
@@ -139,13 +161,3 @@ function resizeTypeahead()
   var sWidth = '' + $( '.typeahead' ).closest( '.container' ).width() + 'px';
   $( '.typeahead, .tt-menu' ).css( 'width', sWidth );
 }
-
-
-
-
-
-
-
-
-
-
