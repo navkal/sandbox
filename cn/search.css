@@ -88,5 +88,6 @@
 
 .searchTextHighlight
 {
-  color: red;
+  border: 1px lightgray solid;
+  background-color: #d9ff66;
 }
