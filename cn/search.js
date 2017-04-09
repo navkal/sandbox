@@ -76,14 +76,14 @@ function initSearch()
 
 
   $(window).resize( resizeTypeahead );
-  $( '#search .typeahead' ).on( 'keyup', getMatches );
+  $( '#search .typeahead' ).on( 'keyup', getSearchResults );
   $( '#search .typeahead' ).on( 'blur', hideSearchResults );
   $( '#search .typeahead' ).on( 'focus', showSearchResults );
 
   resizeTypeahead();
 }
 
-function getMatches( tEvent )
+function getSearchResults( tEvent )
 {
   var sText = $( tEvent.target ).val();
 
@@ -95,7 +95,7 @@ function getMatches( tEvent )
   else
   {
     $.ajax(
-      encodeURI( "cn/search.php?text=" + sText ),
+      encodeURI( 'cn/search.php?requestTime=' + Date.now() + '&searchText=' + sText ),
       {
         type: 'GET',
         dataType : 'json'
@@ -104,12 +104,16 @@ function getMatches( tEvent )
     .done( loadSearchResults )
     .fail( handleAjaxError );
   }
-
 };
 
-function loadSearchResults( aResults )
+function loadSearchResults( tResults )
 {
-  console.log( "===> loadSearchResults: " + aResults );
+  console.log( "===> loadSearchResults: " + JSON.stringify( tResults ) );
+
+  console.log( "===> requestTime=" + tResults.requestTime );
+  console.log( "===> searchResults=" + tResults.searchResults );
+  var aResults = tResults.searchResults;
+
 
   // Generate the HTML
   var sHtml = '';
