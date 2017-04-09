@@ -9,6 +9,7 @@
   $tResult =
   [
     "requestTime" => $iRequestTime,
+    "searchText" => $sSearchText,
     "searchResults" => [ $sSearchText."abc", "abcc".$sSearchText.'xx', "abcWWWWWWWWWWWWWWWWWWWWWWWWWWWWW".$sSearchText."WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWcc" ]
   ];
 
