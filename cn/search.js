@@ -41,24 +41,26 @@ function getSearchResults( tEvent )
 
 function loadSearchResults( tResults )
 {
-  console.log( "===> Last requestTime=" + g_iLastRequestTime );
-  console.log( "===> requestTime=" + tResults.requestTime );
+  console.log( '===> Last requestTime=' + g_iLastRequestTime );
+  console.log( '===> requestTime=' + tResults.requestTime );
 
   // If handling response to latest request, update suggestions display
   if ( tResults.requestTime == g_iLastRequestTime )
   {
     var sSearchText = tResults.searchText;
-    console.log( "===> searchText=" + sSearchText );
+    console.log( '===> searchText=' + sSearchText );
     var aResults = tResults.searchResults;
-    console.log( "===> searchResults=" + aResults );
+    console.log( '===> searchResults=' + JSON.stringify( aResults ) );
 
     // Generate the HTML
     var sHtml = '';
     for ( var iResult in aResults )
     {
-      var sResult = aResults[iResult];
+      var tResult = aResults[iResult];
+      var sPath = tResult.path;
+      var sResult = tResult.searchResult;
 
-      sHtml += '<div class="tt-suggestion">';
+      sHtml += '<div class="tt-suggestion" path="' + sPath + '" >';
       sHtml += sResult.split( sSearchText ).join( '<span class="searchTextHighlight">' + sSearchText + '</span>' );
       sHtml += '</div>';
     }
@@ -76,7 +78,12 @@ function loadSearchResults( tResults )
 
 function selectSearchResult( tEvent )
 {
-  $( '#search .typeahead' ).val( $( tEvent.target ).text() );
+  var tTarget = $( tEvent.target );
+  var sSearchResult = tTarget.text();
+  var sPath = tTarget.attr( 'path' );
+  $( '#search .typeahead' ).val( sSearchResult );
+  $( '#search .typeahead' ).attr( 'path', sPath );
+
   hideSearchResults();
   clearSearchResults();
 }
