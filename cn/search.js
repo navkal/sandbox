@@ -1,5 +1,7 @@
 // Copyright 2017 Energize Apps.  All rights reserved.
 
+var g_iLastRequestTime = 0;
+
 $(document).ready( initSearch );
 
 function initSearch()
@@ -12,7 +14,12 @@ function initSearch()
   resizeTypeahead();
 }
 
-var g_iLastRequestTime = 0;
+function resizeTypeahead()
+{
+  var sWidth = '' + $( '.typeahead' ).closest( '.container' ).width() + 'px';
+  $( '.typeahead, .tt-menu' ).css( 'width', sWidth );
+}
+
 
 function getSearchResults( tEvent )
 {
@@ -78,14 +85,19 @@ function loadSearchResults( tResults )
 
 function selectSearchResult( tEvent )
 {
+  // Set selection in search field
   var tTarget = $( tEvent.target );
   var sSearchResult = tTarget.text();
   var sPath = tTarget.attr( 'path' );
   $( '#search .typeahead' ).val( sSearchResult );
   $( '#search .typeahead' ).attr( 'path', sPath );
 
+  // Clear search results
   hideSearchResults();
   clearSearchResults();
+
+  // Navigate to selected search result in tree
+  navigateToSearchResult();
 }
 
 function showSearchResults( tEvent )
@@ -106,8 +118,12 @@ function clearSearchResults()
   $( '#search .tt-dataset' ).html( '' );
 }
 
-function resizeTypeahead()
+function navigateToSearchResult()
 {
-  var sWidth = '' + $( '.typeahead' ).closest( '.container' ).width() + 'px';
-  $( '.typeahead, .tt-menu' ).css( 'width', sWidth );
+  var sPath = $( '#search .typeahead' ).attr( 'path' );
+  console.log( '========> Navigate in tree to this path: ' + sPath );
+
+  var tTreeElement = $( '#circuitTree a[path="' + sPath + '"]' );
+  console.log( '===> Elements with that path: ' + tTreeElement.length );
+
 }
