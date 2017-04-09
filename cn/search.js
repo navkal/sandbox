@@ -43,14 +43,14 @@ $(document).ready( initSearch );
 
 function initSearch()
 {
-  resizeTypeahead();
-  $(window).resize( resizeTypeahead );
+
+
 
   // Use hard-coded data
   $( '#the-basics .typeahead' ).typeahead(
     {
-      hint: true,
-      highlight: true,
+      hint: false,
+      highlight: false,
       minLength: 1
     },
     {
@@ -59,76 +59,35 @@ function initSearch()
     }
   );
 
-  // Use Bloodhound with hard-coded data
-  var fnFindStates = new Bloodhound(
-    {
-      datumTokenizer: Bloodhound.tokenizers.whitespace,
-      queryTokenizer: Bloodhound.tokenizers.whitespace,
-      local: g_aStates
-    }
-  );
 
-  $( '#bloodhound .typeahead' ).typeahead(
-    {
-      hint: true,
-      highlight: true,
-      minLength: 1
-    },
-    {
-      name: 'states',
-      source: fnFindStates
-    }
-  );
 
-  // Use Bloodhound with prefetched data
-  var countries = new Bloodhound(
-    {
-      datumTokenizer: Bloodhound.tokenizers.whitespace,
-      queryTokenizer: Bloodhound.tokenizers.whitespace,
-      prefetch: 'cn/prefetch.json'
-    }
-  );
 
-  $( '#prefetch .typeahead' ).typeahead(
-    null,
-    {
-      name: 'countries',
-      source: countries
-    }
-  );
 
-  // Get dynamic results from backend
-  $( '#search .typeahead' ).typeahead(
-    {
-      hint: true,
-      highlight: true,
-      minLength: 1
-    },
-    {
-      name: 'search',
-      source: makeMatchfinder(g_aStates)
-    }
-  );
 
+
+
+
+
+  $(window).resize( resizeTypeahead );
+  $( '#search .typeahead' ).on( 'keyup', getMatches );
+
+  resizeTypeahead();
 }
 
-function makeMatchfinder( aStrings )
+function getMatches( tEvent )
 {
-  // Create and return a function that finds matches
-  return function( sFragment, fnShowDropdown )
-  {
-    console.log( "===> in anon function, sFragment=" + sFragment );
+  var sText = $( tEvent.target ).text();
 
-    $.ajax(
-      encodeURI( "cn/search.php?query=" + sFragment ),
-      {
-        type: 'GET',
-        dataType : 'json'
-      }
-    )
-    .done( showSearchResults )
-    .fail( handleAjaxError );
-  };
+  $.ajax(
+    encodeURI( "cn/search.php?query=" + sText ),
+    {
+      type: 'GET',
+      dataType : 'json'
+    }
+  )
+  .done( showSearchResults )
+  .fail( handleAjaxError );
+
 };
 
 function showSearchResults( aResults )
@@ -146,7 +105,7 @@ function showSearchResults( aResults )
   }
 
   // Replace HTML in suggestions div
-  var tSuggestions = $( '.tt-dataset-search' );
+  var tSuggestions = $( '#search .tt-dataset' );
   tSuggestions.html( sHtml );
 
   // Show the suggestions menu
