@@ -88,10 +88,10 @@
 
 .tt-suggestion:hover .searchTextHighlight
 {
-  border: 1px #99e2ff solid;
+  border: 1px #e6f8ff solid;
 }
 
 .searchTextHighlight
 {
-  border: 1px #4dcfff solid;
+  border: 1px #0097cf solid;
 }
