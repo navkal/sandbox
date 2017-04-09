@@ -115,6 +115,7 @@ function loadSearchResults( tResults )
   console.log( "===> Last requestTime=" + g_iLastRequestTime );
   console.log( "===> requestTime=" + tResults.requestTime );
 
+  // If handling response to latest request, update suggestions display
   if ( tResults.requestTime == g_iLastRequestTime )
   {
     var aResults = tResults.searchResults;
