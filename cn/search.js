@@ -128,8 +128,9 @@ function loadSearchResults( tResults )
     for ( var iResult in aResults )
     {
       var sResult = aResults[iResult];
+
       sHtml += '<div class="tt-suggestion">';
-      sHtml += sResult;
+      sHtml += sResult.split( sSearchText ).join( '<span class="searchTextHighlight">' + sSearchText + '</span>' );
       sHtml += '</div>';
     }
 
