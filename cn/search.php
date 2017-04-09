@@ -13,7 +13,7 @@
     'searchResults' =>
     [
       [
-        'path' => 'MWSB.5.DBH.5',
+        'path' => 'MWSB.5.DHB.5',
         'searchResult' => $sSearchText.'abc'
       ],
       [

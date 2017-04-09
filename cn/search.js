@@ -126,14 +126,17 @@ function navigateToSearchResult( sPath )
   console.log( '===> Elements with that path: ' + tNode.length );
 
   var aPath = sPath.split( '.' );
-  var bVisible = true;
-  for ( var iLen = 0; ( iLen < aPath.length ) && bVisible; iLen ++ )
+  var bExpanded = true;
+  for ( var iLen = 0; ( iLen < aPath.length ) && bExpanded; iLen ++ )
   {
     var sTestPath = aPath.slice( 0, iLen + 1 ).join( '.' );
     console.log( "===> testing path=" + sTestPath );
-    var tTestNode = $( '#circuitTree a[path="' + sTestPath + '"]:visible' );
-    bVisible = tTestNode.length > 0;
-    console.log( '===> VISIBLE? ' + bVisible );
+    var tTestNode = $( '#circuitTree a[path="' + sTestPath + '"]' );
+    bExpanded = tTestNode.find( ".toggle.glyphicon-chevron-down" ).length > 0;
+    console.log( '===> EXPANDED? ' + bExpanded );
   }
+
+  var sStartPath = aPath.slice( 0, iLen ).join( '.' );
+  console.log( "===> Call toggleFolder starting at: " + sStartPath );
 
 }
