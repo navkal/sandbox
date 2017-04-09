@@ -49,7 +49,7 @@
           <i class="glyphicon glyphicon-search form-control-feedback"></i>
           <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">a</pre>
           <div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; overflow: auto">
-            <div class="tt-dataset tt-dataset-search">
+            <div class="tt-dataset">
             </div>
           </div>
         </div>

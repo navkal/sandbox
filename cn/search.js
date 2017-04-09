@@ -70,29 +70,39 @@ function initSearch()
 
   $(window).resize( resizeTypeahead );
   $( '#search .typeahead' ).on( 'keyup', getMatches );
+  $( '#search .typeahead' ).on( 'blur', hideSearchResults );
+  $( '#search .typeahead' ).on( 'focus', showSearchResults );
 
   resizeTypeahead();
 }
 
 function getMatches( tEvent )
 {
-  var sText = $( tEvent.target ).text();
+  var sText = $( tEvent.target ).val();
 
-  $.ajax(
-    encodeURI( "cn/search.php?text=" + sText ),
-    {
-      type: 'GET',
-      dataType : 'json'
-    }
-  )
-  .done( showSearchResults )
-  .fail( handleAjaxError );
+  if ( sText == '' )
+  {
+    $( '#search .tt-dataset' ).html( '' );
+    hideSearchResults();
+  }
+  else
+  {
+    $.ajax(
+      encodeURI( "cn/search.php?text=" + sText ),
+      {
+        type: 'GET',
+        dataType : 'json'
+      }
+    )
+    .done( loadSearchResults )
+    .fail( handleAjaxError );
+  }
 
 };
 
-function showSearchResults( aResults )
+function loadSearchResults( aResults )
 {
-  console.log( "===> showSearchResults: " + aResults );
+  console.log( "===> loadSearchResults: " + aResults );
 
   // Generate the HTML
   var sHtml = '';
@@ -105,13 +115,23 @@ function showSearchResults( aResults )
   }
 
   // Replace HTML in suggestions div
-  var tSuggestions = $( '#search .tt-dataset' );
-  tSuggestions.html( sHtml );
+  $( '#search .tt-dataset' ).html( sHtml );
 
   // Show the suggestions menu
-  var tMenu = tSuggestions.closest( '.tt-menu' );
-  tMenu.removeClass( 'tt-empty' );
-  tMenu.show();
+  showSearchResults();
+}
+
+function showSearchResults( tEvent )
+{
+  if ( $( '#search .tt-suggestion' ).length )
+  {
+    $( '#search .tt-menu' ).show();
+  }
+}
+
+function hideSearchResults( tEvent )
+{
+  $( '#search .tt-menu' ).hide();
 }
 
 function resizeTypeahead()
