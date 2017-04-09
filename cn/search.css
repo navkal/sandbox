@@ -86,8 +86,12 @@
   color:#999;
 }
 
+.tt-suggestion:hover .searchTextHighlight
+{
+  border: 1px #99e2ff solid;
+}
+
 .searchTextHighlight
 {
-  border: 1px lightgray solid;
-  background-color: #d9ff66;
+  border: 1px #33c5ff solid;
 }
