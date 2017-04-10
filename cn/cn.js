@@ -337,8 +337,8 @@ function resizeTree()
 {
   var tHeader = $( '.navbar-fixed-top' );
   var tFooter = $( '.navbar-fixed-bottom' );
-  var nNavbarHeight = ( tHeader.length && tFooter.length )? tHeader.height() + tFooter.height() : 0;
-  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - nNavbarHeight - 40 );
+  var nNavbarHeight = ( tHeader.length && tFooter.length )? tHeader.height() + tFooter.height() + 30 : 40;
+  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - nNavbarHeight );
 }
 
 function openImageWindow( tEvent )
