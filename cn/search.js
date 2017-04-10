@@ -20,7 +20,6 @@ function resizeTypeahead()
   $( '.typeahead, .tt-menu' ).css( 'width', sWidth );
 }
 
-
 function getSearchResults( tEvent )
 {
   var sText = $( tEvent.target ).val();
@@ -92,7 +91,7 @@ function selectSearchResult( tEvent )
   clearSearchResults();
 
   // Navigate to selected search result in tree
-  g_sSearchResultPath = sPath;
+  g_sSearchTargetPath = sPath;
   navigateToSearchTarget();
 }
 

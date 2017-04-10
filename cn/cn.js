@@ -5,7 +5,7 @@ var g_aPropertiesWindows = [];
 var g_tTreeMap = {};
 var g_sImageButton = '<button class="btn btn-link btn-xs" onclick="openImageWindow(event)" title="Image" ><span class="glyphicon glyphicon-picture" style="font-size:18px;" ></span></button>';
 var g_sPropertiesButton = '<button class="btn btn-link btn-xs" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-list" style="font-size:18px;" ></span></button>';
-var g_sSearchResultPath = '';
+var g_sSearchTargetPath = '';
 
 $( document ).ready( initView );
 
@@ -152,7 +152,7 @@ function insertTreeNode( tRsp, sStatus, tJqXhr )
   g_tTreeMap[sPath] = tRsp;
 
   // Handle continuation of navigation to search result
-  if ( g_sSearchResultPath )
+  if ( g_sSearchTargetPath )
   {
     navigateToSearchTarget();
   }
@@ -197,9 +197,10 @@ function handleAjaxError( tJqXhr, sStatus, sErrorThrown )
 
 function navigateToSearchTarget()
 {
-  console.log( '========> Navigate to path: ' + g_sSearchResultPath );
+  console.log( '========> Navigate to path: ' + g_sSearchTargetPath );
 
-  var aPath = g_sSearchResultPath.split( '.' );
+  // Find first collapsed node hiding search target
+  var aPath = g_sSearchTargetPath.split( '.' );
   var bExpanded = true;
   var sNavPath = '';
   var tNavNode = null;
@@ -211,17 +212,29 @@ function navigateToSearchTarget()
     console.log( '===> ' + sNavPath + ' EXPANDED? ' + bExpanded );
   }
 
-  if ( sNavPath == g_sSearchResultPath )
+  // Terminate or continue navigation to search target
+  if ( sNavPath == g_sSearchTargetPath )
   {
+    console.log( "===========> DONE! at path=" + sNavPath );
     // Navigation done
-    setToggleTooltips();
-    console.log( "===========> DONE! at path=" + g_sSearchResultPath );
+
+    // Clear search target path
+    g_sSearchTargetPath = '';
+
+    // Highlight search target in tree
     $( '.searchTarget' ).removeClass( 'searchTarget' );
-    $( '#circuitTree a[path="' + g_sSearchResultPath + '"]' ).addClass( 'searchTarget' );
-    g_sSearchResultPath = '';
+    $( '#circuitTree a[path="' + sNavPath + '"]' ).addClass( 'searchTarget' );
+
+    // Auto-scroll tree to search target
+
+
+    // Set tooltips on toggle buttons
+    setToggleTooltips();
   }
   else
   {
+    // Navigation not done
+
     // Expand node hiding search result
     console.log( "===> Need to expand: " + sNavPath );
     tNavNode.trigger( 'click' );
@@ -246,7 +259,7 @@ function toggleFolder( tEvent )
       switch( tEvent.type )
       {
         case 'click':
-          if ( g_sSearchResultPath )
+          if ( g_sSearchTargetPath )
           {
             $( tItem.attr( 'href' ) ).collapse( 'show' );
             tItem.find( '.toggle' ).removeClass( 'glyphicon-chevron-right' ).addClass( 'glyphicon-chevron-down' );
