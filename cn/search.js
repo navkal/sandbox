@@ -127,16 +127,19 @@ function navigateToSearchResult( sPath )
 
   var aPath = sPath.split( '.' );
   var bExpanded = true;
+  var sStartPath = '';
   for ( var iLen = 0; ( iLen < aPath.length ) && bExpanded; iLen ++ )
   {
-    var sTestPath = aPath.slice( 0, iLen + 1 ).join( '.' );
-    console.log( "===> testing path=" + sTestPath );
-    var tTestNode = $( '#circuitTree a[path="' + sTestPath + '"]' );
+    sStartPath = aPath.slice( 0, iLen + 1 ).join( '.' );
+    var tTestNode = $( '#circuitTree a[path="' + sStartPath + '"]' );
     bExpanded = tTestNode.find( ".toggle.glyphicon-chevron-down" ).length > 0;
-    console.log( '===> EXPANDED? ' + bExpanded );
+    console.log( '===> ' + sStartPath + ' EXPANDED? ' + bExpanded );
   }
 
-  var sStartPath = aPath.slice( 0, iLen ).join( '.' );
   console.log( "===> Call toggleFolder starting at: " + sStartPath );
 
+  if ( sStartPath != sPath )
+  {
+    tTestNode.trigger( 'click' );
+  }
 }
