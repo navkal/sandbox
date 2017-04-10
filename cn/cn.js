@@ -5,6 +5,7 @@ var g_aPropertiesWindows = [];
 var g_tTreeMap = {};
 var g_sImageButton = '<button class="btn btn-link btn-xs" onclick="openImageWindow(event)" title="Image" ><span class="glyphicon glyphicon-picture" style="font-size:18px;" ></span></button>';
 var g_sPropertiesButton = '<button class="btn btn-link btn-xs" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-list" style="font-size:18px;" ></span></button>';
+var g_sSearchResultPath = '';
 
 $( document ).ready( initView );
 
@@ -149,6 +150,12 @@ function insertTreeNode( tRsp, sStatus, tJqXhr )
 
   // Insert node in tree map
   g_tTreeMap[sPath] = tRsp;
+
+  // Handle continuation of navigation to search result
+  if ( g_sSearchResultPath )
+  {
+    navigateToSearchResult();
+  }
 }
 
 function compareNodes( d1, d2 )
@@ -203,10 +210,24 @@ function toggleFolder( tEvent )
     }
     else
     {
-      // Optionally collapse all descendants of this target
-      if ( ( tEvent.type == "dblclick" ) && ( tItem.find( ".toggle.glyphicon-chevron-down" ).length > 0 ) )
+      switch( tEvent.type )
       {
-        $( '.collapse', $( tItem.attr( "href" ) ) ).collapse( 'hide' );
+        case 'click':
+          if ( g_sSearchResultPath )
+          {
+            $( tItem.attr( 'href' ) ).collapse( 'show' );
+            tItem.find( '.toggle' ).removeClass( 'glyphicon-chevron-right' ).addClass( 'glyphicon-chevron-down' );
+            navigateToSearchResult();
+          }
+          break;
+
+        case 'dblclick':
+          if ( tItem.find( ".toggle.glyphicon-chevron-down" ).length > 0 )
+          {
+            // Collapse all descendants of this target
+            $( '.collapse', $( tItem.attr( 'href' ) ) ).collapse( 'hide' );
+          }
+          break;
       }
     }
   }

@@ -48,16 +48,11 @@ function getSearchResults( tEvent )
 
 function loadSearchResults( tResults )
 {
-  console.log( '===> Last requestTime=' + g_iLastRequestTime );
-  console.log( '===> requestTime=' + tResults.requestTime );
-
   // If handling response to latest request, update suggestions display
   if ( tResults.requestTime == g_iLastRequestTime )
   {
     var sSearchText = tResults.searchText;
-    console.log( '===> searchText=' + sSearchText );
     var aResults = tResults.searchResults;
-    console.log( '===> searchResults=' + JSON.stringify( aResults ) );
 
     // Generate the HTML
     var sHtml = '';
@@ -97,7 +92,8 @@ function selectSearchResult( tEvent )
   clearSearchResults();
 
   // Navigate to selected search result in tree
-  navigateToSearchResult( sPath );
+  g_sSearchResultPath = sPath;
+  navigateToSearchResult();
 }
 
 function showSearchResults( tEvent )
@@ -118,28 +114,34 @@ function clearSearchResults()
   $( '#search .tt-dataset' ).html( '' );
 }
 
-function navigateToSearchResult( sPath )
+function navigateToSearchResult()
 {
-  console.log( '========> Navigate in tree to this path: ' + sPath );
+  console.log( '========> Navigate to path: ' + g_sSearchResultPath );
 
-  var tNode = $( '#circuitTree a[path="' + sPath + '"]' );
-  console.log( '===> Elements with that path: ' + tNode.length );
-
-  var aPath = sPath.split( '.' );
+  var aPath = g_sSearchResultPath.split( '.' );
   var bExpanded = true;
-  var sStartPath = '';
+  var sNavPath = '';
+  var tNavNode = null;
   for ( var iLen = 0; ( iLen < aPath.length ) && bExpanded; iLen ++ )
   {
-    sStartPath = aPath.slice( 0, iLen + 1 ).join( '.' );
-    var tTestNode = $( '#circuitTree a[path="' + sStartPath + '"]' );
-    bExpanded = tTestNode.find( ".toggle.glyphicon-chevron-down" ).length > 0;
-    console.log( '===> ' + sStartPath + ' EXPANDED? ' + bExpanded );
+    sNavPath = aPath.slice( 0, iLen + 1 ).join( '.' );
+    tNavNode = $( '#circuitTree a[path="' + sNavPath + '"]' );
+    bExpanded = tNavNode.find( ".toggle.glyphicon-chevron-down" ).length > 0;
+    console.log( '===> ' + sNavPath + ' EXPANDED? ' + bExpanded );
   }
 
-  console.log( "===> Call toggleFolder starting at: " + sStartPath );
-
-  if ( sStartPath != sPath )
+  if ( sNavPath == g_sSearchResultPath )
   {
-    tTestNode.trigger( 'click' );
+    // Navigation done
+    setToggleTooltips();
+    console.log( "===========> DONE! at path=" + g_sSearchResultPath );
+    $( '#circuitTree a[path="' + g_sSearchResultPath + '"]' ).css( 'color', 'red' );
+    g_sSearchResultPath = '';
+  }
+  else
+  {
+    // Expand node hiding search result
+    console.log( "===> Need to expand: " + sNavPath );
+    tNavNode.trigger( 'click' );
   }
 }
