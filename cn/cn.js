@@ -216,7 +216,8 @@ function navigateToSearchTarget()
     // Navigation done
     setToggleTooltips();
     console.log( "===========> DONE! at path=" + g_sSearchResultPath );
-    $( '#circuitTree a[path="' + g_sSearchResultPath + '"]' ).css( 'color', 'red' );
+    $( '.searchTarget' ).removeClass( 'searchTarget' );
+    $( '#circuitTree a[path="' + g_sSearchResultPath + '"]' ).addClass( 'searchTarget' );
     g_sSearchResultPath = '';
   }
   else
