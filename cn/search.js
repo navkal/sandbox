@@ -93,7 +93,7 @@ function selectSearchResult( tEvent )
 
   // Navigate to selected search result in tree
   g_sSearchResultPath = sPath;
-  navigateToSearchResult();
+  navigateToSearchTarget();
 }
 
 function showSearchResults( tEvent )
@@ -112,36 +112,4 @@ function hideSearchResults()
 function clearSearchResults()
 {
   $( '#search .tt-dataset' ).html( '' );
-}
-
-function navigateToSearchResult()
-{
-  console.log( '========> Navigate to path: ' + g_sSearchResultPath );
-
-  var aPath = g_sSearchResultPath.split( '.' );
-  var bExpanded = true;
-  var sNavPath = '';
-  var tNavNode = null;
-  for ( var iLen = 0; ( iLen < aPath.length ) && bExpanded; iLen ++ )
-  {
-    sNavPath = aPath.slice( 0, iLen + 1 ).join( '.' );
-    tNavNode = $( '#circuitTree a[path="' + sNavPath + '"]' );
-    bExpanded = tNavNode.find( ".toggle.glyphicon-chevron-down" ).length > 0;
-    console.log( '===> ' + sNavPath + ' EXPANDED? ' + bExpanded );
-  }
-
-  if ( sNavPath == g_sSearchResultPath )
-  {
-    // Navigation done
-    setToggleTooltips();
-    console.log( "===========> DONE! at path=" + g_sSearchResultPath );
-    $( '#circuitTree a[path="' + g_sSearchResultPath + '"]' ).css( 'color', 'red' );
-    g_sSearchResultPath = '';
-  }
-  else
-  {
-    // Expand node hiding search result
-    console.log( "===> Need to expand: " + sNavPath );
-    tNavNode.trigger( 'click' );
-  }
 }
