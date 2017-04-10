@@ -333,6 +333,14 @@ function setToggleTooltips()
   $( '.toggle.glyphicon-chevron-down:not(.no-children)' ).attr( 'title', 'Double click to collapse all' );
 }
 
+function resizeTree()
+{
+  var tHeader = $( '.navbar-fixed-top' );
+  var tFooter = $( '.navbar-fixed-bottom' );
+  var nNavbarHeight = ( tHeader.length && tFooter.length )? tHeader.height() + tFooter.height() : 0;
+  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - nNavbarHeight - 40 );
+}
+
 function openImageWindow( tEvent )
 {
   tEvent.preventDefault();
@@ -359,11 +367,6 @@ function openPropertiesWindow( tEvent )
   var sUrl = 'cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
 
   childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 350, 550 );
-}
-
-function resizeTree()
-{
-  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - 50 );
 }
 
 function closeChildWindows()
