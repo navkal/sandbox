@@ -86,7 +86,7 @@ function loadSearchResults( tResults )
 function selectSearchResult( tEvent )
 {
   // Set selection in search field
-  var tTarget = $( tEvent.target );
+  var tTarget = $( tEvent.target ).closest( '.tt-suggestion' );
   var sSearchResult = tTarget.text();
   var sPath = tTarget.attr( 'path' );
   $( '#search .typeahead' ).val( sSearchResult );
