@@ -222,10 +222,19 @@ function navigateToSearchTarget()
     g_sSearchTargetPath = '';
 
     // Highlight search target in tree
+    var tSearchTarget = $( '#circuitTree a[path="' + sNavPath + '"]' );
     $( '.searchTarget' ).removeClass( 'searchTarget' );
-    $( '#circuitTree a[path="' + sNavPath + '"]' ).addClass( 'searchTarget' );
+    tSearchTarget.addClass( 'searchTarget' );
 
     // Auto-scroll tree to search target
+Element.prototype.documentOffsetTop = function () {
+    return this.offsetTop + ( this.offsetParent ? this.offsetParent.documentOffsetTop() : 0 );
+};
+
+var top = tSearchTarget[0].documentOffsetTop() - (window.innerHeight / 2 );
+window.scrollTo( 0, top );
+
+
 
 
     // Set tooltips on toggle buttons
