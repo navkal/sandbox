@@ -335,10 +335,9 @@ function setToggleTooltips()
 
 function resizeTree()
 {
-  var tHeader = $( '.navbar-fixed-top' );
   var tFooter = $( '.navbar-fixed-bottom' );
-  var nNavbarHeight = ( tHeader.length && tFooter.length )? tHeader.height() + tFooter.height() + 30 : 40;
-  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - nNavbarHeight );
+  var nHeightMinus = tFooter.length ? tFooter.height() + 80 : 40;
+  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - nHeightMinus );
 }
 
 function openImageWindow( tEvent )
