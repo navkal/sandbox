@@ -195,6 +195,11 @@ function handleAjaxError( tJqXhr, sStatus, sErrorThrown )
   console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
 }
 
+Element.prototype.documentOffsetTop = function()
+{
+  return this.offsetTop + ( this.offsetParent ? this.offsetParent.documentOffsetTop() : 0 );
+};
+
 function navigateToSearchTarget()
 {
   console.log( '========> Navigate to path: ' + g_sSearchTargetPath );
@@ -227,15 +232,8 @@ function navigateToSearchTarget()
     tSearchTarget.addClass( 'searchTarget' );
 
     // Auto-scroll tree to search target
-Element.prototype.documentOffsetTop = function () {
-    return this.offsetTop + ( this.offsetParent ? this.offsetParent.documentOffsetTop() : 0 );
-};
-
-var top = tSearchTarget[0].documentOffsetTop() - (window.innerHeight / 2 );
-window.scrollTo( 0, top );
-
-
-
+    var nScrollTop = tSearchTarget[0].documentOffsetTop() - ( window.innerHeight / 2 );
+    window.scrollTo( 0, nScrollTop );
 
     // Set tooltips on toggle buttons
     setToggleTooltips();
