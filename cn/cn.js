@@ -204,8 +204,6 @@ Element.prototype.documentOffsetTop = function()
 
 function navigateToSearchTarget()
 {
-  console.log( '========> Navigate to path: ' + g_sSearchTargetPath );
-
   // Find first collapsed node hiding search target
   var aPath = g_sSearchTargetPath.split( '.' );
   var bExpanded = true;
@@ -216,14 +214,12 @@ function navigateToSearchTarget()
     sNavPath = aPath.slice( 0, iLen + 1 ).join( '.' );
     tNavNode = $( '#circuitTree a[path="' + sNavPath + '"]' );
     bExpanded = tNavNode.find( ".toggle.glyphicon-chevron-down" ).length > 0;
-    console.log( '===> ' + sNavPath + ' EXPANDED? ' + bExpanded );
   }
 
   // Terminate or continue navigation to search target
   if ( sNavPath == g_sSearchTargetPath )
   {
-    console.log( "===========> DONE! at path=" + sNavPath );
-    // Navigation done
+    // Navigation done: Clean up and update display
 
     // Clear search target path
     g_sSearchTargetPath = '';
@@ -242,10 +238,7 @@ function navigateToSearchTarget()
   }
   else
   {
-    // Navigation not done
-
-    // Expand node hiding search result
-    console.log( "===> Need to expand: " + sNavPath );
+    // Navigation continues: Expand node hiding search result
     tNavNode.trigger( 'click' );
   }
 }
