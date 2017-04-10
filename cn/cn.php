@@ -48,7 +48,7 @@
 
     <div class="row" >
       <div class="just-padding">
-        <div id="circuitTree" class="list-group list-group-root well">
+        <div id="circuitTree" class="list-group list-group-root panel panel-default" style="overflow:auto;" >
         </div>
       </div>
     </div>

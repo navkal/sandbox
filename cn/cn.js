@@ -12,6 +12,8 @@ $( document ).ready( initView );
 function initView()
 {
   $( window ).on( 'unload', closeChildWindows );
+  $( window ).resize( resizeTree );
+  resizeTree();
   getTreeNode( "" );
 }
 
@@ -232,8 +234,8 @@ function navigateToSearchTarget()
     tSearchTarget.addClass( 'searchTarget' );
 
     // Auto-scroll tree to search target
-    var nScrollTop = tSearchTarget[0].documentOffsetTop() - ( window.innerHeight / 2 );
-    window.scrollTo( 0, nScrollTop );
+    var tTree = $( '#circuitTree' );
+    tTree.scrollTop( tTree.scrollTop() + ( tSearchTarget.position().top - tTree.position().top ) - ( tTree.height() / 2 ) + ( tSearchTarget.height() / 2 ) );
 
     // Set tooltips on toggle buttons
     setToggleTooltips();
@@ -357,6 +359,11 @@ function openPropertiesWindow( tEvent )
   var sUrl = 'cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
 
   childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 350, 550 );
+}
+
+function resizeTree()
+{
+  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - 50 );
 }
 
 function closeChildWindows()
