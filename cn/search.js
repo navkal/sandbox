@@ -33,11 +33,19 @@ function getSearchResults( tEvent )
   {
     g_iLastRequestTime = Date.now();
 
+    // Post request to server
+    var tPostData = new FormData();
+    tPostData.append( "requestTime", g_iLastRequestTime );
+    tPostData.append( "searchText", sText );
+
     $.ajax(
-      encodeURI( 'cn/search.php?requestTime=' + g_iLastRequestTime + '&searchText=' + sText ),
+      "cn/search.php",
       {
-        type: 'GET',
-        dataType : 'json'
+        type: 'POST',
+        processData: false,
+        contentType: false,
+        dataType : 'json',
+        data: tPostData
       }
     )
     .done( loadSearchResults )
@@ -47,12 +55,10 @@ function getSearchResults( tEvent )
 
 function loadSearchResults( tResults )
 {
-  console.log( '=====> loadSearchResults()' );
   // If handling response to latest request, update suggestions display
   if ( tResults.requestTime == g_iLastRequestTime )
   {
     var sSearchText = tResults.searchText;
-    console.log( '=====> loadSearchResults() processing results for ' + sSearchText );
     var iSearchTextLen = sSearchText.length;
     var sSearchLower = sSearchText.toLowerCase();
     var aResults = tResults.searchResults;
@@ -69,7 +75,6 @@ function loadSearchResults( tResults )
       var sResultFormat = '';
       while( sResult != '' )
       {
-        console.log( "==> BF sResult=" + sResult );
         var iPos = sResultLower.indexOf( sSearchLower );
         if ( iPos >= 0 )
         {
@@ -81,8 +86,6 @@ function loadSearchResults( tResults )
           sResultFormat += '</span>';
           sResult = sResult.substr( iPos + iSearchTextLen );
           sResultLower = sResultLower.substr( iPos + iSearchTextLen );
-          console.log( "==> sLeading=" + sLeading );
-          console.log( "==> sMatch=" + sMatch );
         }
         else
         {
@@ -90,9 +93,6 @@ function loadSearchResults( tResults )
           sResult = '';
           sResultLower = '';
         }
-
-        console.log( "==> sResultFormat=" + sResultFormat );
-        console.log( "==> AF sResult=" + sResult );
       }
 
       sHtml += '<div class="tt-suggestion" path="' + sPath + '" >';

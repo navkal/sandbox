@@ -1,10 +1,10 @@
 <?php
   // Copyright 2017 Energize Apps.  All rights reserved.
   require_once $_SERVER['DOCUMENT_ROOT'].'/../common/util.php';
-  error_log( '====> get=' . print_r( $_GET, true ) );
+  error_log( '====> post=' . print_r( $_POST, true ) );
 
-  $sSearchText = $_GET['searchText'];
-  $iRequestTime = $_GET['requestTime'];
+  $sSearchText = $_POST['searchText'];
+  $iRequestTime = $_POST['requestTime'];
 
   $command = quote( getenv( "PYTHON" ) ) . " search.py 2>&1 -s " . quote( $sSearchText );
   error_log( "===> command=" . $command );
