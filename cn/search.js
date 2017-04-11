@@ -52,6 +52,7 @@ function loadSearchResults( tResults )
   if ( tResults.requestTime == g_iLastRequestTime )
   {
     var sSearchText = tResults.searchText;
+    console.log( '=====> loadSearchResults() processing results for ' + sSearchText );
     var iSearchTextLen = sSearchText.length;
     var sSearchLower = sSearchText.toLowerCase();
     var aResults = tResults.searchResults;
