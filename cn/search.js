@@ -1,12 +1,14 @@
 // Copyright 2017 Energize Apps.  All rights reserved.
 
 var g_iLastRequestTime = 0;
+var g_sLastText = '';
 
 $(document).ready( initSearch );
 
 function initSearch()
 {
   $(window).resize( resizeTypeahead );
+  $( '#search .typeahead' ).on( 'keydown', cycleSelection );
   $( '#search .typeahead' ).on( 'keyup', getSearchResults );
   $( '#search .typeahead' ).on( 'blur', hideSearchResults );
   $( '#search .typeahead' ).on( 'focus', showSearchResults );
@@ -26,32 +28,71 @@ function getSearchResults( tEvent )
 
   if ( sText == '' )
   {
-    $( '#search .tt-dataset' ).html( '' );
-    hideSearchResults();
+    closeSearchResults();
   }
   else
   {
-    g_iLastRequestTime = Date.now();
+    if ( sText != g_sLastText )
+    {
+      g_iLastRequestTime = Date.now();
 
-    // Post request to server
-    var tPostData = new FormData();
-    tPostData.append( "requestTime", g_iLastRequestTime );
-    tPostData.append( "searchText", sText );
+      // Post request to server
+      var tPostData = new FormData();
+      tPostData.append( "requestTime", g_iLastRequestTime );
+      tPostData.append( "searchText", sText );
 
-    $.ajax(
-      "cn/search.php",
-      {
-        type: 'POST',
-        processData: false,
-        contentType: false,
-        dataType : 'json',
-        data: tPostData
-      }
-    )
-    .done( loadSearchResults )
-    .fail( handleAjaxError );
+      console.log( "===> ajax" );
+
+      $.ajax(
+        "cn/search.php",
+        {
+          type: 'POST',
+          processData: false,
+          contentType: false,
+          dataType : 'json',
+          data: tPostData
+        }
+      )
+      .done( loadSearchResults )
+      .fail( handleAjaxError );
+    }
   }
+
+  g_sLastText = sText;
 };
+
+function cycleSelection( tEvent )
+{
+  console.log( '==> cycleSelection() ' + tEvent.keyCode );
+
+  var iCursor = $( '#search .tt-suggestion.tt-cursor' ).index();
+  var bCycle = false;
+  console.log( '===> cursor at ' + iCursor );
+
+  switch( tEvent.keyCode )
+  {
+    case 13:
+      console.log( "enter" );
+      selectSearchResult( { target: $( '#search .tt-cursor' )[0] } );
+      break;
+    case 38:
+      console.log( "up" );
+      iCursor --;
+      bCycle = true;
+      break;
+    case 40:
+      console.log( 'down' );
+      iCursor ++;
+      bCycle = true;
+      break;
+  }
+
+  if ( bCycle )
+  {
+    $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
+    $( $( '#search .tt-suggestion' )[iCursor] ).addClass( 'tt-cursor' );
+  }
+}
 
 function loadSearchResults( tResults )
 {
@@ -63,51 +104,58 @@ function loadSearchResults( tResults )
     var sSearchLower = sSearchText.toLowerCase();
     var aResults = tResults.searchResults;
 
-    // Generate the HTML
-    var sHtml = '';
-    for ( var iResult in aResults )
+    if ( aResults.length )
     {
-      var aResult = aResults[iResult];
-      var sPath = aResult[0];
-      var sResult = aResult[1];
-      var sResultLower = sResult.toLowerCase();
-
-      var sResultFormat = '';
-      while( sResult != '' )
+      // Generate the HTML
+      var sHtml = '';
+      for ( var iResult in aResults )
       {
-        var iPos = sResultLower.indexOf( sSearchLower );
-        if ( iPos >= 0 )
+        var aResult = aResults[iResult];
+        var sPath = aResult[0];
+        var sResult = aResult[1];
+        var sResultLower = sResult.toLowerCase();
+
+        var sResultFormat = '';
+        while( sResult != '' )
         {
-          var sLeading = sResult.substr( 0, iPos );
-          var sMatch = sResult.substr( iPos, iSearchTextLen );
-          sResultFormat += sLeading;
-          sResultFormat += '<span class="searchTextHighlight">';
-          sResultFormat += sMatch;
-          sResultFormat += '</span>';
-          sResult = sResult.substr( iPos + iSearchTextLen );
-          sResultLower = sResultLower.substr( iPos + iSearchTextLen );
+          var iPos = sResultLower.indexOf( sSearchLower );
+          if ( iPos >= 0 )
+          {
+            var sLeading = sResult.substr( 0, iPos );
+            var sMatch = sResult.substr( iPos, iSearchTextLen );
+            sResultFormat += sLeading;
+            sResultFormat += '<span class="searchTextHighlight">';
+            sResultFormat += sMatch;
+            sResultFormat += '</span>';
+            sResult = sResult.substr( iPos + iSearchTextLen );
+            sResultLower = sResultLower.substr( iPos + iSearchTextLen );
+          }
+          else
+          {
+            sResultFormat += sResult;
+            sResult = '';
+            sResultLower = '';
+          }
         }
-        else
-        {
-          sResultFormat += sResult;
-          sResult = '';
-          sResultLower = '';
-        }
+
+        sHtml += '<div class="tt-suggestion" path="' + sPath + '" >';
+        sHtml += sResultFormat;
+        sHtml += '</div>';
       }
 
-      sHtml += '<div class="tt-suggestion" path="' + sPath + '" >';
-      sHtml += sResultFormat;
-      sHtml += '</div>';
+      // Replace HTML in suggestions div
+      $( '#search .tt-dataset' ).html( sHtml );
+
+      // Set handlers
+      $( '#search .tt-suggestion' ).on( 'mousedown', selectSearchResult );
+
+      // Show the suggestions menu
+      showSearchResults();
     }
-
-    // Replace HTML in suggestions div
-    $( '#search .tt-dataset' ).html( sHtml );
-
-    // Set handlers
-    $( '#search .tt-suggestion' ).on( 'mousedown', selectSearchResult );
-
-    // Show the suggestions menu
-    showSearchResults();
+    else
+    {
+      closeSearchResults();
+    }
   }
 }
 
@@ -120,9 +168,11 @@ function selectSearchResult( tEvent )
   $( '#search .typeahead' ).val( sSearchResult );
   $( '#search .typeahead' ).attr( 'path', sPath );
 
-  // Clear search results
-  hideSearchResults();
-  clearSearchResults();
+  // Update copy of last text
+  g_sLastText = sSearchResult;
+
+  // Close search results
+  closeSearchResults();
 
   // Navigate to selected search result in tree
   g_sSearchTargetPath = sPath;
@@ -135,6 +185,12 @@ function showSearchResults( tEvent )
   {
     $( '#search .tt-menu' ).show();
   }
+}
+
+function closeSearchResults()
+{
+  hideSearchResults();
+  clearSearchResults();
 }
 
 function hideSearchResults()
