@@ -8,7 +8,7 @@ $(document).ready( initSearch );
 function initSearch()
 {
   $(window).resize( resizeTypeahead );
-  $( '#search .typeahead' ).on( 'keydown', cycleSelection );
+  $( '#search .typeahead' ).on( 'keydown', cycleCursor );
   $( '#search .typeahead' ).on( 'keyup', getSearchResults );
   $( '#search .typeahead' ).on( 'blur', hideSearchResults );
   $( '#search .typeahead' ).on( 'focus', showSearchResults );
@@ -61,62 +61,59 @@ function getSearchResults( tEvent )
   g_sLastText = sText;
 };
 
-function cycleSelection( tEvent )
+function cycleCursor( tEvent )
 {
-  console.log( '==> cycleSelection() ' + tEvent.keyCode );
+  console.log( '==> cycleCursor() ' + tEvent.keyCode );
 
-  var iCursor = $( '#search .tt-suggestion.tt-cursor' ).index();
   var nSuggestions = $( '#search .tt-suggestion' ).length;
 
-  var bMoveCursor = false;
-
-  console.log( '===> BF cursor at ' + iCursor );
-
-  switch( tEvent.keyCode )
+  if ( nSuggestions )
   {
+    // Determine current cursor index
+    var iCursor = $( '#search .tt-suggestion.tt-cursor' ).index();
+    console.log( '===> BF cursor at ' + iCursor );
 
-    case 13:
-      // Enter: Select highlighted result
-      console.log( "enter" );
-      var tCursor = $( '#search .tt-cursor' );
-      if ( tCursor.length )
-      {
-        selectSearchResult( { target: $( '#search .tt-cursor' )[0] } );
-      }
-      break;
-
-    case 38:
-      // Up-arrow: Cycle upward
-      console.log( "up" );
-      if ( iCursor == -1 )
-      {
-        iCursor = nSuggestions;
-      }
-      iCursor --;
-      bMoveCursor = true;
-      break;
-
-    case 40:
-      // Down-arrow: Cycle downward
-      console.log( 'down' );
-      iCursor ++;
-      bMoveCursor = true;
-      break;
-  }
-
-  console.log( '===> AF cursor at ' + iCursor );
-
-  if ( bMoveCursor )
-  {
-    // Clear existing cursor
-    $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
-
-    // If new cursor index is within range, update display
-    if ( ( iCursor >= 0 ) && ( iCursor < nSuggestions ) )
+    switch( tEvent.keyCode )
     {
-      console.log( '======> setting new cursor to ' + iCursor );
-      $( $( '#search .tt-suggestion' )[iCursor] ).addClass( 'tt-cursor' );
+      case 13:
+        // Enter: Select result highlighted by cursor, if any
+        console.log( "enter" );
+        var tCursor = $( '#search .tt-cursor' );
+        if ( tCursor.length )
+        {
+          selectSearchResult( { target: tCursor[0] } );
+        }
+        break;
+
+      case 38:
+        // Up-arrow: Cycle upward
+        console.log( "up" );
+        if ( iCursor == -1 )
+        {
+          iCursor = nSuggestions;
+        }
+        moveCursor( -- iCursor, nSuggestions );
+        break;
+
+      case 40:
+        // Down-arrow: Cycle downward
+        console.log( 'down' );
+        moveCursor( ++ iCursor, nSuggestions );
+        break;
     }
+  }
+}
+
+function moveCursor( iCursor, nSuggestions )
+{
+  // Clear existing cursor
+  $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
+
+  // If new cursor index is within range, update display
+  if ( ( iCursor >= 0 ) && ( iCursor < nSuggestions ) )
+  {
+    console.log( '======> setting new cursor to ' + iCursor );
+    $( $( '#search .tt-suggestion' )[iCursor] ).addClass( 'tt-cursor' );
   }
 }
 
