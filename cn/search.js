@@ -47,22 +47,55 @@ function getSearchResults( tEvent )
 
 function loadSearchResults( tResults )
 {
+  console.log( '=====> loadSearchResults()' );
   // If handling response to latest request, update suggestions display
   if ( tResults.requestTime == g_iLastRequestTime )
   {
     var sSearchText = tResults.searchText;
+    var iSearchTextLen = sSearchText.length;
+    var sSearchLower = sSearchText.toLowerCase();
     var aResults = tResults.searchResults;
 
     // Generate the HTML
     var sHtml = '';
     for ( var iResult in aResults )
     {
-      var tResult = aResults[iResult];
-      var sPath = tResult.path;
-      var sResult = tResult.searchResult;
+      var aResult = aResults[iResult];
+      var sPath = aResult[0];
+      var sResult = aResult[1];
+      var sResultLower = sResult.toLowerCase();
+
+      var sResultFormat = '';
+      while( sResult != '' )
+      {
+        console.log( "==> BF sResult=" + sResult );
+        var iPos = sResultLower.indexOf( sSearchLower );
+        if ( iPos >= 0 )
+        {
+          var sLeading = sResult.substr( 0, iPos );
+          var sMatch = sResult.substr( iPos, iSearchTextLen );
+          sResultFormat += sLeading;
+          sResultFormat += '<span class="searchTextHighlight">';
+          sResultFormat += sMatch;
+          sResultFormat += '</span>';
+          sResult = sResult.substr( iPos + iSearchTextLen );
+          sResultLower = sResultLower.substr( iPos + iSearchTextLen );
+          console.log( "==> sLeading=" + sLeading );
+          console.log( "==> sMatch=" + sMatch );
+        }
+        else
+        {
+          sResultFormat += sResult;
+          sResult = '';
+          sResultLower = '';
+        }
+
+        console.log( "==> sResultFormat=" + sResultFormat );
+        console.log( "==> AF sResult=" + sResult );
+      }
 
       sHtml += '<div class="tt-suggestion" path="' + sPath + '" >';
-      sHtml += sResult.split( sSearchText ).join( '<span class="searchTextHighlight">' + sSearchText + '</span>' );
+      sHtml += sResultFormat;
       sHtml += '</div>';
     }
 

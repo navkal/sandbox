@@ -185,3 +185,11 @@ class room:
                 'Circuit Objects': self.cirobjs,
                 'Closet': self.closet
                 }
+
+class search:
+    def __init__(self, searchText):
+        searchText = searchText[1:-1]
+        print( 'search text=<' + searchText + '>' )
+        cur.execute('SELECT * FROM (SELECT path, description FROM CircuitObject WHERE description LIKE "%' + searchText + '%") LIMIT 5')
+        self.searchResults = cur.fetchall()
+        print('found ' + str(len(self.searchResults)) + ' matches' )
