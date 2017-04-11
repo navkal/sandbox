@@ -6,7 +6,7 @@
   $sSearchText = $_POST['searchText'];
   $iRequestTime = $_POST['requestTime'];
 
-  $command = quote( getenv( "PYTHON" ) ) . " search.py 2>&1 -s " . quote( $sSearchText );
+  $command = quote( getenv( "PYTHON" ) ) . " search.py 2>&1 -s " . quote( $sSearchText, false );
   error_log( "===> command=" . $command );
   exec( $command, $output, $status );
   error_log( "===> output=" . print_r( $output, true ) );
