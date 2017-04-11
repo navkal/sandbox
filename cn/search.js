@@ -66,31 +66,57 @@ function cycleSelection( tEvent )
   console.log( '==> cycleSelection() ' + tEvent.keyCode );
 
   var iCursor = $( '#search .tt-suggestion.tt-cursor' ).index();
-  var bCycle = false;
-  console.log( '===> cursor at ' + iCursor );
+  var nSuggestions = $( '#search .tt-suggestion' ).length;
+
+  var bMoveCursor = false;
+
+  console.log( '===> BF cursor at ' + iCursor );
 
   switch( tEvent.keyCode )
   {
+
     case 13:
+      // Enter: Select highlighted result
       console.log( "enter" );
-      selectSearchResult( { target: $( '#search .tt-cursor' )[0] } );
+      var tCursor = $( '#search .tt-cursor' );
+      if ( tCursor.length )
+      {
+        selectSearchResult( { target: $( '#search .tt-cursor' )[0] } );
+      }
       break;
+
     case 38:
+      // Up-arrow: Cycle upward
       console.log( "up" );
+      if ( iCursor == -1 )
+      {
+        iCursor = nSuggestions;
+      }
       iCursor --;
-      bCycle = true;
+      bMoveCursor = true;
       break;
+
     case 40:
+      // Down-arrow: Cycle downward
       console.log( 'down' );
       iCursor ++;
-      bCycle = true;
+      bMoveCursor = true;
       break;
   }
 
-  if ( bCycle )
+  console.log( '===> AF cursor at ' + iCursor );
+
+  if ( bMoveCursor )
   {
+    // Clear existing cursor
     $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
-    $( $( '#search .tt-suggestion' )[iCursor] ).addClass( 'tt-cursor' );
+
+    // If new cursor index is within range, update display
+    if ( ( iCursor >= 0 ) && ( iCursor < nSuggestions ) )
+    {
+      console.log( '======> setting new cursor to ' + iCursor );
+      $( $( '#search .tt-suggestion' )[iCursor] ).addClass( 'tt-cursor' );
+    }
   }
 }
 
