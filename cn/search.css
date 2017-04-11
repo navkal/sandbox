@@ -90,7 +90,12 @@
   border: 1px #e6f8ff solid;
 }
 
-.searchTextHighlight
+.tt-suggestion.tt-cursor .searchTextHighlight
+{
+  border: 1px #e6f8ff solid;
+}
+
+.tt-suggestion:not(.tt-cursor):not(:hover) .searchTextHighlight
 {
   border: 1px #0097cf solid;
 }
