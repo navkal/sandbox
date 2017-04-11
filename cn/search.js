@@ -41,8 +41,6 @@ function getSearchResults( tEvent )
       tPostData.append( "requestTime", g_iLastRequestTime );
       tPostData.append( "searchText", sText );
 
-      console.log( "===> ajax" );
-
       $.ajax(
         "cn/search.php",
         {
@@ -63,21 +61,17 @@ function getSearchResults( tEvent )
 
 function cycleCursor( tEvent )
 {
-  console.log( '==> cycleCursor() ' + tEvent.keyCode );
-
   var nSuggestions = $( '#search .tt-suggestion' ).length;
 
   if ( nSuggestions )
   {
     // Determine current cursor index
     var iCursor = $( '#search .tt-suggestion.tt-cursor' ).index();
-    console.log( '===> BF cursor at ' + iCursor );
 
     switch( tEvent.keyCode )
     {
       case 13:
         // Enter: Select result highlighted by cursor, if any
-        console.log( "enter" );
         var tCursor = $( '#search .tt-cursor' );
         if ( tCursor.length )
         {
@@ -87,7 +81,6 @@ function cycleCursor( tEvent )
 
       case 38:
         // Up-arrow: Cycle cursor upward
-        console.log( "up" );
         if ( iCursor == -1 )
         {
           iCursor = nSuggestions;
@@ -97,7 +90,6 @@ function cycleCursor( tEvent )
 
       case 40:
         // Down-arrow: Cycle cursor downward
-        console.log( 'down' );
         moveCursor( ++ iCursor, nSuggestions );
         break;
     }
@@ -112,7 +104,6 @@ function moveCursor( iCursor, nSuggestions )
   // If new cursor index is within range, update display
   if ( ( iCursor >= 0 ) && ( iCursor < nSuggestions ) )
   {
-    console.log( '======> setting new cursor to ' + iCursor );
     $( $( '#search .tt-suggestion' )[iCursor] ).addClass( 'tt-cursor' );
   }
 }
