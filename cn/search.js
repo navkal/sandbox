@@ -81,7 +81,8 @@ function cycleCursor( tEvent )
 
       case 38:
         // Up-arrow: Cycle cursor upward
-        if ( iCursor == -1 )
+        console.log( "==> up from " + iCursor );
+        if ( iCursor < 1 )
         {
           iCursor = nSuggestions;
         }
@@ -90,6 +91,11 @@ function cycleCursor( tEvent )
 
       case 40:
         // Down-arrow: Cycle cursor downward
+        console.log( "==> down from " + iCursor );
+        if ( iCursor >= ( nSuggestions - 1 ) )
+        {
+          iCursor = -1;
+        }
         moveCursor( ++ iCursor, nSuggestions );
         break;
     }
