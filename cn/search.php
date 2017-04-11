@@ -14,9 +14,6 @@
   $sSearchResults = $output[ count( $output ) - 1 ];
   $tSearchResults = json_decode( $sSearchResults );
   $aSearchResults = $tSearchResults->searchResults;
-  error_log( "===> bf: num results=" . count( $aSearchResults ) );
-  $aSearchResults = array_slice( $aSearchResults, 0, 5 );
-  error_log( "===> af: num results=" . count( $aSearchResults ) );
 
   $tResult =
   [
