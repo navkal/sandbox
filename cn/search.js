@@ -7,19 +7,19 @@ $(document).ready( initSearch );
 
 function initSearch()
 {
-  $(window).resize( resizeTypeahead );
-  $( '#search .typeahead' ).on( 'keydown', cycleCursor );
-  $( '#search .typeahead' ).on( 'keyup', getSearchResults );
-  $( '#search .typeahead' ).on( 'blur', hideSearchResults );
-  $( '#search .typeahead' ).on( 'focus', showSearchResults );
+  $(window).resize( resizeSearchInput );
+  $( '#search .searchinput' ).on( 'keydown', cycleCursor );
+  $( '#search .searchinput' ).on( 'keyup', getSearchResults );
+  $( '#search .searchinput' ).on( 'blur', hideSearchResults );
+  $( '#search .searchinput' ).on( 'focus', showSearchResults );
 
-  resizeTypeahead();
+  resizeSearchInput();
 }
 
-function resizeTypeahead()
+function resizeSearchInput()
 {
-  var sWidth = '' + $( '.typeahead' ).closest( '.container' ).width() + 'px';
-  $( '.typeahead, .tt-menu' ).css( 'width', sWidth );
+  var sWidth = '' + $( '.searchinput' ).closest( '.container' ).width() + 'px';
+  $( '.searchinput, .tt-menu' ).css( 'width', sWidth );
 }
 
 function getSearchResults( tEvent )
@@ -187,8 +187,8 @@ function selectSearchResult( tEvent )
   var tTarget = $( tEvent.target ).closest( '.tt-suggestion' );
   var sSearchResult = tTarget.text();
   var sPath = tTarget.attr( 'path' );
-  $( '#search .typeahead' ).val( sSearchResult );
-  $( '#search .typeahead' ).attr( 'path', sPath );
+  $( '#search .searchinput' ).val( sSearchResult );
+  $( '#search .searchinput' ).attr( 'path', sPath );
 
   // Update copy of last text
   g_sLastText = sSearchResult;
