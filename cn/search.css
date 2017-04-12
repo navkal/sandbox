@@ -1,7 +1,6 @@
 /* Copyright 2017 Energize Apps.  All rights reserved. */
 
-.search-input,
-.tt-hint
+.search-input
 {
   width: 396px;
   height: 38px;
@@ -28,11 +27,6 @@
 .search-input:focus
 {
   border: 2px solid #0097cf;
-}
-
-.tt-hint
-{
-  color: #999
 }
 
 .tt-menu
