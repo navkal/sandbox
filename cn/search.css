@@ -42,7 +42,7 @@
           box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
-.tt-suggestion
+.search-result
 {
   padding: 3px 20px;
   font-size: 16px;
@@ -51,20 +51,20 @@
   overflow: visible;
 }
 
-.tt-suggestion:hover
+.search-result:hover
 {
   cursor: pointer;
   color: #fff;
   background-color: #0097cf;
 }
 
-.tt-suggestion.tt-cursor
+.search-result.tt-cursor
 {
   color: #fff;
   background-color: #0097cf;
 }
 
-.tt-suggestion p
+.search-result p
 {
   margin: 0;
 }
@@ -75,17 +75,17 @@
   color:#999;
 }
 
-.tt-suggestion:hover .searchTextHighlight
+.search-result:hover .searchTextHighlight
 {
   border: 1px #e6f8ff solid;
 }
 
-.tt-suggestion.tt-cursor .searchTextHighlight
+.search-result.tt-cursor .searchTextHighlight
 {
   border: 1px #e6f8ff solid;
 }
 
-.tt-suggestion:not(.tt-cursor):not(:hover) .searchTextHighlight
+.search-result:not(.tt-cursor):not(:hover) .searchTextHighlight
 {
   border: 1px #0097cf solid;
 }

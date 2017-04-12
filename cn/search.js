@@ -61,12 +61,12 @@ function getSearchResults( tEvent )
 
 function cycleCursor( tEvent )
 {
-  var nSuggestions = $( '#search .tt-suggestion' ).length;
+  var nResults = $( '#search .search-result' ).length;
 
-  if ( nSuggestions )
+  if ( nResults )
   {
     // Determine current cursor index
-    var iCursor = $( '#search .tt-suggestion.tt-cursor' ).index();
+    var iCursor = $( '#search .search-result.tt-cursor' ).index();
 
     switch( tEvent.keyCode )
     {
@@ -84,41 +84,41 @@ function cycleCursor( tEvent )
         console.log( "==> up from " + iCursor );
         if ( iCursor < 1 )
         {
-          iCursor = nSuggestions;
+          iCursor = nResults;
         }
-        moveCursor( -- iCursor, nSuggestions );
+        moveCursor( -- iCursor, nResults );
         break;
 
       case 40:
         // Down-arrow: Cycle cursor downward
         console.log( "==> down from " + iCursor );
-        if ( iCursor >= ( nSuggestions - 1 ) )
+        if ( iCursor >= ( nResults - 1 ) )
         {
           iCursor = -1;
         }
-        moveCursor( ++ iCursor, nSuggestions );
+        moveCursor( ++ iCursor, nResults );
         break;
     }
   }
 }
 
-function moveCursor( iCursor, nSuggestions )
+function moveCursor( iCursor, nResults )
 {
   // Clear existing cursor
   $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
 
   // If new cursor index is within range, update display
-  if ( ( iCursor >= 0 ) && ( iCursor < nSuggestions ) )
+  if ( ( iCursor >= 0 ) && ( iCursor < nResults ) )
   {
-    var tSuggestion = $( $( '#search .tt-suggestion' )[iCursor] );
-    tSuggestion.addClass( 'tt-cursor' );
-    scrollToCenter( $( '#search .tt-menu' ), tSuggestion );
+    var tResult = $( $( '#search .search-result' )[iCursor] );
+    tResult.addClass( 'tt-cursor' );
+    scrollToCenter( $( '#search .tt-menu' ), tResult );
   }
 }
 
 function loadSearchResults( tResults )
 {
-  // If handling response to latest request, update suggestions display
+  // If handling response to latest request, update results display
   if ( tResults.requestTime == g_iLastRequestTime )
   {
     var sSearchText = tResults.searchText;
@@ -160,18 +160,18 @@ function loadSearchResults( tResults )
           }
         }
 
-        sHtml += '<div class="tt-suggestion" path="' + sPath + '" title="' + sPath + '" >';
+        sHtml += '<div class="search-result" path="' + sPath + '" title="' + sPath + '" >';
         sHtml += sResultFormat;
         sHtml += '</div>';
       }
 
-      // Replace HTML in suggestions div
+      // Replace HTML in results div
       $( '#search .tt-dataset' ).html( sHtml );
 
       // Set handlers
-      $( '#search .tt-suggestion' ).on( 'mousedown', selectSearchResult );
+      $( '#search .search-result' ).on( 'mousedown', selectSearchResult );
 
-      // Show the suggestions menu
+      // Show the results menu
       showSearchResults();
     }
     else
@@ -184,7 +184,7 @@ function loadSearchResults( tResults )
 function selectSearchResult( tEvent )
 {
   // Set selection in search field
-  var tTarget = $( tEvent.target ).closest( '.tt-suggestion' );
+  var tTarget = $( tEvent.target ).closest( '.search-result' );
   var sSearchResult = tTarget.text();
   var sPath = tTarget.attr( 'path' );
   $( '#search .search-input' ).val( sSearchResult );
@@ -203,7 +203,7 @@ function selectSearchResult( tEvent )
 
 function showSearchResults( tEvent )
 {
-  if ( $( '#search .tt-suggestion' ).length )
+  if ( $( '#search .search-result' ).length )
   {
     $( '#search .tt-menu' ).show();
   }
