@@ -17,7 +17,7 @@
 
 .search-input::-ms-clear
 {
-    display: none;
+  display: none;
 }
 
 .search-input:focus
@@ -64,12 +64,6 @@
   background-color: #0097cf;
 }
 
-.glyphicon-search
-{
-  font-size:18px;
-  color:#999;
-}
-
 .search-result:hover .search-result-highlight
 {
   border: 1px #e6f8ff solid;
@@ -83,4 +77,10 @@
 .search-result:not(.tt-cursor):not(:hover) .search-result-highlight
 {
   border: 1px #0097cf solid;
+}
+
+.glyphicon-search
+{
+  font-size:18px;
+  color:#999;
 }
