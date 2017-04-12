@@ -19,7 +19,7 @@ function initSearch()
 function resizeSearchInput()
 {
   var sWidth = '' + $( '.search-input' ).closest( '.container' ).width() + 'px';
-  $( '.search-input, .tt-menu' ).css( 'width', sWidth );
+  $( '.search-input, .search-menu' ).css( 'width', sWidth );
 }
 
 function getSearchResults( tEvent )
@@ -112,7 +112,7 @@ function moveCursor( iCursor, nResults )
   {
     var tResult = $( $( '#search .search-result' )[iCursor] );
     tResult.addClass( 'tt-cursor' );
-    scrollToCenter( $( '#search .tt-menu' ), tResult );
+    scrollToCenter( $( '#search .search-menu' ), tResult );
   }
 }
 
@@ -205,7 +205,7 @@ function showSearchResults( tEvent )
 {
   if ( $( '#search .search-result' ).length )
   {
-    $( '#search .tt-menu' ).show();
+    $( '#search .search-menu' ).show();
   }
 }
 
@@ -217,7 +217,7 @@ function closeSearchResults()
 
 function hideSearchResults()
 {
-  $( '#search .tt-menu' ).hide();
+  $( '#search .search-menu' ).hide();
 }
 
 function clearSearchResults()
