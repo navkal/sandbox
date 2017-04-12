@@ -1,6 +1,6 @@
 /* Copyright 2017 Energize Apps.  All rights reserved. */
 
-.searchinput,
+.search-input,
 .tt-query,
 .tt-hint
 {
@@ -16,17 +16,17 @@
   outline: none;
 }
 
-.searchinput::-ms-clear
+.search-input::-ms-clear
 {
     display: none;
 }
 
-.searchinput
+.search-input
 {
   background-color: #fff;
 }
 
-.searchinput:focus
+.search-input:focus
 {
   border: 2px solid #0097cf;
 }

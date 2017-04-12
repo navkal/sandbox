@@ -35,7 +35,7 @@
     <div class="row" >
       <div id="search" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div class="form-group has-feedback">
-          <input class="searchinput" type="text" placeholder="Search..." >
+          <input class="search-input" type="text" placeholder="Search..." >
           <i class="glyphicon glyphicon-search form-control-feedback"></i>
           <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">a</pre>
           <div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; overflow: auto;">

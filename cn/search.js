@@ -8,18 +8,18 @@ $(document).ready( initSearch );
 function initSearch()
 {
   $(window).resize( resizeSearchInput );
-  $( '#search .searchinput' ).on( 'keydown', cycleCursor );
-  $( '#search .searchinput' ).on( 'keyup', getSearchResults );
-  $( '#search .searchinput' ).on( 'blur', hideSearchResults );
-  $( '#search .searchinput' ).on( 'focus', showSearchResults );
+  $( '#search .search-input' ).on( 'keydown', cycleCursor );
+  $( '#search .search-input' ).on( 'keyup', getSearchResults );
+  $( '#search .search-input' ).on( 'blur', hideSearchResults );
+  $( '#search .search-input' ).on( 'focus', showSearchResults );
 
   resizeSearchInput();
 }
 
 function resizeSearchInput()
 {
-  var sWidth = '' + $( '.searchinput' ).closest( '.container' ).width() + 'px';
-  $( '.searchinput, .tt-menu' ).css( 'width', sWidth );
+  var sWidth = '' + $( '.search-input' ).closest( '.container' ).width() + 'px';
+  $( '.search-input, .tt-menu' ).css( 'width', sWidth );
 }
 
 function getSearchResults( tEvent )
@@ -187,8 +187,8 @@ function selectSearchResult( tEvent )
   var tTarget = $( tEvent.target ).closest( '.tt-suggestion' );
   var sSearchResult = tTarget.text();
   var sPath = tTarget.attr( 'path' );
-  $( '#search .searchinput' ).val( sSearchResult );
-  $( '#search .searchinput' ).attr( 'path', sPath );
+  $( '#search .search-input' ).val( sSearchResult );
+  $( '#search .search-input' ).attr( 'path', sPath );
 
   // Update copy of last text
   g_sLastText = sSearchResult;
