@@ -110,7 +110,10 @@ function moveCursor( iCursor, nSuggestions )
   // If new cursor index is within range, update display
   if ( ( iCursor >= 0 ) && ( iCursor < nSuggestions ) )
   {
-    $( $( '#search .tt-suggestion' )[iCursor] ).addClass( 'tt-cursor' );
+    var tSuggestion = $( $( '#search .tt-suggestion' )[iCursor] );
+    tSuggestion.addClass( 'tt-cursor' );
+    var tMenu = $( '#search .tt-menu' );
+    tMenu.scrollTop( tMenu.scrollTop() + ( tSuggestion.position().top - tMenu.position().top ) - ( tMenu.height() / 2 ) + ( tSuggestion.height() / 2 ) );
   }
 }
 
