@@ -64,6 +64,8 @@
   padding: 3px 20px;
   font-size: 16px;
   line-height: 22px;
+  white-space: nowrap;
+  overflow: visible;
 }
 
 .tt-suggestion:hover
