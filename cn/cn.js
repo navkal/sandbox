@@ -230,8 +230,7 @@ function navigateToSearchTarget()
     tSearchTarget.addClass( 'searchTarget' );
 
     // Auto-scroll tree to search target
-    var tTree = $( '#circuitTree' );
-    tTree.scrollTop( tTree.scrollTop() + ( tSearchTarget.position().top - tTree.position().top ) - ( tTree.height() / 2 ) + ( tSearchTarget.height() / 2 ) );
+    scrollToCenter( $( '#circuitTree' ), tSearchTarget );
 
     // Set tooltips on toggle buttons
     setToggleTooltips();
@@ -331,6 +330,11 @@ function resizeTree()
   var tFooter = $( '.navbar-fixed-bottom' );
   var nHeightMinus = tFooter.length ? ( tFooter.height() + 80 ) : 40;
   $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - nHeightMinus );
+}
+
+function scrollToCenter( tContainer, tItem )
+{
+  tContainer.scrollTop( tContainer.scrollTop() + ( tItem.position().top - tContainer.position().top ) - ( tContainer.height() / 2 ) + ( tItem.height() / 2 ) );
 }
 
 function openImageWindow( tEvent )

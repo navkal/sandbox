@@ -112,8 +112,7 @@ function moveCursor( iCursor, nSuggestions )
   {
     var tSuggestion = $( $( '#search .tt-suggestion' )[iCursor] );
     tSuggestion.addClass( 'tt-cursor' );
-    var tMenu = $( '#search .tt-menu' );
-    tMenu.scrollTop( tMenu.scrollTop() + ( tSuggestion.position().top - tMenu.position().top ) - ( tMenu.height() / 2 ) + ( tSuggestion.height() / 2 ) );
+    scrollToCenter( $( '#search .tt-menu' ), tSuggestion );
   }
 }
 
