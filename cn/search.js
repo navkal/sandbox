@@ -160,7 +160,7 @@ function loadSearchResults( tResults )
           }
         }
 
-        sHtml += '<div class="tt-suggestion" path="' + sPath + '" >';
+        sHtml += '<div class="tt-suggestion" path="' + sPath + '" title="' + sPath + '" >';
         sHtml += sResultFormat;
         sHtml += '</div>';
       }
