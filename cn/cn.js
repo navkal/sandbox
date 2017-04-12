@@ -329,7 +329,7 @@ function resizeTree()
 {
   var tFooter = $( '.navbar-fixed-bottom' );
   var nHeightMinus = tFooter.length ? ( tFooter.height() + 80 ) : 40;
-  $( '#circuitTree' ).css( 'height', $( window ).height() - $( '#circuitTree' ).position().top - nHeightMinus );
+  $( '#circuitTree' ).css( 'max-height', $( window ).height() - $( '#circuitTree' ).position().top - nHeightMinus );
 }
 
 function scrollToCenter( tContainer, tItem )
