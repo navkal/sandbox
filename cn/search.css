@@ -16,6 +16,11 @@
   outline: none;
 }
 
+.typeahead::-ms-clear
+{
+    display: none;
+}
+
 .typeahead
 {
   background-color: #fff;
