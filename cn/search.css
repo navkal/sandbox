@@ -12,16 +12,12 @@
      -moz-border-radius: 8px;
           border-radius: 8px;
   outline: none;
+  background-color: #fff;
 }
 
 .search-input::-ms-clear
 {
     display: none;
-}
-
-.search-input
-{
-  background-color: #fff;
 }
 
 .search-input:focus
