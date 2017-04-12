@@ -70,17 +70,17 @@
   color:#999;
 }
 
-.search-result:hover .searchTextHighlight
+.search-result:hover .search-result-highlight
 {
   border: 1px #e6f8ff solid;
 }
 
-.search-result.tt-cursor .searchTextHighlight
+.search-result.tt-cursor .search-result-highlight
 {
   border: 1px #e6f8ff solid;
 }
 
-.search-result:not(.tt-cursor):not(:hover) .searchTextHighlight
+.search-result:not(.tt-cursor):not(:hover) .search-result-highlight
 {
   border: 1px #0097cf solid;
 }

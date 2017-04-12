@@ -146,7 +146,7 @@ function loadSearchResults( tResults )
             var sLeading = sResult.substr( 0, iPos );
             var sMatch = sResult.substr( iPos, iSearchTextLen );
             sResultFormat += sLeading;
-            sResultFormat += '<span class="searchTextHighlight">';
+            sResultFormat += '<span class="search-result-highlight">';
             sResultFormat += sMatch;
             sResultFormat += '</span>';
             sResult = sResult.substr( iPos + iSearchTextLen );
