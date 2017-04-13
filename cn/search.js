@@ -8,23 +8,24 @@ $(document).ready( initSearch );
 function initSearch()
 {
   $(window).resize( resizeSearchInput );
-  $( '#search .search-input' ).on( 'keydown', cycleCursor );
-  $( '#search .search-input' ).on( 'keyup', getSearchResults );
-  $( '#search .search-input' ).on( 'blur', hideSearchResults );
-  $( '#search .search-input' ).on( 'focus', showSearchResults );
+  $( '#search-input' ).on( 'keydown', cycleCursor );
+  $( '#search-input' ).on( 'keyup', getSearchResults );
+  $( '#search-input' ).on( 'blur', hideSearchResults );
+  $( '#search-input' ).on( 'focus', showSearchResults );
 
   resizeSearchInput();
+  $( '#search-input' ).focus();
 }
 
 function resizeSearchInput()
 {
-  var sWidth = '' + $( '.search-input' ).closest( '.container' ).width() + 'px';
-  $( '.search-input, .search-menu' ).css( 'width', sWidth );
+  var sWidth = '' + $( '#search-input' ).closest( '.container' ).width() + 'px';
+  $( '#search-control, #search-menu' ).css( 'width', sWidth );
 }
 
-function getSearchResults( tEvent )
+function getSearchResults()
 {
-  var sText = $( tEvent.target ).val();
+  var sText = $( '#search-input' ).val();
 
   if ( sText == '' )
   {
@@ -112,7 +113,7 @@ function moveCursor( iCursor, nResults )
   {
     var tResult = $( $( '#search .search-result' )[iCursor] );
     tResult.addClass( 'tt-cursor' );
-    scrollToCenter( $( '#search .search-menu' ), tResult );
+    scrollToCenter( $( '#search-menu' ), tResult );
   }
 }
 
@@ -187,8 +188,8 @@ function selectSearchResult( tEvent )
   var tTarget = $( tEvent.target ).closest( '.search-result' );
   var sSearchResult = tTarget.text();
   var sPath = tTarget.attr( 'path' );
-  $( '#search .search-input' ).val( sSearchResult );
-  $( '#search .search-input' ).attr( 'path', sPath );
+  $( '#search-input' ).val( sSearchResult );
+  $( '#search-input' ).attr( 'path', sPath );
 
   // Update copy of last text
   g_sLastText = sSearchResult;
@@ -205,22 +206,29 @@ function showSearchResults( tEvent )
 {
   if ( $( '#search .search-result' ).length )
   {
-    $( '#search .search-menu' ).show();
+    $( '#search-menu' ).show();
   }
+}
+
+function clearSearchInput()
+{
+  $( '#search-input' ).val( '' );
+  getSearchResults();
 }
 
 function closeSearchResults()
 {
-  hideSearchResults();
   clearSearchResults();
+  hideSearchResults();
 }
 
 function hideSearchResults()
 {
-  $( '#search .search-menu' ).hide();
+  $( '#search-menu' ).hide();
 }
 
 function clearSearchResults()
 {
   $( '#search .tt-dataset' ).html( '' );
+  $( '#search-input' ).focus();
 }

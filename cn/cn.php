@@ -32,19 +32,33 @@
   <div id="circuitNavigator">
     <hr/>
 
+    <!-- Search -->
     <div class="row" >
       <div id="search" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-        <div class="form-group has-feedback">
-          <input class="search-input" type="text" placeholder="Search..." >
-          <i class="glyphicon glyphicon-search form-control-feedback"></i>
-          <div class="search-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; overflow: auto;">
+        <div class="form-group">
+
+          <!-- Search input control -->
+          <div id="search-control" class="input-group" >
+            <input class="form-control search-input" id="search-input" type="text" placeholder="Search..." >
+            <div class="input-group-btn">
+              <button type="button" id="search-input-clear" class="btn btn-default" title="Clear search input" onclick="clearSearchInput()">
+                <span class="glyphicon glyphicon-remove">
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu showing search results -->
+          <div id="search-menu" class="search-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; overflow: auto;">
             <div class="tt-dataset">
             </div>
           </div>
+
         </div>
       </div>
     </div>
 
+    <!-- Tree -->
     <div class="row" >
       <div class="just-padding">
         <div id="circuitTree" class="list-group list-group-root well" style="overflow:auto; min-height:36px" >

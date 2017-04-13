@@ -1,35 +1,15 @@
 /* Copyright 2017 Energize Apps.  All rights reserved. */
 
-.search-input
-{
-  width: 396px;
-  height: 38px;
-  padding: 4px 12px;
-  font-size: 18px;
-  line-height: 26px;
-  border: 2px solid #ccc;
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
-  outline: none;
-  background-color: #fff;
-}
-
 .search-input::-ms-clear
 {
   display: none;
-}
-
-.search-input:focus
-{
-  border: 2px solid #0097cf;
 }
 
 .search-menu
 {
   width: 422px;
   max-height: 300px;
-  margin: 12px 0;
+  margin: 0px 15px;
   padding: 8px 0;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -79,8 +59,7 @@
   border: 1px #0097cf solid;
 }
 
-.glyphicon-search
+.glyphicon-remove
 {
-  font-size:18px;
   color:#999;
 }
