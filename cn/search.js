@@ -7,6 +7,8 @@ $(document).ready( initSearch );
 
 function initSearch()
 {
+  $( '#search-input' ).focus();
+
   $(window).resize( resizeSearchInput );
   $( '#search-input' ).on( 'keydown', cycleCursor );
   $( '#search-input' ).on( 'keyup', getSearchResults );
@@ -14,7 +16,6 @@ function initSearch()
   $( '#search-input' ).on( 'focus', showSearchResults );
 
   resizeSearchInput();
-  $( '#search-input' ).focus();
 }
 
 function resizeSearchInput()
@@ -207,6 +208,12 @@ function showSearchResults( tEvent )
   if ( $( '#search .search-result' ).length )
   {
     $( '#search-menu' ).show();
+
+    // If displaying new results, restore the scroll position
+    if ( ! tEvent )
+    {
+      $( '#search-menu' ).scrollTop( 0 );
+    }
   }
 }
 
