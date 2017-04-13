@@ -86,7 +86,6 @@ function cycleCursor( tEvent )
 
       case 38:
         // Up-arrow: Cycle cursor upward
-        console.log( "==> up from " + iCursor );
         if ( iCursor < 1 )
         {
           iCursor = nResults;
@@ -96,7 +95,6 @@ function cycleCursor( tEvent )
 
       case 40:
         // Down-arrow: Cycle cursor downward
-        console.log( "==> down from " + iCursor );
         if ( iCursor >= ( nResults - 1 ) )
         {
           iCursor = -1;
@@ -228,7 +226,6 @@ function clearSearchInput()
 
 function closeSearchResults()
 {
-  console.log( '======> closeSearchResults' );
   clearSearchResults();
   hideSearchResults();
 }
