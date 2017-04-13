@@ -59,7 +59,7 @@
   border: 1px #0097cf solid;
 }
 
-.glyphicon-remove
+.glyphicon-remove, .glyphicon-search
 {
-  color:#999;
+  color: #999;
 }
