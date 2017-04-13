@@ -7,15 +7,18 @@ $(document).ready( initSearch );
 
 function initSearch()
 {
+  // Set focus on the search input control
   $( '#search-input' ).focus();
 
-  $(window).resize( resizeSearchInput );
+  // Set size of search input control
+  resizeSearchInput();
+
+  // Set handlers
+  $( window ).resize( resizeSearchInput );
   $( '#search-input' ).on( 'keydown', cycleCursor );
   $( '#search-input' ).on( 'keyup', getSearchResults );
   $( '#search-input' ).on( 'blur', hideSearchResults );
   $( '#search-input' ).on( 'focus', showSearchResults );
-
-  resizeSearchInput();
 }
 
 function resizeSearchInput()
@@ -225,6 +228,7 @@ function clearSearchInput()
 
 function closeSearchResults()
 {
+  console.log( '======> closeSearchResults' );
   clearSearchResults();
   hideSearchResults();
 }
