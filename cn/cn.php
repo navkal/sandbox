@@ -2,15 +2,16 @@
 
 <?php
   $_SESSION["pathDotReplacement"] = '-_-_-';
+  $iVersion = time();
 ?>
 
 <!-- Circuit Navigator scripts -->
-<link rel="stylesheet" href="cn/cn.css">
-<script src="cn/cn.js"></script>
+<link rel="stylesheet" href="cn/cn.css?version=<?=$iVersion?>">
+<script src="cn/cn.js?version=<?=$iVersion?>"></script>
 
 <!-- Search scripts -->
-<link rel="stylesheet" href="cn/search.css">
-<script src="cn/search.js"></script>
+<link rel="stylesheet" href="cn/search.css?version=<?=$iVersion?>">
+<script src="cn/search.js?version=<?=$iVersion?>"></script>
 
 <br/>
 <div class="container">
