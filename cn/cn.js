@@ -83,7 +83,7 @@ function insertTreeNode( tRsp, sStatus, tJqXhr )
   aChildInfo.sort( compareNodes );
   for ( var iChild = 0; iChild < aChildInfo.length; iChild ++ )
   {
-    sCollapse += '<a class="list-group-item clearfix collapsed" data-toggle="collapse" onclick="toggleFolder(event);"  ondblclick="toggleFolder(event);"path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
+    sCollapse += '<a href="javascript:void(null)" class="list-group-item clearfix collapsed" data-toggle="collapse" onclick="toggleFolder(event);"  ondblclick="toggleFolder(event);"path="' + aChildInfo[iChild].path + '" type="' + aChildInfo[iChild].type.toLowerCase() + '" oid="' + aChildInfo[iChild].oid + '" title="' + aChildInfo[iChild].path + '" style="padding-left:' + sPadCollapse + '" >';
     sCollapse += '<i class="glyphicon glyphicon-chevron-right toggle"></i>';
     sCollapse += aChildInfo[iChild].label;
     sCollapse += '<span class="pull-right">';
