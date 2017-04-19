@@ -38,7 +38,7 @@
   background-color: #0097cf;
 }
 
-.search-result.tt-cursor
+.search-result.search-cursor
 {
   color: #fff;
   background-color: #0097cf;
@@ -49,12 +49,12 @@
   border: 1px #e6f8ff solid;
 }
 
-.search-result.tt-cursor .search-result-highlight
+.search-result.search-cursor .search-result-highlight
 {
   border: 1px #e6f8ff solid;
 }
 
-.search-result:not(.tt-cursor):not(:hover) .search-result-highlight
+.search-result:not(.search-cursor):not(:hover) .search-result-highlight
 {
   border: 1px #0097cf solid;
 }

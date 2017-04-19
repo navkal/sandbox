@@ -71,13 +71,13 @@ function cycleCursor( tEvent )
   if ( nResults )
   {
     // Determine current cursor index
-    var iCursor = $( '#search .search-result.tt-cursor' ).index();
+    var iCursor = $( '#search .search-result.search-cursor' ).index();
 
     switch( tEvent.keyCode )
     {
       case 13:
         // Enter: Select result highlighted by cursor, if any
-        var tCursor = $( '#search .tt-cursor' );
+        var tCursor = $( '#search .search-cursor' );
         if ( tCursor.length )
         {
           selectSearchResult( { target: tCursor[0] } );
@@ -108,13 +108,13 @@ function cycleCursor( tEvent )
 function moveCursor( iCursor, nResults )
 {
   // Clear existing cursor
-  $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
+  $( '#search .search-cursor' ).removeClass( 'search-cursor' );
 
   // If new cursor index is within range, update display
   if ( ( iCursor >= 0 ) && ( iCursor < nResults ) )
   {
     var tResult = $( $( '#search .search-result' )[iCursor] );
-    tResult.addClass( 'tt-cursor' );
+    tResult.addClass( 'search-cursor' );
     scrollToVisible( $( '#search-menu' ), tResult );
   }
 }
@@ -195,8 +195,8 @@ function selectSearchResult( tEvent )
   var tTarget = $( tEvent.target ).closest( '.search-result' );
 
   // Set cursor on search result
-  $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
-  tTarget.addClass( 'tt-cursor' );
+  $( '#search .search-cursor' ).removeClass( 'search-cursor' );
+  tTarget.addClass( 'search-cursor' );
 
   // Hide search results
   hideSearchResults();
