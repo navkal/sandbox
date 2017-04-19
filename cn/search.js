@@ -18,7 +18,7 @@ function initSearch()
   $( '#search-input' ).on( 'keydown', cycleCursor );
   $( '#search-input' ).on( 'keyup', getSearchResults );
   $( '#search-input' ).on( 'blur', hideSearchResults );
-  $( '#search-input' ).on( 'focus', showSearchResults );
+  $( '#search-input' ).on( 'click', showSearchResults );
 }
 
 function resizeSearchInput()
@@ -115,8 +115,13 @@ function moveCursor( iCursor, nResults )
   {
     var tResult = $( $( '#search .search-result' )[iCursor] );
     tResult.addClass( 'tt-cursor' );
-    scrollToCenter( $( '#search-menu' ), tResult );
+    scrollToVisible( $( '#search-menu' ), tResult );
   }
+}
+
+function scrollToVisible( tContainer, tItem )
+{
+  tContainer.scrollTop( tContainer.scrollTop() + ( tItem.position().top - tContainer.position().top ) - ( tContainer.height() / 2 ) + ( tItem.height() / 2 ) );
 }
 
 function loadSearchResults( tResults )
@@ -186,21 +191,18 @@ function loadSearchResults( tResults )
 
 function selectSearchResult( tEvent )
 {
-  // Set selection in search field
+  // Get event target
   var tTarget = $( tEvent.target ).closest( '.search-result' );
-  var sSearchResult = tTarget.text();
-  var sPath = tTarget.attr( 'path' );
-  $( '#search-input' ).val( sSearchResult );
-  $( '#search-input' ).attr( 'path', sPath );
 
-  // Update copy of last text
-  g_sLastText = sSearchResult;
+  // Set cursor on search result
+  $( '#search .tt-cursor' ).removeClass( 'tt-cursor' );
+  tTarget.addClass( 'tt-cursor' );
 
-  // Close search results
-  closeSearchResults();
+  // Hide search results
+  hideSearchResults();
 
   // Navigate to selected search result in tree
-  g_sSearchTargetPath = sPath;
+  g_sSearchTargetPath = tTarget.attr( 'path' );
   navigateToSearchTarget();
 }
 
@@ -221,22 +223,18 @@ function showSearchResults( tEvent )
 function clearSearchInput()
 {
   $( '#search-input' ).val( '' );
-  getSearchResults();
+  g_sLastText = '';
+  closeSearchResults();
 }
 
 function closeSearchResults()
 {
-  clearSearchResults();
   hideSearchResults();
+  $( '#search .tt-dataset' ).html( '' );
+  $( '#search-input' ).focus();
 }
 
 function hideSearchResults()
 {
   $( '#search-menu' ).hide();
-}
-
-function clearSearchResults()
-{
-  $( '#search .tt-dataset' ).html( '' );
-  $( '#search-input' ).focus();
 }
