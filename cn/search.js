@@ -70,36 +70,58 @@ function cycleCursor( tEvent )
 
   if ( nResults )
   {
+    // Determine whether menu is visible
+    var bVisible = $( '#search-menu' ).is( ':visible' );
+
     // Determine current cursor index
     var iCursor = $( '#search .search-result.search-cursor' ).index();
 
     switch( tEvent.keyCode )
     {
       case 13:
-        // Enter: Select result highlighted by cursor, if any
-        var tCursor = $( '#search .search-cursor' );
-        if ( tCursor.length )
+        // Enter: Select highlighted result or show hidden menu
+        if ( bVisible )
         {
-          selectSearchResult( { target: tCursor[0] } );
+          var tCursor = $( '#search .search-cursor' );
+          if ( tCursor.length )
+          {
+            selectSearchResult( { target: tCursor[0] } );
+          }
+        }
+        else
+        {
+          showSearchResults( tEvent );
         }
         break;
 
       case 38:
         // Up-arrow: Cycle cursor upward
-        if ( iCursor < 1 )
+        if ( bVisible )
         {
-          iCursor = nResults;
+          tEvent.preventDefault();
+
+          if ( iCursor < 1 )
+          {
+            iCursor = nResults;
+          }
+
+          moveCursor( -- iCursor, nResults );
         }
-        moveCursor( -- iCursor, nResults );
         break;
 
       case 40:
         // Down-arrow: Cycle cursor downward
-        if ( iCursor >= ( nResults - 1 ) )
+        if ( bVisible )
         {
-          iCursor = -1;
+          tEvent.preventDefault();
+
+          if ( iCursor >= ( nResults - 1 ) )
+          {
+            iCursor = -1;
+          }
+
+          moveCursor( ++ iCursor, nResults );
         }
-        moveCursor( ++ iCursor, nResults );
         break;
     }
   }
