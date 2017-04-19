@@ -213,6 +213,11 @@ function navigateToSearchTarget()
   {
     sNavPath = aPath.slice( 0, iLen + 1 ).join( '.' );
     tNavNode = $( '#circuitTree a[path="' + sNavPath + '"]' );
+    if ( tNavNode.length == 0 )
+    {
+      console.log( '==> ERROR navigating to path: <' + g_sSearchTargetPath + '>' );
+      console.log( '==> Ancestor does not exist: <' + sNavPath + '>' );
+    }
     bExpanded = tNavNode.find( ".toggle.glyphicon-chevron-down" ).length > 0;
   }
 
