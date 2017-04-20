@@ -264,16 +264,12 @@ function showSearchResults( tEvent )
       // Set menu height
       var nHeight = nResultsHeight + nMenuExtraHeight;
       tMenu.height( nHeight );
-      console.log( '===> menu calc height=' + nHeight );
 
       // Clear scroll top
       tMenu.scrollTop( 0 );
     }
 
     tMenu.show();
-
-    console.log( '===> menu height=' + tMenu.height() );
-    console.log( '===> menu css height=' + tMenu.css( 'height' ) );
   }
 }
 
