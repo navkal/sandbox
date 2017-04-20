@@ -247,33 +247,33 @@ function showSearchResults( tEvent )
       // Calculate per-result height
       var tResult = $( aResults[0] );
       var nLineHeight = parseInt( tResult.css( 'line-height' ) );
-      var nPadBottom = parseInt( tResult.css( 'padding-bottom' ) );
       var nPadTop = parseInt( tResult.css( 'padding-top' ) );
-      var nBorderBottom = parseInt( tResult.css( 'border-bottom' ) );
-      var nBorderTop = parseInt( tResult.css( 'border-top' ) );
-      var nMarginBottom = parseInt( tResult.css( 'margin-bottom' ) );
+      var nPadBottom = parseInt( tResult.css( 'padding-bottom' ) );
       var nMarginTop = parseInt( tResult.css( 'margin-top' ) );
-      var nResultHeight = nLineHeight + nPadBottom + nPadTop + nBorderBottom + nBorderTop + nMarginBottom + nMarginTop;
+      var nMarginBottom = parseInt( tResult.css( 'margin-bottom' ) );
+      var nResultHeight = nLineHeight + nPadTop + nPadBottom + nMarginTop + nMarginBottom;
       var nResultsHeight = nResultHeight * Math.min( nResults, 10 );
 
       // Calculate additional menu height
       var nMenuPadBottom = parseInt( tMenu.css( 'padding-bottom' ) );
       var nMenuPadTop = parseInt( tMenu.css( 'padding-top' ) );
-      var nMenuBorderBottom = parseInt( tMenu.css( 'border-bottom' ) );
-      var nMenuBorderTop = parseInt( tMenu.css( 'border-top' ) );
       var nMenuMarginBottom = parseInt( tMenu.css( 'margin-bottom' ) );
       var nMenuMarginTop = parseInt( tMenu.css( 'margin-top' ) );
-      var nMenuExtraHeight = nMenuPadBottom + nMenuPadTop + nMenuBorderBottom + nMenuBorderTop + nMenuMarginBottom + nMenuMarginTop;
+      var nMenuExtraHeight = nMenuPadTop + nMenuPadBottom + nMenuMarginTop + nMenuMarginBottom;
 
       // Set menu height
       var nHeight = nResultsHeight + nMenuExtraHeight;
       tMenu.height( nHeight );
+      console.log( '===> menu calc height=' + nHeight );
 
       // Clear scroll top
       tMenu.scrollTop( 0 );
     }
 
     tMenu.show();
+
+    console.log( '===> menu height=' + tMenu.height() );
+    console.log( '===> menu css height=' + tMenu.css( 'height' ) );
   }
 }
 
