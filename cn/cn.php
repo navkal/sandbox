@@ -54,8 +54,8 @@
           </div>
 
           <!-- Menu showing search results -->
-          <div id="search-menu" class="search-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; overflow: auto;">
-            <div class="tt-dataset">
+          <div id="search-menu" class="search-menu" style="position:absolute; top:100%; left:0px; z-index:100; display:none; overflow:auto; resize:both; ">
+            <div id="search-results">
             </div>
           </div>
 

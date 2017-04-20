@@ -196,7 +196,7 @@ function loadSearchResults( tResults )
       }
 
       // Replace HTML in results div
-      $( '#search .tt-dataset' ).html( sHtml );
+      $( '#search-results' ).html( sHtml );
 
       // Set handlers
       $( '#search .search-result' ).on( 'mousedown', selectSearchResult );
@@ -230,15 +230,50 @@ function selectSearchResult( tEvent )
 
 function showSearchResults( tEvent )
 {
-  if ( $( '#search .search-result' ).length )
-  {
-    $( '#search-menu' ).show();
+  var aResults = $( '#search .search-result' )
+  var nResults = aResults.length;
 
-    // If displaying new results, restore the scroll position
+  if ( nResults > 0 )
+  {
+    var tMenu = $( '#search-menu' );
+
+    // If displaying new results, resize and clear scroll position
     if ( ! tEvent )
     {
-      $( '#search-menu' ).scrollTop( 0 );
+      // Set menu width
+      var nWidth = tMenu.closest( '.container' ).width();
+      tMenu.width( nWidth );
+
+      // Calculate per-result height
+      var tResult = $( aResults[0] );
+      var nLineHeight = parseInt( tResult.css( 'line-height' ) );
+      var nPadBottom = parseInt( tResult.css( 'padding-bottom' ) );
+      var nPadTop = parseInt( tResult.css( 'padding-top' ) );
+      var nBorderBottom = parseInt( tResult.css( 'border-bottom' ) );
+      var nBorderTop = parseInt( tResult.css( 'border-top' ) );
+      var nMarginBottom = parseInt( tResult.css( 'margin-bottom' ) );
+      var nMarginTop = parseInt( tResult.css( 'margin-top' ) );
+      var nResultHeight = nLineHeight + nPadBottom + nPadTop + nBorderBottom + nBorderTop + nMarginBottom + nMarginTop;
+      var nResultsHeight = nResultHeight * Math.min( nResults, 10 );
+
+      // Calculate additional menu height
+      var nMenuPadBottom = parseInt( tMenu.css( 'padding-bottom' ) );
+      var nMenuPadTop = parseInt( tMenu.css( 'padding-top' ) );
+      var nMenuBorderBottom = parseInt( tMenu.css( 'border-bottom' ) );
+      var nMenuBorderTop = parseInt( tMenu.css( 'border-top' ) );
+      var nMenuMarginBottom = parseInt( tMenu.css( 'margin-bottom' ) );
+      var nMenuMarginTop = parseInt( tMenu.css( 'margin-top' ) );
+      var nMenuExtraHeight = nMenuPadBottom + nMenuPadTop + nMenuBorderBottom + nMenuBorderTop + nMenuMarginBottom + nMenuMarginTop;
+
+      // Set menu height
+      var nHeight = nResultsHeight + nMenuExtraHeight;
+      tMenu.height( nHeight );
+
+      // Clear scroll top
+      tMenu.scrollTop( 0 );
     }
+
+    tMenu.show();
   }
 }
 
@@ -252,7 +287,7 @@ function clearSearchInput()
 function closeSearchResults()
 {
   hideSearchResults();
-  $( '#search .tt-dataset' ).html( '' );
+  $( '#search-results' ).html( '' );
   $( '#search-input' ).focus();
 }
 
