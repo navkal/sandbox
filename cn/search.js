@@ -2,6 +2,7 @@
 
 var g_iLastRequestTime = 0;
 var g_sLastText = '';
+var g_nResultHeight = null;
 
 $(document).ready( initSearch );
 
@@ -137,13 +138,37 @@ function moveCursor( iCursor, nResults )
   {
     var tResult = $( $( '#search .search-result' )[iCursor] );
     tResult.addClass( 'search-cursor' );
-    scrollToVisible( $( '#search-menu' ), tResult );
+    scrollToVisible( $( '#search-menu' ), iCursor, nResults );
   }
 }
 
-function scrollToVisible( tContainer, tItem )
+function scrollToVisible( tContainer, iCursor, nResults )
 {
-  tContainer.scrollTop( tContainer.scrollTop() + ( tItem.position().top - tContainer.position().top ) - ( tContainer.height() / 2 ) + ( tItem.height() / 2 ) );
+  var iTop = tContainer.scrollTop();
+  var iHeight = tContainer.height();
+  var iFirst = ( iTop / g_nResultHeight );
+  var iLast = Math.floor( ( iTop + iHeight ) / g_nResultHeight );
+
+  if ( iCursor == 0 )
+  {
+    // Scroll to top
+    tContainer.scrollTop( 0 );
+  }
+  else if ( iCursor == ( nResults - 1 ) )
+  {
+    // Scroll to bottom
+    tContainer.scrollTop( ( nResults * g_nResultHeight ) - iHeight );
+  }
+  else if ( iCursor < iFirst )
+  {
+    // Scroll up
+    tContainer.scrollTop( iCursor * g_nResultHeight );
+  }
+  else if ( iCursor >= iLast )
+  {
+    // Scroll down
+    tContainer.scrollTop( iTop + g_nResultHeight );
+  }
 }
 
 function loadSearchResults( tResults )
@@ -245,21 +270,25 @@ function showSearchResults( tEvent )
       tMenu.width( nWidth );
 
       // Calculate per-result height
-      var tResult = $( aResults[0] );
-      var nLineHeight = parseInt( tResult.css( 'line-height' ) );
-      var nPadTop = parseInt( tResult.css( 'padding-top' ) );
-      var nPadBottom = parseInt( tResult.css( 'padding-bottom' ) );
-      var nMarginTop = parseInt( tResult.css( 'margin-top' ) );
-      var nMarginBottom = parseInt( tResult.css( 'margin-bottom' ) );
-      var nResultHeight = nLineHeight + nPadTop + nPadBottom + nMarginTop + nMarginBottom;
-      var nResultsHeight = nResultHeight * Math.min( nResults, 10 );
+      if ( g_nResultHeight == null )
+      {
+        var tResult = $( aResults[0] );
+        var nLineHeight = parseInt( tResult.css( 'line-height' ) );
+        var nPadTop = parseInt( tResult.css( 'padding-top' ) );
+        var nPadBottom = parseInt( tResult.css( 'padding-bottom' ) );
+        var nMarginTop = parseInt( tResult.css( 'margin-top' ) );
+        var nMarginBottom = parseInt( tResult.css( 'margin-bottom' ) );
+        g_nResultHeight = nLineHeight + nPadTop + nPadBottom + nMarginTop + nMarginBottom;
+      }
+      var nResultsHeight = g_nResultHeight * Math.min( nResults, 10 );
 
       // Calculate additional menu height
       var nMenuPadBottom = parseInt( tMenu.css( 'padding-bottom' ) );
       var nMenuPadTop = parseInt( tMenu.css( 'padding-top' ) );
       var nMenuMarginBottom = parseInt( tMenu.css( 'margin-bottom' ) );
       var nMenuMarginTop = parseInt( tMenu.css( 'margin-top' ) );
-      var nMenuExtraHeight = nMenuPadTop + nMenuPadBottom + nMenuMarginTop + nMenuMarginBottom;
+      var nMenuRadius = parseInt( tMenu.css( 'border-radius' ) || tMenu.css( '-moz-border-radius' ) || tMenu.css( '-webkit-border-radius' ) || '8px' );
+      var nMenuExtraHeight = nMenuPadTop + nMenuPadBottom + nMenuMarginTop + nMenuMarginBottom + nMenuRadius;
 
       // Set menu height
       var nHeight = nResultsHeight + nMenuExtraHeight;
