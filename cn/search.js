@@ -138,36 +138,50 @@ function moveCursor( iCursor, nResults )
   {
     var tResult = $( $( '#search .search-result' )[iCursor] );
     tResult.addClass( 'search-cursor' );
-    scrollToVisible( $( '#search-menu' ), iCursor, nResults );
+
+    var tMenu = $( '#search-menu' );
+    scrollToVisible( tMenu, tResult, iCursor, nResults );
   }
 }
 
-function scrollToVisible( tContainer, iCursor, nResults )
+function scrollToVisible( tMenu, tResult, iCursor, nResults )
 {
-  var iTop = tContainer.scrollTop();
-  var iHeight = tContainer.height();
+  var iTop = tMenu.scrollTop();
+  var iHeight = tMenu.height();
   var iFirst = ( iTop / g_nResultHeight );
   var iLast = Math.floor( ( iTop + iHeight ) / g_nResultHeight );
 
   if ( iCursor == 0 )
   {
     // Scroll to top
-    tContainer.scrollTop( 0 );
+    tMenu.scrollTop( 0 );
   }
   else if ( iCursor == ( nResults - 1 ) )
   {
     // Scroll to bottom
-    tContainer.scrollTop( ( nResults * g_nResultHeight ) - iHeight );
+    tMenu.scrollTop( ( nResults * g_nResultHeight ) - iHeight );
   }
   else if ( iCursor < iFirst )
   {
     // Scroll up
-    tContainer.scrollTop( iCursor * g_nResultHeight );
+    tMenu.scrollTop( iCursor * g_nResultHeight );
   }
   else if ( iCursor >= iLast )
   {
     // Scroll down
-    tContainer.scrollTop( iTop + g_nResultHeight );
+    tMenu.scrollTop( iTop + g_nResultHeight );
+  }
+
+  // Handle possibility that selection is still hidden due to previous resize or scroll by mouse
+  var iMenuTop = tMenu.scrollTop();
+  var iMenuBottom = iMenuTop + tMenu.outerHeight();
+  var iResultTop = iMenuTop + tResult.position().top;
+  var iResultBottom = iResultTop + tResult.outerHeight();
+
+  if ( iResultBottom > iMenuBottom )
+  {
+    console.log( '===> fix ' + Date.now() );
+    scrollToCenter( tMenu, tResult );
   }
 }
 
