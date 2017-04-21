@@ -180,8 +180,8 @@ function scrollToVisible( tMenu, tResult, iCursor, nResults )
 
   if ( iResultBottom > iMenuBottom )
   {
-    console.log( '===> fix ' + Date.now() );
-    scrollToCenter( tMenu, tResult );
+    console.log( '====> fix' + Date.now() );
+    tMenu.scrollTop( iResultBottom - tMenu.height() );
   }
 }
 
