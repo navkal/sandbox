@@ -431,7 +431,7 @@ var g_iInterval = null;
 function startTreeDump( tEvent )
 {
   closeChildWindows();
-  $( '#dumpStart,#circuitNavigator' ).addClass( "hidden" );
+  $( '#headerContent,#circuitNavigator' ).addClass( "hidden" );
   $( "#dumpTime" ).html( "00:00:00" );
   $( '#dumpStatus' ).removeClass( "hidden" );
   g_iInterval = setInterval( waitTreeDump, 1000 );
@@ -460,7 +460,7 @@ function endTreeDump( tRsp, sStatus, tJqXhr )
     console.log( "=> Tree dump completed.  Elapsed time: " + timeSince( g_iStartTime ) );
     clearInterval( g_iInterval );
     g_iInterval = null;
-    $( '#dumpStart,#circuitNavigator' ).removeClass( "hidden" );
+    $( '#headerContent,#circuitNavigator' ).removeClass( "hidden" );
     $( '#dumpStatus' ).addClass( "hidden" );
   }
 }
