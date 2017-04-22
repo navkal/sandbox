@@ -50,7 +50,7 @@
           <h3 class="panel-title" id="propertiesTitle"></h3>
         </div>
         <div class="panel-body">
-          <div id="objectArea">
+          <div id="objectArea" style="overflow:auto;">
             <table class="table table-hover table-condensed" >
               <tbody id="objectLayout" >
               </tbody>
