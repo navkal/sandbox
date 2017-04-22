@@ -17,12 +17,12 @@
 <div class="container">
   <div id="headerContent" >
     <div class="row" >
-      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="padding-top:2px; padding-bottom:2px;" >
-        <a class="btn btn-default btn-sm" href="javscript:void(null)" onclick="alert('moo')" title="Open circuit overview image" >
-          <span class="glyphicon glyphicon-blackboard"></span> Open Circuit Overview
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 headerButton" >
+        <a class="btn btn-default btn-sm" href="cn/circuitTopology.pdf" target="_blank" title="View diagram of circuit topology" >
+          <span class="glyphicon glyphicon-blackboard"></span> View Circuit Topology
         </a>
       </div>
-      <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10" style="padding-top:2px; padding-bottom:2px;" >
+      <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10 headerButton" >
         <a class="btn btn-default btn-sm" href="cn/downloadTree.php" onclick="return startTreeDump(event);" title="Generate and download dump of Circuit Tree" ><span class="glyphicon glyphicon-download-alt"></span> Download Tree Dump <sup><span class="glyphicon glyphicon-asterisk"></span></sup></a>
         <span class="well-sm text-info" style="white-space:nowrap;" >
           <small>
