@@ -190,6 +190,13 @@ class search:
     def __init__(self, searchText):
         print( 'search text=<' + searchText + '>' )
         #cur.execute('SELECT * FROM (SELECT path, description FROM CircuitObject WHERE description LIKE "%' + searchText + '%") LIMIT 5')
+
+        cur.execute('SELECT path, path FROM CircuitObject WHERE tail LIKE "%' + searchText + '%"')
+        pathRows = cur.fetchall()
+
         cur.execute('SELECT path, description FROM CircuitObject WHERE description LIKE "%' + searchText + '%"')
-        self.searchResults = cur.fetchall()
+        descrRows = cur.fetchall()
+
+        self.searchResults = pathRows + descrRows
+
         print('found ' + str(len(self.searchResults)) + ' matches' )
