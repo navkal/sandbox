@@ -5,6 +5,11 @@
   $iVersion = time();
 ?>
 
+<script>
+  // Capture QR code parameter, if any, as search target
+  var g_sSearchTargetPath = "<?=$_REQUEST['qrcode']?>";
+</script>
+
 <!-- Circuit Navigator scripts -->
 <link rel="stylesheet" href="cn/cn.css?version=<?=$iVersion?>">
 <script src="cn/cn.js?version=<?=$iVersion?>"></script>
