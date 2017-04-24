@@ -3,7 +3,7 @@
 <?php
   $_SESSION["pathDotReplacement"] = '-_-_-';
   $iVersion = time();
-  $sQrcode = isset( $_REQUEST['qrcode'] ) ? $_REQUEST['qrcode'] : '';
+  $sGoto = isset( $_REQUEST['goto'] ) ? $_REQUEST['goto'] : '';
 ?>
 
 
@@ -15,8 +15,8 @@
 <link rel="stylesheet" href="cn/search.css?version=<?=$iVersion?>">
 <script src="cn/search.js?version=<?=$iVersion?>"></script>
 
-<!-- QR code parameter -->
-<input id="qrcode" type="hidden" value="<?=$sQrcode?>"/>
+<!-- Goto parameter -->
+<input id="goto" type="hidden" value="<?=$sGoto?>"/>
 
 <br/>
 <div class="container">

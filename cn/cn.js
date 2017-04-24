@@ -14,8 +14,8 @@ function initView()
   $( window ).on( 'unload', closeChildWindows );
   $( window ).resize( resizeTree );
 
-  // Capture qrcode parameter, if any
-  g_sSearchTargetPath = $( '#qrcode' ).val();
+  // Capture goto parameter, if any
+  g_sSearchTargetPath = $( '#goto' ).val();
 
   // Initialize tree
   resizeTree();
@@ -245,8 +245,8 @@ function navigateToSearchTarget()
     // Set tooltips on toggle buttons
     setToggleTooltips();
 
-    // It search target comes from QR code, open properties window
-    if ( $( '#qrcode' ).val() != '' )
+    // It search target comes from goto parameter, open properties window
+    if ( $( '#goto' ).val() != '' )
     {
       var tBtnProperties = tSearchTarget.find( 'button[title="Properties"]' );
       if ( tBtnProperties.length == 1 )
@@ -254,8 +254,8 @@ function navigateToSearchTarget()
         tBtnProperties.click();
       }
 
-      // Clear the QR code
-      $( '#qrcode' ).val( '' );
+      // Clear the goto parameter
+      $( '#goto' ).val( '' );
     }
   }
   else
