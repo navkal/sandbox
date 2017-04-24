@@ -3,12 +3,9 @@
 <?php
   $_SESSION["pathDotReplacement"] = '-_-_-';
   $iVersion = time();
+  $sQrcode = isset( $_REQUEST['qrcode'] ) ? $_REQUEST['qrcode'] : '';
 ?>
 
-<script>
-  // Capture QR code parameter, if any, as search target
-  var g_sSearchTargetPath = "<?=$_REQUEST['qrcode']?>";
-</script>
 
 <!-- Circuit Navigator scripts -->
 <link rel="stylesheet" href="cn/cn.css?version=<?=$iVersion?>">
@@ -17,6 +14,9 @@
 <!-- Search scripts -->
 <link rel="stylesheet" href="cn/search.css?version=<?=$iVersion?>">
 <script src="cn/search.js?version=<?=$iVersion?>"></script>
+
+<!-- QR code parameter -->
+<input id="qrcode" type="hidden" value="<?=$sQrcode?>"/>
 
 <br/>
 <div class="container">

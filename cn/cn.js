@@ -5,6 +5,7 @@ var g_aPropertiesWindows = [];
 var g_tTreeMap = {};
 var g_sImageButton = '<button class="btn btn-link btn-xs" onclick="openImageWindow(event)" title="Image" ><span class="glyphicon glyphicon-picture" style="font-size:18px;" ></span></button>';
 var g_sPropertiesButton = '<button class="btn btn-link btn-xs" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-list" style="font-size:18px;" ></span></button>';
+var g_sSearchTargetPath = '';
 
 $( document ).ready( initView );
 
@@ -12,6 +13,11 @@ function initView()
 {
   $( window ).on( 'unload', closeChildWindows );
   $( window ).resize( resizeTree );
+
+  // Capture qrcode parameter, if any
+  g_sSearchTargetPath = $( '#qrcode' ).val();
+
+  // Initialize tree
   resizeTree();
   getTreeNode( "" );
 }
@@ -238,6 +244,19 @@ function navigateToSearchTarget()
 
     // Set tooltips on toggle buttons
     setToggleTooltips();
+
+    // It search target comes from QR code, open properties window
+    if ( $( '#qrcode' ).val() != '' )
+    {
+      var tBtnProperties = tSearchTarget.find( 'button[title="Properties"]' );
+      if ( tBtnProperties.length == 1 )
+      {
+        tBtnProperties.click();
+      }
+
+      // Clear the QR code
+      $( '#qrcode' ).val( '' );
+    }
   }
   else
   {
