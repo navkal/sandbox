@@ -245,18 +245,8 @@ function navigateToSearchTarget()
     // Set tooltips on toggle buttons
     setToggleTooltips();
 
-    // It search target comes from goto parameter, open properties window
-    if ( $( '#goto' ).val() != '' )
-    {
-      var tBtnProperties = tSearchTarget.find( 'button[title="Properties"]' );
-      if ( tBtnProperties.length == 1 )
-      {
-        tBtnProperties.click();
-      }
-
-      // Clear the goto parameter
-      $( '#goto' ).val( '' );
-    }
+    // Clear the goto parameter
+    $( '#goto' ).val( '' );
   }
   else
   {
