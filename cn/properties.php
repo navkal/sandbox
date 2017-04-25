@@ -3,28 +3,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+  <!-- Head -->
   <?php
-    require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
+    require_once $_SERVER["DOCUMENT_ROOT"]."/../common/headStart.php";
   ?>
-  <head>
-    <title>Properties:
-      <?php
-        echo( $_REQUEST["path"] );
-      ?>
-    </title>
-
+  <title>Properties:
     <?php
-      require_once "head.php";
+      echo( $_REQUEST["path"] );
     ?>
+  </title>
+  <style>
+    #objectArea .table > tbody > tr:first-child > td
+    {
+      border: none;
+    }
+  </style>
+  <?php
+    require_once $_SERVER["DOCUMENT_ROOT"]."/../common/headEnd.php";
+  ?>
 
-    <style>
-      #objectArea .table > tbody > tr:first-child > td
-      {
-        border: none;
-      }
-    </style>
-  </head>
-
+  <!-- Body -->
 	<body>
     <div class="container">
 

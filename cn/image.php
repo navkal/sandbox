@@ -4,19 +4,22 @@
 <html lang="en">
 
   <?php
-    require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
     $sPath = $_REQUEST['path'];
     $sImg = 'images/' . $sPath . '.jpg';
   ?>
-  <head>
-    <title>
-      Image: <?=$sPath?>
-    </title>
-    <?php
-      require_once "head.php";
-    ?>
-  </head>
 
+  <!-- Head -->
+  <?php
+    require_once $_SERVER["DOCUMENT_ROOT"]."/../common/headStart.php";
+  ?>
+  <title>
+    Image: <?=$sPath?>
+  </title>
+  <?php
+    require_once $_SERVER["DOCUMENT_ROOT"]."/../common/headEnd.php";
+  ?>
+
+  <!-- Body -->
 	<body>
     <div class="container-fluid">
       <img class="img-responsive" src="<?=$sImg?>" alt="<?=$sPath?>">
