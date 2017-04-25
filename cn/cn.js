@@ -176,14 +176,14 @@ function compareNodes( d1, d2 )
   var sPrefix2 = sLabel2.split( ":" )[0];
 
   // Determine whether prefixes are numeric
-  var bNum1 = /^\d+$/.test( sPrefix1 );
-  var bNum2 = /^\d+$/.test( sPrefix2 );
+  var iNum1 = parseInt( sPrefix1 );
+  var iNum2 = parseInt( sPrefix2 );
 
   var iResult = 0;
-  if ( bNum1 && bNum2 )
+  if ( ! isNaN( iNum1 ) && ! isNaN( iNum2 ) )
   {
     // Compare numerically
-    iResult = sPrefix1 - sPrefix2;
+    iResult = iNum1 - iNum2;
   }
 
   // If no difference found, compare full text
