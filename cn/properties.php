@@ -187,12 +187,29 @@
 
   function saveNotes( tEvent )
   {
-    console.log( 'save' );
-    saveNotesCompletion();
+    // Post request to server
+    var tPostData = new FormData();
+    tPostData.append( "objectTable", ( ( g_sType == 'device' ) ? "device" : "cirobj" ) );
+    tPostData.append( "objectSelector", ( ( g_sType == 'device' ) ? g_sOid : g_sPath ) );
+    tPostData.append( "notes", $( '#notes' ).val() );
+
+    $.ajax(
+      "saveNotes.php",
+      {
+        type: 'POST',
+        processData: false,
+        contentType: false,
+        dataType : 'json',
+        data: tPostData
+      }
+    )
+    .done( saveNotesCompletion )
+    .fail( handlePostError );
   }
 
-  function saveNotesCompletion()
+  function saveNotesCompletion( tRsp, sStatus, tJqXhr )
   {
+    console.log( '==> rsp=' + JSON.stringify( tRsp ) );
     clearNotes( { type: 'click' } );
     loadHistory();
   }
