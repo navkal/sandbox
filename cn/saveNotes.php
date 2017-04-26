@@ -7,19 +7,9 @@
   $postTable = $_POST['objectTable'];
   $postSelector = $_POST['objectSelector'];
 
+  // Determine query selector argument
+  $sTag = ( $postTable == "cirobj" ) ? 'p' : 'i';
+  $sSelector = ' -' . ( ( $postTable == "cirobj" ) ? 'p' : 'i' ) . ' ' . $postSelector;
 
-
-
-  // Use getObject.php as example
-  // Use getObject.php as example
-  // Use getObject.php as example
-  // Use getObject.php as example
-  // Use getObject.php as example
-  // Use getObject.php as example
-  // Use getObject.php as example
-
-
-
-
-  echo json_encode( [ $postTable, $postSelector ] );;
+  echo json_encode( [ $postTable, $postSelector, $sSelector ] );;
 ?>
