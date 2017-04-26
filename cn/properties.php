@@ -188,7 +188,18 @@
   function saveNotes( tEvent )
   {
     alert( 'save' );
-    clearNotes( tEvent );
+    saveNotesCompletion();
+  }
+
+  function saveNotesCompletion()
+  {
+    loadHistory();
+    clearNotes( { type: 'click' } );
+  }
+
+  function loadHistory()
+  {
+    alert( 'load history' );
   }
 
   function clearNotes( tEvent )
