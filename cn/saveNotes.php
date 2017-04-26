@@ -8,8 +8,17 @@
   $postSelector = $_POST['objectSelector'];
 
   // Determine query selector argument
-  $sTag = ( $postTable == "cirobj" ) ? 'p' : 'i';
   $sSelector = ' -' . ( ( $postTable == "cirobj" ) ? 'p' : 'i' ) . ' ' . $postSelector;
 
-  echo json_encode( [ $postTable, $postSelector, $sSelector ] );;
+
+  $command = quote( getenv( "PYTHON" ) ) . " saveNotes.py 2>&1 -t " . $postTable . $sSelector;
+  error_log( "===> command=" . $command );
+  exec( $command, $output, $status );
+  error_log( "===> output=" . print_r( $output, true ) );
+
+  $sResult = $output[ count( $output ) - 1 ];
+  echo $sResult;
+
+
+  /////////echo json_encode( [ $postTable, $postSelector, $sSelector ] );
 ?>
