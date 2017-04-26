@@ -42,9 +42,15 @@
       </div>
 
       <div id="notesEditor">
-        <textarea id="notes" class="form-control" maxlength="1000"></textarea>
+        <div class="form-group">
+          <label for="notes">Notes</label>
+          <textarea id="notes" class="form-control" maxlength="1000"></textarea>
+        </div>
+        <div style="text-align:center;" >
+          <button class="btn btn-primary btn-xs" onclick="saveNotes(event)" >Save</button>
+          <button class="btn btn-default btn-xs" onclick="clearNotes(event)" >Clear</button>
+        </div>
       </div>
-
     </div>
  	</body>
 </html>
@@ -179,10 +185,37 @@
     console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
   }
 
+  function saveNotes( tEvent )
+  {
+    alert( 'save' );
+    clearNotes( tEvent );
+  }
+
+  function clearNotes( tEvent )
+  {
+    $( '#notes' ).val( '' );
+    setOnBeforeUnload( tEvent );
+  }
+
   // Set or clear handler for onbeforeunload event
   function setOnBeforeUnload( tEvent )
   {
-    var sVal = ( tEvent.type == 'keyup' ) ? $( '#notes' ).val().trim() : 'unknown';
+    console.log( 'event type=' + tEvent.type );
+
+    switch( tEvent.type )
+    {
+      case 'paste':
+      case 'drop':
+        sVal = 'unknown';
+        break;
+
+      default:
+        sVal = $( '#notes' ).val().trim();
+        break;
+    }
+
+    console.log( 'val=' + sVal );
+
     window.onbeforeunload = ( sVal == '' ) ? null : onBeforeUnload;
   }
 
