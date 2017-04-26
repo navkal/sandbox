@@ -41,6 +41,8 @@
         </div>
       </div>
 
+      <textarea id="notes" class="form-control" maxlength="1000"></textarea>
+
     </div>
  	</body>
 </html>
@@ -55,6 +57,8 @@
 
   function loadProperties()
   {
+    $( '#notes' ).on( 'keyup paste drop', setOnBeforeUnload );
+
     if ( g_tProperties )
     {
       showProperties();
@@ -168,4 +172,18 @@
     console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
   }
 
+  // Set or clear handler for onbeforeunload event
+  function setOnBeforeUnload( tEvent )
+  {
+    var sVal = ( tEvent.type == 'keyup' ) ? $( '#notes' ).val().trim() : 'unknown';
+    window.onbeforeunload = ( sVal == '' ) ? null : onBeforeUnload;
+  }
+
+  // Handle onbeforeunload event
+  function onBeforeUnload( tEvent )
+  {
+    var sMsg = 'Changes you made will not be saved.';
+    tEvent.returnValue = sMsg;
+    return sMsg;
+  }
 </script>
