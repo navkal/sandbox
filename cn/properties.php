@@ -187,19 +187,19 @@
 
   function saveNotes( tEvent )
   {
-    alert( 'save' );
+    console.log( 'save' );
     saveNotesCompletion();
   }
 
   function saveNotesCompletion()
   {
-    loadHistory();
     clearNotes( { type: 'click' } );
+    loadHistory();
   }
 
   function loadHistory()
   {
-    alert( 'load history' );
+    console.log( 'load history' );
   }
 
   function clearNotes( tEvent )
