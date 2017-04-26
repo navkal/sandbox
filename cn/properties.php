@@ -41,7 +41,9 @@
         </div>
       </div>
 
-      <textarea id="notes" class="form-control" maxlength="1000"></textarea>
+      <div id="notesEditor">
+        <textarea id="notes" class="form-control" maxlength="1000"></textarea>
+      </div>
 
     </div>
  	</body>
@@ -57,7 +59,12 @@
 
   function loadProperties()
   {
-    $( '#notes' ).on( 'keyup paste drop', setOnBeforeUnload );
+    var bEdit = ( '<?=$_SESSION["user"]["role"]?>' == 'admin' );
+    $( '#notesEditor' ).css( 'display', bEdit ? 'initial' : 'none' );
+    if ( bEdit )
+    {
+      $( '#notes' ).on( 'keyup paste drop', setOnBeforeUnload );
+    }
 
     if ( g_tProperties )
     {

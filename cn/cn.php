@@ -2,6 +2,9 @@
 
 <?php
   $_SESSION["pathDotReplacement"] = '-_-_-';
+  $_SESSION['user'] = [];
+  $_SESSION['user']['role'] = ( strpos( $_SERVER['TMP'], 'xampp' ) !== false ) ? 'admin' : 'readonly';
+
   $iVersion = time();
   $sGoto = isset( $_REQUEST['goto'] ) ? $_REQUEST['goto'] : '';
 ?>
