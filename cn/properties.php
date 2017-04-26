@@ -200,22 +200,21 @@
   // Set or clear handler for onbeforeunload event
   function setOnBeforeUnload( tEvent )
   {
-    console.log( 'event type=' + tEvent.type );
-
     switch( tEvent.type )
     {
       case 'paste':
       case 'drop':
+        // Don't know what was pasted or dropped; set artificial value
         sVal = 'unknown';
         break;
 
       default:
+        // Get current value of text area
         sVal = $( '#notes' ).val().trim();
         break;
     }
 
-    console.log( 'val=' + sVal );
-
+    // Set/clear handler based on value
     window.onbeforeunload = ( sVal == '' ) ? null : onBeforeUnload;
   }
 
