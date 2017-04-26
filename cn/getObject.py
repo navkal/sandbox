@@ -5,7 +5,7 @@ import argparse
 import json
 
 printctl.off()
-import queries
+import sql
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser( description='retrieve object from Location Dictionary database' )
@@ -22,7 +22,7 @@ if __name__ == '__main__':
       selector = ''
 
     try:
-      object = eval( 'queries.' + args.table + '( ' + selector + ' )' )
+      object = eval( 'sql.' + args.table + '( ' + selector + ' )' )
     except:
       dict = { 'Error': 'Could not retrieve [' + selector + '] from [' + args.table + '] table' }
     else:

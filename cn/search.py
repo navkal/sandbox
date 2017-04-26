@@ -5,7 +5,7 @@ import argparse
 import json
 
 printctl.off()
-import queries
+import sql
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser( description='search' )
@@ -13,7 +13,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     try:
-      searchResults = queries.search( args.searchText );
+      searchResults = sql.search( args.searchText );
     except:
       dict = { 'Error': 'Failed to search for [' + args.searchText + '] in [' + args.table + '] table' }
     else:
