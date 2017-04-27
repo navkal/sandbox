@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div id="eventsArea" >
+      <div id="historyArea" >
       </div>
 
       <div id="notesEditor">
@@ -69,7 +69,7 @@
   function loadProperties()
   {
     var bEdit = ( '<?=$_SESSION["user"]["role"]?>' == 'admin' );
-    $( '#notesEditor,#eventsArea' ).css( 'display', bEdit ? 'initial' : 'none' );
+    $( '#notesEditor,#historyArea' ).css( 'display', bEdit ? 'initial' : 'none' );
     if ( bEdit )
     {
       $( '#notes' ).on( 'keyup paste drop', setOnBeforeUnload );
@@ -182,7 +182,7 @@
     $( "#objectLayout" ).html( sTbody );
 
     // Display history
-    $( '#eventsArea' ).html( JSON.stringify( g_tProperties.events ) );
+    $( '#historyArea' ).html( JSON.stringify( g_tProperties.events ) );
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )
