@@ -41,6 +41,9 @@
         </div>
       </div>
 
+      <div id="eventsArea" >
+      </div>
+
       <div id="notesEditor">
         <div class="form-group">
           <label for="notes">Notes</label>
@@ -66,7 +69,7 @@
   function loadProperties()
   {
     var bEdit = ( '<?=$_SESSION["user"]["role"]?>' == 'admin' );
-    $( '#notesEditor' ).css( 'display', bEdit ? 'initial' : 'none' );
+    $( '#notesEditor,#eventsArea' ).css( 'display', bEdit ? 'initial' : 'none' );
     if ( bEdit )
     {
       $( '#notes' ).on( 'keyup paste drop', setOnBeforeUnload );
@@ -177,6 +180,9 @@
 
     // Display properties
     $( "#objectLayout" ).html( sTbody );
+
+    // Display history
+    $( '#eventsArea' ).html( JSON.stringify( g_tProperties.events ) );
   }
 
   function handlePostError( tJqXhr, sStatus, sErrorThrown )

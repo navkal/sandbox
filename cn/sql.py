@@ -115,9 +115,14 @@ class cirobj:
             dev = device( dev_id )
             self.devices.append( [ dev.id, dev.closet_new, dev.closet_old, dev.description ] )
 
+
+        cur.execute( 'SELECT timestamp, username, event_type, description FROM Event WHERE target_table = "CircuitObject" AND target_column = "path" AND target_value = ?', (self.path,) )
+        self.events = cur.fetchall()
+
         print('my parent is ',self.parent)
         print('my children are ', self.children)
         print('my devices are ', self.devices)
+        print( 'my events are ', self.events )
 
 
     def get_main_display(self):
