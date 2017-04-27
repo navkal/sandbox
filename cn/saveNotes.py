@@ -20,9 +20,9 @@ if __name__ == '__main__':
       selector = 'id=' + args.id
 
     if selector:
-      dict = { 'STUB': 'Saving notes at [' + selector + '] in [' + args.table + '] table' }
+      dict = { 'status': 'STUB: Saving notes at [' + selector + '] in [' + args.table + '] table' }
     else:
-      dict = { 'Error': 'Missing required argument, either -p or -i' }
+      dict = { 'status': 'Error: Missing selector argument, either -p or -i' }
 
 
     printctl.on( )
