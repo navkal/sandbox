@@ -211,6 +211,7 @@
   {
     console.log( '==> rsp=' + JSON.stringify( tRsp ) );
     clearNotes( { type: 'click' } );
+    $('#notes').val( tRsp.status );
     loadHistory();
   }
 
