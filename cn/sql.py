@@ -31,6 +31,13 @@ class device:
         if ( self.closet_old == 'no old room' ) or ( self.closet_old.upper().find( 'UNKNOWN' ) != -1 ):
             self.closet_old = ''
 
+
+        cur.execute( "SELECT timestamp, username, event_type, description FROM Event WHERE target_table = 'Device' AND target_column = 'id' AND target_value = ?", (self.id,) )
+        print( 'id=', self.id )
+        self.events = cur.fetchall()
+        print( 'events=', self.events )
+
+
     def properties(self):
         print("room_id:", self.room_id)
         print("panel_id:",self.panel_id)
@@ -116,7 +123,7 @@ class cirobj:
             self.devices.append( [ dev.id, dev.closet_new, dev.closet_old, dev.description ] )
 
 
-        cur.execute( 'SELECT timestamp, username, event_type, description FROM Event WHERE target_table = "CircuitObject" AND target_column = "path" AND target_value = ?', (self.path,) )
+        cur.execute( "SELECT timestamp, username, event_type, description FROM Event WHERE target_table = 'CircuitObject' AND target_column = 'path' AND target_value = ?", (self.path,) )
         self.events = cur.fetchall()
 
         print('my parent is ',self.parent)
