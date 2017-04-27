@@ -8,23 +8,19 @@ printctl.off()
 import sql
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser( description='retrieve object from Location Dictionary database' )
-    parser.add_argument( '-t', '--table', dest='table', help='object table' )
-    parser.add_argument( '-i', '--id', dest='id',  help='object id' )
-    parser.add_argument( '-p', '--path', dest='path',  help='object path' )
+    parser = argparse.ArgumentParser( description='save notes applicable to target table, column, and value' )
+    parser.add_argument( '-t', '--table', dest='targetTable', help='target table' )
+    parser.add_argument( '-c', '--column', dest='targetColumn',  help='target column' )
+    parser.add_argument( '-v', '--value', dest='targetValue',  help='target value' )
     parser.add_argument( '-n', '--notes', dest='notes',  help='notes' )
     args = parser.parse_args()
 
-    if args.path:
-      selector = 'path="' + args.path + '"'
-    elif args.id:
-      selector = 'id=' + args.id
-
-    if selector:
-      dict = { 'status': 'STUB: Saving notes [' + args.notes + '] at selector [' + selector + '] in table [' + args.table + ']' }
+    try:
+        saveNotes = sql.saveNotes( args )
+    except:
+        dict = { 'status': 'Error: Failed to save notes at ' + str( args ) }
     else:
-      dict = { 'status': 'Error: Missing selector argument, either -p or -i' }
-
+        dict = saveNotes.__dict__
 
     printctl.on( )
     print( json.dumps( dict ) )

@@ -26,7 +26,7 @@ if __name__ == '__main__':
     except:
       dict = { 'Error': 'Could not retrieve [' + selector + '] from [' + args.table + '] table' }
     else:
-      dict = object.__dict__;
+      dict = object.__dict__
 
     printctl.on( )
     print( json.dumps( dict ) )

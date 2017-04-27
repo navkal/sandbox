@@ -17,7 +17,7 @@ if __name__ == '__main__':
     except:
       dict = { 'Error': 'Failed to search for [' + args.searchText + '] in [' + args.table + '] table' }
     else:
-      dict = searchResults.__dict__;
+      dict = searchResults.__dict__
 
     printctl.on()
     print( json.dumps( dict ) )

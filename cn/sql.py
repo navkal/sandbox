@@ -1,5 +1,7 @@
 import sqlite3
 import os
+import time
+from eventTypes import dcEventTypes
 
 conn = sqlite3.connect('AHSMap.sqlite')
 cur = conn.cursor()
@@ -200,3 +202,14 @@ class search:
         self.searchResults = pathRows + descrRows
 
         print('found ' + str(len(self.searchResults)) + ' matches' )
+
+
+class saveNotes:
+    def __init__(self, args):
+
+        cur.execute('''INSERT INTO Event ( timestamp, username, event_type, target_table, target_column, target_value, description )
+            VALUES (?,?,?,?,?,?,? )''', ( time.time(), 'donaldDuck', dcEventTypes['notes'], args.targetTable, args.targetColumn, args.targetValue, args.notes ) )
+
+        conn.commit()
+
+        self.status = args.notes
