@@ -135,7 +135,21 @@ function collapseToggle( tEvent )
 function showHistory()
 {
   g_tProperties.events.sort( compareEventTimestamps );
-  $( '#historyCollapse' ).html( JSON.stringify( g_tProperties.events ) );
+
+  var sTbody = '';
+  for ( var iEvent in g_tProperties.events )
+  {
+    var aEvent = g_tProperties.events[iEvent];
+
+    sTbody += '<tr>';
+    for( var iCell in aEvent )
+    {
+      sTbody += '<td>' + aEvent[iCell] + '</td>';
+    }
+    sTbody += '</tr>';
+  }
+
+  $( '#historyTableBody' ).append( sTbody );
 }
 
 function compareEventTimestamps( aEvent1, aEvent2 )

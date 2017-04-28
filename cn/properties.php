@@ -63,6 +63,18 @@
               </h4>
             </div>
             <div id="historyCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="historyHeading">
+              <table class="table" >
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody id="historyTableBody" >
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
