@@ -6,6 +6,10 @@ $( document ).ready( loadProperties );
 
 function loadProperties()
 {
+  // Set handler to toggle plus and minus icons on collapse panel head
+  $( ".collapse" ).on( "shown.bs.collapse hidden.bs.collapse", collapseToggle );
+
+  // Show/hide Notes Editor
   var bEdit = ( g_sRole == 'admin' );
   $( '#notesEditor,#historyArea' ).css( 'display', bEdit ? 'initial' : 'none' );
   if ( bEdit )
@@ -123,10 +127,15 @@ function showProperties()
   showHistory();
 }
 
+function collapseToggle( tEvent )
+{
+  $( this ).parent().find( ".glyphicon-plus,.glyphicon-minus" ).toggleClass( "glyphicon-plus" ).toggleClass( "glyphicon-minus" );
+}
+
 function showHistory()
 {
   g_tProperties.events.sort( compareEventTimestamps );
-  $( '#historyArea' ).html( JSON.stringify( g_tProperties.events ) );
+  $( '#historyCollapse' ).html( JSON.stringify( g_tProperties.events ) );
 }
 
 function compareEventTimestamps( aEvent1, aEvent2 )

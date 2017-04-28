@@ -50,7 +50,22 @@
         </div>
       </div>
 
-      <div id="historyArea" >
+      <!-- Collapsible "History" section -->
+      <div id="historyArea">
+        <div class="panel-group" role="tablist" >
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="historyHeading">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#historyCollapse" aria-expanded="true" aria-controls="historyCollapse">
+                  <span class="glyphicon glyphicon-list-alt">&nbsp;</span>History
+                  <span class="glyphicon glyphicon-plus pull-right"></span>
+                </a>
+              </h4>
+            </div>
+            <div id="historyCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="historyHeading">
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="notesEditor">
