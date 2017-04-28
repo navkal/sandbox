@@ -308,9 +308,7 @@ function showSearchResults( tEvent )
       tMenu.height( nHeight );
 
       // Clear scroll top
-      console.log( 'bf showSearchResults scrolltop=' + tMenu.scrollTop() );
       tMenu.scrollTop( 0 );
-      console.log( 'af showSearchResults scrolltop=' + tMenu.scrollTop() );
     }
 
     tMenu.show();
@@ -325,9 +323,10 @@ function clearSearchInput()
 
 function closeSearchResults()
 {
-  console.log( 'bf closeSearchResults scrolltop=' + $( '#search-menu' ).scrollTop() );
+  // Clear scroll top
+  $( '#search-menu' ).show(); // Must be showing to set scrollTop
   $( '#search-menu' ).scrollTop( 0 );
-  console.log( 'af closeSearchResults scrolltop=' + $( '#search-menu' ).scrollTop() );
+
   hideSearchResults();
   $( '#search-results' ).html( '' );
   $( '#search-input' ).focus();
