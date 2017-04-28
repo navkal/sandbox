@@ -120,7 +120,18 @@ function showProperties()
   $( "#objectLayout" ).html( sTbody );
 
   // Display history
+  showHistory();
+}
+
+function showHistory()
+{
+  g_tProperties.events.sort( compareEventTimestamps );
   $( '#historyArea' ).html( JSON.stringify( g_tProperties.events ) );
+}
+
+function compareEventTimestamps( aEvent1, aEvent2 )
+{
+  return aEvent2[0] - aEvent1[0];
 }
 
 function handlePostError( tJqXhr, sStatus, sErrorThrown )
