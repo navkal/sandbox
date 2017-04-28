@@ -308,7 +308,9 @@ function showSearchResults( tEvent )
       tMenu.height( nHeight );
 
       // Clear scroll top
+      console.log( 'bf showSearchResults scrolltop=' + tMenu.scrollTop() );
       tMenu.scrollTop( 0 );
+      console.log( 'af showSearchResults scrolltop=' + tMenu.scrollTop() );
     }
 
     tMenu.show();
@@ -318,12 +320,14 @@ function showSearchResults( tEvent )
 function clearSearchInput()
 {
   $( '#search-input' ).val( '' );
-  g_sLastText = '';
-  closeSearchResults();
+  getSearchResults();
 }
 
 function closeSearchResults()
 {
+  console.log( 'bf closeSearchResults scrolltop=' + $( '#search-menu' ).scrollTop() );
+  $( '#search-menu' ).scrollTop( 0 );
+  console.log( 'af closeSearchResults scrolltop=' + $( '#search-menu' ).scrollTop() );
   hideSearchResults();
   $( '#search-results' ).html( '' );
   $( '#search-input' ).focus();
