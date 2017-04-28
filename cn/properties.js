@@ -134,22 +134,24 @@ function collapseToggle( tEvent )
 
 function showHistory()
 {
-  g_tProperties.events.sort( compareEventTimestamps );
+  var aEvents = g_tProperties.events;
+  console.log( '==> num events=' + aEvents.length );
+  aEvents.sort( compareEventTimestamps );
 
   var sTbody = '';
-  for ( var iEvent in g_tProperties.events )
+  for ( var iEvent in aEvents )
   {
-    var aEvent = g_tProperties.events[iEvent];
+    var aCells = aEvents[iEvent];
 
     sTbody += '<tr>';
-    for( var iCell in aEvent )
+    for( var iCell in aCells )
     {
-      sTbody += '<td>' + aEvent[iCell] + '</td>';
+      sTbody += '<td>' + aCells[iCell] + '</td>';
     }
     sTbody += '</tr>';
   }
 
-  $( '#historyTableBody' ).append( sTbody );
+  $( '#historyTableBody' ).html( sTbody );
 }
 
 function compareEventTimestamps( aEvent1, aEvent2 )
