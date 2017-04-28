@@ -156,12 +156,7 @@ function saveNotesCompletion( tRsp, sStatus, tJqXhr )
 {
   console.log( '==> rsp=' + JSON.stringify( tRsp ) );
   clearNotes( { type: 'click' } );
-  loadHistory();
-}
-
-function loadHistory()
-{
-  console.log( 'load history' );
+  getProperties();
 }
 
 function clearNotes( tEvent )
