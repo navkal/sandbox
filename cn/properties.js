@@ -146,7 +146,12 @@ function showHistory()
     sTbody += '<tr>';
     for( var iCell in aCells )
     {
-      sTbody += '<td>' + aCells[iCell] + '</td>';
+      var sCell = aCells[iCell];
+      if ( iCell == 0 )
+      {
+        sCell = new Date( Math.floor( sCell * 1000 ) ).toLocaleString();
+      }
+      sTbody += '<td>' + sCell + '</td>';
     }
     sTbody += '</tr>';
   }
