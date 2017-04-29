@@ -135,28 +135,39 @@ function collapseToggle( tEvent )
 function showHistory()
 {
   var aEvents = g_tProperties.events;
-  console.log( '==> num events=' + aEvents.length );
-  aEvents.sort( compareEventTimestamps );
+  console.log( '==>num events=' + aEvents.length );
 
-  var sTbody = '';
-  for ( var iEvent in aEvents )
+  if ( aEvents.length == 0 )
   {
-    var aCells = aEvents[iEvent];
-
-    sTbody += '<tr>';
-    for( var iCell in aCells )
-    {
-      var sCell = aCells[iCell];
-      if ( iCell == 0 )
-      {
-        sCell = new Date( Math.floor( sCell * 1000 ) ).toLocaleString();
-      }
-      sTbody += '<td>' + sCell + '</td>';
-    }
-    sTbody += '</tr>';
+    $( '#historyTable' ).css( 'display', 'none' );
+    $( '#historyNone' ).css( 'display', 'initial' );
   }
+  else
+  {
+    aEvents.sort( compareEventTimestamps );
 
-  $( '#historyTableBody' ).html( sTbody );
+    var sTbody = '';
+    for ( var iEvent in aEvents )
+    {
+      var aCells = aEvents[iEvent];
+
+      sTbody += '<tr>';
+      for( var iCell in aCells )
+      {
+        var sCell = aCells[iCell];
+        if ( iCell == 0 )
+        {
+          sCell = new Date( Math.floor( sCell * 1000 ) ).toLocaleString();
+        }
+        sTbody += '<td>' + sCell + '</td>';
+      }
+      sTbody += '</tr>';
+    }
+    $( '#historyTableBody' ).html( sTbody );
+
+    $( '#historyTable' ).css( 'display', 'initial' );
+    $( '#historyNone' ).css( 'display', 'none' );
+  }
 }
 
 function compareEventTimestamps( aEvent1, aEvent2 )
