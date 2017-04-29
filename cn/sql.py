@@ -32,7 +32,7 @@ class device:
             self.closet_old = ''
 
 
-        cur.execute( "SELECT timestamp, username, event_type, description FROM Event WHERE target_table = 'Device' AND target_column = 'id' AND target_value = ?", (self.id,) )
+        cur.execute( "SELECT timestamp, username, event_type, description FROM Activity WHERE target_table = 'Device' AND target_column = 'id' AND target_value = ?", (self.id,) )
         print( 'id=', self.id )
         self.events = cur.fetchall()
         print( 'events=', self.events )
@@ -123,7 +123,7 @@ class cirobj:
             self.devices.append( [ dev.id, dev.closet_new, dev.closet_old, dev.description ] )
 
 
-        cur.execute( "SELECT timestamp, username, event_type, description FROM Event WHERE target_table = 'CircuitObject' AND target_column = 'path' AND target_value = ?", (self.path,) )
+        cur.execute( "SELECT timestamp, username, event_type, description FROM Activity WHERE target_table = 'CircuitObject' AND target_column = 'path' AND target_value = ?", (self.path,) )
         self.events = cur.fetchall()
 
         print('my parent is ',self.parent)
@@ -219,7 +219,7 @@ class search:
 class saveNotes:
     def __init__(self, args):
 
-        cur.execute('''INSERT INTO Event ( timestamp, username, event_type, target_table, target_column, target_value, description )
+        cur.execute('''INSERT INTO Activity ( timestamp, username, event_type, target_table, target_column, target_value, description )
             VALUES (?,?,?,?,?,?,? )''', ( time.time(), 'bigBird', dcEventTypes['notes'], args.targetTable, args.targetColumn, args.targetValue, args.notes ) )
 
         conn.commit()
