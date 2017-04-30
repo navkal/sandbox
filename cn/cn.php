@@ -3,7 +3,7 @@
 <?php
   $_SESSION["pathDotReplacement"] = '-_-_-';
   $_SESSION['user'] = [];
-  $_SESSION['user']['role'] = ( strpos( $_SERVER['TMP'], 'xampp' ) !== false ) ? 'admin' : 'readonly';
+  $_SESSION['user']['role'] = ( isset( $_REQUEST['role'] ) && ( ( strpos( $_SERVER['TMP'], 'xampp' ) !== false ) || ( $_SERVER['SERVER_ADDR'] == '192.168.1.194' ) ) ) ? $_REQUEST['role'] : '';
 
   $iVersion = time();
   $sGoto = isset( $_REQUEST['goto'] ) ? $_REQUEST['goto'] : '';
