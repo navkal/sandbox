@@ -62,8 +62,9 @@
                 </a>
               </h4>
             </div>
-            <div id="historyCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="historyHeading">
-              <table id="historyTable" class="table" >
+            <div id="historyCollapse" class="panel-collapse collapse" style="overflow-x:auto" role="tabpanel" aria-labelledby="historyHeading">
+
+              <table id="historyTable" class="table table-responsive">
                 <thead>
                   <tr>
                     <th>Timestamp</th>
@@ -78,6 +79,7 @@
               <div id="historyNone">
                 <p class="h5 text-center" >None</p>
               </div>
+
             </div>
           </div>
         </div>

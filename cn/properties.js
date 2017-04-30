@@ -139,8 +139,8 @@ function showHistory()
 
   if ( aEvents.length == 0 )
   {
-    $( '#historyTable' ).css( 'display', 'none' );
-    $( '#historyNone' ).css( 'display', 'initial' );
+    $( '#historyTable' ).hide();
+    $( '#historyNone' ).show();
   }
   else
   {
@@ -165,8 +165,8 @@ function showHistory()
     }
     $( '#historyTableBody' ).html( sTbody );
 
-    $( '#historyTable' ).css( 'display', 'initial' );
-    $( '#historyNone' ).css( 'display', 'none' );
+    $( '#historyTable' ).show();
+    $( '#historyNone' ).hide();
   }
 }
 
