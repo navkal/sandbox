@@ -81,9 +81,7 @@ function showProperties()
     //id: "ID",
     object_type: "Type",
     // panel_id: "Panel ID",
-    closet_new: "New Closet",
-    closet_old: "Old Closet",
-    loc_new: "New Location",
+    loc_new: "Location",
     loc_old: "Old Location",
     loc_type: "Location Type",
     loc_descr: "Location Description"

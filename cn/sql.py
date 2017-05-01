@@ -20,22 +20,20 @@ class device:
         self.description = row[3]
         self.parent = row[5]
 
-        #gets room where device or device's panel is located
-        if self.room_id.isdigit():
-            print( 'room-id', self.room_id )
+        #gets room where device is located
+        print( 'room-id', self.room_id )
+        if str( self.room_id ).isdigit():
             cur.execute('SELECT room_num, old_num FROM Room WHERE id = ?', (self.room_id,))
+            rooms = cur.fetchone()
+            self.loc_new = rooms[0]
+            if (self.loc_new == 'no new room') or (self.loc_new.upper().find( 'UNKNOWN' ) != -1):
+                self.loc_new = ''
+            self.loc_old = rooms[1]
+            if (self.loc_old == 'no old room') or (self.loc_old.upper().find( 'UNKNOWN' ) != -1):
+                self.loc_old = ''
         else:
-            print( 'panel-id', self.panel_id )
-            cur.execute('SELECT room_num, old_num FROM Room WHERE id = (SELECT room_id FROM CircuitObject WHERE id = ?)', (self.panel_id,))
-
-        room = cur.fetchone()
-
-        self.closet_new = room[0]
-        if ( self.closet_new == 'no new room' ) or ( self.closet_new.upper().find( 'UNKNOWN' ) != -1 ):
-            self.closet_new = ''
-        self.closet_old = room[1]
-        if ( self.closet_old == 'no old room' ) or ( self.closet_old.upper().find( 'UNKNOWN' ) != -1 ):
-            self.closet_old = ''
+            self.loc_new = ''
+            self.loc_old = ''
 
 
         cur.execute( "SELECT timestamp, username, event_type, description FROM Activity WHERE target_table = 'Device' AND target_column = 'id' AND target_value = ?", (self.id,) )
@@ -49,8 +47,8 @@ class device:
         print("panel_id:",self.panel_id)
         print("description:", self.description)
         print("parent:",self.parent)
-        print("closet_new:", self.closet_new)
-        print("closet_old:", self.closet_old)
+        print("loc_new:", self.loc_new)
+        print("loc_old:", self.loc_old)
 
     def get_main_display(self):
         return {'ID': self.id,
@@ -58,8 +56,8 @@ class device:
                 'Panel ID': self.panel_id,
                 'Description':self.description,
                 'Parent': self.parent,
-                'Closet New': self.closet_new,
-                'Closet Old': self.closet_old}
+                'Location New': self.loc_new,
+                'Location Old': self.loc_old}
 
 
 class cirobj:
@@ -126,7 +124,7 @@ class cirobj:
         for i in range( len (dev_ids) ):
             dev_id = dev_ids[i][0]
             dev = device( dev_id )
-            self.devices.append( [ dev.id, dev.closet_new, dev.closet_old, dev.description ] )
+            self.devices.append( [ dev.id, dev.loc_new, dev.loc_old, dev.description ] )
 
 
         cur.execute( "SELECT timestamp, username, event_type, description FROM Activity WHERE target_table = 'CircuitObject' AND target_column = 'path' AND target_value = ?", (self.path,) )
