@@ -6,6 +6,8 @@ var g_tTreeMap = {};
 var g_sImageButton = '<button class="btn btn-link btn-xs" onclick="openImageWindow(event)" title="Image" ><span class="glyphicon glyphicon-picture" style="font-size:18px;" ></span></button>';
 var g_sPropertiesButton = '<button class="btn btn-link btn-xs propertiesButton" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-list" style="font-size:18px;" ></span></button>';
 var g_sSearchTargetPath = '';
+var g_aPropertiesTrail = null;
+var g_iPropertiesTrailIndex = null;
 
 $( document ).ready( initView );
 
@@ -106,7 +108,7 @@ function insertTreeNode( tRsp, sStatus, tJqXhr )
     var sDeviceOid = aDevices[iDevice][0];
     var sDeviceLoc = aDevices[iDevice][1] || aDevices[iDevice][2];
     var sDeviceDescr = aDevices[iDevice][3];
-    sDevicePath = sPath + " " + sDeviceOid + "," + sDeviceLoc + "," + sDeviceDescr;
+    sDevicePath = sPath + "." + sDeviceOid;
     var sDeviceAt = ( sDeviceLoc == '' ) ? '' : ( ' <span class="glyphicon glyphicon-map-marker"></span>' + sDeviceLoc );
     var sDeviceLabel = sDeviceDescr + sDeviceAt;
     aDeviceInfo.push( { oid: sDeviceOid, path: sDevicePath, label: sDeviceLabel } );
@@ -383,11 +385,16 @@ function openPropertiesWindow( tEvent )
   // Update tree
   if ( bFromPropertiesWindow )
   {
+    // User clicked arrow button in Properties window
+    g_iPropertiesTrailIndex --;
     g_sSearchTargetPath = sPath;
     navigateToSearchTarget();
   }
   else
   {
+    // User clicked Properties button on tree node
+    g_aPropertiesTrail = sPath.split( '.' );
+    g_iPropertiesTrailIndex = g_aPropertiesTrail.length - 1;
     $( '.searchTarget' ).removeClass( 'searchTarget' );
     tAnchor.addClass( 'searchTarget' );
   }
@@ -396,6 +403,8 @@ function openPropertiesWindow( tEvent )
   var sDirectory = bFromPropertiesWindow ? '' : 'cn/';
   var sUrl = sDirectory + 'properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
   childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650, false );
+
+  console.log( '==> at ' + g_iPropertiesTrailIndex + ' in ' + JSON.stringify( g_aPropertiesTrail ),  );
 }
 
 function closeChildWindows()
