@@ -67,8 +67,9 @@ function showProperties()
   var sTitle = g_tProperties["description"] || g_tProperties["path"];
   $( "#propertiesTitle" ).html( sTitle );
 
-  // Show/hide parent button
-  $( '#parentButton' ).css( 'display', ( g_tProperties.parent_path ? 'initial' : 'none' ) );
+  // Show/hide buttons
+  $( '#btnUp' ).css( 'display', ( g_tProperties.parent_path ? 'initial' : 'none' ) );
+  $( '#btnDown' ).css( 'display', ( ( window.opener.g_iPropertiesTrailIndex < ( window.opener.g_aPropertiesTrail.length - 1 ) ) ? 'initial' : 'none' ) );
 
   // Initialize map of property labels
   var tLabelMap =
@@ -135,11 +136,16 @@ function showProperties()
   showHistory();
 }
 
-function goToParent()
+function goUp()
 {
   var tButton = window.opener.$( '#circuitTree a[path="' +  g_tProperties.parent_path + '"] .propertiesButton' );
   tButton.attr( 'fromPropertiesWindow', true );
   tButton.click();
+}
+
+function goDown()
+{
+  alert( 'down' );
 }
 
 function collapseToggle()
