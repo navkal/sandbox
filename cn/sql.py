@@ -20,8 +20,14 @@ class device:
         self.description = row[3]
         self.parent = row[5]
 
-        #gets room where device's panel is located
-        cur.execute('SELECT room_num, old_num FROM Room WHERE id = ?', (self.room_id,))
+        #gets room where device or device's panel is located
+        if self.room_id.isdigit():
+            print( 'room-id', self.room_id )
+            cur.execute('SELECT room_num, old_num FROM Room WHERE id = ?', (self.room_id,))
+        else:
+            print( 'panel-id', self.panel_id )
+            cur.execute('SELECT room_num, old_num FROM Room WHERE id = (SELECT room_id FROM CircuitObject WHERE id = ?)', (self.panel_id,))
+
         room = cur.fetchone()
 
         self.closet_new = room[0]
