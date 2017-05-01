@@ -362,7 +362,7 @@ function openImageWindow( tEvent )
   var nDefaultAspect = 2550 / 3300;
   var nDefaultHeight = nDefaultWidth / nDefaultAspect;
 
-  childWindowOpen( tEvent, g_aImageWindows, sUrl, "Image", sPath, nDefaultWidth, nDefaultHeight );
+  childWindowOpen( tEvent, g_aImageWindows, sUrl, "Image", sPath, nDefaultWidth, nDefaultHeight, false );
 }
 
 function openPropertiesWindow( tEvent )
@@ -380,7 +380,7 @@ function openPropertiesWindow( tEvent )
   var sUrl = sDirectory + 'properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
   tTarget.removeAttr( 'fromPropertiesWindow' );
 
-  childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650 );
+  childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650, false );
 }
 
 function closeChildWindows()
@@ -394,11 +394,11 @@ function closeChildWindows()
 // Open child window and save reference in array.
 // - If opened with Click, save in element [0].
 // - If opened with <key>+Click, save in new element.
-function childWindowOpen( tEvent, aChildWindows, sUrl, sName, sNameSuffix, iWidth, iHeight )
+function childWindowOpen( tEvent, aChildWindows, sUrl, sName, sNameSuffix, iWidth, iHeight, bAllowDefault )
 {
   var iIndex, sWindowFeatures, bFocus;
 
-  if ( tEvent.altKey || tEvent.shiftKey || tEvent.ctrlKey )
+  if ( bAllowDefault && ( tEvent.altKey || tEvent.shiftKey || tEvent.ctrlKey ) )
   {
     // User pressed a special key while clicking.  Allow browser default behavior.
     iIndex = aChildWindows.length;
