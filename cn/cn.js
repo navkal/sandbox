@@ -376,11 +376,15 @@ function openPropertiesWindow( tEvent )
   var sType = tAnchor.attr( "type" );
   var sOid = tAnchor.attr( "oid" );
 
+  // Open the window
   var sDirectory = tTarget.attr( 'fromPropertiesWindow' ) ? '' : 'cn/';
   var sUrl = sDirectory + 'properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
   tTarget.removeAttr( 'fromPropertiesWindow' );
-
   childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650, false );
+
+  // Navigate to corresponding tree element
+  g_sSearchTargetPath = sPath;
+  navigateToSearchTarget();
 }
 
 function closeChildWindows()
