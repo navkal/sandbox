@@ -4,7 +4,7 @@ var g_aImageWindows = [];
 var g_aPropertiesWindows = [];
 var g_tTreeMap = {};
 var g_sImageButton = '<button class="btn btn-link btn-xs" onclick="openImageWindow(event)" title="Image" ><span class="glyphicon glyphicon-picture" style="font-size:18px;" ></span></button>';
-var g_sPropertiesButton = '<button class="btn btn-link btn-xs" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-list" style="font-size:18px;" ></span></button>';
+var g_sPropertiesButton = '<button class="btn btn-link btn-xs propertiesButton" onclick="openPropertiesWindow(event)" title="Properties" ><span class="glyphicon glyphicon-list" style="font-size:18px;" ></span></button>';
 var g_sSearchTargetPath = '';
 
 $( document ).ready( initView );
@@ -370,10 +370,15 @@ function openPropertiesWindow( tEvent )
   tEvent.preventDefault();
   tEvent.stopPropagation();
 
-  var sPath = $( tEvent.target ).closest( "a" ).attr( "path" );
-  var sType = $( tEvent.target ).closest( "a" ).attr( "type" );
-  var sOid = $( tEvent.target ).closest( "a" ).attr( "oid" );
-  var sUrl = 'cn/properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
+  var tTarget = $( tEvent.target );
+  var tAnchor = tTarget.closest( 'a' );
+  var sPath = tAnchor.attr( "path" );
+  var sType = tAnchor.attr( "type" );
+  var sOid = tAnchor.attr( "oid" );
+
+  var sDirectory = tTarget.attr( 'fromPropertiesWindow' ) ? '' : 'cn/';
+  var sUrl = sDirectory + 'properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
+  tTarget.removeAttr( 'fromPropertiesWindow' );
 
   childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650 );
 }

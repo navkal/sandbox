@@ -67,6 +67,9 @@ function showProperties()
   var sTitle = g_tProperties["description"] || g_tProperties["path"];
   $( "#propertiesTitle" ).html( sTitle );
 
+  // Show/hide parent button
+  $( '#parentButton' ).css( 'display', ( g_tProperties.parent_path ? 'initial' : 'none' ) );
+
   // Initialize map of property labels
   var tLabelMap =
   {
@@ -134,10 +137,12 @@ function showProperties()
 
 function goToParent()
 {
-  alert(g_tProperties.path);
+  var tButton = window.opener.$( '#circuitTree a[path="' +  g_tProperties.parent_path + '"] .propertiesButton' );
+  tButton.attr( 'fromPropertiesWindow', true );
+  tButton.click();
 }
 
-function collapseToggle( tEvent )
+function collapseToggle()
 {
   $( this ).parent().find( ".glyphicon-plus,.glyphicon-minus" ).toggleClass( "glyphicon-plus" ).toggleClass( "glyphicon-minus" );
 }

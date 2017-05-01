@@ -40,10 +40,9 @@
         <div class="panel-heading">
           <span id="propertiesTitle" class="panel-title" >
           </span>
-          <span class="pull-right">
+          <span id="parentButton" class="pull-right">
             <button class="btn btn-link btn-xs" onclick="goToParent()" title="Parent">
-              <span class="glyphicon glyphicon-arrow-up" style="font-size:18px;">
-              </span>
+              <span class="glyphicon glyphicon-arrow-up" style="font-size:18px;"></span>
             </button>
           </span>
         </div>
