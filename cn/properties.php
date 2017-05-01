@@ -38,7 +38,14 @@
       <br/>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title" id="propertiesTitle"></h3>
+          <span id="propertiesTitle" class="panel-title" >
+          </span>
+          <span class="pull-right">
+            <button class="btn btn-link btn-xs" onclick="alert('moo')" title="Parent">
+              <span class="glyphicon glyphicon-arrow-up" style="font-size:18px;">
+              </span>
+            </button>
+          </span>
         </div>
         <div class="panel-body">
           <div id="objectArea" style="overflow:auto;">
@@ -55,12 +62,12 @@
         <div class="panel-group" role="tablist" >
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="historyHeading">
-              <h4 class="panel-title">
+              <span class="panel-title">
                 <a role="button" data-toggle="collapse" href="#historyCollapse" aria-expanded="true" aria-controls="historyCollapse">
                   <span class="glyphicon glyphicon-list-alt">&nbsp;</span>History
                   <span class="glyphicon glyphicon-plus pull-right"></span>
                 </a>
-              </h4>
+              </span>
             </div>
             <div id="historyCollapse" class="panel-collapse collapse" style="overflow-x:auto" role="tabpanel" aria-labelledby="historyHeading">
 
