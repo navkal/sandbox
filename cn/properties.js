@@ -51,7 +51,13 @@ function getProperties()
 function saveProperties( tRsp, sStatus, tJqXhr )
 {
   g_tProperties = tRsp;
-  window.opener.g_tTreeMap[g_tProperties["path"]] = tRsp;
+
+  // If main window already has this element, update it
+  if ( window.opener.g_tTreeMap[g_tProperties["path"]] )
+  {
+    window.opener.g_tTreeMap[g_tProperties["path"]] = tRsp;
+  }
+
   showProperties();
 }
 
