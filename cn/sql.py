@@ -18,7 +18,7 @@ class device:
         self.room_id = row[1]
         self.panel_id = row[2]
         self.description = row[3]
-        self.parent = row[5]
+        self.parent_path = row[5]
 
         #gets room where device is located
         print( 'room-id', self.room_id )
@@ -46,7 +46,7 @@ class device:
         print("room_id:", self.room_id)
         print("panel_id:",self.panel_id)
         print("description:", self.description)
-        print("parent:",self.parent)
+        print("parent_path:",self.parent_path)
         print("loc_new:", self.loc_new)
         print("loc_old:", self.loc_old)
 
@@ -55,7 +55,7 @@ class device:
                 'Room ID': self.room_id,
                 'Panel ID': self.panel_id,
                 'Description':self.description,
-                'Parent': self.parent,
+                'Parent Path': self.parent_path,
                 'Location New': self.loc_new,
                 'Location Old': self.loc_old}
 
@@ -82,7 +82,7 @@ class cirobj:
         self.voltage = voltage[1]
         self.object_type = row[5].title()
         self.description = row[6]
-        self.parent = row[7]
+        self.parent_path = row[7]
 
         # Get room information
         cur.execute('SELECT * FROM Room WHERE id = ?', (self.room_id,))
@@ -130,7 +130,7 @@ class cirobj:
         cur.execute( "SELECT timestamp, username, event_type, description FROM Activity WHERE target_table = 'CircuitObject' AND target_column = 'path' AND target_value = ?", (self.path,) )
         self.events = cur.fetchall()
 
-        print('my parent is ',self.parent)
+        print('my parent path is ',self.parent_path)
         print('my children are ', self.children)
         print('my devices are ', self.devices)
         print( 'my events are ', self.events )
@@ -143,7 +143,7 @@ class cirobj:
                 'Voltage': self.voltage,
                 'Type': self.object_type,
                 'Description': self.description,
-                'Parent': self.parent,
+                'Parent Path': self.parent_path,
                 'Children': self.children}
 
 class room:

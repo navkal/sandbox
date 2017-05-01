@@ -74,7 +74,7 @@ function showProperties()
     path: "Path",
     children: "Children",
     //description: "Description",
-    parent: "Parent",
+    parent_path: "Parent",
     voltage: "Voltage",
     //room_id: "Room ID",
     devices: "Devices",
@@ -130,6 +130,11 @@ function showProperties()
 
   // Display history
   showHistory();
+}
+
+function goToParent()
+{
+  alert(g_tProperties.path);
 }
 
 function collapseToggle( tEvent )

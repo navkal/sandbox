@@ -41,7 +41,7 @@
           <span id="propertiesTitle" class="panel-title" >
           </span>
           <span class="pull-right">
-            <button class="btn btn-link btn-xs" onclick="alert('moo')" title="Parent">
+            <button class="btn btn-link btn-xs" onclick="goToParent()" title="Parent">
               <span class="glyphicon glyphicon-arrow-up" style="font-size:18px;">
               </span>
             </button>
