@@ -376,15 +376,26 @@ function openPropertiesWindow( tEvent )
   var sType = tAnchor.attr( "type" );
   var sOid = tAnchor.attr( "oid" );
 
-  // Open the window
-  var sDirectory = tTarget.attr( 'fromPropertiesWindow' ) ? '' : 'cn/';
-  var sUrl = sDirectory + 'properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
+  // Determine context of user request
+  var bFromPropertiesWindow = tTarget.attr( 'fromPropertiesWindow' )
   tTarget.removeAttr( 'fromPropertiesWindow' );
-  childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650, false );
 
-  // Navigate to corresponding tree element
-  g_sSearchTargetPath = sPath;
-  navigateToSearchTarget();
+  // Update tree
+  if ( bFromPropertiesWindow )
+  {
+    g_sSearchTargetPath = sPath;
+    navigateToSearchTarget();
+  }
+  else
+  {
+    $( '.searchTarget' ).removeClass( 'searchTarget' );
+    tAnchor.addClass( 'searchTarget' );
+  }
+
+  // Open the window
+  var sDirectory = bFromPropertiesWindow ? '' : 'cn/';
+  var sUrl = sDirectory + 'properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
+  childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650, false );
 }
 
 function closeChildWindows()
