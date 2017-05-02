@@ -68,8 +68,8 @@ function showProperties()
   $( "#propertiesTitle" ).html( sTitle );
 
   // Show/hide buttons
-  $( '#btnUp' ).css( 'display', ( g_tProperties.parent_path ? 'initial' : 'none' ) );
-  $( '#btnDown' ).css( 'display', ( ( window.opener.g_iPropertiesTrailIndex < ( window.opener.g_aPropertiesTrail.length - 1 ) ) ? 'initial' : 'none' ) );
+  $( '#btnUp' ).css( 'visibility', ( g_tProperties.parent_path ? 'visible' : 'hidden' ) );
+  $( '#btnDown' ).css( 'visibility', ( ( window.opener.g_iPropertiesTrailIndex < ( window.opener.g_aPropertiesTrail.length - 1 ) ) ? 'visible' : 'hidden' ) );
 
   // Initialize map of property labels
   var tLabelMap =
@@ -139,13 +139,17 @@ function showProperties()
 function goUp()
 {
   var tButton = window.opener.$( '#circuitTree a[path="' +  g_tProperties.parent_path + '"] .propertiesButton' );
-  tButton.attr( 'fromPropertiesWindow', true );
+  tButton.addClass( 'btnUp' );
   tButton.click();
 }
 
 function goDown()
 {
-  alert( 'down' );
+  var aPath = window.opener.g_aPropertiesTrail.slice( 0, window.opener.g_iPropertiesTrailIndex + 2 );
+  var sPath = aPath.join( '.' );
+  var tButton = window.opener.$( '#circuitTree a[path="' +  sPath + '"] .propertiesButton' );
+  tButton.addClass( 'btnDown' );
+  tButton.click();
 }
 
 function collapseToggle()

@@ -378,15 +378,15 @@ function openPropertiesWindow( tEvent )
   var sType = tAnchor.attr( "type" );
   var sOid = tAnchor.attr( "oid" );
 
-  // Determine context of user request
-  var bFromPropertiesWindow = tTarget.attr( 'fromPropertiesWindow' )
-  tTarget.removeAttr( 'fromPropertiesWindow' );
-
   // Update tree
+  var bFromPropertiesWindow = tTarget.hasClass( 'btnUp' ) || tTarget.hasClass( 'btnDown' );
   if ( bFromPropertiesWindow )
   {
     // User clicked arrow button in Properties window
-    g_iPropertiesTrailIndex --;
+    console.log( '==> openPropertiesWindow bf index=' + g_iPropertiesTrailIndex );
+    g_iPropertiesTrailIndex += ( tTarget.hasClass( 'btnUp' ) ? -1 : 1 );
+    tTarget.removeClass( 'btnUp' ).removeClass( 'btnDown' );
+    console.log( '==> openPropertiesWindow af index=' + g_iPropertiesTrailIndex );
     g_sSearchTargetPath = sPath;
     navigateToSearchTarget();
   }
