@@ -35,19 +35,20 @@
 	<body>
     <div class="container">
 
-      <br/>
+      <div class="clearfix" style="padding-top: 5px">
+        <span class="pull-right">
+          <button id="btnUp" class="btn btn-link btn-xs" onclick="goUp()" title="Parent">
+            <span class="glyphicon glyphicon-arrow-up" style="font-size:18px;"></span>
+          </button>
+          <button id="btnDown" class="btn btn-link btn-xs" onclick="goDown()" title="Child">
+            <span class="glyphicon glyphicon-arrow-down" style="font-size:18px;"></span>
+          </button>
+        </span>
+      </div>
+
       <div class="panel panel-default">
         <div class="panel-heading">
-          <span id="propertiesTitle" class="panel-title" >
-          </span>
-          <span class="pull-right">
-            <button id="btnUp" class="btn btn-link btn-xs" onclick="goUp()" title="Parent">
-              <span class="glyphicon glyphicon-arrow-up" style="font-size:14px;"></span>
-            </button>
-            <button id="btnDown" class="btn btn-link btn-xs" onclick="goDown()" title="Child">
-              <span class="glyphicon glyphicon-arrow-down" style="font-size:14px;"></span>
-            </button>
-          </span>
+          <span id="propertiesTitle" class="panel-title" ></span>
         </div>
         <div class="panel-body">
           <div id="objectArea" style="overflow:auto;">

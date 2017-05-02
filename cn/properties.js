@@ -67,9 +67,9 @@ function showProperties()
   var sTitle = g_tProperties["description"] || g_tProperties["path"];
   $( "#propertiesTitle" ).html( sTitle );
 
-  // Show/hide buttons
-  $( '#btnUp' ).css( 'visibility', ( g_tProperties.parent_path ? 'visible' : 'hidden' ) );
-  $( '#btnDown' ).css( 'visibility', ( ( window.opener.g_iPropertiesTrailIndex < ( window.opener.g_aPropertiesTrail.length - 1 ) ) ? 'visible' : 'hidden' ) );
+  // Enable/disable buttons
+  $( '#btnUp' ).prop( 'disabled', ! g_tProperties.parent_path );
+  $( '#btnDown' ).prop( 'disabled', ( window.opener.g_iPropertiesTrailIndex >= ( window.opener.g_aPropertiesTrail.length - 1 ) ) );
 
   // Initialize map of property labels
   var tLabelMap =
