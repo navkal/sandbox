@@ -17,6 +17,10 @@
     {
       border: none;
     }
+    .glyphicon-arrow-up,.glyphicon-arrow-down
+    {
+      font-size: 15px;
+    }
   </style>
 
   <script>
@@ -38,10 +42,10 @@
       <div class="clearfix" style="padding-top: 5px">
         <span class="pull-right">
           <button id="btnUp" class="btn btn-link btn-xs" onclick="goUp()" title="Parent">
-            <span class="glyphicon glyphicon-arrow-up" style="font-size:18px;"></span>
+            <span class="glyphicon glyphicon-arrow-up" ></span>
           </button>
           <button id="btnDown" class="btn btn-link btn-xs" onclick="goDown()" title="Child">
-            <span class="glyphicon glyphicon-arrow-down" style="font-size:18px;"></span>
+            <span class="glyphicon glyphicon-arrow-down" ></span>
           </button>
         </span>
       </div>
