@@ -19,7 +19,7 @@
     }
     .glyphicon-arrow-up,.glyphicon-arrow-down
     {
-      font-size: 15px;
+      font-size: 16px;
     }
   </style>
 
