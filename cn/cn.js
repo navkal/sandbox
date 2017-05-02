@@ -383,10 +383,8 @@ function openPropertiesWindow( tEvent )
   if ( bFromPropertiesWindow )
   {
     // User clicked arrow button in Properties window
-    console.log( '==> openPropertiesWindow bf index=' + g_iPropertiesTrailIndex );
     g_iPropertiesTrailIndex += ( tTarget.hasClass( 'btnUp' ) ? -1 : 1 );
     tTarget.removeClass( 'btnUp' ).removeClass( 'btnDown' );
-    console.log( '==> openPropertiesWindow af index=' + g_iPropertiesTrailIndex );
     g_sSearchTargetPath = sPath;
     navigateToSearchTarget();
   }
@@ -403,8 +401,6 @@ function openPropertiesWindow( tEvent )
   var sDirectory = bFromPropertiesWindow ? '' : 'cn/';
   var sUrl = sDirectory + 'properties.php?path=' + sPath + '&type=' + sType + '&oid=' + sOid;
   childWindowOpen( tEvent, g_aPropertiesWindows, sUrl, "Properties", sPath, 450, 650, false );
-
-  console.log( '==> at ' + g_iPropertiesTrailIndex + ' in ' + JSON.stringify( g_aPropertiesTrail ),  );
 }
 
 function closeChildWindows()

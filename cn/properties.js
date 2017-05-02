@@ -160,7 +160,6 @@ function collapseToggle()
 function showHistory()
 {
   var aEvents = g_tProperties.events;
-  console.log( '==>num events=' + aEvents.length );
 
   if ( aEvents.length == 0 )
   {
@@ -231,7 +230,6 @@ function saveNotes( tEvent )
 
 function saveNotesCompletion( tRsp, sStatus, tJqXhr )
 {
-  console.log( '==> rsp=' + JSON.stringify( tRsp ) );
   clearNotes( { type: 'click' } );
   getProperties();
 }
