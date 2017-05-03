@@ -208,25 +208,30 @@ function handlePostError( tJqXhr, sStatus, sErrorThrown )
 
 function saveNotes( tEvent )
 {
-  // Post request to server
-  var tPostData = new FormData();
-  tPostData.append( "targetTable", ( ( g_sType == 'device' ) ? "Device" : "CircuitObject" ) );
-  tPostData.append( "targetColumn", ( ( g_sType == 'device' ) ? "id" : "path" ) );
-  tPostData.append( "targetValue", ( ( g_sType == 'device' ) ? g_sOid : g_sPath ) );
-  tPostData.append( "notes", $( '#notes' ).val() );
+  var sNotes = $( '#notes' ).val().trim();
+  $( '#notes' ).val( sNotes );
+  if ( sNotes != '' )
+  {
+    // Post request to server
+    var tPostData = new FormData();
+    tPostData.append( "targetTable", ( ( g_sType == 'device' ) ? "Device" : "CircuitObject" ) );
+    tPostData.append( "targetColumn", ( ( g_sType == 'device' ) ? "id" : "path" ) );
+    tPostData.append( "targetValue", ( ( g_sType == 'device' ) ? g_sOid : g_sPath ) );
+    tPostData.append( "notes", sNotes );
 
-  $.ajax(
-    "saveNotes.php",
-    {
-      type: 'POST',
-      processData: false,
-      contentType: false,
-      dataType : 'json',
-      data: tPostData
-    }
-  )
-  .done( saveNotesCompletion )
-  .fail( handlePostError );
+    $.ajax(
+      "saveNotes.php",
+      {
+        type: 'POST',
+        processData: false,
+        contentType: false,
+        dataType : 'json',
+        data: tPostData
+      }
+    )
+    .done( saveNotesCompletion )
+    .fail( handlePostError );
+  }
 }
 
 function saveNotesCompletion( tRsp, sStatus, tJqXhr )
