@@ -39,13 +39,15 @@
 	<body>
     <div class="container">
 
-      <div style="padding-top: 5px">
-        <button id="btnUp" class="btn btn-link btn-xs" onclick="goUp()" title="Parent">
-          <span class="glyphicon glyphicon-arrow-up" ></span>
-        </button>
-        <button id="btnDown" class="btn btn-link btn-xs" onclick="goDown()" title="Child">
-          <span class="glyphicon glyphicon-arrow-down" ></span>
-        </button>
+      <div class="clearfix" style="padding-top: 5px">
+        <span class="pull-right">
+          <button id="btnUp" class="btn btn-link btn-xs" onclick="goUp()" title="Parent">
+            <span class="glyphicon glyphicon-arrow-up" ></span>
+          </button>
+          <button id="btnDown" class="btn btn-link btn-xs" onclick="goDown()" title="Child">
+            <span class="glyphicon glyphicon-arrow-down" ></span>
+          </button>
+        </span>
       </div>
 
       <div class="panel panel-default">
