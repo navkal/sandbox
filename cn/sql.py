@@ -18,7 +18,8 @@ class device:
         self.room_id = row[1]
         self.panel_id = row[2]
         self.description = row[3]
-        self.parent_path = row[5]
+        self.parent_path = row[5] # For tree structure
+        self.attached_to = row[5] # For properties display
 
         #gets room where device is located
         print( 'room-id', self.room_id )
