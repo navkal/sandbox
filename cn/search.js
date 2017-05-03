@@ -1,4 +1,4 @@
-// Copyright 2017 Energize Apps.  All rights reserved.
+// Copyright 2017 Circuit Explorer.  All rights reserved.
 
 var g_iLastRequestTime = 0;
 var g_sLastText = '';
