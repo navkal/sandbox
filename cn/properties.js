@@ -78,7 +78,7 @@ function showProperties()
     path: "Path",
     children: "Children",
     //description: "Description",
-    attached_to: "Attached To",
+    source: "Source",
     //parent_path: "Parent",
     voltage: "Voltage",
     //room_id: "Room ID",
