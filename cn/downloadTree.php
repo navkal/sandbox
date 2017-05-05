@@ -1,5 +1,5 @@
 <?php
-  // Copyright 2016 Circuit Explorer.  All rights reserved.
+  // Copyright 2016 Panel Spy.  All rights reserved.
 
   require_once $_SERVER["DOCUMENT_ROOT"]."/../common/util.php";
 

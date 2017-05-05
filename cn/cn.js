@@ -1,4 +1,4 @@
-// Copyright 2017 Circuit Explorer.  All rights reserved.
+// Copyright 2017 Panel Spy.  All rights reserved.
 
 var g_aImageWindows = [];
 var g_aPropertiesWindows = [];

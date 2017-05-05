@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="page-header">
-    <p class="h3">Circuit Explorer</p>
+    <p class="h3">Panel Spy</p>
     <p>TBD</p>
   </div>
 

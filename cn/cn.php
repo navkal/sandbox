@@ -1,4 +1,4 @@
-<!-- Copyright 2017 Circuit Explorer.  All rights reserved. -->
+<!-- Copyright 2017 Panel Spy.  All rights reserved. -->
 
 <?php
   $_SESSION["pathDotReplacement"] = '-_-_-';

@@ -1,5 +1,5 @@
 <?php
-  // Copyright 2017 Circuit Explorer.  All rights reserved.
+  // Copyright 2017 Panel Spy.  All rights reserved.
   require_once $_SERVER['DOCUMENT_ROOT'].'/../common/util.php';
   error_log( '====> post=' . print_r( $_POST, true ) );
 
