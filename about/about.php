@@ -8,7 +8,7 @@
   <br/>
   <h4>Features</h4>
   <dl class="dl-horizontal">
-    <dt>Topology</dt>
+    <dt>Circuits</dt>
     <dd>TBD</dd>
     <dt>Panels</dt>
     <dd>TBD</dd>
