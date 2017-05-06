@@ -21,8 +21,11 @@
 <!-- Goto parameter -->
 <input id="goto" type="hidden" value="<?=$sGoto?>"/>
 
-<br/>
 <div class="container">
+
+  <div class="page-header">
+    <p class="h3">Circuits</p>
+  </div>
 
   <!-- Search -->
   <div class="row" >
