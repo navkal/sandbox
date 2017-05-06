@@ -6,15 +6,17 @@
   </div>
 
   <br/>
-  <h4>Applications</h4>
+  <h4>Features</h4>
   <dl class="dl-horizontal">
-    <dt>Circuit Navigator</dt>
+    <dt>Topology</dt>
     <dd>TBD</dd>
-    <dt>Panel Finder</dt>
+    <dt>Panels</dt>
     <dd>TBD</dd>
-    <dt>Transformer Finder</dt>
+    <dt>Transformers</dt>
     <dd>TBD</dd>
-    <dt>Device Finder</dt>
+    <dt>Devices</dt>
+    <dd>TBD</dd>
+    <dt>Locations</dt>
     <dd>TBD</dd>
   </dl>
 

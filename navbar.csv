@@ -1,7 +1,11 @@
 Panel Spy,,
 &copy; 2017 Panel Spy. All rights reserved.,,
 panelSpy@gmail.com,,
-cn,Circuit Navigator,cn/cn.php
+cn,Topology,cn/cn.php
+pans,Panels,pans/pans.php
+trans,Transformers,trans/trans.php
+devs,Devices,devs/devs.php
+locs,Locations,locs/locs.php
 about,About,about/about.php
 contact,Contact,contact/contact.php
 php,PHP Information,pi/pi.php
