@@ -3,7 +3,7 @@ import os
 import time
 from eventTypes import dcEventTypes
 
-conn = sqlite3.connect('AHSMap.sqlite')
+conn = sqlite3.connect('../db/AHSMap.sqlite')
 cur = conn.cursor()
 
 class device:
