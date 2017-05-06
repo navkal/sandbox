@@ -23,7 +23,7 @@
 
 <br/>
 <div class="container">
-  <div id="headerContent" >
+  <div id="headerContent" class="page-header" >
     <div class="row" >
       <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 headerButton" >
         <a class="btn btn-default btn-sm" href="cn/circuitTopology.pdf" target="_blank" title="View diagram of Circuit Topology" >
@@ -48,7 +48,6 @@
   </div>
 
   <div id="circuitNavigator">
-    <hr/>
 
     <!-- Search -->
     <div class="row" >
