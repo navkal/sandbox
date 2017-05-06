@@ -19,7 +19,7 @@ function waitTreeDump()
   $( "#dumpTime" ).html( timeSince( g_iStartTime ) );
 
   $.ajax(
-    "cn/downloadWait.php",
+    "topo/downloadWait.php",
     {
       type: 'GET'
     }
@@ -38,6 +38,12 @@ function endTreeDump( tRsp, sStatus, tJqXhr )
     $( '#headerContent' ).removeClass( "hidden" );
     $( '#dumpStatus' ).addClass( "hidden" );
   }
+}
+
+function handleAjaxError( tJqXhr, sStatus, sErrorThrown )
+{
+  console.log( "=> ERROR=" + sStatus + " " + sErrorThrown );
+  console.log( "=> HEADER=" + JSON.stringify( tJqXhr ) );
 }
 
 // <- <- <- Tree dump <- <- <-
